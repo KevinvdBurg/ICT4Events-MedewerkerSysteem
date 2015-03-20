@@ -78,6 +78,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedewerkerSysteemDiagramLib\MedewerkerSysteemDiagramLib.csproj">
+      <Project>{286963b1-256e-4ad0-95c8-4f2c21564d50}</Project>
+      <Name>MedewerkerSysteemDiagramLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
