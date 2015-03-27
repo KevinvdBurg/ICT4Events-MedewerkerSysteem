@@ -73,17 +73,17 @@
     </stereotypeInstance>
   </appliedStereotypesInternal>
   <profileInstances>
-    <packageHasProfileInstances Id="a4be5170-f0ef-4a80-b0e0-01bc5cf06335">
-      <profileInstance Id="20f7ebfb-0fef-4171-898c-b797d6099314" name="CSharpProfile">
-        <elementDefinition Id="d9362cd9-98d3-44fd-9edf-1612f3228a4c" />
+    <packageHasProfileInstances Id="cc428404-57cf-4339-acfd-b4d61a110789">
+      <profileInstance Id="1811b035-c2a3-43b3-a90a-679ecdabdeac" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
       </profileInstance>
-      <elementDefinition Id="59957140-4d33-4223-8376-e2ebc1be035c" />
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
     </packageHasProfileInstances>
-    <packageHasProfileInstances Id="bf6deb38-2126-4559-9713-b709f4cb5026">
-      <profileInstance Id="7120fd39-0fd6-4413-9d3c-35ee64507020" name="TextTemplateBindings">
-        <elementDefinition Id="5cf7c5ed-7270-4f26-a37c-891f08c7466b" />
+    <packageHasProfileInstances Id="a720329b-0290-4628-9ede-cf4adc10ab32">
+      <profileInstance Id="ad348c30-402c-4605-9d3c-0a84bad23229" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
       </profileInstance>
-      <elementDefinition Id="de4c48b8-118d-442c-a809-b7308cfeb6d6" />
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -190,11 +190,6 @@
     <packageHasNamedElement>
       <referencedType Id="3581516e-1224-48ac-92a4-407ee5268893" name="ICT4Event::Event" isAbstract="false" isLeaf="false" cachedFullName="ICT4Event::Event">
         <elementDefinition Id="ccd7dad6-3382-4f08-95de-22a9e34ff0f6" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="f89ef0c0-7bc4-4386-b491-ee2471060ef9" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
-        <elementDefinition Id="1999bff6-199e-4d8e-9904-b51616f3e374" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -343,7 +338,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="12714771-a7cb-4dec-94be-b1a07b2a786a" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="fda31027-6606-435b-8b56-2fb869d2ac66" LastKnownName="int" />
+              <referencedTypeMoniker Id="97940163-04e9-478b-ace1-948cc706b201" LastKnownName="String" />
             </type_NamedElement>
           </property>
           <property Id="468bba8b-40cd-404d-a293-60b737102c8a" name="StartDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -1142,7 +1137,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="4d1c1e66-1c5c-40e1-922a-bb2eec5d1bc5" name="CampingSpot: CamptingSpot, Group : Group, Paid : bool)" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="4d1c1e66-1c5c-40e1-922a-bb2eec5d1bc5" name="ReserveSpot" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="93d511cf-bd0a-49e1-a2fe-d3b09f592da0" name="method" profile="CSharpProfile">
                 <elementDefinition Id="cf6b8138-f750-40c2-9cd4-3c8602a9422d" />
@@ -1187,6 +1182,32 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="276e5858-4abd-46ef-a795-201b400181fa" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b2334d5b-587e-4bed-8b35-02a6964bcb0f" name="CampingSpot" direction="In" isUnique="false">
+                  <elementDefinition Id="23c49969-46de-42c4-b0dd-7ff505b71365" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cfa48182-0558-46fb-82de-47b7fb1f38e8" LastKnownName="CamptingSpot" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a4d068ac-5f1b-4022-91dc-d2688b0d739a" name="Group" direction="In" isUnique="false">
+                  <elementDefinition Id="b78453a0-8a6e-42f1-8164-cca59571b11e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ea6b7c9c-134e-4d7e-8266-5b8434f2165d" LastKnownName="Group" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="93aa62d7-ee32-43a4-a16c-ec24696413d2" name="Paid" direction="In" isUnique="false">
+                  <elementDefinition Id="f56b2662-d0b6-47d1-b913-93cb09078f27" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="699bbd97-76c0-4edb-a14c-15ef9c863d67" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1686,7 +1707,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="0e671426-b675-4a70-b25a-111f3a641ae4" name="Account(Person : Person, RFID : string, Type : string" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="0e671426-b675-4a70-b25a-111f3a641ae4" name="Account(Person : Person, RFID : string" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="44c51f20-a823-41f5-b04a-022c9179430c" name="method" profile="CSharpProfile">
                 <elementDefinition Id="abeeab26-2cfe-41db-8241-17e3e3704a9e" />
@@ -4388,7 +4409,7 @@
             </appliedStereotypesInternal>
             <elementDefinition Id="1e5662c0-699a-49a3-ada2-e3f6f1833f43" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="f89ef0c0-7bc4-4386-b491-ee2471060ef9" LastKnownName="int" />
+              <referencedTypeMoniker Id="909b6111-d480-4b0d-a1df-b9edddae4ab9" LastKnownName="decimal" />
             </type_NamedElement>
           </property>
           <property Id="f96dd044-1191-44ff-ac13-670665833ac8" name="Details" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -4550,32 +4571,24 @@
             <elementDefinition Id="0f9da82f-562f-4723-9669-fb8082704500" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="a5564ca6-0e67-44d6-9610-4aec438123e8" name="Type" direction="In" isUnique="false">
-                  <elementDefinition Id="afe9789f-9f35-41f4-b6e1-4b69e640bfb1" />
+                <parameter Id="e36d7fa3-1176-4b17-acba-2d6b9c1bbf0d" name="Details" direction="In" isUnique="false">
+                  <elementDefinition Id="791f5186-feea-4b41-877c-8dc04d89d60f" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="9e0f7e26-b76a-4ab1-ac07-74929c798818" LastKnownName="string" />
+                    <referencedTypeMoniker Id="01358840-0854-4a28-85b6-003f9991c0e3" LastKnownName="string" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="fa636643-e2c3-4d70-8c55-254fde9c5187" name="Details" direction="In" isUnique="false">
-                  <elementDefinition Id="13db539f-715e-4b09-96be-a9ca832e601b" />
+                <parameter Id="dbc3f12b-4077-4172-862a-3530b56981a2" name="Price" direction="In" isUnique="false">
+                  <elementDefinition Id="9225de0f-9782-42fc-878e-8aa0a0e1488e" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="9e0f7e26-b76a-4ab1-ac07-74929c798818" LastKnownName="string" />
+                    <referencedTypeMoniker Id="4b17106a-ff9b-4079-9ebc-8c561b435ea3" LastKnownName="decimal" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="cb0a84b2-a702-40f6-a86e-6e7c4a5fe740" name="Price" direction="In" isUnique="false">
-                  <elementDefinition Id="4d294ada-c597-4182-9a2e-0c4712bdb150" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="9e0f7e26-b76a-4ab1-ac07-74929c798818" LastKnownName="string" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="f7b9c1b9-9753-465d-9bd5-e599232bb62d" name="Type" direction="In" isUnique="false">
-                  <elementDefinition Id="c9b67732-70bb-48c9-a03d-313544015556" />
+                <parameter Id="279e3415-b32e-4eb4-adb8-d7b66cd355be" name="Type" direction="In" isUnique="false">
+                  <elementDefinition Id="978abf15-5c7c-4a3d-a037-9974450a78cc" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="01358840-0854-4a28-85b6-003f9991c0e3" LastKnownName="string" />
                   </type_NamedElement>
@@ -4690,7 +4703,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="619b7867-ad92-42e7-86f3-42581241f926" name="Category" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="619b7867-ad92-42e7-86f3-42581241f926" name="CategorySpots" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="ff7009e5-c119-495e-a7c3-5ccc1765aee4" name="method" profile="CSharpProfile">
                 <elementDefinition Id="1c95c7f2-928a-48a6-af16-fa46f00b7c08" />
@@ -4737,8 +4750,8 @@
             <elementDefinition Id="1d53778f-1d74-4f8c-a9fc-e1008aae5cf8" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="fdea5c2b-f31f-4acd-9c33-fc7c21e7543c" name="MaxPerson" direction="In" isUnique="false">
-                  <elementDefinition Id="806f2cf4-f283-4c11-a051-5c3f96df8355" />
+                <parameter Id="a9060657-ed8f-48ac-b749-4cc540075b5e" name="MaxPerson" direction="In" isUnique="false">
+                  <elementDefinition Id="e66c8724-b38f-4394-843c-cb0abae12503" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="868a981c-0f5e-4499-92f1-62f8bef5d08c" LastKnownName="int" />
                   </type_NamedElement>
@@ -4853,7 +4866,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="d2156513-d01a-4049-856a-427b763f0349" name="Category" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="d2156513-d01a-4049-856a-427b763f0349" name="CategoryItmes" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="29898c86-0786-4f14-a0f4-75628d9f8f6f" name="method" profile="CSharpProfile">
                 <elementDefinition Id="8775d04a-a541-4e0c-9c39-023fe91a978c" />
@@ -4900,8 +4913,8 @@
             <elementDefinition Id="228aed32-f071-43ea-b72c-fa83b6477241" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="2a60f51d-e803-4680-96ff-bb7cc1baac0f" name="Name" direction="In" isUnique="false">
-                  <elementDefinition Id="c052a7d7-5262-4a4e-82dc-f5b5b31b3a8c" />
+                <parameter Id="9fce414a-fa20-416e-89a7-39794b0525d7" name="Name" direction="In" isUnique="false">
+                  <elementDefinition Id="ac4d95ff-b964-4315-b161-46d7062b978a" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="90b652ab-1f51-49c2-bbb6-26647581d6e7" LastKnownName="string" />
                   </type_NamedElement>
@@ -5078,6 +5091,22 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="9803f48c-29ed-455d-87e2-a9ce9ee91995" />
+          </association>
+          <association Id="dbd82e54-6de6-4e94-850d-5a284fe2fd2b" isDerived="false" sourceEndRoleName="Administation" targetEndRoleName="DBLogin" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a4fc6b6e-4631-4a8a-ab4f-ae8e379b0c54" LastKnownName="DBLogin" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d2fecb25-2e9d-4dbd-863d-fcbabbf58d62" name="Administation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7db1f9ba-75f1-4322-b7cb-6fe426564f9b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5056392a-1dda-44b1-9306-675216a11018" name="DBLogin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c9204a65-3baa-4899-853d-6336c8d4d3f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7ddcdf6c-7521-4caa-a5e3-d2f43d81c51b" />
           </association>
         </targetEnds>
         <ownedOperationsInternal>
@@ -5641,6 +5670,12 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="d4292bc7-b687-4bb0-9711-081aae3e0b84" name="Login" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="599fb018-d21c-4bf3-938a-3bfc4bb4aa8d" />
+          </operation>
+          <operation Id="fc8c2a30-40fa-4b9b-8dc6-f7510cb015b6" name="Administation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40117148-0b89-49a2-8a79-0d1403408cda" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -5832,8 +5867,63 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a4fc6b6e-4631-4a8a-ab4f-ae8e379b0c54" name="DBLogin" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c01acb5e-2288-49c7-bf70-fd99ae5915c3" />
+        <generalsInternal>
+          <generalization Id="0e820549-fe39-414a-a874-b06cf789308d" isSubstitutable="false">
+            <classMoniker Id="3c768441-e2bf-4db2-bf2b-801a7ee0146d" LastKnownName="Database" />
+            <elementDefinition Id="86e333cd-f36c-41c3-8812-e905a4230a2a" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="3afca018-07af-4a1f-95f0-2ffbd791c751" name="Select" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f9ee2b88-5e18-4bc8-ab98-40509e7dfaef" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="97940163-04e9-478b-ace1-948cc706b201" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4b17106a-ff9b-4079-9ebc-8c561b435ea3" name="decimal" isAbstract="false" isLeaf="false" cachedFullName="decimal">
+        <elementDefinition Id="bc18c128-252a-4238-9c6f-4becead7344e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="909b6111-d480-4b0d-a1df-b9edddae4ab9" name="decimal" isAbstract="false" isLeaf="false" cachedFullName="decimal">
+        <elementDefinition Id="bc18c128-252a-4238-9c6f-4becead7344e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cfa48182-0558-46fb-82de-47b7fb1f38e8" name="CamptingSpot" isAbstract="false" isLeaf="false" cachedFullName="CamptingSpot">
+        <elementDefinition Id="937b6ebb-990e-4874-b9d5-f13a66462562" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ea6b7c9c-134e-4d7e-8266-5b8434f2165d" name="Group" isAbstract="false" isLeaf="false" cachedFullName="MedewerkerSysteemDiagram::Group">
+        <elementDefinition Id="df643185-85c8-483a-84d4-6f96d4774bbc" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="a12a1dcb-ece2-4b9b-aeec-c3fb9c01dd3f" name="MedewerkerSysteemDiagram">
     <elementDefinition Id="2c53dd6a-11b7-4976-8706-d460ea30e936" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a4be5170-f0ef-4a80-b0e0-01bc5cf06335">
+        <profileInstance Id="20f7ebfb-0fef-4171-898c-b797d6099314" name="CSharpProfile">
+          <elementDefinition Id="d9362cd9-98d3-44fd-9edf-1612f3228a4c" />
+        </profileInstance>
+        <elementDefinition Id="59957140-4d33-4223-8376-e2ebc1be035c" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="bf6deb38-2126-4559-9713-b709f4cb5026">
+        <profileInstance Id="7120fd39-0fd6-4413-9d3c-35ee64507020" name="TextTemplateBindings">
+          <elementDefinition Id="5cf7c5ed-7270-4f26-a37c-891f08c7466b" />
+        </profileInstance>
+        <elementDefinition Id="de4c48b8-118d-442c-a809-b7308cfeb6d6" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

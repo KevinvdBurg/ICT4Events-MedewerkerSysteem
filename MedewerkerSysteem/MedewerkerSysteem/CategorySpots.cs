@@ -9,38 +9,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class CategorySpots : Category
 {
-	public string ZipCode
+	public virtual int MaxPerson
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public CategorySpots(int MaxPerson, string Details, decimal Price, string Type) : base(Details, Price, Type)
 	{
-		get;
-		set;
-	}
-
-	public string StreetName
-	{
-		get;
-		set;
-	}
-
-	public string Country
-	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.MaxPerson = MaxPerson;
 	}
 
 }

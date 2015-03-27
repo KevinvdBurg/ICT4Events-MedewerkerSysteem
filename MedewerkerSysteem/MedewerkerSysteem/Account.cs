@@ -9,38 +9,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class Account
 {
-	public string ZipCode
+	public string RFID
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public Person Person
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public IEnumerable<Reserve> Reserve
 	{
 		get;
 		set;
 	}
 
-	public string Country
+	public Account(Person Person, string RFID)
 	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.Person = Person;
+        this.RFID = RFID; 
 	}
 
 }

@@ -9,38 +9,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class Category
 {
-	public string ZipCode
+	public decimal Price
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public string Details
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public string Type
 	{
 		get;
 		set;
 	}
 
-	public string Country
+	public Category(string Details, decimal Price, string Type)
 	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.Price = Price;
+        this.Details = Details;
+        this.Type = Type;
 	}
 
 }

@@ -9,38 +9,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class Event
 {
-	public string ZipCode
+	public int MaxPerson
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public Location Location
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public string Name
 	{
 		get;
 		set;
 	}
 
-	public string Country
+	public Event(Location Location, int MaxPerson, string Name)
 	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.Location = Location;
+        this.MaxPerson = MaxPerson;
+        this.Name = Name;
 	}
 
 }

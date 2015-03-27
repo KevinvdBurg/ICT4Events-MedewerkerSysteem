@@ -9,38 +9,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public abstract class Reserve
 {
-	public string ZipCode
+	public virtual int RFID
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public virtual DateTime StartDate
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public virtual DateTime EndDate
 	{
 		get;
 		set;
 	}
 
-	public string Country
+	public virtual Category Category
 	{
 		get;
 		set;
 	}
 
-	public Address(string City, string Country, string StreetName, string ZipCode)
+	public virtual Account Account
 	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+		get;
+		set;
+	}
+
+	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID)
+	{
+        this.Account = Account;
+        this.Category = Category;
+        this.EndDate = EndDate;
+        this.StartDate = StartDate;
+        this.RFID = RFID;
 	}
 
 }

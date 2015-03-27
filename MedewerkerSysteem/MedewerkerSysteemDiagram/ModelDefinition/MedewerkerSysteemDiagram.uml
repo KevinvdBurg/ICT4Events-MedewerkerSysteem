@@ -2398,9 +2398,9 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="1999bff6-199e-4d8e-9904-b51616f3e374"
-                LastKnownName="int"
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
                 LastKnownLocation="MedewerkerSysteemDiagram.uml" />
             </type_NamedElement>
           </property>
@@ -3522,7 +3522,7 @@
         <ownedOperationsInternal>
           <operation
             Id="276e5858-4abd-46ef-a795-201b400181fa"
-            name="CampingSpot: CamptingSpot, Group : Group, Paid : bool)"
+            name="ReserveSpot"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3578,6 +3578,50 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="23c49969-46de-42c4-b0dd-7ff505b71365"
+                  name="CampingSpot"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="937b6ebb-990e-4874-b9d5-f13a66462562"
+                      LastKnownName="CamptingSpot"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b78453a0-8a6e-42f1-8164-cca59571b11e"
+                  name="Group"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="df643185-85c8-483a-84d4-6f96d4774bbc"
+                      LastKnownName="Group"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f56b2662-d0b6-47d1-b913-93cb09078f27"
+                  name="Paid"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7d529fb8-0b96-4a6e-9889-3d7426417ef0"
+                      LastKnownName="bool"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -4253,7 +4297,7 @@
         <ownedOperationsInternal>
           <operation
             Id="9447eb0f-302a-4f2c-94ca-dc3fc4b119f2"
-            name="Account(Person : Person, RFID : string, Type : string"
+            name="Account(Person : Person, RFID : string"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -7946,8 +7990,8 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="1999bff6-199e-4d8e-9904-b51616f3e374"
-                LastKnownName="int"
+                Id="bc18c128-252a-4238-9c6f-4becead7344e"
+                LastKnownName="decimal"
                 LastKnownLocation="MedewerkerSysteemDiagram.uml" />
             </type_NamedElement>
           </property>
@@ -8164,21 +8208,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="afe9789f-9f35-41f4-b6e1-4b69e640bfb1"
-                  name="Type"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="3510d130-5545-4eaf-b702-e8d5f4750404"
-                      LastKnownName="string"
-                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="13db539f-715e-4b09-96be-a9ca832e601b"
+                  Id="791f5186-feea-4b41-877c-8dc04d89d60f"
                   name="Details"
                   direction="In"
                   isUnique="false">
@@ -8192,21 +8222,21 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="4d294ada-c597-4182-9a2e-0c4712bdb150"
+                  Id="9225de0f-9782-42fc-878e-8aa0a0e1488e"
                   name="Price"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="3510d130-5545-4eaf-b702-e8d5f4750404"
-                      LastKnownName="string"
+                      Id="bc18c128-252a-4238-9c6f-4becead7344e"
+                      LastKnownName="decimal"
                       LastKnownLocation="MedewerkerSysteemDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c9b67732-70bb-48c9-a03d-313544015556"
+                  Id="978abf15-5c7c-4a3d-a037-9974450a78cc"
                   name="Type"
                   direction="In"
                   isUnique="false">
@@ -8362,7 +8392,7 @@
         <ownedOperationsInternal>
           <operation
             Id="1d53778f-1d74-4f8c-a9fc-e1008aae5cf8"
-            name="Category"
+            name="CategorySpots"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -8421,7 +8451,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="806f2cf4-f283-4c11-a051-5c3f96df8355"
+                  Id="e66c8724-b38f-4394-843c-cb0abae12503"
                   name="MaxPerson"
                   direction="In"
                   isUnique="false">
@@ -8578,7 +8608,7 @@
         <ownedOperationsInternal>
           <operation
             Id="228aed32-f071-43ea-b72c-fa83b6477241"
-            name="Category"
+            name="CategoryItmes"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -8637,7 +8667,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c052a7d7-5262-4a4e-82dc-f5b5b31b3a8c"
+                  Id="ac4d95ff-b964-4315-b161-46d7062b978a"
                   name="Name"
                   direction="In"
                   isUnique="false">
@@ -8978,6 +9008,46 @@
                       value="*" />
                   </upperValueInternal>
                 </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7ddcdf6c-7521-4caa-a5e3-d2f43d81c51b"
+            isDerived="false"
+            sourceEndRoleName="Administation"
+            targetEndRoleName="DBLogin"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c01acb5e-2288-49c7-bf70-fd99ae5915c3"
+              LastKnownName="DBLogin"
+              LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7db1f9ba-75f1-4322-b7cb-6fe426564f9b"
+                  name="Administation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c9204a65-3baa-4899-853d-6336c8d4d3f1"
+                  name="DBLogin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -9733,6 +9803,22 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="599fb018-d21c-4bf3-938a-3bfc4bb4aa8d"
+            name="Login"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="40117148-0b89-49a2-8a79-0d1403408cda"
+            name="Administation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -9976,6 +10062,45 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c01acb5e-2288-49c7-bf70-fd99ae5915c3"
+        name="DBLogin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="86e333cd-f36c-41c3-8812-e905a4230a2a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="a1106d8f-291a-4db2-890c-b6a1ea6d56d9"
+              LastKnownName="Database"
+              LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f9ee2b88-5e18-4bc8-ab98-40509e7dfaef"
+            name="Select"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="bc18c128-252a-4238-9c6f-4becead7344e"
+        name="decimal" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="937b6ebb-990e-4874-b9d5-f13a66462562"
+        name="CamptingSpot" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

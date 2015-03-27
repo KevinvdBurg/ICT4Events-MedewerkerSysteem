@@ -9,38 +9,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class ReserveItem : Reserve
 {
-	public string ZipCode
+	public bool Present
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public Item Item
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public ReserveItem(Item Item, bool Present, Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID) : base(Account, Category, EndDate, StartDate, RFID)
 	{
-		get;
-		set;
-	}
-
-	public string Country
-	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.Item = Item;
+        this.Present = Present;
 	}
 
 }

@@ -9,38 +9,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class Location
 {
-	public string ZipCode
+	public Address Address
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public string Name
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public DBAddress DBAddress
 	{
 		get;
 		set;
 	}
 
-	public string Country
-	{
-		get;
-		set;
-	}
+	
 
-	public Address(string City, string Country, string StreetName, string ZipCode)
+	public Location(Address Address, string Name)
 	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.Address = Address;
+        this.Name = Name;
 	}
 
 }

@@ -9,38 +9,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class ReserveSpot : Reserve
 {
-	public string ZipCode
+	public virtual bool Paid
 	{
 		get;
 		set;
 	}
 
-	public string City
+	public virtual Group Group
 	{
 		get;
 		set;
 	}
 
-	public string StreetName
+	public virtual CampingSpot CampingSpot
 	{
 		get;
 		set;
 	}
 
-	public string Country
+	public ReserveSpot (CampingSpot CamptingSpot, Group Group, bool Paid, Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID)
 	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+        this.CampingSpot = CampingSpot;
+        this.Group = Group;
+        this.Paid = Paid;
 	}
 
 }

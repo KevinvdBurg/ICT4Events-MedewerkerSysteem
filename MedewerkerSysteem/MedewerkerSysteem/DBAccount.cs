@@ -9,38 +9,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Address
+public class DBAccount : Database
 {
-	public string ZipCode
+	public virtual bool Update(ICT4Event::Account Account)
 	{
-		get;
-		set;
+		throw new System.NotImplementedException();
 	}
 
-	public string City
+	public virtual void Delete()
 	{
-		get;
-		set;
+		throw new System.NotImplementedException();
 	}
 
-	public string StreetName
+	public virtual void Insert()
 	{
-		get;
-		set;
+		throw new System.NotImplementedException();
 	}
 
-	public string Country
+	public virtual void Select()
 	{
-		get;
-		set;
-	}
-
-	public Address(string City, string Country, string StreetName, string ZipCode)
-	{
-        this.City = City;
-        this.Country = Country;
-        this.StreetName = StreetName;
-        this.ZipCode = ZipCode;
+		throw new System.NotImplementedException();
 	}
 
 }
