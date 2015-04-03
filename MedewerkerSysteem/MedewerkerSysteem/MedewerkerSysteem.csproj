@@ -66,6 +66,12 @@
     <Compile Include="MederwerkerForm.Designer.cs">
       <DependentUpon>MederwerkerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedewerkerLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedewerkerLogin.Designer.cs">
+      <DependentUpon>MedewerkerLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +80,9 @@
     <Compile Include="ReserveSpot.cs" />
     <EmbeddedResource Include="MederwerkerForm.resx">
       <DependentUpon>MederwerkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedewerkerLogin.resx">
+      <DependentUpon>MedewerkerLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
