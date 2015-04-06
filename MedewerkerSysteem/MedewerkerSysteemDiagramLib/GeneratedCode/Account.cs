@@ -35,7 +35,7 @@ public class Account
 		set;
 	}
 
-	public virtual void Account(Person : Person, RFID : string, Type : string()
+	public virtual Account(Person Person, string RFID, string Type )
 	{
 		throw new System.NotImplementedException();
 	}

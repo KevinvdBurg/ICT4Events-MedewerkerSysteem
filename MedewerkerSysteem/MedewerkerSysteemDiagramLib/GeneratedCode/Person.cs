@@ -11,7 +11,7 @@ using System.Text;
 
 public class Person
 {
-	public virtual ICT4Event::Address Address
+	public virtual Address Address
 	{
 		get;
 		set;
@@ -41,33 +41,30 @@ public class Person
 		set;
 	}
 
-	public virtual Address Address
+
+
+	public virtual Person(Address Address, string Email)
 	{
-		get;
-		set;
+        this.Address = Address;
+        this.Email = Email;
 	}
 
-	public virtual void Person(Address : Address, Email : ()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void AddAddress(ICT4Event::Address Address)
+	public virtual void AddAddress(Address Address)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void DeleteAddress(ICT4Event::Address Address)
+	public virtual void DeleteAddress(Address Address)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void FindAddress(ICT4Event::Address Address)
+	public virtual void FindAddress(Address Address)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void UpdateAddress(ICT4Event::Address Address)
+	public virtual void UpdateAddress(Address Address)
 	{
 		throw new System.NotImplementedException();
 	}

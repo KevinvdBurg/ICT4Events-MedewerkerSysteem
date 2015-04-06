@@ -11,7 +11,7 @@ using System.Text;
 
 public class DBAccount : Database
 {
-	public virtual bool Update(ICT4Event::Account Account)
+	public virtual bool Update(Account Account)
 	{
 		throw new System.NotImplementedException();
 	}

@@ -29,26 +29,21 @@ public abstract class Reserve
 		set;
 	}
 
-	public virtual ICT4Event::Category Category
-	{
-		get;
-		set;
-	}
-
-	public virtual ICT4Event::Account Account
-	{
-		get;
-		set;
-	}
-
 	public virtual Category Category
 	{
 		get;
 		set;
 	}
 
-	public Reserve(ICT4Event::Account Account, object Category, DateTime EndDate, DateTime StartDate, int) RFID)
+	public virtual Account Account
 	{
+		get;
+		set;
+	}
+
+	public Reserve(Account Account, object Category, DateTime EndDate, DateTime StartDate, int RFID)
+	{
+
 	}
 
 }

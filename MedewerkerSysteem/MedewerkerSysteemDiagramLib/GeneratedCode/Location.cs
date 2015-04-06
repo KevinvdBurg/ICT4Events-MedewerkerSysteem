@@ -11,12 +11,6 @@ using System.Text;
 
 public class Location
 {
-	public virtual ICT4Event::Address Address
-	{
-		get;
-		set;
-	}
-
 	public virtual string Name
 	{
 		get;
@@ -35,8 +29,10 @@ public class Location
 		set;
 	}
 
-	public Location(ICT4Event::Address Address, string Name)
+	public Location(Address Address, string Name)
 	{
+        this.Address = Address;
+        this.Name = Name;
 	}
 
 }

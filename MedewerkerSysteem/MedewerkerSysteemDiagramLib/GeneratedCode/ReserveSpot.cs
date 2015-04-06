@@ -17,13 +17,7 @@ public class ReserveSpot : Reserve
 		set;
 	}
 
-	public virtual ICT4Event::Group Group
-	{
-		get;
-		set;
-	}
-
-	public virtual ICT4Event::CampingSpot CampingSpot
+	public virtual Group Group
 	{
 		get;
 		set;
@@ -35,7 +29,7 @@ public class ReserveSpot : Reserve
 		set;
 	}
 
-	public virtual void CampingSpot: CamptingSpot, Group : Group, Paid : bool)()
+	public virtual void ReserveSpot (CampingSpot CampingSpot, Group Group, bool Paid)
 	{
 		throw new System.NotImplementedException();
 	}

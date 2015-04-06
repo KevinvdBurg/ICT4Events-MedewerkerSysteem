@@ -5066,7 +5066,7 @@
         <ownedOperationsInternal>
           <operation
             Id="2651150f-bddc-46c7-8518-530bb3ddfad0"
-            name="Person(Address : Address, Email : "
+            name="Person"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -5122,6 +5122,36 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7aac0d2-aaa8-4bcc-94f8-3423aac3fdf9"
+                  name="Address"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="8551df9b-24e2-45a2-9735-9801d7a7e830"
+                      LastKnownName="Address"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="57fb6d30-5531-44e7-a124-83ac9ea3062e"
+                  name="Email"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3510d130-5545-4eaf-b702-e8d5f4750404"
+                      LastKnownName="string"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation
             Id="232a06ea-c1a6-41c8-86a5-206f7faca649"

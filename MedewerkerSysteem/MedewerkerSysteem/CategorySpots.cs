@@ -11,7 +11,7 @@ using System.Text;
 
 public class CategorySpots : Category
 {
-	public virtual int MaxPerson
+	public int MaxPerson
 	{
 		get;
 		set;

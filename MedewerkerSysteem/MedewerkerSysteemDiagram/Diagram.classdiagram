@@ -72,20 +72,6 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="cc428404-57cf-4339-acfd-b4d61a110789">
-      <profileInstance Id="1811b035-c2a3-43b3-a90a-679ecdabdeac" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a720329b-0290-4628-9ede-cf4adc10ab32">
-      <profileInstance Id="ad348c30-402c-4605-9d3c-0a84bad23229" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <referencedType Id="fda31027-6606-435b-8b56-2fb869d2ac66" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
@@ -2248,7 +2234,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="d4242cbf-cc63-45e4-9bd2-69e69ca1f1bb" name="Person(Address : Address, Email : " isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="d4242cbf-cc63-45e4-9bd2-69e69ca1f1bb" name="Person" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
               <stereotypeInstance Id="b3a1e5ed-cc0b-4a70-bd4c-ee780bb3f74e" name="method" profile="CSharpProfile">
                 <elementDefinition Id="3ce5564d-aa31-4f67-8b4e-a782dfd23150" />
@@ -2293,6 +2279,24 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <elementDefinition Id="2651150f-bddc-46c7-8518-530bb3ddfad0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b69cb156-8915-425d-83fa-9b36f5279da8" name="Address" direction="In" isUnique="false">
+                  <elementDefinition Id="d7aac0d2-aaa8-4bcc-94f8-3423aac3fdf9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2bb29c54-bb3c-4fbf-80e4-44794b78bd7f" LastKnownName="Address" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f19d7686-372c-4e88-8519-b51242eaa8f5" name="Email" direction="In" isUnique="false">
+                  <elementDefinition Id="57fb6d30-5531-44e7-a124-83ac9ea3062e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="01358840-0854-4a28-85b6-003f9991c0e3" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="40a8940c-9afd-4d3a-b812-b88eaf2bd838" name="AddAddress" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <appliedStereotypesInternal>
@@ -5908,6 +5912,11 @@
         <elementDefinition Id="df643185-85c8-483a-84d4-6f96d4774bbc" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2bb29c54-bb3c-4fbf-80e4-44794b78bd7f" name="Address" isAbstract="false" isLeaf="false" cachedFullName="MedewerkerSysteemDiagram::Address">
+        <elementDefinition Id="8551df9b-24e2-45a2-9735-9801d7a7e830" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="a12a1dcb-ece2-4b9b-aeec-c3fb9c01dd3f" name="MedewerkerSysteemDiagram">
     <elementDefinition Id="2c53dd6a-11b7-4976-8706-d460ea30e936" />
@@ -5923,6 +5932,18 @@
           <elementDefinition Id="5cf7c5ed-7270-4f26-a37c-891f08c7466b" />
         </profileInstance>
         <elementDefinition Id="de4c48b8-118d-442c-a809-b7308cfeb6d6" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cc428404-57cf-4339-acfd-b4d61a110789">
+        <profileInstance Id="1811b035-c2a3-43b3-a90a-679ecdabdeac" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a720329b-0290-4628-9ede-cf4adc10ab32">
+        <profileInstance Id="ad348c30-402c-4605-9d3c-0a84bad23229" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

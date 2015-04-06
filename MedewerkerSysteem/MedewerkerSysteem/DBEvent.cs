@@ -21,7 +21,7 @@ public class DBEvent : Database
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Update(ICT4Event::Event Event)
+	public virtual void Update(Event Event)
 	{
 		throw new System.NotImplementedException();
 	}
