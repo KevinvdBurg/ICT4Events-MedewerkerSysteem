@@ -34,52 +34,52 @@ public class Administation
 
     }
 
-	public virtual void Add(ICT4Event::Account Account)
+	public virtual void Add(Account Account)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Add(ICT4Event::Reserve Reserve)
+	public virtual void Add(Reserve Reserve)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void AddEvent(ICT4Event::Event Event)
+	public virtual void AddEvent(Event Event)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete(ICT4Event::Account Account)
+	public virtual void Delete(Account Account)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete(ICT4Event::Reserve Reserve)
+	public virtual void Delete(Reserve Reserve)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete(ICT4Event::Event Event)
+	public virtual void Delete(Event Event)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Find(ICT4Event::Account Account)
+	public virtual void Find(Account Account)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Find(ICT4Event::Event Event)
+	public virtual void Find(Event Event)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Find(ICT4Event::Reserve Reserve)
+	public virtual void Find(Reserve Reserve)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Update(ICT4Event::Account Account)
+	public virtual void Update(Account Account)
 	{
 		throw new System.NotImplementedException();
 	}
