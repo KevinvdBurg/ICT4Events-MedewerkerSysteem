@@ -36,5 +36,31 @@ namespace MedewerkerSysteem
         {
 
         }
+
+        //Buttons
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            MederwerkerCreateAccount CA = new MederwerkerCreateAccount();
+            CA.Show();
+        }
+
+        private void btnReserveItem_Click(object sender, EventArgs e)
+        {
+            MedewerkerReserveItem IR = new MedewerkerReserveItem();
+            IR.Show();
+        }
+
+        private void btnReserveLocation_Click(object sender, EventArgs e)
+        {
+            MedewerkerReserveSpot SR = new MedewerkerReserveSpot();
+            SR.Show();
+        }
+
+        private void btnEvent_Click(object sender, EventArgs e)
+        {
+            MedewerkerEvent E = new MedewerkerEvent();
+            E.Show();
+        }
     }
 }

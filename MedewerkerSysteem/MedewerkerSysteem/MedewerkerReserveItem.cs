@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace MedewerkerSysteem
 {
-    public partial class MederwerkerCreateAccount : Form
+    public partial class MedewerkerReserveItem : Form
     {
-        public MederwerkerCreateAccount()
+        public MedewerkerReserveItem()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCAcancel_Click(object sender, EventArgs e)
+        private void btnIRcancel_Click(object sender, EventArgs e)
         {
             Close();
         }

@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace MedewerkerSysteem
 {
-    public partial class MederwerkerCreateAccount : Form
+    public partial class MedewerkerMedia : Form
     {
-        public MederwerkerCreateAccount()
+        public MedewerkerMedia()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void lblMreport_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnCAcancel_Click(object sender, EventArgs e)
+        private void lblMFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMcancel_Click(object sender, EventArgs e)
         {
             Close();
         }
