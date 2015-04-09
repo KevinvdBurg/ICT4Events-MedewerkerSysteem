@@ -39,26 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneratedCode\Account.cs" />
-    <Compile Include="GeneratedCode\Address.cs" />
-    <Compile Include="GeneratedCode\Administation.cs" />
-    <Compile Include="GeneratedCode\CampingSpot.cs" />
-    <Compile Include="GeneratedCode\Category.cs" />
-    <Compile Include="GeneratedCode\CategoryItems.cs" />
-    <Compile Include="GeneratedCode\CategorySpots.cs" />
-    <Compile Include="GeneratedCode\Database.cs" />
-    <Compile Include="GeneratedCode\DBAccount.cs" />
-    <Compile Include="GeneratedCode\DBAddress.cs" />
-    <Compile Include="GeneratedCode\DBEvent.cs" />
-    <Compile Include="GeneratedCode\DBReserve.cs" />
-    <Compile Include="GeneratedCode\Event.cs" />
-    <Compile Include="GeneratedCode\Group.cs" />
-    <Compile Include="GeneratedCode\Item.cs" />
-    <Compile Include="GeneratedCode\Location.cs" />
-    <Compile Include="GeneratedCode\Person.cs" />
-    <Compile Include="GeneratedCode\Reserve.cs" />
-    <Compile Include="GeneratedCode\ReserveItem.cs" />
-    <Compile Include="GeneratedCode\ReserveSpot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

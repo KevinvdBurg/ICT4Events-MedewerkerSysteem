@@ -41,7 +41,7 @@ public abstract class Reserve
 		set;
 	}
 
-	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID)
+	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID)
 	{
         this.Account = Account;
         this.Category = Category;

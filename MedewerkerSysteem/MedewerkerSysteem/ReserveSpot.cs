@@ -29,12 +29,12 @@ public class ReserveSpot : Reserve
 		set;
 	}
 
-	public ReserveSpot (CampingSpot CamptingSpot, Group Group, bool Paid, Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID)
+	public ReserveSpot (CampingSpot CamptingSpot, Group Group, bool Paid, Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID) : base (Account, Category, EndDate, StartDate, RFID)
 	{
         this.CampingSpot = CampingSpot;
         this.Group = Group;
         this.Paid = Paid;
 	}
+    }
 
-}
 
