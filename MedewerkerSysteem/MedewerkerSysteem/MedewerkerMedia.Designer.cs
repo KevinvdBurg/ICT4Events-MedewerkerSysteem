@@ -88,7 +88,7 @@
             this.btnMbrowse.Name = "btnMbrowse";
             this.btnMbrowse.Size = new System.Drawing.Size(75, 23);
             this.btnMbrowse.TabIndex = 21;
-            this.btnMbrowse.Text = "button1";
+            this.btnMbrowse.Text = "Zoek";
             this.btnMbrowse.UseVisualStyleBackColor = true;
             // 
             // tbFile
