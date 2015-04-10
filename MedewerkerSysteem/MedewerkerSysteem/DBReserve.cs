@@ -16,7 +16,7 @@ public class DBReserve : Database
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Inset()
+    public virtual void Insert()
 	{
 		throw new System.NotImplementedException();
 	}

@@ -17,7 +17,7 @@ public class Database
 
 	public virtual void Connect()
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public virtual void DisConnect()
