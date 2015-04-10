@@ -15,7 +15,10 @@ namespace MedewerkerSysteem
     public partial class MederwerkerForm : Form
     {
         private RFID rfid; //Declare an RFID object
-        Administation administation = new Administation();
+        private Administation administation = new Administation();
+
+        List<Account> accounts = new List<Account>(); 
+        List<ReserveSpot> reserveSpots = new List<ReserveSpot>(); 
         public MederwerkerForm()
         {
             InitializeComponent();
@@ -256,19 +259,51 @@ namespace MedewerkerSysteem
 
         private void btnControl_Click(object sender, EventArgs e)
         {
-            //Check if the RFID belongs to the name
-            if (administation.Find())
-            {
-                //If correct fill in name and payment status
+            btnChangePaid.Visible = false;
+            btnComplete.Visible = false;
 
-                //Set btnComplete to true
+            Account account = administation.Find(tbLetterRFID.Text);
+            ReserveSpot reserveSpot = administation.Find(tbSpotLocation.Text);
+
+            accounts.Add(account);
+            reserveSpots.Add(reserveSpot);
+            //Check if the RFID belongs to the name
+            //If correct fill in name and payment status
+            if ( account.Person.LastName == tbLetterName.Text && reserveSpot.Account == account && reserveSpot.Group.Name == tbLetterGroupName.Text)
+            {
+                // TODO Fill in textboxes
+                //if status: paid set btnComplete to true
+                if (reserveSpot.Paid)
+                {
+                    //TODO check if customer already inside
+                    btnComplete.Visible = true;
+                }
+                else
+                {
+                    btnChangePaid.Visible = true;
+                }
             }
 
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
         {
-            //Person has arrived
+            //TODO checkin person
+            
+            //Empty lists
+            accounts.Clear();
+            reserveSpots.Clear();
+        }
+
+        private void btnChangePaid_Click(object sender, EventArgs e)
+        {
+            btnComplete.Visible = true;
+            btnChangePaid.Visible = false;
+
+            foreach (var item in reserveSpots)
+            {
+                item.Paid = true;
+            }
         }
        
     }

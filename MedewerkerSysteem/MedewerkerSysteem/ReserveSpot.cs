@@ -13,13 +13,13 @@ public class ReserveSpot : Reserve
 {
 	
 
-	public virtual Group Group
+	public Group Group
 	{
 		get;
 		set;
 	}
 
-	public virtual CampingSpot CampingSpot
+	public CampingSpot CampingSpot
 	{
 		get;
 		set;
@@ -32,10 +32,10 @@ public class ReserveSpot : Reserve
         this.Paid = Paid;
 	}
 
-    public ReserveSpot(Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID, bool Paid, Group @group, CampingSpot campingSpot) : base(Account, Category, EndDate, StartDate, RFID, Paid)
-    {
-        Group = @group;
-        CampingSpot = campingSpot;
-    }
+    //public ReserveSpot(Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID, bool Paid, Group @group, CampingSpot campingSpot) : base(Account, Category, EndDate, StartDate, RFID, Paid)
+    //{
+    //    Group = @group;
+    //    CampingSpot = campingSpot;
+    //}
 }
 
