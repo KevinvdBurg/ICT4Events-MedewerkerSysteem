@@ -153,6 +153,7 @@
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Uitloggen";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // comboBox1
             // 
@@ -798,6 +799,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "MederwerkerForm";
             this.Text = "Medewerker Form";
+            this.Load += new System.EventHandler(this.MederwerkerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCMedewerker.ResumeLayout(false);
             this.tabPincheck.ResumeLayout(false);

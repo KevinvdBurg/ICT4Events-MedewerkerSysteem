@@ -14,19 +14,27 @@ namespace MedewerkerSysteem
 {
     public partial class MederwerkerForm : Form
     {
-        RFID rfid = new RFID(); //Declare an RFID object
-
+        private RFID rfid; //Declare an RFID object
         public MederwerkerForm()
         {
             InitializeComponent();
-            //initialize our Phidgets RFID reader and hook the event handlers
+        }
+
+        private void MederwerkerForm_Load(object sender, EventArgs e)
+        {
+            rfid = new RFID();
+
             rfid.Attach += new AttachEventHandler(rfid_Attach);
             rfid.Detach += new DetachEventHandler(rfid_Detach);
             rfid.Error += new ErrorEventHandler(rfid_Error);
 
             rfid.Tag += new TagEventHandler(rfid_Tag);
             rfid.TagLost += new TagEventHandler(rfid_TagLost);
-            rfid.open();
+
+
+            //Disabled controls until Phidget is attached
+            openCmdLine(rfid);
+
         }
 
         private void lblFuction_Click(object sender, EventArgs e)
@@ -72,35 +80,55 @@ namespace MedewerkerSysteem
         }
 
         //attach event handler...display the serial number of the attached RFID phidget
-        private static void rfid_Attach(object sender, AttachEventArgs e)
+        void rfid_Attach(object sender, AttachEventArgs e)
         {
-            Console.WriteLine("RFIDReader {0} attached!",
-                e.Device.SerialNumber.ToString());
+            RFID attached = (RFID)sender;
+
+            switch (attached.ID)
+            {
+                case Phidget.PhidgetID.RFID_2OUTPUT_READ_WRITE:
+                    break;
+                case Phidget.PhidgetID.RFID:
+                case Phidget.PhidgetID.RFID_2OUTPUT:
+                default:
+                    break;
+            }
+
+            if (rfid.outputs.Count > 0)
+            {
+                rfid.Antenna = true;
+            }
         }
 
-        //detach event handler...display the serial number of the detached RFID phidget
-        private static void rfid_Detach(object sender, DetachEventArgs e)
+        //detach event handler...clear all the fields, display the attached status, and disable the checkboxes.
+        void rfid_Detach(object sender, DetachEventArgs e)
         {
-            Console.WriteLine("RFID reader {0} detached!", e.Device.SerialNumber.ToString());
+            RFID detached = (RFID)sender;
+
+            //this.Bounds = new Rectangle(this.Location, new Size(298, 433));
         }
 
-        //Error event handler...display the error description string
-        private static void rfid_Error(object sender, ErrorEventArgs e)
+        void rfid_Error(object sender, ErrorEventArgs e)
         {
-            Console.WriteLine(e.Description);
+            Console.WriteLine("Error: " + e);
+          
         }
 
-        //Print the tag code of the scanned tag
-        private static void rfid_Tag(object sender, TagEventArgs e)
+        //Tag event handler...we'll display the tag code in the field on the GUI
+        void rfid_Tag(object sender, TagEventArgs e)
         {
-            Console.WriteLine("Tag {0} scanned", e.Tag);
+            tbLetterRFID.Text = e.Tag;
         }
 
-        //print the tag code for the tag that was just lost
-        private static void rfid_TagLost(object sender, TagEventArgs e)
+        //Tag lost event handler...here we simply want to clear our tag field in the GUI
+        void rfid_TagLost(object sender, TagEventArgs e)
         {
-            Console.WriteLine("Tag {0} lost", e.Tag);
+            //tbLetterRFID.Text = "";
+            Console.WriteLine("Lost");
+            Console.WriteLine(e.ToString());
         }
+
+
 
         private void tbLetterRFID_MouseHover(object sender, EventArgs e)
         {
@@ -109,30 +137,7 @@ namespace MedewerkerSysteem
 
         private void tbLetterRFID_Enter(object sender, EventArgs e)
         {
-            /*MessageBox.Show("Focus");
-            timer.Interval = 50;
-            timer.Enabled = true;
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();*/
-
             
-
-            //Wait for a Phidget RFID to be attached before doing anything with 
-            //the object
-            //Console.WriteLine("waiting for attachment...");
-            rfid.waitForAttachment();
-
-            //turn on the antenna and the led to show everything is working
-            rfid.Antenna = true;
-            rfid.LED = true;
-
-            
-
-          
-
-            //keep waiting and outputting events until keyboard input is entered
-            //Console.WriteLine("Press any key to end...");
-            //Console.Read();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -142,13 +147,111 @@ namespace MedewerkerSysteem
 
         private void tbLetterRFID_MouseLeave(object sender, EventArgs e)
         {
-            if (rfid.LED != true )
-            {
-                rfid.LED = false;
-            }
-            //close the phidget and dispose of the object
-            rfid = null;
-            Console.WriteLine("ok");
+
         }
+
+        #region Command line open functions
+        private void openCmdLine(Phidget p)
+        {
+            openCmdLine(p, null);
+        }
+        private void openCmdLine(Phidget p, String pass)
+        {
+            int serial = -1;
+            String logFile = null;
+            int port = 5001;
+            String host = null;
+            bool remote = false, remoteIP = false;
+            string[] args = Environment.GetCommandLineArgs();
+            String appName = args[0];
+
+            try
+            { //Parse the flags
+                for (int i = 1; i < args.Length; i++)
+                {
+                    if (args[i].StartsWith("-"))
+                        switch (args[i].Remove(0, 1).ToLower())
+                        {
+                            case "l":
+                                logFile = (args[++i]);
+                                break;
+                            case "n":
+                                serial = int.Parse(args[++i]);
+                                break;
+                            case "r":
+                                remote = true;
+                                break;
+                            case "s":
+                                remote = true;
+                                host = args[++i];
+                                break;
+                            case "p":
+                                pass = args[++i];
+                                break;
+                            case "i":
+                                remoteIP = true;
+                                host = args[++i];
+                                if (host.Contains(":"))
+                                {
+                                    port = int.Parse(host.Split(':')[1]);
+                                    host = host.Split(':')[0];
+                                }
+                                break;
+                            default:
+                                goto usage;
+                        }
+                    else
+                        goto usage;
+                }
+                if (logFile != null)
+                    Phidget.enableLogging(Phidget.LogLevel.PHIDGET_LOG_INFO, logFile);
+                if (remoteIP)
+                    p.open(serial, host, port, pass);
+                else if (remote)
+                    p.open(serial, host, pass);
+                else
+                    p.open(serial);
+                return; //success
+            }
+            catch { }
+        usage:
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Invalid Command line arguments." + Environment.NewLine);
+            sb.AppendLine("Usage: " + appName + " [Flags...]");
+            sb.AppendLine("Flags:\t-n   serialNumber\tSerial Number, omit for any serial");
+            sb.AppendLine("\t-l   logFile\tEnable phidget21 logging to logFile.");
+            sb.AppendLine("\t-r\t\tOpen remotely");
+            sb.AppendLine("\t-s   serverID\tServer ID, omit for any server");
+            sb.AppendLine("\t-i   ipAddress:port\tIp Address and Port. Port is optional, defaults to 5001");
+            sb.AppendLine("\t-p   password\tPassword, omit for no password" + Environment.NewLine);
+            sb.AppendLine("Examples: ");
+            sb.AppendLine(appName + " -n 50098");
+            sb.AppendLine(appName + " -r");
+            sb.AppendLine(appName + " -s myphidgetserver");
+            sb.AppendLine(appName + " -n 45670 -i 127.0.0.1:5001 -p paswrd");
+            MessageBox.Show(sb.ToString(), "Argument Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            Application.Exit();
+        }
+        #endregion
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void MederwerkerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            rfid.Attach -= new AttachEventHandler(rfid_Attach);
+            rfid.Detach -= new DetachEventHandler(rfid_Detach);
+            rfid.Tag -= new TagEventHandler(rfid_Tag);
+            rfid.TagLost -= new TagEventHandler(rfid_TagLost);
+
+            //run any events in the message queue - otherwise close will hang if there are any outstanding events
+            Application.DoEvents();
+
+            rfid.close();
+        }
+       
     }
 }
