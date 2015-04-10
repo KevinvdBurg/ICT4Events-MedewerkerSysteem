@@ -107,6 +107,7 @@
             this.AdminEventEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -297,6 +298,9 @@
             this.tbLetterRFID.Name = "tbLetterRFID";
             this.tbLetterRFID.Size = new System.Drawing.Size(347, 20);
             this.tbLetterRFID.TabIndex = 8;
+            this.tbLetterRFID.Enter += new System.EventHandler(this.tbLetterRFID_Enter);
+            this.tbLetterRFID.MouseLeave += new System.EventHandler(this.tbLetterRFID_MouseLeave);
+            this.tbLetterRFID.MouseHover += new System.EventHandler(this.tbLetterRFID_MouseHover);
             // 
             // lblLetterRFID
             // 
@@ -775,6 +779,10 @@
             this.btnEvent.UseVisualStyleBackColor = true;
             this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // MederwerkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -899,6 +907,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDelete;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
