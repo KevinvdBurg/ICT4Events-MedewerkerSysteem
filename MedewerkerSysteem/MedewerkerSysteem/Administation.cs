@@ -11,6 +11,7 @@ using System.Text;
 
 public class Administation
 {
+    Database DB = new Database();
 	public IEnumerable<Reserve> Reserve
 	{
 		get;
@@ -36,53 +37,63 @@ public class Administation
 
 	public void Add(Account Account)
 	{
-		throw new System.NotImplementedException();
+
 	}
 
 	public void Add(Reserve Reserve)
 	{
-		throw new System.NotImplementedException();
+
 	}
 
 	public void AddEvent(Event Event)
 	{
-		throw new System.NotImplementedException();
+
 	}
 
 	public void Delete(Account Account)
 	{
-		throw new System.NotImplementedException();
+
 	}
 
 	public void Delete(Reserve Reserve)
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public void Delete(Event Event)
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public void Find(Account Account)
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public void Find(Event Event)
 	{
-		throw new System.NotImplementedException();
 	}
 
 	public void Find(Reserve Reserve)
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public void Update(Account Account)
 	{
-		throw new System.NotImplementedException();
+
 	}
+
+    public bool Login(string email, string password)
+    {
+        //database connectie hier
+
+        Address adminAddress = new Address("admin street", "admin street","admin streetname", "Adminzip");
+        //Persoon wordt aangemaakt
+        Person person = new Person(adminAddress, "admin@admin.nl", "admin name", "adminlastname");
+        //Account wordt aangemaakt
+        Account admin = new Account(person, 999);
+    }
 
 }
 
