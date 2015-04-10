@@ -12,7 +12,7 @@ namespace MedewerkerSysteem
 {
     public partial class MederwerkerCreateAccount : Form
     {
-        public Administation administration = new Administation();
+        Administation administration = new Administation();
         public MederwerkerCreateAccount()
         {
             InitializeComponent();
@@ -34,17 +34,22 @@ namespace MedewerkerSysteem
         {
             //tijdelijke int ipv RFID
             int test = 1;
-            //Account wordt aangemaakt
+            //Adres wordt aangemaakt
             Address address = new Address(tbCAcity.Text, tbCAcountry.Text, tbCAstreetname.Text, tbCAzipcode.Text);
+            //Persoon wordt aangemaakt
             Person person = new Person(address, tbCAemail.Text, tbCAname.Text, tbCAlastname.Text);
+            //Account wordt aangemaakt
             Account account = new Account(person, test);
 
+            //Account wordt opgeslagen in de database door administration.Add()
             administration.Add(account);
+            //address wordt opgeslagen in de database door person.AddAddress()
             person.AddAddress(address);
         }
 
         private void btnCAaddevent_Click(object sender, EventArgs e)
         {
+            //Geselecteerde event wordt toegevoegd aan de listbox
             lbCAeventlist.Items.Add(cbCAaddevent.SelectedValue);
         }
     }

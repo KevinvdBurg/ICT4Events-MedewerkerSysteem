@@ -29,13 +29,31 @@ public class Location
 		set;
 	}
 
-	
-
 	public Location(Address Address, string Name)
 	{
         this.Address = Address;
         this.Name = Name;
 	}
+
+    public virtual void AddAddress(Address Address)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public virtual void DeleteAddress(Address Address)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public virtual void FindAddress(Address Address)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public virtual void UpdateAddress(Address Address)
+    {
+        throw new System.NotImplementedException();
+    }
 
 }
 

@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.gbReserveSpot = new System.Windows.Forms.GroupBox();
+            this.lblCAcountry = new System.Windows.Forms.Label();
+            this.tbCAcountry = new System.Windows.Forms.TextBox();
+            this.tbCAcity = new System.Windows.Forms.TextBox();
+            this.lblCAcity = new System.Windows.Forms.Label();
+            this.lblCAzipcode = new System.Windows.Forms.Label();
+            this.tbCAzipcode = new System.Windows.Forms.TextBox();
+            this.tbCAstreetname = new System.Windows.Forms.TextBox();
+            this.lblCAstreetname = new System.Windows.Forms.Label();
+            this.tbEname = new System.Windows.Forms.TextBox();
             this.lblEmaxvisitors = new System.Windows.Forms.Label();
             this.lblElocationname = new System.Windows.Forms.Label();
             this.nudEmaxvisitors = new System.Windows.Forms.NumericUpDown();
@@ -40,15 +49,6 @@
             this.lblEdataout = new System.Windows.Forms.Label();
             this.lblEname = new System.Windows.Forms.Label();
             this.btnRSreserve = new System.Windows.Forms.Button();
-            this.cbEname = new System.Windows.Forms.TextBox();
-            this.lblCAcountry = new System.Windows.Forms.Label();
-            this.tbCAcountry = new System.Windows.Forms.TextBox();
-            this.tbCAcity = new System.Windows.Forms.TextBox();
-            this.lblCAcity = new System.Windows.Forms.Label();
-            this.lblCAzipcode = new System.Windows.Forms.Label();
-            this.tbCAzipcode = new System.Windows.Forms.TextBox();
-            this.tbCAstreetname = new System.Windows.Forms.TextBox();
-            this.lblCAstreetname = new System.Windows.Forms.Label();
             this.gbReserveSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmaxvisitors)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.gbReserveSpot.Controls.Add(this.tbCAzipcode);
             this.gbReserveSpot.Controls.Add(this.tbCAstreetname);
             this.gbReserveSpot.Controls.Add(this.lblCAstreetname);
-            this.gbReserveSpot.Controls.Add(this.cbEname);
+            this.gbReserveSpot.Controls.Add(this.tbEname);
             this.gbReserveSpot.Controls.Add(this.lblEmaxvisitors);
             this.gbReserveSpot.Controls.Add(this.lblElocationname);
             this.gbReserveSpot.Controls.Add(this.nudEmaxvisitors);
@@ -76,124 +76,13 @@
             this.gbReserveSpot.Controls.Add(this.lblEname);
             this.gbReserveSpot.Controls.Add(this.btnRSreserve);
             this.gbReserveSpot.Location = new System.Drawing.Point(16, 15);
-            this.gbReserveSpot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbReserveSpot.Margin = new System.Windows.Forms.Padding(4);
             this.gbReserveSpot.Name = "gbReserveSpot";
-            this.gbReserveSpot.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbReserveSpot.Padding = new System.Windows.Forms.Padding(4);
             this.gbReserveSpot.Size = new System.Drawing.Size(601, 416);
             this.gbReserveSpot.TabIndex = 4;
             this.gbReserveSpot.TabStop = false;
             this.gbReserveSpot.Text = "Event";
-            // 
-            // lblEmaxvisitors
-            // 
-            this.lblEmaxvisitors.AutoSize = true;
-            this.lblEmaxvisitors.Location = new System.Drawing.Point(8, 324);
-            this.lblEmaxvisitors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmaxvisitors.Name = "lblEmaxvisitors";
-            this.lblEmaxvisitors.Size = new System.Drawing.Size(112, 17);
-            this.lblEmaxvisitors.TabIndex = 17;
-            this.lblEmaxvisitors.Text = "Max. Bezoekers:";
-            // 
-            // lblElocationname
-            // 
-            this.lblElocationname.AutoSize = true;
-            this.lblElocationname.Location = new System.Drawing.Point(8, 86);
-            this.lblElocationname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblElocationname.Name = "lblElocationname";
-            this.lblElocationname.Size = new System.Drawing.Size(97, 17);
-            this.lblElocationname.TabIndex = 16;
-            this.lblElocationname.Text = "Locatie naam:";
-            // 
-            // nudEmaxvisitors
-            // 
-            this.nudEmaxvisitors.Location = new System.Drawing.Point(156, 321);
-            this.nudEmaxvisitors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nudEmaxvisitors.Name = "nudEmaxvisitors";
-            this.nudEmaxvisitors.Size = new System.Drawing.Size(409, 22);
-            this.nudEmaxvisitors.TabIndex = 15;
-            // 
-            // tbElocation
-            // 
-            this.tbElocation.Location = new System.Drawing.Point(155, 77);
-            this.tbElocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbElocation.Name = "tbElocation";
-            this.tbElocation.Size = new System.Drawing.Size(408, 22);
-            this.tbElocation.TabIndex = 14;
-            // 
-            // btnRScancel
-            // 
-            this.btnRScancel.Location = new System.Drawing.Point(290, 361);
-            this.btnRScancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRScancel.Name = "btnRScancel";
-            this.btnRScancel.Size = new System.Drawing.Size(133, 44);
-            this.btnRScancel.TabIndex = 13;
-            this.btnRScancel.Text = "Annuleren";
-            this.btnRScancel.UseVisualStyleBackColor = true;
-            this.btnRScancel.Click += new System.EventHandler(this.btnRScancel_Click);
-            // 
-            // dtpEdatein
-            // 
-            this.dtpEdatein.Location = new System.Drawing.Point(156, 269);
-            this.dtpEdatein.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpEdatein.Name = "dtpEdatein";
-            this.dtpEdatein.Size = new System.Drawing.Size(408, 22);
-            this.dtpEdatein.TabIndex = 12;
-            // 
-            // dtpEdateuit
-            // 
-            this.dtpEdateuit.Location = new System.Drawing.Point(156, 226);
-            this.dtpEdateuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpEdateuit.Name = "dtpEdateuit";
-            this.dtpEdateuit.Size = new System.Drawing.Size(408, 22);
-            this.dtpEdateuit.TabIndex = 11;
-            // 
-            // lblEdatain
-            // 
-            this.lblEdatain.AutoSize = true;
-            this.lblEdatain.Location = new System.Drawing.Point(8, 276);
-            this.lblEdatain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEdatain.Name = "lblEdatain";
-            this.lblEdatain.Size = new System.Drawing.Size(92, 17);
-            this.lblEdatain.TabIndex = 8;
-            this.lblEdatain.Text = "Datum einde:";
-            // 
-            // lblEdataout
-            // 
-            this.lblEdataout.AutoSize = true;
-            this.lblEdataout.Location = new System.Drawing.Point(8, 226);
-            this.lblEdataout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEdataout.Name = "lblEdataout";
-            this.lblEdataout.Size = new System.Drawing.Size(92, 17);
-            this.lblEdataout.TabIndex = 6;
-            this.lblEdataout.Text = "Datum begin:";
-            // 
-            // lblEname
-            // 
-            this.lblEname.AutoSize = true;
-            this.lblEname.Location = new System.Drawing.Point(8, 49);
-            this.lblEname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEname.Name = "lblEname";
-            this.lblEname.Size = new System.Drawing.Size(49, 17);
-            this.lblEname.TabIndex = 2;
-            this.lblEname.Text = "Naam:";
-            // 
-            // btnRSreserve
-            // 
-            this.btnRSreserve.Location = new System.Drawing.Point(431, 361);
-            this.btnRSreserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRSreserve.Name = "btnRSreserve";
-            this.btnRSreserve.Size = new System.Drawing.Size(133, 44);
-            this.btnRSreserve.TabIndex = 0;
-            this.btnRSreserve.Text = "Reserveren";
-            this.btnRSreserve.UseVisualStyleBackColor = true;
-            this.btnRSreserve.Click += new System.EventHandler(this.btnRSreserve_Click);
-            // 
-            // cbEname
-            // 
-            this.cbEname.Location = new System.Drawing.Point(156, 43);
-            this.cbEname.Name = "cbEname";
-            this.cbEname.Size = new System.Drawing.Size(408, 22);
-            this.cbEname.TabIndex = 18;
             // 
             // lblCAcountry
             // 
@@ -263,13 +152,124 @@
             this.lblCAstreetname.TabIndex = 29;
             this.lblCAstreetname.Text = "Adres:";
             // 
+            // tbEname
+            // 
+            this.tbEname.Location = new System.Drawing.Point(156, 43);
+            this.tbEname.Name = "tbEname";
+            this.tbEname.Size = new System.Drawing.Size(408, 22);
+            this.tbEname.TabIndex = 18;
+            // 
+            // lblEmaxvisitors
+            // 
+            this.lblEmaxvisitors.AutoSize = true;
+            this.lblEmaxvisitors.Location = new System.Drawing.Point(8, 324);
+            this.lblEmaxvisitors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmaxvisitors.Name = "lblEmaxvisitors";
+            this.lblEmaxvisitors.Size = new System.Drawing.Size(112, 17);
+            this.lblEmaxvisitors.TabIndex = 17;
+            this.lblEmaxvisitors.Text = "Max. Bezoekers:";
+            // 
+            // lblElocationname
+            // 
+            this.lblElocationname.AutoSize = true;
+            this.lblElocationname.Location = new System.Drawing.Point(8, 86);
+            this.lblElocationname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblElocationname.Name = "lblElocationname";
+            this.lblElocationname.Size = new System.Drawing.Size(97, 17);
+            this.lblElocationname.TabIndex = 16;
+            this.lblElocationname.Text = "Locatie naam:";
+            // 
+            // nudEmaxvisitors
+            // 
+            this.nudEmaxvisitors.Location = new System.Drawing.Point(156, 321);
+            this.nudEmaxvisitors.Margin = new System.Windows.Forms.Padding(4);
+            this.nudEmaxvisitors.Name = "nudEmaxvisitors";
+            this.nudEmaxvisitors.Size = new System.Drawing.Size(409, 22);
+            this.nudEmaxvisitors.TabIndex = 15;
+            // 
+            // tbElocation
+            // 
+            this.tbElocation.Location = new System.Drawing.Point(155, 77);
+            this.tbElocation.Margin = new System.Windows.Forms.Padding(4);
+            this.tbElocation.Name = "tbElocation";
+            this.tbElocation.Size = new System.Drawing.Size(408, 22);
+            this.tbElocation.TabIndex = 14;
+            // 
+            // btnRScancel
+            // 
+            this.btnRScancel.Location = new System.Drawing.Point(290, 361);
+            this.btnRScancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRScancel.Name = "btnRScancel";
+            this.btnRScancel.Size = new System.Drawing.Size(133, 44);
+            this.btnRScancel.TabIndex = 13;
+            this.btnRScancel.Text = "Annuleren";
+            this.btnRScancel.UseVisualStyleBackColor = true;
+            this.btnRScancel.Click += new System.EventHandler(this.btnRScancel_Click);
+            // 
+            // dtpEdatein
+            // 
+            this.dtpEdatein.Location = new System.Drawing.Point(156, 269);
+            this.dtpEdatein.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpEdatein.Name = "dtpEdatein";
+            this.dtpEdatein.Size = new System.Drawing.Size(408, 22);
+            this.dtpEdatein.TabIndex = 12;
+            // 
+            // dtpEdateuit
+            // 
+            this.dtpEdateuit.Location = new System.Drawing.Point(156, 226);
+            this.dtpEdateuit.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpEdateuit.Name = "dtpEdateuit";
+            this.dtpEdateuit.Size = new System.Drawing.Size(408, 22);
+            this.dtpEdateuit.TabIndex = 11;
+            // 
+            // lblEdatain
+            // 
+            this.lblEdatain.AutoSize = true;
+            this.lblEdatain.Location = new System.Drawing.Point(8, 276);
+            this.lblEdatain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEdatain.Name = "lblEdatain";
+            this.lblEdatain.Size = new System.Drawing.Size(92, 17);
+            this.lblEdatain.TabIndex = 8;
+            this.lblEdatain.Text = "Datum einde:";
+            // 
+            // lblEdataout
+            // 
+            this.lblEdataout.AutoSize = true;
+            this.lblEdataout.Location = new System.Drawing.Point(8, 226);
+            this.lblEdataout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEdataout.Name = "lblEdataout";
+            this.lblEdataout.Size = new System.Drawing.Size(92, 17);
+            this.lblEdataout.TabIndex = 6;
+            this.lblEdataout.Text = "Datum begin:";
+            // 
+            // lblEname
+            // 
+            this.lblEname.AutoSize = true;
+            this.lblEname.Location = new System.Drawing.Point(8, 49);
+            this.lblEname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEname.Name = "lblEname";
+            this.lblEname.Size = new System.Drawing.Size(49, 17);
+            this.lblEname.TabIndex = 2;
+            this.lblEname.Text = "Naam:";
+            // 
+            // btnRSreserve
+            // 
+            this.btnRSreserve.Location = new System.Drawing.Point(431, 361);
+            this.btnRSreserve.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRSreserve.Name = "btnRSreserve";
+            this.btnRSreserve.Size = new System.Drawing.Size(133, 44);
+            this.btnRSreserve.TabIndex = 0;
+            this.btnRSreserve.Text = "Reserveren";
+            this.btnRSreserve.UseVisualStyleBackColor = true;
+            this.btnRSreserve.Click += new System.EventHandler(this.btnRSreserve_Click);
+            // 
             // MedewerkerEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 437);
             this.Controls.Add(this.gbReserveSpot);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MedewerkerEvent";
             this.Text = "Event";
             this.gbReserveSpot.ResumeLayout(false);
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Label lblEmaxvisitors;
         private System.Windows.Forms.Label lblElocationname;
         private System.Windows.Forms.NumericUpDown nudEmaxvisitors;
-        private System.Windows.Forms.TextBox cbEname;
+        private System.Windows.Forms.TextBox tbEname;
         private System.Windows.Forms.Label lblCAcountry;
         private System.Windows.Forms.TextBox tbCAcountry;
         private System.Windows.Forms.TextBox tbCAcity;
