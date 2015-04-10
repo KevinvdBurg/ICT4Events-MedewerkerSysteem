@@ -19,7 +19,7 @@ namespace MedewerkerSysteem
 
         private void lblFuction_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void lblName_Click(object sender, EventArgs e)

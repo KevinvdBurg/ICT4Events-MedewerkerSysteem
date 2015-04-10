@@ -47,6 +47,7 @@ public class Person
         this.Email = Email;
         this.Name = Name;
         this.LastName = LastName;
+        
 	}
 
 	public virtual void AddAddress(Address Address)

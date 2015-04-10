@@ -6327,21 +6327,21 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="79d36378-54bb-406e-8d75-16956a3899d8"
+                  Id="17c08863-251c-47fa-a803-fa0d154efa22"
                   name="Address"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="07c6bf20-99f2-405a-b204-aa3f13e49e52"
-                      LastKnownName="ICT4Event::Address"
+                    <classMoniker
+                      Id="8551df9b-24e2-45a2-9735-9801d7a7e830"
+                      LastKnownName="Address"
                       LastKnownLocation="MedewerkerSysteemDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b5d43dda-ea2c-4093-b38d-c189f2a0c92a"
+                  Id="c90a6cda-466f-4f08-a2e6-d23d58a3a870"
                   name="Name"
                   direction="In"
                   isUnique="false">
