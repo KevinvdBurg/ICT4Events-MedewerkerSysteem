@@ -50,7 +50,10 @@ namespace MedewerkerSysteem
         private void btnCAaddevent_Click(object sender, EventArgs e)
         {
             //Geselecteerde event wordt toegevoegd aan de listbox
-            lbCAeventlist.Items.Add(cbCAaddevent.SelectedValue);
+            if (cbCAaddevent.SelectedText != null)
+            {
+                lbCAeventlist.Items.Add(cbCAaddevent.SelectedValue);
+            }
         }
     }
 }
