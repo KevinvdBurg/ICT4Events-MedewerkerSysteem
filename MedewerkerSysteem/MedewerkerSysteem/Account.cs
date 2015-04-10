@@ -11,7 +11,7 @@ using System.Text;
 
 public class Account
 {
-	public string RFID
+	public int RFID
 	{
 		get;
 		set;
@@ -29,7 +29,7 @@ public class Account
 		set;
 	}
 
-	public Account(Person Person, string RFID)
+	public Account(Person Person, int RFID)
 	{
         this.Person = Person;
         this.RFID = RFID; 

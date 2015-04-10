@@ -26,5 +26,18 @@ namespace MedewerkerSysteem
         {
             Close();
         }
+
+        private void btnCAcreate_Click(object sender, EventArgs e)
+        {
+            int test = 1;
+            Address address = new Address(tbCAcity.Text, tbCAcountry.Text, tbCAstreetname.Text, tbCAzipcode.Text);
+            Person person = new Person(address, tbCAemail.Text, tbCAname.Text, tbCAlastname.Text);
+            Account account = new Account(person, test);
+        }
+
+        private void btnCAaddevent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
