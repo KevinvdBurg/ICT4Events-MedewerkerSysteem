@@ -108,6 +108,8 @@
             this.AdminEventDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnControl = new System.Windows.Forms.Button();
+            this.btnComplete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -139,17 +141,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(115, 107);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(791, 23);
+            this.btnLogout.Location = new System.Drawing.Point(1055, 28);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.Size = new System.Drawing.Size(100, 28);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Uitloggen";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -158,18 +162,20 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(745, 52);
+            this.comboBox1.Location = new System.Drawing.Point(993, 64);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 2;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(115, 26);
+            this.lblName.Location = new System.Drawing.Point(153, 32);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 20);
+            this.lblName.Size = new System.Drawing.Size(70, 25);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Naam:";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
@@ -178,9 +184,10 @@
             // 
             this.lblFuction.AutoSize = true;
             this.lblFuction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuction.Location = new System.Drawing.Point(115, 57);
+            this.lblFuction.Location = new System.Drawing.Point(153, 70);
+            this.lblFuction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFuction.Name = "lblFuction";
-            this.lblFuction.Size = new System.Drawing.Size(66, 20);
+            this.lblFuction.Size = new System.Drawing.Size(82, 25);
             this.lblFuction.TabIndex = 4;
             this.lblFuction.Text = "Functie:";
             this.lblFuction.Click += new System.EventHandler(this.lblFuction_Click);
@@ -189,18 +196,20 @@
             // 
             this.lbliFunction.AutoSize = true;
             this.lbliFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbliFunction.Location = new System.Drawing.Point(188, 57);
+            this.lbliFunction.Location = new System.Drawing.Point(251, 70);
+            this.lbliFunction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbliFunction.Name = "lbliFunction";
-            this.lbliFunction.Size = new System.Drawing.Size(0, 20);
+            this.lbliFunction.Size = new System.Drawing.Size(0, 25);
             this.lbliFunction.TabIndex = 6;
             // 
             // lbliName
             // 
             this.lbliName.AutoSize = true;
             this.lbliName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbliName.Location = new System.Drawing.Point(188, 26);
+            this.lbliName.Location = new System.Drawing.Point(251, 32);
+            this.lbliName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbliName.Name = "lbliName";
-            this.lbliName.Size = new System.Drawing.Size(0, 20);
+            this.lbliName.Size = new System.Drawing.Size(0, 25);
             this.lbliName.TabIndex = 5;
             // 
             // tabCMedewerker
@@ -209,10 +218,11 @@
             this.tabCMedewerker.Controls.Add(this.tabPaccount);
             this.tabCMedewerker.Controls.Add(this.tabPreserve);
             this.tabCMedewerker.Controls.Add(this.tabPadmin);
-            this.tabCMedewerker.Location = new System.Drawing.Point(12, 114);
+            this.tabCMedewerker.Location = new System.Drawing.Point(16, 140);
+            this.tabCMedewerker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabCMedewerker.Name = "tabCMedewerker";
             this.tabCMedewerker.SelectedIndex = 0;
-            this.tabCMedewerker.Size = new System.Drawing.Size(903, 399);
+            this.tabCMedewerker.Size = new System.Drawing.Size(1204, 491);
             this.tabCMedewerker.TabIndex = 7;
             // 
             // tabPincheck
@@ -221,61 +231,70 @@
             this.tabPincheck.Controls.Add(this.groupBox1);
             this.tabPincheck.Controls.Add(this.label2);
             this.tabPincheck.Controls.Add(this.label1);
-            this.tabPincheck.Location = new System.Drawing.Point(4, 22);
+            this.tabPincheck.Location = new System.Drawing.Point(4, 25);
+            this.tabPincheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPincheck.Name = "tabPincheck";
-            this.tabPincheck.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPincheck.Size = new System.Drawing.Size(895, 373);
+            this.tabPincheck.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPincheck.Size = new System.Drawing.Size(1196, 462);
             this.tabPincheck.TabIndex = 0;
             this.tabPincheck.Text = "InCheck";
             this.tabPincheck.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnComplete);
             this.groupBox2.Controls.Add(this.tbLetterStatus);
             this.groupBox2.Controls.Add(this.lblLetterStatus);
             this.groupBox2.Controls.Add(this.btnLetterScan);
             this.groupBox2.Controls.Add(this.lblLetterScan);
-            this.groupBox2.Location = new System.Drawing.Point(447, 46);
+            this.groupBox2.Location = new System.Drawing.Point(596, 57);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(442, 324);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(589, 399);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2. Scan Band";
             // 
             // tbLetterStatus
             // 
-            this.tbLetterStatus.Location = new System.Drawing.Point(66, 50);
+            this.tbLetterStatus.Location = new System.Drawing.Point(88, 62);
+            this.tbLetterStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLetterStatus.Name = "tbLetterStatus";
-            this.tbLetterStatus.Size = new System.Drawing.Size(370, 20);
+            this.tbLetterStatus.Size = new System.Drawing.Size(492, 22);
             this.tbLetterStatus.TabIndex = 10;
             // 
             // lblLetterStatus
             // 
             this.lblLetterStatus.AutoSize = true;
-            this.lblLetterStatus.Location = new System.Drawing.Point(13, 53);
+            this.lblLetterStatus.Location = new System.Drawing.Point(17, 65);
+            this.lblLetterStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterStatus.Name = "lblLetterStatus";
-            this.lblLetterStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblLetterStatus.Size = new System.Drawing.Size(52, 17);
             this.lblLetterStatus.TabIndex = 9;
             this.lblLetterStatus.Text = "Status:";
             // 
             // btnLetterScan
             // 
-            this.btnLetterScan.Location = new System.Drawing.Point(66, 24);
+            this.btnLetterScan.Location = new System.Drawing.Point(88, 30);
+            this.btnLetterScan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLetterScan.Name = "btnLetterScan";
-            this.btnLetterScan.Size = new System.Drawing.Size(370, 20);
+            this.btnLetterScan.Size = new System.Drawing.Size(492, 22);
             this.btnLetterScan.TabIndex = 8;
             // 
             // lblLetterScan
             // 
             this.lblLetterScan.AutoSize = true;
-            this.lblLetterScan.Location = new System.Drawing.Point(13, 27);
+            this.lblLetterScan.Location = new System.Drawing.Point(17, 33);
+            this.lblLetterScan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterScan.Name = "lblLetterScan";
-            this.lblLetterScan.Size = new System.Drawing.Size(35, 13);
+            this.lblLetterScan.Size = new System.Drawing.Size(44, 17);
             this.lblLetterScan.TabIndex = 7;
             this.lblLetterScan.Text = "Scan:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnControl);
             this.groupBox1.Controls.Add(this.tbLetterRFID);
             this.groupBox1.Controls.Add(this.lblLetterRFID);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -285,9 +304,11 @@
             this.groupBox1.Controls.Add(this.tbLetterName);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lblLetterName);
-            this.groupBox1.Location = new System.Drawing.Point(6, 43);
+            this.groupBox1.Location = new System.Drawing.Point(8, 53);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 324);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(580, 399);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1. Scan Brief";
@@ -295,9 +316,10 @@
             // 
             // tbLetterRFID
             // 
-            this.tbLetterRFID.Location = new System.Drawing.Point(82, 105);
+            this.tbLetterRFID.Location = new System.Drawing.Point(109, 129);
+            this.tbLetterRFID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLetterRFID.Name = "tbLetterRFID";
-            this.tbLetterRFID.Size = new System.Drawing.Size(347, 20);
+            this.tbLetterRFID.Size = new System.Drawing.Size(461, 22);
             this.tbLetterRFID.TabIndex = 8;
             this.tbLetterRFID.Enter += new System.EventHandler(this.tbLetterRFID_Enter);
             this.tbLetterRFID.MouseLeave += new System.EventHandler(this.tbLetterRFID_MouseLeave);
@@ -306,93 +328,104 @@
             // lblLetterRFID
             // 
             this.lblLetterRFID.AutoSize = true;
-            this.lblLetterRFID.Location = new System.Drawing.Point(6, 108);
+            this.lblLetterRFID.Location = new System.Drawing.Point(8, 133);
+            this.lblLetterRFID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterRFID.Name = "lblLetterRFID";
-            this.lblLetterRFID.Size = new System.Drawing.Size(35, 13);
+            this.lblLetterRFID.Size = new System.Drawing.Size(43, 17);
             this.lblLetterRFID.TabIndex = 7;
             this.lblLetterRFID.Text = "RFID:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 79);
+            this.textBox2.Location = new System.Drawing.Point(109, 97);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(347, 20);
+            this.textBox2.Size = new System.Drawing.Size(461, 22);
             this.textBox2.TabIndex = 6;
             // 
             // lblLetterLocation
             // 
             this.lblLetterLocation.AutoSize = true;
-            this.lblLetterLocation.Location = new System.Drawing.Point(6, 82);
+            this.lblLetterLocation.Location = new System.Drawing.Point(8, 101);
+            this.lblLetterLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterLocation.Name = "lblLetterLocation";
-            this.lblLetterLocation.Size = new System.Drawing.Size(75, 13);
+            this.lblLetterLocation.Size = new System.Drawing.Size(97, 17);
             this.lblLetterLocation.TabIndex = 5;
             this.lblLetterLocation.Text = "Plek Location:";
             // 
             // btnLetterGroupName
             // 
-            this.btnLetterGroupName.Location = new System.Drawing.Point(82, 53);
+            this.btnLetterGroupName.Location = new System.Drawing.Point(109, 65);
+            this.btnLetterGroupName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLetterGroupName.Name = "btnLetterGroupName";
-            this.btnLetterGroupName.Size = new System.Drawing.Size(347, 20);
+            this.btnLetterGroupName.Size = new System.Drawing.Size(461, 22);
             this.btnLetterGroupName.TabIndex = 4;
             // 
             // lblLetterGroupName
             // 
             this.lblLetterGroupName.AutoSize = true;
-            this.lblLetterGroupName.Location = new System.Drawing.Point(6, 56);
+            this.lblLetterGroupName.Location = new System.Drawing.Point(8, 69);
+            this.lblLetterGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterGroupName.Name = "lblLetterGroupName";
-            this.lblLetterGroupName.Size = new System.Drawing.Size(70, 13);
+            this.lblLetterGroupName.Size = new System.Drawing.Size(93, 17);
             this.lblLetterGroupName.TabIndex = 3;
             this.lblLetterGroupName.Text = "Group Name:";
             // 
             // tbLetterName
             // 
-            this.tbLetterName.Location = new System.Drawing.Point(82, 27);
+            this.tbLetterName.Location = new System.Drawing.Point(109, 33);
+            this.tbLetterName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLetterName.Name = "tbLetterName";
-            this.tbLetterName.Size = new System.Drawing.Size(347, 20);
+            this.tbLetterName.Size = new System.Drawing.Size(461, 22);
             this.tbLetterName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 65);
+            this.label4.Location = new System.Drawing.Point(12, 80);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 1;
             // 
             // lblLetterName
             // 
             this.lblLetterName.AutoSize = true;
-            this.lblLetterName.Location = new System.Drawing.Point(6, 30);
+            this.lblLetterName.Location = new System.Drawing.Point(8, 37);
+            this.lblLetterName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterName.Name = "lblLetterName";
-            this.lblLetterName.Size = new System.Drawing.Size(38, 13);
+            this.lblLetterName.Size = new System.Drawing.Size(49, 17);
             this.lblLetterName.TabIndex = 0;
             this.lblLetterName.Text = "Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 18);
+            this.label2.Location = new System.Drawing.Point(416, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.Size = new System.Drawing.Size(237, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Scan QR-Code op Brief / Scan Band";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(329, 18);
+            this.label1.Location = new System.Drawing.Point(439, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 0;
             // 
             // tabPaccount
             // 
             this.tabPaccount.Controls.Add(this.dgwAccount);
             this.tabPaccount.Controls.Add(this.btnCreateAccount);
-            this.tabPaccount.Location = new System.Drawing.Point(4, 22);
+            this.tabPaccount.Location = new System.Drawing.Point(4, 25);
+            this.tabPaccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPaccount.Name = "tabPaccount";
-            this.tabPaccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPaccount.Size = new System.Drawing.Size(895, 373);
+            this.tabPaccount.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPaccount.Size = new System.Drawing.Size(1196, 462);
             this.tabPaccount.TabIndex = 1;
             this.tabPaccount.Text = "Account";
             this.tabPaccount.UseVisualStyleBackColor = true;
@@ -405,9 +438,10 @@
             this.dgvcEdit,
             this.dgvcDelete,
             this.dgvcEditPassword});
-            this.dgwAccount.Location = new System.Drawing.Point(22, 57);
+            this.dgwAccount.Location = new System.Drawing.Point(29, 70);
+            this.dgwAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgwAccount.Name = "dgwAccount";
-            this.dgwAccount.Size = new System.Drawing.Size(843, 294);
+            this.dgwAccount.Size = new System.Drawing.Size(1124, 362);
             this.dgwAccount.TabIndex = 1;
             // 
             // dgvcName
@@ -433,9 +467,10 @@
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(22, 16);
+            this.btnCreateAccount.Location = new System.Drawing.Point(29, 20);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(122, 23);
+            this.btnCreateAccount.Size = new System.Drawing.Size(163, 28);
             this.btnCreateAccount.TabIndex = 0;
             this.btnCreateAccount.Text = "Account Maken";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
@@ -446,19 +481,21 @@
             this.tabPreserve.Controls.Add(this.btnReserveLocation);
             this.tabPreserve.Controls.Add(this.btnReserveItem);
             this.tabPreserve.Controls.Add(this.tabControl1);
-            this.tabPreserve.Location = new System.Drawing.Point(4, 22);
+            this.tabPreserve.Location = new System.Drawing.Point(4, 25);
+            this.tabPreserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPreserve.Name = "tabPreserve";
-            this.tabPreserve.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPreserve.Size = new System.Drawing.Size(895, 373);
+            this.tabPreserve.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPreserve.Size = new System.Drawing.Size(1196, 462);
             this.tabPreserve.TabIndex = 2;
             this.tabPreserve.Text = "Reserveren";
             this.tabPreserve.UseVisualStyleBackColor = true;
             // 
             // btnReserveLocation
             // 
-            this.btnReserveLocation.Location = new System.Drawing.Point(125, 17);
+            this.btnReserveLocation.Location = new System.Drawing.Point(167, 21);
+            this.btnReserveLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReserveLocation.Name = "btnReserveLocation";
-            this.btnReserveLocation.Size = new System.Drawing.Size(107, 23);
+            this.btnReserveLocation.Size = new System.Drawing.Size(143, 28);
             this.btnReserveLocation.TabIndex = 2;
             this.btnReserveLocation.Text = "Plek Reserveren";
             this.btnReserveLocation.UseVisualStyleBackColor = true;
@@ -466,9 +503,10 @@
             // 
             // btnReserveItem
             // 
-            this.btnReserveItem.Location = new System.Drawing.Point(10, 17);
+            this.btnReserveItem.Location = new System.Drawing.Point(13, 21);
+            this.btnReserveItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReserveItem.Name = "btnReserveItem";
-            this.btnReserveItem.Size = new System.Drawing.Size(109, 23);
+            this.btnReserveItem.Size = new System.Drawing.Size(145, 28);
             this.btnReserveItem.TabIndex = 1;
             this.btnReserveItem.Text = "Item Reserveren";
             this.btnReserveItem.UseVisualStyleBackColor = true;
@@ -478,19 +516,21 @@
             // 
             this.tabControl1.Controls.Add(this.tabPItem);
             this.tabControl1.Controls.Add(this.tabPlocation);
-            this.tabControl1.Location = new System.Drawing.Point(0, 63);
+            this.tabControl1.Location = new System.Drawing.Point(0, 78);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(899, 310);
+            this.tabControl1.Size = new System.Drawing.Size(1199, 382);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPItem
             // 
             this.tabPItem.Controls.Add(this.dataGridView1);
-            this.tabPItem.Location = new System.Drawing.Point(4, 22);
+            this.tabPItem.Location = new System.Drawing.Point(4, 25);
+            this.tabPItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPItem.Name = "tabPItem";
-            this.tabPItem.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPItem.Size = new System.Drawing.Size(891, 284);
+            this.tabPItem.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPItem.Size = new System.Drawing.Size(1191, 353);
             this.tabPItem.TabIndex = 0;
             this.tabPItem.Text = "Item";
             this.tabPItem.UseVisualStyleBackColor = true;
@@ -505,9 +545,10 @@
             this.ItemDateIn,
             this.ItemEdit,
             this.ItemDelete});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 7);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 9);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(879, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(1172, 334);
             this.dataGridView1.TabIndex = 3;
             // 
             // ItemName
@@ -543,10 +584,11 @@
             // tabPlocation
             // 
             this.tabPlocation.Controls.Add(this.dataGridView2);
-            this.tabPlocation.Location = new System.Drawing.Point(4, 22);
+            this.tabPlocation.Location = new System.Drawing.Point(4, 25);
+            this.tabPlocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPlocation.Name = "tabPlocation";
-            this.tabPlocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPlocation.Size = new System.Drawing.Size(891, 284);
+            this.tabPlocation.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPlocation.Size = new System.Drawing.Size(1191, 353);
             this.tabPlocation.TabIndex = 1;
             this.tabPlocation.Text = "Plek";
             this.tabPlocation.UseVisualStyleBackColor = true;
@@ -561,9 +603,10 @@
             this.LocationDateOut,
             this.LocationEdit,
             this.LocationDelete});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 7);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 9);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(879, 271);
+            this.dataGridView2.Size = new System.Drawing.Size(1172, 334);
             this.dataGridView2.TabIndex = 4;
             // 
             // LocationCode
@@ -600,10 +643,11 @@
             // 
             this.tabPadmin.Controls.Add(this.tabCAdmin);
             this.tabPadmin.Controls.Add(this.btnEvent);
-            this.tabPadmin.Location = new System.Drawing.Point(4, 22);
+            this.tabPadmin.Location = new System.Drawing.Point(4, 25);
+            this.tabPadmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPadmin.Name = "tabPadmin";
-            this.tabPadmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPadmin.Size = new System.Drawing.Size(895, 373);
+            this.tabPadmin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPadmin.Size = new System.Drawing.Size(1196, 462);
             this.tabPadmin.TabIndex = 3;
             this.tabPadmin.Text = "Admin";
             this.tabPadmin.UseVisualStyleBackColor = true;
@@ -613,19 +657,21 @@
             this.tabCAdmin.Controls.Add(this.tabPpressent);
             this.tabCAdmin.Controls.Add(this.tabPmedia);
             this.tabCAdmin.Controls.Add(this.tabPEvent);
-            this.tabCAdmin.Location = new System.Drawing.Point(0, 57);
+            this.tabCAdmin.Location = new System.Drawing.Point(0, 70);
+            this.tabCAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabCAdmin.Name = "tabCAdmin";
             this.tabCAdmin.SelectedIndex = 0;
-            this.tabCAdmin.Size = new System.Drawing.Size(899, 320);
+            this.tabCAdmin.Size = new System.Drawing.Size(1199, 394);
             this.tabCAdmin.TabIndex = 1;
             // 
             // tabPpressent
             // 
             this.tabPpressent.Controls.Add(this.dataGridView4);
-            this.tabPpressent.Location = new System.Drawing.Point(4, 22);
+            this.tabPpressent.Location = new System.Drawing.Point(4, 25);
+            this.tabPpressent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPpressent.Name = "tabPpressent";
-            this.tabPpressent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPpressent.Size = new System.Drawing.Size(891, 294);
+            this.tabPpressent.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPpressent.Size = new System.Drawing.Size(1191, 365);
             this.tabPpressent.TabIndex = 0;
             this.tabPpressent.Text = "Aanwezigen";
             this.tabPpressent.UseVisualStyleBackColor = true;
@@ -639,9 +685,10 @@
             this.AdminPresentDateIn,
             this.AdminPresentDateOut,
             this.AdminPresentPayment});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView4.Location = new System.Drawing.Point(8, 7);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(843, 294);
+            this.dataGridView4.Size = new System.Drawing.Size(1124, 362);
             this.dataGridView4.TabIndex = 2;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -673,10 +720,11 @@
             // tabPmedia
             // 
             this.tabPmedia.Controls.Add(this.dataGridView5);
-            this.tabPmedia.Location = new System.Drawing.Point(4, 22);
+            this.tabPmedia.Location = new System.Drawing.Point(4, 25);
+            this.tabPmedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPmedia.Name = "tabPmedia";
-            this.tabPmedia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPmedia.Size = new System.Drawing.Size(891, 294);
+            this.tabPmedia.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPmedia.Size = new System.Drawing.Size(1191, 365);
             this.tabPmedia.TabIndex = 1;
             this.tabPmedia.Text = "Media";
             this.tabPmedia.UseVisualStyleBackColor = true;
@@ -689,9 +737,10 @@
             this.AdminMediaText,
             this.AdminMediaReports,
             this.AdminMediaOpen});
-            this.dataGridView5.Location = new System.Drawing.Point(6, 3);
+            this.dataGridView5.Location = new System.Drawing.Point(8, 4);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(843, 294);
+            this.dataGridView5.Size = new System.Drawing.Size(1124, 362);
             this.dataGridView5.TabIndex = 2;
             // 
             // AdminMediaCode
@@ -717,10 +766,11 @@
             // tabPEvent
             // 
             this.tabPEvent.Controls.Add(this.dataGridView3);
-            this.tabPEvent.Location = new System.Drawing.Point(4, 22);
+            this.tabPEvent.Location = new System.Drawing.Point(4, 25);
+            this.tabPEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPEvent.Name = "tabPEvent";
-            this.tabPEvent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPEvent.Size = new System.Drawing.Size(891, 294);
+            this.tabPEvent.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPEvent.Size = new System.Drawing.Size(1191, 365);
             this.tabPEvent.TabIndex = 2;
             this.tabPEvent.Text = "Event";
             this.tabPEvent.UseVisualStyleBackColor = true;
@@ -735,9 +785,10 @@
             this.AdminEventAttendeesCount,
             this.AdminEventEdit,
             this.AdminEventDelete});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView3.Location = new System.Drawing.Point(8, 7);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(843, 294);
+            this.dataGridView3.Size = new System.Drawing.Size(1124, 362);
             this.dataGridView3.TabIndex = 2;
             // 
             // AdminEventName
@@ -772,9 +823,10 @@
             // 
             // btnEvent
             // 
-            this.btnEvent.Location = new System.Drawing.Point(18, 16);
+            this.btnEvent.Location = new System.Drawing.Point(24, 20);
+            this.btnEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(105, 23);
+            this.btnEvent.Size = new System.Drawing.Size(140, 28);
             this.btnEvent.TabIndex = 0;
             this.btnEvent.Text = "Event Aanmaken";
             this.btnEvent.UseVisualStyleBackColor = true;
@@ -784,11 +836,32 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // btnControl
+            // 
+            this.btnControl.Location = new System.Drawing.Point(483, 169);
+            this.btnControl.Name = "btnControl";
+            this.btnControl.Size = new System.Drawing.Size(86, 28);
+            this.btnControl.TabIndex = 9;
+            this.btnControl.Text = "Controlleer";
+            this.btnControl.UseVisualStyleBackColor = true;
+            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
+            // 
+            // btnComplete
+            // 
+            this.btnComplete.Location = new System.Drawing.Point(494, 165);
+            this.btnComplete.Name = "btnComplete";
+            this.btnComplete.Size = new System.Drawing.Size(86, 28);
+            this.btnComplete.TabIndex = 10;
+            this.btnComplete.Text = "Voltooi";
+            this.btnComplete.UseVisualStyleBackColor = true;
+            this.btnComplete.Visible = false;
+            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
+            // 
             // MederwerkerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 534);
+            this.ClientSize = new System.Drawing.Size(1236, 657);
             this.Controls.Add(this.tabCMedewerker);
             this.Controls.Add(this.lbliFunction);
             this.Controls.Add(this.lbliName);
@@ -797,6 +870,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MederwerkerForm";
             this.Text = "Medewerker Form";
             this.Load += new System.EventHandler(this.MederwerkerForm_Load);
@@ -910,6 +984,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDelete;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button btnComplete;
+        private System.Windows.Forms.Button btnControl;
     }
 }
 

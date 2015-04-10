@@ -5443,10 +5443,10 @@
             <elementDefinition Id="bffb48df-be78-4658-bdcd-434101ea3405" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="0fffcf31-3ab3-4531-aee3-a1c760cf0f8e" name="Account" direction="In" isUnique="false">
-                  <elementDefinition Id="56823fec-8922-490b-b34c-fa723bc05de6" />
+                <parameter Id="5ef433a0-a9b3-4d96-b3f4-60bab5ffae3d" name="Account" direction="In" isUnique="false">
+                  <elementDefinition Id="cd453d8b-d21a-4472-bbe8-c230faf40769" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="1077b72f-48c6-4069-a68b-d0f48ce610cf" LastKnownName="Account" />
+                    <referencedTypeMoniker Id="e3e8e154-c890-4307-8797-78bcdd6b33d9" LastKnownName="Account" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -5499,10 +5499,10 @@
             <elementDefinition Id="17f954fa-0145-49f1-b29b-eef9e5056836" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="3e41bb64-bdb4-4588-879b-aaecbcba653a" name="Event" direction="In" isUnique="false">
-                  <elementDefinition Id="1f3d91d3-5daf-4bb5-937e-50f6456e8405" />
+                <parameter Id="82356c55-50e6-4dce-8443-3e8af1b1c734" name="Event" direction="In" isUnique="false">
+                  <elementDefinition Id="b1bfce39-5da0-4739-97d1-75e2468b52d5" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="3581516e-1224-48ac-92a4-407ee5268893" LastKnownName="ICT4Event::Event" />
+                    <referencedTypeMoniker Id="6f60f561-0a3f-47e6-a3c6-e3a83f4ef46b" LastKnownName="Event" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -5555,10 +5555,10 @@
             <elementDefinition Id="6241bcd8-2dff-40e6-9176-2c8e5353eb24" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="84897688-5a1b-4901-907e-3b89571628bc" name="Reserve" direction="In" isUnique="false">
-                  <elementDefinition Id="ea2bc331-9853-4bae-962c-2b164205493a" />
+                <parameter Id="493f0642-085a-43bb-adef-47791cd3912c" name="Reserve" direction="In" isUnique="false">
+                  <elementDefinition Id="04c6bfbc-9455-4226-b49a-941ebe7ea957" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="ca9e9aa0-a838-453a-a35a-57c2918116d8" LastKnownName="ICT4Event::Reserve" />
+                    <referencedTypeMoniker Id="30281d14-091d-4599-b7e6-abdb4d94db0f" LastKnownName="Reserve" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -5866,6 +5866,21 @@
     <packageHasNamedElement>
       <referencedType Id="c216971b-3fb3-4c2c-a07d-bf89b83cf8aa" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="30281d14-091d-4599-b7e6-abdb4d94db0f" name="Reserve" isAbstract="false" isLeaf="false" cachedFullName="MedewerkerSysteemDiagram::Reserve">
+        <elementDefinition Id="38b953c9-c7d1-43ad-affb-4b95499ce050" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e3e8e154-c890-4307-8797-78bcdd6b33d9" name="Account" isAbstract="false" isLeaf="false" cachedFullName="MedewerkerSysteemDiagram::Account">
+        <elementDefinition Id="ab097110-917b-4fa2-878e-589c3be05a02" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6f60f561-0a3f-47e6-a3c6-e3a83f4ef46b" name="Event" isAbstract="false" isLeaf="false" cachedFullName="MedewerkerSysteemDiagram::Event">
+        <elementDefinition Id="bc47a407-6b18-4342-ade2-3d0373dcccba" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

@@ -9536,14 +9536,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="56823fec-8922-490b-b34c-fa723bc05de6"
+                  Id="cd453d8b-d21a-4472-bbe8-c230faf40769"
                   name="Account"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="1bb1d29a-ea25-4481-bfdc-58244b762e66"
-                      LastKnownName="ICT4Event::Account"
+                    <classMoniker
+                      Id="ab097110-917b-4fa2-878e-589c3be05a02"
+                      LastKnownName="Account"
                       LastKnownLocation="MedewerkerSysteemDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -9611,14 +9611,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1f3d91d3-5daf-4bb5-937e-50f6456e8405"
+                  Id="b1bfce39-5da0-4739-97d1-75e2468b52d5"
                   name="Event"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="ccd7dad6-3382-4f08-95de-22a9e34ff0f6"
-                      LastKnownName="ICT4Event::Event"
+                    <classMoniker
+                      Id="bc47a407-6b18-4342-ade2-3d0373dcccba"
+                      LastKnownName="Event"
                       LastKnownLocation="MedewerkerSysteemDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -9686,14 +9686,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="ea2bc331-9853-4bae-962c-2b164205493a"
+                  Id="04c6bfbc-9455-4226-b49a-941ebe7ea957"
                   name="Reserve"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="3a9a63cb-a879-4f19-892a-601489c89036"
-                      LastKnownName="ICT4Event::Reserve"
+                    <classMoniker
+                      Id="38b953c9-c7d1-43ad-affb-4b95499ce050"
+                      LastKnownName="Reserve"
                       LastKnownLocation="MedewerkerSysteemDiagram.uml" />
                   </type_NamedElement>
                 </parameter>

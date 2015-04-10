@@ -15,6 +15,7 @@ namespace MedewerkerSysteem
     public partial class MederwerkerForm : Form
     {
         private RFID rfid; //Declare an RFID object
+        Administation administation = new Administation();
         public MederwerkerForm()
         {
             InitializeComponent();
@@ -251,6 +252,23 @@ namespace MedewerkerSysteem
             Application.DoEvents();
 
             rfid.close();
+        }
+
+        private void btnControl_Click(object sender, EventArgs e)
+        {
+            //Check if the RFID belongs to the name
+            if (administation.Find())
+            {
+                //If correct fill in name and payment status
+
+                //Set btnComplete to true
+            }
+
+        }
+
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+            //Person has arrived
         }
        
     }
