@@ -65,18 +65,37 @@ public class Administation
 		
 	}
 
-	public void Find(Account Account)
+	public Account Find(string Code)
 	{
-		
+	    foreach (var item in COLLECTION)
+	    {
+	        if (item.RFID == Code)
+	        {
+	            return item;
+	        }
+	    }
 	}
 
-	public void Find(Event Event)
+	public Event Find(string Code)
 	{
+	    foreach (var item in COLLECTION)
+	    {
+	        if (item.EventID == Code)
+	        {
+	            return item;
+	        }
+	    }
 	}
 
-	public void Find(Reserve Reserve)
+	public Reserve Find(string Code)
 	{
-		
+	    foreach (var item in COLLECTION)
+	    {
+	        if (item.ReserveID == Code)
+	        {
+	            return item;
+	        }
+	    }
 	}
 
 	public void Update(Account Account)
