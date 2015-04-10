@@ -11,11 +11,7 @@ using System.Text;
 
 public class ReserveSpot : Reserve
 {
-	public virtual bool Paid
-	{
-		get;
-		set;
-	}
+	
 
 	public virtual Group Group
 	{
@@ -29,7 +25,7 @@ public class ReserveSpot : Reserve
 		set;
 	}
 
-	public ReserveSpot (CampingSpot CamptingSpot, Group Group, bool Paid, Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID) : base (Account, Category, EndDate, StartDate, RFID)
+	public ReserveSpot (CampingSpot CamptingSpot, Group Group, Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID, bool Paid) : base (Account, Category, EndDate, StartDate, RFID, Paid)
 	{
         this.CampingSpot = CampingSpot;
         this.Group = Group;

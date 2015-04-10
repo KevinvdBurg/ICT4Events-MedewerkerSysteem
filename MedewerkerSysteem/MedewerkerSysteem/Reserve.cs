@@ -41,7 +41,13 @@ public abstract class Reserve
 		set;
 	}
 
-	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID)
+    public virtual bool Paid
+    {
+        get;
+        set;
+    }
+
+	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID, bool Paid)
 	{
         this.Account = Account;
         this.Category = Category;

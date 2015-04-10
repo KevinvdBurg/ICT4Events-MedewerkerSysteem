@@ -2704,6 +2704,23 @@
                 LastKnownLocation="MedewerkerSysteemDiagram.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="c5c9e8fa-6318-4a2a-b438-dc7c5069f02f"
+            name="Paid"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -3294,81 +3311,6 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property
-            Id="31c15c39-59ed-4416-a3ee-1bbb681945b4"
-            name="Paid"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="9ebf0345-fc68-4a0b-9d45-026a3d7566d2"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="f190b554-406a-4186-b423-027eafccae64">
-                    <propertyInstance
-                      Id="a3946751-63a5-4ab5-bbbb-20ca66ff2b4a"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b6dbb52e-957c-4982-840c-3b5b9edc54c4">
-                    <propertyInstance
-                      Id="6bc34083-212c-40ef-9c8c-a5cfff6ba397"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="59d21715-5932-4063-9c61-914763572b6a">
-                    <propertyInstance
-                      Id="3dd5f10e-7f74-4aa7-adeb-e69a41957271"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7c1e953e-b9c8-4648-b379-897ac6f6f94c">
-                    <propertyInstance
-                      Id="8c6325ed-3b14-4f1c-9165-d03d55488347"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="74e82b5a-4d57-47a7-b531-0e17a94407b0">
-                    <propertyInstance
-                      Id="24d90a0c-3496-479d-8de3-e0d0f9ef128a"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0c6686fa-11ab-4a40-a3f7-4b1cd4a1f337">
-                    <propertyInstance
-                      Id="d1f47640-3a8d-4a0d-89a1-e3f7868f9ced"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e39e1866-74d5-4cac-9025-8c59130c4dd4">
-                    <propertyInstance
-                      Id="a1dd9255-d5b8-4e59-83a3-82c64c0920f5"
-                      name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7d529fb8-0b96-4a6e-9889-3d7426417ef0"
-                LastKnownName="bool"
-                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
-            </type_NamedElement>
-          </property>
           <property
             Id="a6c7cf4f-345a-46e5-b6ab-8549bf82e1b1"
             name="Group"
