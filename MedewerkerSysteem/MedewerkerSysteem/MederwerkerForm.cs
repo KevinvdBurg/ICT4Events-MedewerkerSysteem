@@ -261,9 +261,11 @@ namespace MedewerkerSysteem
         {
             btnChangePaid.Visible = false;
             btnComplete.Visible = false;
+            tbLetterScan.Clear();
+            tbLetterName.Clear();
 
-            Account account = administation.Find(tbLetterRFID.Text);
-            ReserveSpot reserveSpot = administation.Find(tbSpotLocation.Text);
+            Account account = administation.Account(tbLetterRFID.Text);
+            ReserveSpot reserveSpot = administation.FindReserve(tbSpotLocation.Text);
 
             accounts.Add(account);
             reserveSpots.Add(reserveSpot);
@@ -277,6 +279,8 @@ namespace MedewerkerSysteem
                 {
                     //TODO check if customer already inside
                     btnComplete.Visible = true;
+                    tbLetterScan.Text = "TODO";
+                    tbLetterName.Text = "TODO";
                 }
                 else
                 {

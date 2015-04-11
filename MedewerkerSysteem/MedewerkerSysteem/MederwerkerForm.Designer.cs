@@ -40,10 +40,11 @@
             this.tabCMedewerker = new System.Windows.Forms.TabControl();
             this.tabPincheck = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnChangePaid = new System.Windows.Forms.Button();
             this.btnComplete = new System.Windows.Forms.Button();
             this.tbLetterStatus = new System.Windows.Forms.TextBox();
             this.lblLetterStatus = new System.Windows.Forms.Label();
-            this.btnLetterScan = new System.Windows.Forms.TextBox();
+            this.tbLetterScan = new System.Windows.Forms.TextBox();
             this.lblLetterScan = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnControl = new System.Windows.Forms.Button();
@@ -110,7 +111,6 @@
             this.AdminEventDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.btnChangePaid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -247,7 +247,7 @@
             this.groupBox2.Controls.Add(this.btnComplete);
             this.groupBox2.Controls.Add(this.tbLetterStatus);
             this.groupBox2.Controls.Add(this.lblLetterStatus);
-            this.groupBox2.Controls.Add(this.btnLetterScan);
+            this.groupBox2.Controls.Add(this.tbLetterScan);
             this.groupBox2.Controls.Add(this.lblLetterScan);
             this.groupBox2.Location = new System.Drawing.Point(596, 57);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
@@ -257,6 +257,17 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2. Scan Band";
+            // 
+            // btnChangePaid
+            // 
+            this.btnChangePaid.Location = new System.Drawing.Point(98, 165);
+            this.btnChangePaid.Name = "btnChangePaid";
+            this.btnChangePaid.Size = new System.Drawing.Size(75, 28);
+            this.btnChangePaid.TabIndex = 11;
+            this.btnChangePaid.Text = "Betaald";
+            this.btnChangePaid.UseVisualStyleBackColor = true;
+            this.btnChangePaid.Visible = false;
+            this.btnChangePaid.Click += new System.EventHandler(this.btnChangePaid_Click);
             // 
             // btnComplete
             // 
@@ -287,13 +298,13 @@
             this.lblLetterStatus.TabIndex = 9;
             this.lblLetterStatus.Text = "Status:";
             // 
-            // btnLetterScan
+            // tbLetterScan
             // 
-            this.btnLetterScan.Location = new System.Drawing.Point(88, 30);
-            this.btnLetterScan.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLetterScan.Name = "btnLetterScan";
-            this.btnLetterScan.Size = new System.Drawing.Size(492, 22);
-            this.btnLetterScan.TabIndex = 8;
+            this.tbLetterScan.Location = new System.Drawing.Point(88, 30);
+            this.tbLetterScan.Margin = new System.Windows.Forms.Padding(4);
+            this.tbLetterScan.Name = "tbLetterScan";
+            this.tbLetterScan.Size = new System.Drawing.Size(492, 22);
+            this.tbLetterScan.TabIndex = 8;
             // 
             // lblLetterScan
             // 
@@ -859,17 +870,6 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // btnChangePaid
-            // 
-            this.btnChangePaid.Location = new System.Drawing.Point(98, 165);
-            this.btnChangePaid.Name = "btnChangePaid";
-            this.btnChangePaid.Size = new System.Drawing.Size(75, 28);
-            this.btnChangePaid.TabIndex = 11;
-            this.btnChangePaid.Text = "Betaald";
-            this.btnChangePaid.UseVisualStyleBackColor = true;
-            this.btnChangePaid.Visible = false;
-            this.btnChangePaid.Click += new System.EventHandler(this.btnChangePaid_Click);
-            // 
             // MederwerkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -937,7 +937,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbLetterStatus;
         private System.Windows.Forms.Label lblLetterStatus;
-        private System.Windows.Forms.TextBox btnLetterScan;
+        private System.Windows.Forms.TextBox tbLetterScan;
         private System.Windows.Forms.Label lblLetterScan;
         private System.Windows.Forms.TextBox tbLetterRFID;
         private System.Windows.Forms.Label lblLetterRFID;

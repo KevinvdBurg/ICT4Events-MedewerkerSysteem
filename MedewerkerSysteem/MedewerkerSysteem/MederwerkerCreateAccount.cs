@@ -33,7 +33,7 @@ namespace MedewerkerSysteem
         private void btnCAcreate_Click(object sender, EventArgs e)
         {
             //tijdelijke int ipv RFID
-            int test = 1;
+            string test = "test";
             //Adres wordt aangemaakt
             Address address = new Address(tbCAcity.Text, tbCAcountry.Text, tbCAstreetname.Text, tbCAzipcode.Text);
             //Persoon wordt aangemaakt

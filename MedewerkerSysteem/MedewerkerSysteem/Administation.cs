@@ -65,7 +65,7 @@ public class Administation
 		
 	}
 
-	public Account Find(string Code)
+	public Account FindAccount(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -76,7 +76,7 @@ public class Administation
 	    }
 	}
 
-	public Event Find(string Code)
+	public Event FindEvent(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -87,7 +87,7 @@ public class Administation
 	    }
 	}
 
-	public Reserve Find(string Code)
+	public Reserve FindReserve(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -111,7 +111,7 @@ public class Administation
         //Persoon wordt aangemaakt
         Person person = new Person(adminAddress, "admin@admin.nl", "admin name", "adminlastname");
         //Account wordt aangemaakt
-        Account admin = new Account(person, 999);
+        Account admin = new Account(person, "999");
     }
 
 }
