@@ -309,6 +309,11 @@ namespace MedewerkerSysteem
                 item.Paid = true;
             }
         }
+
+        private void dgwAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
        
     }
 }
