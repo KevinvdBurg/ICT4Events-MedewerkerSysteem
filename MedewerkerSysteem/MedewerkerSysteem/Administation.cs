@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using MedewerkerSysteem;
 
 public class Administation
@@ -15,6 +16,7 @@ public class Administation
     Database DB = new Database();
     public Account currentAccount { get; set; }
     private DBLogin dblogin = new DBLogin();
+    private DBAccount dbaccount = new DBAccount();
 
 	public IEnumerable<Reserve> Reserve
 	{
@@ -71,13 +73,18 @@ public class Administation
 
 	public Account FindAccount(string Code)
 	{
-	    foreach (var item in COLLECTION)
-	    {
-	        if (item.RFID == Code)
-	        {
-	            return item;
-	        }
-	    }
+	    Account foundAccount = dbaccount.Select(Code);
+
+        if (foundAccount != null)
+        {
+            return foundAccount;
+        }
+        else
+        {
+            MessageBox.Show("Account niet gevonden");
+            return null;
+        }
+	    
 	}
 
 	public Event FindEvent(string Code)

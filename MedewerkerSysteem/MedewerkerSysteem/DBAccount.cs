@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
 
 public class DBAccount : Database
 {
@@ -28,8 +29,64 @@ public class DBAccount : Database
 
 	public virtual void Select()
 	{
-		throw new System.NotImplementedException();
 	}
 
+
+    internal Account Select(string Code)
+    {
+        Account resultaat = null;
+        string sql;
+        sql = "select * from gebruiker where RFID = :rfid";
+            string lastName = "";
+            string name = "";
+            string type = "";
+            string rfid = "";
+            string city = "";
+            string country = "";
+            string nr = "";
+            string zipcode = "";
+            string email = "";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("RFID", Code));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    name = Convert.ToString(reader["voornaam"]);
+                    lastName = Convert.ToString(reader["achternaam"]);
+                    rfid = Convert.ToString(reader["rfid"]);
+                    city = Convert.ToString(reader["plaats"]);
+                    country = Convert.ToString(reader["Land"]);
+                    nr = Convert.ToString(reader["nr"]);
+                    zipcode = Convert.ToString(reader["postcode"]);
+                    email = Convert.ToString(reader["emailadres"]);
+
+                    if (Convert.ToInt32(reader["isAdmin"]) > 0)
+                    {
+                        type = "admin";
+                    }
+                    else
+                    {
+                        type = "bezoeker";
+                    }
+                }
+                resultaat = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid);
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+    }
 }
 
