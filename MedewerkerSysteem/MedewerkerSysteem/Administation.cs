@@ -69,7 +69,7 @@ public class Administation
 		
 	}
 
-	/*public Account FindAccount(string Code)
+	public Account FindAccount(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -78,9 +78,9 @@ public class Administation
 	            return item;
 	        }
 	    }
-	}*/
+	}
 
-	/*public Event FindEvent(string Code)
+	public Event FindEvent(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -89,9 +89,9 @@ public class Administation
 	            return item;
 	        }
 	    }
-	}*/
+	}
 
-	/*public Reserve FindReserve(string Code)
+	public Reserve FindReserve(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -100,7 +100,7 @@ public class Administation
 	            return item;
 	        }
 	    }
-	}*/
+	}
 
 	public void Update(Account Account)
 	{

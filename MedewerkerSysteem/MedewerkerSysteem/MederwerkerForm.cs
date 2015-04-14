@@ -19,9 +19,10 @@ namespace MedewerkerSysteem
 
         List<Account> accounts = new List<Account>();
         List<Reserve> reserves = new List<Reserve>();
-        public MederwerkerForm()
+        public MederwerkerForm(Administation admin)
         {
             InitializeComponent();
+             administation = admin;
         }
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
