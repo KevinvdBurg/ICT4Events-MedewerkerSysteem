@@ -29,11 +29,14 @@ public class Event
 		set;
 	}
 
-	public Event(Location Location, int MaxPerson, string Name)
+    public int EventID { get; set; }
+
+	public Event(Location Location, int MaxPerson, string Name, int EventID)
 	{
         this.Location = Location;
         this.MaxPerson = MaxPerson;
         this.Name = Name;
+	    this.EventID = EventID;
 	}
 
 }

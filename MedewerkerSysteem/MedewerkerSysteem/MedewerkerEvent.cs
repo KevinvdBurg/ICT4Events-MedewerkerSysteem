@@ -25,9 +25,9 @@ namespace MedewerkerSysteem
 
         private void btnRSreserve_Click(object sender, EventArgs e)
         {
-            Address address = new Address(tbCAcity.Text, tbCAcountry.Text, tbCAstreetname.Text, tbCAzipcode.Text);
+            Address address = new Address(tbEcity.Text, tbEcountry.Text, tbEstreetname.Text, tbEzipcode.Text);
             Location location = new Location(address, tbElocation.Text);
-            Event newEvent = new Event(location, Convert.ToInt32(nudEmaxvisitors.Value), tbEname.Text);
+            Event newEvent = new Event(location, Convert.ToInt32(nudEmaxvisitors.Value), tbEname.Text, Convert.ToInt32(nudEid.Value));
 
             administation.AddEvent(newEvent);
             location.AddAddress(address);

@@ -13,9 +13,11 @@ namespace MedewerkerSysteem
     public partial class MederwerkerCreateAccount : Form
     {
         Administation administration = new Administation();
+        //TODO fill eventcombobox
         public MederwerkerCreateAccount()
         {
             InitializeComponent();
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -41,6 +43,14 @@ namespace MedewerkerSysteem
             //Account wordt aangemaakt
             Account account = new Account(person, "bezoeker", test);
 
+            //test int
+            int i = 1;
+            foreach (var item in lbCAeventlist.Items)
+            {
+                AccountEvent accountEvent = new AccountEvent(false, account.RFID, i++ /*EventID*/ );
+                
+            }
+
             //Account wordt opgeslagen in de database door administration.Add()
             administration.Add(account);
             //address wordt opgeslagen in de database door person.AddAddress()
@@ -52,8 +62,8 @@ namespace MedewerkerSysteem
             //Geselecteerde event wordt toegevoegd aan de listbox
             if (cbCAaddevent.SelectedText != null)
             {
-                lbCAeventlist.Items.Add(cbCAaddevent.SelectedValue);
-                //TODO create accountevent
+                lbCAeventlist.Items.Add(cbCAaddevent.SelectedItem);
+                
             }
         }
     }
