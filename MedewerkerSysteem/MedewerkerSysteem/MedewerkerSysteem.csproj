@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountEvent.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Administation.cs" />
     <Compile Include="CampingSpot.cs" />
