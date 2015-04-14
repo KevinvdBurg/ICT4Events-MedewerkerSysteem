@@ -17,18 +17,12 @@ namespace MedewerkerSysteem
         private RFID rfid; //Declare an RFID object
         private Administation administation = new Administation();
 
-        List<Account> accounts = new List<Account>(); 
-<<<<<<< HEAD
-        List<ReserveSpot> reserveSpots = new List<ReserveSpot>();
-        public MederwerkerForm(Administation admin)
-=======
-        List<Reserve> reserves = new List<Reserve>(); 
+        List<Account> accounts = new List<Account>();
+        List<Reserve> reserves = new List<Reserve>();
         public MederwerkerForm()
->>>>>>> bb7f73faeb3781e4ce51e2c1adbff0a5f06b854a
         {
             InitializeComponent();
         }
-
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
         {
@@ -121,7 +115,7 @@ namespace MedewerkerSysteem
         void rfid_Error(object sender, ErrorEventArgs e)
         {
             Console.WriteLine("Error: " + e);
-          
+
         }
 
         //Tag event handler...we'll display the tag code in the field on the GUI
@@ -147,12 +141,12 @@ namespace MedewerkerSysteem
 
         private void tbLetterRFID_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-           
+
         }
 
         private void tbLetterRFID_MouseLeave(object sender, EventArgs e)
@@ -269,20 +263,7 @@ namespace MedewerkerSysteem
             btnComplete.Visible = false;
             tbLetterScan.Clear();
             tbLetterName.Clear();
-<<<<<<< HEAD
-
-            /*
-            Account account = administation.Account(tbLetterRFID.Text);
-            ReserveSpot reserveSpot = administation.FindReserve(tbSpotLocation.Text);
-
-            accounts.Add(account);
-            reserveSpots.Add(reserveSpot);
-            //Check if the RFID belongs to the name
-            //If correct fill in name and payment status
-            if ( account.Person.LastName == tbLetterName.Text && reserveSpot.Account == account && reserveSpot.Group.Name == tbLetterGroupName.Text)
-=======
             try
->>>>>>> bb7f73faeb3781e4ce51e2c1adbff0a5f06b854a
             {
                 Account account = administation.FindAccount(tbLetterRFID.Text);
                 Reserve reserve = administation.FindReserve(tbSpotLocation.Text);
@@ -316,9 +297,6 @@ namespace MedewerkerSysteem
                     tbLetterGroupName.Clear();
                     tbSpotLocation.Clear();
                 }
-<<<<<<< HEAD
-            }*/
-=======
             }
             catch (Exception)
             {
@@ -327,20 +305,19 @@ namespace MedewerkerSysteem
                 tbLetterName.Clear();
                 tbLetterRFID.Clear();
                 tbLetterGroupName.Clear();
-                tbSpotLocation.Clear();    
+                tbSpotLocation.Clear();
                 throw;
             }
-            
 
-            
->>>>>>> bb7f73faeb3781e4ce51e2c1adbff0a5f06b854a
+
+
 
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
         {
             //TODO checkin person
-            
+
             //Empty lists
             accounts.Clear();
             reserves.Clear();
@@ -365,13 +342,13 @@ namespace MedewerkerSysteem
 
         private void dgwAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-       
+
     }
 }
