@@ -20,20 +20,20 @@ namespace MedewerkerSysteem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = lblLoginEmail.Text;
-            string password = lblLoginPassword.Text;
 
-            if (administration.Login(email, password))
+            if (administration.Login(tbEmail.Text, tbWachtwoord.Text))
             {
-                MederwerkerForm MF = new MederwerkerForm();
-                Close(); 
-                MF.Show();
+                administration.setCurrentAccount(tbEmail.Text);
+                this.Close();
+                new MederwerkerForm(administration).Show();
+                
+
             }
             else
             {
                 MessageBox.Show("Er is iets mis gegaan");
             }
-            
+
         }
     }
 }

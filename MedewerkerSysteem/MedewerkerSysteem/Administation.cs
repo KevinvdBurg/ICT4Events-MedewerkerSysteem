@@ -8,10 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MedewerkerSysteem;
 
 public class Administation
 {
     Database DB = new Database();
+    public Account currentAccount { get; set; }
+    private DBLogin dblogin = new DBLogin();
+
 	public IEnumerable<Reserve> Reserve
 	{
 		get;
@@ -65,7 +69,7 @@ public class Administation
 		
 	}
 
-	public Account FindAccount(string Code)
+	/*public Account FindAccount(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -74,9 +78,9 @@ public class Administation
 	            return item;
 	        }
 	    }
-	}
+	}*/
 
-	public Event FindEvent(string Code)
+	/*public Event FindEvent(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -85,9 +89,9 @@ public class Administation
 	            return item;
 	        }
 	    }
-	}
+	}*/
 
-	public Reserve FindReserve(string Code)
+	/*public Reserve FindReserve(string Code)
 	{
 	    foreach (var item in COLLECTION)
 	    {
@@ -96,7 +100,7 @@ public class Administation
 	            return item;
 	        }
 	    }
-	}
+	}*/
 
 	public void Update(Account Account)
 	{
@@ -105,14 +109,12 @@ public class Administation
 
     public bool Login(string email, string password)
     {
-        //database connectie hier
-
-        Address adminAddress = new Address("admin street", "admin street","admin streetname", "Adminzip");
-        //Persoon wordt aangemaakt
-        Person person = new Person(adminAddress, "admin@admin.nl", "admin name", "adminlastname");
-        //Account wordt aangemaakt
-        Account admin = new Account(person, "999");
+        return dblogin.loginCheck(email, password);
     }
 
+    public void setCurrentAccount(string email)
+    {
+        this.currentAccount = dblogin.returnLoggedinAccount(email);
+    }
 }
 

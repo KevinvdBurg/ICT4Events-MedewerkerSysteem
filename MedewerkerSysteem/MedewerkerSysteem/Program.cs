@@ -16,7 +16,7 @@ namespace MedewerkerSysteem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MederwerkerForm());
+            Application.Run(new MedewerkerLogin());
         }
     }
 }

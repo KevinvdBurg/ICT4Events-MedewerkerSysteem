@@ -39,7 +39,7 @@ namespace MedewerkerSysteem
             //Persoon wordt aangemaakt
             Person person = new Person(address, tbCAemail.Text, tbCAname.Text, tbCAlastname.Text);
             //Account wordt aangemaakt
-            Account account = new Account(person, test);
+            Account account = new Account(person, "bezoeker", test);
 
             //Account wordt opgeslagen in de database door administration.Add()
             administration.Add(account);

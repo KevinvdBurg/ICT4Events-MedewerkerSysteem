@@ -18,11 +18,12 @@ namespace MedewerkerSysteem
         private Administation administation = new Administation();
 
         List<Account> accounts = new List<Account>(); 
-        List<ReserveSpot> reserveSpots = new List<ReserveSpot>(); 
-        public MederwerkerForm()
+        List<ReserveSpot> reserveSpots = new List<ReserveSpot>();
+        public MederwerkerForm(Administation admin)
         {
             InitializeComponent();
         }
+
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
         {
@@ -264,6 +265,7 @@ namespace MedewerkerSysteem
             tbLetterScan.Clear();
             tbLetterName.Clear();
 
+            /*
             Account account = administation.Account(tbLetterRFID.Text);
             ReserveSpot reserveSpot = administation.FindReserve(tbSpotLocation.Text);
 
@@ -286,7 +288,7 @@ namespace MedewerkerSysteem
                 {
                     btnChangePaid.Visible = true;
                 }
-            }
+            }*/
 
         }
 
