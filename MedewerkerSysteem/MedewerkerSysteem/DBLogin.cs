@@ -53,7 +53,7 @@ namespace MedewerkerSysteem
             string rfid = "";
             string city = "";
             string country = "";
-            string streetName = "";
+            string nr = "";
             string zipcode = "";
 
             string sql;
@@ -73,9 +73,9 @@ namespace MedewerkerSysteem
                     name = Convert.ToString(reader["voornaam"]);
                     lastName = Convert.ToString(reader["achternaam"]);
                     rfid = Convert.ToString(reader["rfid"]);
-                    city = Convert.ToString(reader["city"]);
-                    country = Convert.ToString(reader["country"]);
-                    streetName = Convert.ToString(reader["streetName"]);
+                    city = Convert.ToString(reader["plaats"]);
+                    country = Convert.ToString(reader["Land"]);
+                    nr = Convert.ToString(reader["nr"]);
                     zipcode = Convert.ToString(reader["zipcode"]);
 
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
@@ -89,7 +89,7 @@ namespace MedewerkerSysteem
                 }
 
                 //account = new Account(new Person(email, lastName, name), type, rfid);
-                account = new Account(new Person(new Address(city, country, streetName, zipcode), email, name, lastName), type, rfid);
+                account = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid);
 
             }
             catch (OracleException e)

@@ -23,7 +23,7 @@ public class Address
 		set;
 	}
 
-	public string StreetName
+	public string Number
 	{
 		get;
 		set;
@@ -35,11 +35,11 @@ public class Address
 		set;
 	}
 
-	public Address(string City, string Country, string StreetName, string ZipCode)
+	public Address(string City, string Country, string Number, string ZipCode)
 	{
         this.City = City;
         this.Country = Country;
-        this.StreetName = StreetName;
+        this.Number = Number;
         this.ZipCode = ZipCode;
 	}
 
