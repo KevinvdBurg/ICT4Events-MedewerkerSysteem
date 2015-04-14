@@ -68,6 +68,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPItem = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ItemDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPlocation = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.LocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,11 +86,6 @@
             this.tabCAdmin = new System.Windows.Forms.TabControl();
             this.tabPpressent = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.AdminPresentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPmedia = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,24 +94,23 @@
             this.AdminMediaOpen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPEvent = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnEvent = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvcDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvcEditPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ItemDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AdminEventDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnEvent = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.AdminPresentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentPayment = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvcDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvcEditPassword = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -564,6 +564,41 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1172, 334);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Name";
+            this.ItemName.Name = "ItemName";
+            // 
+            // ItemAccountName
+            // 
+            this.ItemAccountName.HeaderText = "Account Name";
+            this.ItemAccountName.Name = "ItemAccountName";
+            // 
+            // ItemDateOut
+            // 
+            this.ItemDateOut.HeaderText = "Data Out";
+            this.ItemDateOut.Name = "ItemDateOut";
+            // 
+            // ItemDateIn
+            // 
+            this.ItemDateIn.HeaderText = "Date In";
+            this.ItemDateIn.Name = "ItemDateIn";
+            // 
+            // ItemEdit
+            // 
+            this.ItemEdit.HeaderText = "Wijzigen";
+            this.ItemEdit.Name = "ItemEdit";
+            this.ItemEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ItemEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ItemDelete
+            // 
+            this.ItemDelete.HeaderText = "Verwijderen";
+            this.ItemDelete.Name = "ItemDelete";
+            this.ItemDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ItemDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPlocation
             // 
@@ -676,31 +711,6 @@
             this.dataGridView4.TabIndex = 2;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
-            // AdminPresentName
-            // 
-            this.AdminPresentName.HeaderText = "Naam";
-            this.AdminPresentName.Name = "AdminPresentName";
-            // 
-            // AdminPresentLocation
-            // 
-            this.AdminPresentLocation.HeaderText = "Plek Locatie";
-            this.AdminPresentLocation.Name = "AdminPresentLocation";
-            // 
-            // AdminPresentDateIn
-            // 
-            this.AdminPresentDateIn.HeaderText = "Datum In";
-            this.AdminPresentDateIn.Name = "AdminPresentDateIn";
-            // 
-            // AdminPresentDateOut
-            // 
-            this.AdminPresentDateOut.HeaderText = "Datum Uit";
-            this.AdminPresentDateOut.Name = "AdminPresentDateOut";
-            // 
-            // AdminPresentPayment
-            // 
-            this.AdminPresentPayment.HeaderText = "Betaald";
-            this.AdminPresentPayment.Name = "AdminPresentPayment";
-            // 
             // tabPmedia
             // 
             this.tabPmedia.Controls.Add(this.dataGridView5);
@@ -775,81 +785,6 @@
             this.dataGridView3.Size = new System.Drawing.Size(1124, 362);
             this.dataGridView3.TabIndex = 2;
             // 
-            // btnEvent
-            // 
-            this.btnEvent.Location = new System.Drawing.Point(24, 20);
-            this.btnEvent.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(140, 28);
-            this.btnEvent.TabIndex = 0;
-            this.btnEvent.Text = "Event Aanmaken";
-            this.btnEvent.UseVisualStyleBackColor = true;
-            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // dgvcName
-            // 
-            this.dgvcName.HeaderText = "Naam";
-            this.dgvcName.Name = "dgvcName";
-            this.dgvcName.Width = 500;
-            // 
-            // dgvcEdit
-            // 
-            this.dgvcEdit.HeaderText = "Wijzigen";
-            this.dgvcEdit.Name = "dgvcEdit";
-            this.dgvcEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgvcEdit.Text = "";
-            // 
-            // dgvcDelete
-            // 
-            this.dgvcDelete.HeaderText = "Verwijderen";
-            this.dgvcDelete.Name = "dgvcDelete";
-            this.dgvcDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dgvcEditPassword
-            // 
-            this.dgvcEditPassword.HeaderText = "WW";
-            this.dgvcEditPassword.Name = "dgvcEditPassword";
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "Name";
-            this.ItemName.Name = "ItemName";
-            // 
-            // ItemAccountName
-            // 
-            this.ItemAccountName.HeaderText = "Account Name";
-            this.ItemAccountName.Name = "ItemAccountName";
-            // 
-            // ItemDateOut
-            // 
-            this.ItemDateOut.HeaderText = "Data Out";
-            this.ItemDateOut.Name = "ItemDateOut";
-            // 
-            // ItemDateIn
-            // 
-            this.ItemDateIn.HeaderText = "Date In";
-            this.ItemDateIn.Name = "ItemDateIn";
-            // 
-            // ItemEdit
-            // 
-            this.ItemEdit.HeaderText = "Wijzigen";
-            this.ItemEdit.Name = "ItemEdit";
-            this.ItemEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ItemEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ItemDelete
-            // 
-            this.ItemDelete.HeaderText = "Verwijderen";
-            this.ItemDelete.Name = "ItemDelete";
-            this.ItemDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ItemDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // AdminEventName
             // 
             this.AdminEventName.HeaderText = "Naam";
@@ -883,6 +818,77 @@
             this.AdminEventDelete.Name = "AdminEventDelete";
             this.AdminEventDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.AdminEventDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // btnEvent
+            // 
+            this.btnEvent.Location = new System.Drawing.Point(24, 20);
+            this.btnEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Size = new System.Drawing.Size(140, 28);
+            this.btnEvent.TabIndex = 0;
+            this.btnEvent.Text = "Event Aanmaken";
+            this.btnEvent.UseVisualStyleBackColor = true;
+            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // AdminPresentName
+            // 
+            this.AdminPresentName.HeaderText = "Naam";
+            this.AdminPresentName.Name = "AdminPresentName";
+            // 
+            // AdminPresentLocation
+            // 
+            this.AdminPresentLocation.HeaderText = "Plek Locatie";
+            this.AdminPresentLocation.Name = "AdminPresentLocation";
+            // 
+            // AdminPresentDateIn
+            // 
+            this.AdminPresentDateIn.HeaderText = "Datum In";
+            this.AdminPresentDateIn.Name = "AdminPresentDateIn";
+            // 
+            // AdminPresentDateOut
+            // 
+            this.AdminPresentDateOut.HeaderText = "Datum Uit";
+            this.AdminPresentDateOut.Name = "AdminPresentDateOut";
+            // 
+            // AdminPresentPayment
+            // 
+            this.AdminPresentPayment.HeaderText = "Betaald";
+            this.AdminPresentPayment.Name = "AdminPresentPayment";
+            this.AdminPresentPayment.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdminPresentPayment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgvcName
+            // 
+            this.dgvcName.HeaderText = "Naam";
+            this.dgvcName.Name = "dgvcName";
+            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcName.Width = 500;
+            // 
+            // dgvcEdit
+            // 
+            this.dgvcEdit.HeaderText = "Wijzigen";
+            this.dgvcEdit.Name = "dgvcEdit";
+            this.dgvcEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvcEdit.Text = "";
+            // 
+            // dgvcDelete
+            // 
+            this.dgvcDelete.HeaderText = "Verwijderen";
+            this.dgvcDelete.Name = "dgvcDelete";
+            this.dgvcDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgvcEditPassword
+            // 
+            this.dgvcEditPassword.HeaderText = "WW";
+            this.dgvcEditPassword.Name = "dgvcEditPassword";
+            this.dgvcEditPassword.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcEditPassword.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // MederwerkerForm
             // 
@@ -985,11 +991,6 @@
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.TabPage tabPEvent;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaText;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaReports;
@@ -998,10 +999,6 @@
         private System.Windows.Forms.Button btnComplete;
         private System.Windows.Forms.Button btnControl;
         private System.Windows.Forms.Button btnChangePaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
-        private System.Windows.Forms.DataGridViewButtonColumn dgvcEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn dgvcDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEditPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
@@ -1014,6 +1011,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
         private System.Windows.Forms.DataGridViewButtonColumn AdminEventEdit;
         private System.Windows.Forms.DataGridViewButtonColumn AdminEventDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
+        private System.Windows.Forms.DataGridViewButtonColumn dgvcEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn dgvcDelete;
+        private System.Windows.Forms.DataGridViewButtonColumn dgvcEditPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateOut;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn AdminPresentPayment;
     }
 }
 

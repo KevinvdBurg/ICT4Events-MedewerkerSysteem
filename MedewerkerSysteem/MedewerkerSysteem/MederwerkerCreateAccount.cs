@@ -53,6 +53,7 @@ namespace MedewerkerSysteem
             if (cbCAaddevent.SelectedText != null)
             {
                 lbCAeventlist.Items.Add(cbCAaddevent.SelectedValue);
+                //TODO create accountevent
             }
         }
     }
