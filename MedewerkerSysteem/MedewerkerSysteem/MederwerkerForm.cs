@@ -18,8 +18,13 @@ namespace MedewerkerSysteem
         private Administation administation = new Administation();
 
         List<Account> accounts = new List<Account>(); 
+<<<<<<< HEAD
         List<ReserveSpot> reserveSpots = new List<ReserveSpot>();
         public MederwerkerForm(Administation admin)
+=======
+        List<Reserve> reserves = new List<Reserve>(); 
+        public MederwerkerForm()
+>>>>>>> bb7f73faeb3781e4ce51e2c1adbff0a5f06b854a
         {
             InitializeComponent();
         }
@@ -264,6 +269,7 @@ namespace MedewerkerSysteem
             btnComplete.Visible = false;
             tbLetterScan.Clear();
             tbLetterName.Clear();
+<<<<<<< HEAD
 
             /*
             Account account = administation.Account(tbLetterRFID.Text);
@@ -274,21 +280,60 @@ namespace MedewerkerSysteem
             //Check if the RFID belongs to the name
             //If correct fill in name and payment status
             if ( account.Person.LastName == tbLetterName.Text && reserveSpot.Account == account && reserveSpot.Group.Name == tbLetterGroupName.Text)
+=======
+            try
+>>>>>>> bb7f73faeb3781e4ce51e2c1adbff0a5f06b854a
             {
-                // TODO Fill in textboxes
-                //if status: paid set btnComplete to true
-                if (reserveSpot.Paid)
+                Account account = administation.FindAccount(tbLetterRFID.Text);
+                Reserve reserve = administation.FindReserve(tbSpotLocation.Text);
+                accounts.Add(account);
+                reserves.Add(reserve);
+                //Check if the RFID belongs to the name
+                //If correct fill in name and payment status
+                if (account.Person.LastName == tbLetterName.Text && reserve.Account == account && account.RFID == tbLetterRFID.Text
+                    /*&& reserve.Group.Name == tbLetterGroupName.Text*/)
                 {
-                    //TODO check if customer already inside
-                    btnComplete.Visible = true;
-                    tbLetterScan.Text = "TODO";
-                    tbLetterName.Text = "TODO";
+                    tbLetterScan.Text = "Succes";
+                    //if status: paid set btnComplete to true
+                    if (reserve.Paid)
+                    {
+                        //TODO check if customer already inside
+                        btnComplete.Visible = true;
+                        tbLetterStatus.Text = "Betaald";
+                    }
+                    else
+                    {
+                        btnChangePaid.Visible = true;
+                        tbLetterStatus.Text = "Nog te betalen: " + reserve.Category.Price;
+                    }
                 }
                 else
                 {
-                    btnChangePaid.Visible = true;
+                    tbLetterScan.Text = "Failed";
+                    tbLetterStatus.Clear();
+                    tbLetterName.Clear();
+                    tbLetterRFID.Clear();
+                    tbLetterGroupName.Clear();
+                    tbSpotLocation.Clear();
                 }
+<<<<<<< HEAD
             }*/
+=======
+            }
+            catch (Exception)
+            {
+                tbLetterScan.Text = "Failed";
+                tbLetterStatus.Clear();
+                tbLetterName.Clear();
+                tbLetterRFID.Clear();
+                tbLetterGroupName.Clear();
+                tbSpotLocation.Clear();    
+                throw;
+            }
+            
+
+            
+>>>>>>> bb7f73faeb3781e4ce51e2c1adbff0a5f06b854a
 
         }
 
@@ -298,7 +343,13 @@ namespace MedewerkerSysteem
             
             //Empty lists
             accounts.Clear();
-            reserveSpots.Clear();
+            reserves.Clear();
+            tbLetterScan.Clear();
+            tbLetterStatus.Clear();
+            tbLetterName.Clear();
+            tbLetterRFID.Clear();
+            tbLetterGroupName.Clear();
+            tbSpotLocation.Clear();
         }
 
         private void btnChangePaid_Click(object sender, EventArgs e)
@@ -306,7 +357,7 @@ namespace MedewerkerSysteem
             btnComplete.Visible = true;
             btnChangePaid.Visible = false;
 
-            foreach (var item in reserveSpots)
+            foreach (var item in reserves)
             {
                 item.Paid = true;
             }
