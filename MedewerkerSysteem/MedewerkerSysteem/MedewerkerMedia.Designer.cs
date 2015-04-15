@@ -167,8 +167,9 @@
             this.btnMdelete.Name = "btnMdelete";
             this.btnMdelete.Size = new System.Drawing.Size(100, 36);
             this.btnMdelete.TabIndex = 0;
-            this.btnMdelete.Text = "Reserveren";
+            this.btnMdelete.Text = "Delete";
             this.btnMdelete.UseVisualStyleBackColor = true;
+            this.btnMdelete.Click += new System.EventHandler(this.btnMdelete_Click);
             // 
             // MedewerkerMedia
             // 

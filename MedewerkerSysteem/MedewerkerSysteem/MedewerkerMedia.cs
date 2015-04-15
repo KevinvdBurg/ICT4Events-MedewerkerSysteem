@@ -31,5 +31,10 @@ namespace MedewerkerSysteem
         {
             Close();
         }
+
+        private void btnMdelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
