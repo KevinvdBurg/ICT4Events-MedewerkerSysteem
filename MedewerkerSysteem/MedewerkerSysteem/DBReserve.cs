@@ -60,7 +60,7 @@ public class DBReserve : Database
             {
                 while (reader.Read())
                 {
-                    RFID = Convert.ToInt32(reader["RFID"]);
+                    RFID = Convert.ToString(reader["RFID"]);
                     KAMPEERPLEKID = Convert.ToInt32(reader["EVENTID"]);
                     BETAALD = Convert.ToBoolean(reader["BETAALD"]);
                     DATUMIN = Convert.ToDateTime(reader["MAXPERSONEN"]);
@@ -74,7 +74,7 @@ public class DBReserve : Database
                 //resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
 
 
-                resultaat = new ReserveSpot(new CampingSpot(KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, rfid, BETAALD);
+                resultaat = new ReserveSpot(new CampingSpot(KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, RFID, BETAALD);
             }
         }
         catch (OracleException e)
