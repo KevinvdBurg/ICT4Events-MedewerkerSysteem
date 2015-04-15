@@ -72,7 +72,11 @@ public class Administation
 	{
 		
 	}
-
+    /// <summary>
+    /// Searched the database for all Accounts for the given Code
+    /// </summary>
+    /// <param name="Code"></param>
+    /// <returns></returns>
 	public Account FindAccount(string Code)
 	{
 	    Account foundAccount = dbaccount.Select(Code);
@@ -89,6 +93,11 @@ public class Administation
 	    
 	}
 
+    /// <summary>
+    /// Searched the database for all events for by event name
+    /// </summary>
+    /// <param name="EventName"></param>
+    /// <returns></returns>
 	public Event FindEvent(string EventName)
 	{
         Event foundEvent = dbevent.Select(EventName);
@@ -105,6 +114,13 @@ public class Administation
 
 	}
 
+    /// <summary>
+    /// Searched the database for all reserves by code
+    /// An Account is needed for the reservation
+    /// </summary>
+    /// <param name="Code"></param>
+    /// <param name="account"></param>
+    /// <returns></returns>
 	public Reserve FindReserve(decimal Code, Account account)
 	{
         Reserve foundReserve = dbreserve.Select(Code, account);
@@ -125,11 +141,21 @@ public class Administation
 
 	}
 
+    /// <summary>
+    /// Log the use in the application
+    /// </summary>
+    /// <param name="email"></param>
+    /// <param name="password"></param>
+    /// <returns></returns>
     public bool Login(string email, string password)
     {
         return dblogin.loginCheck(email, password);
     }
 
+    /// <summary>
+    /// set the current account to the given email
+    /// </summary>
+    /// <param name="email"></param>
     public void setCurrentAccount(string email)
     {
         this.currentAccount = dblogin.returnLoggedinAccount(email);

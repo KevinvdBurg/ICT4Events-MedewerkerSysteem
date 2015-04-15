@@ -21,7 +21,11 @@ public class DBEvent : Database
 	{
 		
 	}
-
+    /// <summary>
+    /// Returned the selected Event by name
+    /// </summary>
+    /// <param name="EventName"></param>
+    /// <returns></returns>
     public virtual Event Select(string EventName)
     {
         Event resultaat = null;
@@ -59,6 +63,62 @@ public class DBEvent : Database
                     zipcode = Convert.ToString(reader["POSTCODE"]);
                 }
                 resultaat = new Event(new Location(new Address(place, nr, zipcode),name ),maxpers,name,eventid );
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+    }
+    /// <summary>
+    /// Returned all Events in a list
+    /// </summary>
+    /// <returns></returns>
+    public virtual List<Event> SelectAll()
+    {
+        List<Event> resultaat = null;
+        Event AddedEvent = null;
+        string sql;
+        //sql = "select * from gebruiker where RFID = :rfid";
+        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+
+        int eventid = 0;
+        string name = "";
+        int maxpers = 0;
+        string begindate = "";
+        string enddate = "";
+        string nr = "";
+        string place = "";
+        string zipcode = "";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("Naam", name));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Event add = null;
+                    eventid = Convert.ToInt32(reader["EVENTID"]);
+                    name = Convert.ToString(reader["Naam"]);
+                    maxpers = Convert.ToInt32(reader["MAXPERSONEN"]);
+                    begindate = Convert.ToString(reader["BEGINDATUM"]);
+                    enddate = Convert.ToString(reader["EINDDATUM"]);
+                    nr = Convert.ToString(reader["HUISNUMMER"]);
+                    place = Convert.ToString(reader["PLAATS"]);
+                    zipcode = Convert.ToString(reader["POSTCODE"]);
+                    AddedEvent = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
+                    resultaat.Add(AddedEvent);
+                }
+                return resultaat;
             }
         }
         catch (OracleException e)
