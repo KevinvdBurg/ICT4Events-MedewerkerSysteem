@@ -73,8 +73,8 @@ namespace MedewerkerSysteem
                     rfid = Convert.ToString(reader["rfid"]);
                     city = Convert.ToString(reader["plaats"]);
                     country = Convert.ToString(reader["Land"]);
-                    nr = Convert.ToString(reader["nr"]);
-                    zipcode = Convert.ToString(reader["zipcode"]);
+                    nr = Convert.ToString(reader["huisnummer"]);
+                    zipcode = Convert.ToString(reader["Postcode"]);
 
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
                     {

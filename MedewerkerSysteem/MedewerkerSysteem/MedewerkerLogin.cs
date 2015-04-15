@@ -24,7 +24,6 @@ namespace MedewerkerSysteem
             if (administration.Login(tbEmail.Text, tbWachtwoord.Text))
             {
                 administration.setCurrentAccount(tbEmail.Text);
-                this.Close();
                 new MederwerkerForm(administration).Show();
                 
 
