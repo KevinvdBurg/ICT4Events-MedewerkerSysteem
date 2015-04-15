@@ -121,7 +121,7 @@ public class Administation
     /// <param name="Code"></param>
     /// <param name="account"></param>
     /// <returns></returns>
-	public Reserve FindReserve(decimal Code, Account account)
+	public Reserve FindReserve(int Code, Account account)
 	{
         Reserve foundReserve = dbreserve.Select(Code, account);
         if (foundReserve != null)

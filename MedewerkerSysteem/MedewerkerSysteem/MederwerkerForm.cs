@@ -414,6 +414,8 @@ namespace MedewerkerSysteem
 
         private void btnDeleteReservation_Click(object sender, EventArgs e)
         {
+            administation.FindReserve(Convert.ToInt32(ItemCode.Selected.ToString()),
+                administation.FindAccount(ItemRFID.Selected.ToString()));
 
         }
 

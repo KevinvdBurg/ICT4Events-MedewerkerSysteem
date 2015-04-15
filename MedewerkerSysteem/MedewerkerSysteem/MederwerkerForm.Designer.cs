@@ -65,6 +65,9 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.dgwAccount = new System.Windows.Forms.DataGridView();
+            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.tabPreserve = new System.Windows.Forms.TabPage();
             this.btnChangeReservation = new System.Windows.Forms.Button();
@@ -74,16 +77,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPItem = new System.Windows.Forms.TabPage();
             this.dgwReserveItem = new System.Windows.Forms.DataGridView();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPlocation = new System.Windows.Forms.TabPage();
             this.dgwReserveSpot = new System.Windows.Forms.DataGridView();
-            this.LocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPadmin = new System.Windows.Forms.TabPage();
             this.btnChangeEvent = new System.Windows.Forms.Button();
             this.btnDeleteEvent = new System.Windows.Forms.Button();
@@ -109,9 +104,17 @@
             this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -529,6 +532,27 @@
             this.dgwAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAccount_CellContentClick);
             this.dgwAccount.SelectionChanged += new System.EventHandler(this.dgwAccount_SelectionChanged);
             // 
+            // dgvcName
+            // 
+            this.dgvcName.HeaderText = "Naam";
+            this.dgvcName.Name = "dgvcName";
+            this.dgvcName.ReadOnly = true;
+            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcName.Width = 500;
+            // 
+            // dgvcRFID
+            // 
+            this.dgvcRFID.HeaderText = "RFID";
+            this.dgvcRFID.Name = "dgvcRFID";
+            this.dgvcRFID.ReadOnly = true;
+            this.dgvcRFID.Visible = false;
+            // 
+            // dgvcEmail
+            // 
+            this.dgvcEmail.HeaderText = "E-mail";
+            this.dgvcEmail.Name = "dgvcEmail";
+            this.dgvcEmail.ReadOnly = true;
+            // 
             // btnCreateAccount
             // 
             this.btnCreateAccount.Location = new System.Drawing.Point(29, 20);
@@ -628,7 +652,9 @@
             // 
             this.dgwReserveItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwReserveItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ItemCode,
             this.ItemName,
+            this.ItemRFID,
             this.ItemAccountName,
             this.ItemDateOut,
             this.ItemDateIn});
@@ -641,30 +667,6 @@
             this.dgwReserveItem.TabIndex = 3;
             this.dgwReserveItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgwReserveItem.SelectionChanged += new System.EventHandler(this.dgwReserveItem_SelectionChanged);
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "Name";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            // 
-            // ItemAccountName
-            // 
-            this.ItemAccountName.HeaderText = "Account Name";
-            this.ItemAccountName.Name = "ItemAccountName";
-            this.ItemAccountName.ReadOnly = true;
-            // 
-            // ItemDateOut
-            // 
-            this.ItemDateOut.HeaderText = "Data Out";
-            this.ItemDateOut.Name = "ItemDateOut";
-            this.ItemDateOut.ReadOnly = true;
-            // 
-            // ItemDateIn
-            // 
-            this.ItemDateIn.HeaderText = "Date In";
-            this.ItemDateIn.Name = "ItemDateIn";
-            this.ItemDateIn.ReadOnly = true;
             // 
             // tabPlocation
             // 
@@ -683,6 +685,7 @@
             this.dgwReserveSpot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwReserveSpot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LocationCode,
+            this.LocationRFID,
             this.LocationAccountName,
             this.LocationDateIn,
             this.LocationDateOut});
@@ -692,26 +695,6 @@
             this.dgwReserveSpot.Size = new System.Drawing.Size(1172, 334);
             this.dgwReserveSpot.TabIndex = 4;
             this.dgwReserveSpot.SelectionChanged += new System.EventHandler(this.dgwReserveSpot_SelectionChanged);
-            // 
-            // LocationCode
-            // 
-            this.LocationCode.HeaderText = "Code";
-            this.LocationCode.Name = "LocationCode";
-            // 
-            // LocationAccountName
-            // 
-            this.LocationAccountName.HeaderText = "Account Name";
-            this.LocationAccountName.Name = "LocationAccountName";
-            // 
-            // LocationDateIn
-            // 
-            this.LocationDateIn.HeaderText = "Date In";
-            this.LocationDateIn.Name = "LocationDateIn";
-            // 
-            // LocationDateOut
-            // 
-            this.LocationDateOut.HeaderText = "DateOut";
-            this.LocationDateOut.Name = "LocationDateOut";
             // 
             // tabPadmin
             // 
@@ -926,26 +909,68 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // dgvcName
+            // LocationCode
             // 
-            this.dgvcName.HeaderText = "Naam";
-            this.dgvcName.Name = "dgvcName";
-            this.dgvcName.ReadOnly = true;
-            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcName.Width = 500;
+            this.LocationCode.HeaderText = "Code";
+            this.LocationCode.Name = "LocationCode";
             // 
-            // dgvcRFID
+            // LocationRFID
             // 
-            this.dgvcRFID.HeaderText = "RFID";
-            this.dgvcRFID.Name = "dgvcRFID";
-            this.dgvcRFID.ReadOnly = true;
-            this.dgvcRFID.Visible = false;
+            this.LocationRFID.HeaderText = "RFID";
+            this.LocationRFID.Name = "LocationRFID";
+            this.LocationRFID.Visible = false;
             // 
-            // dgvcEmail
+            // LocationAccountName
             // 
-            this.dgvcEmail.HeaderText = "E-mail";
-            this.dgvcEmail.Name = "dgvcEmail";
-            this.dgvcEmail.ReadOnly = true;
+            this.LocationAccountName.HeaderText = "Account Name";
+            this.LocationAccountName.Name = "LocationAccountName";
+            // 
+            // LocationDateIn
+            // 
+            this.LocationDateIn.HeaderText = "Date In";
+            this.LocationDateIn.Name = "LocationDateIn";
+            // 
+            // LocationDateOut
+            // 
+            this.LocationDateOut.HeaderText = "DateOut";
+            this.LocationDateOut.Name = "LocationDateOut";
+            // 
+            // ItemCode
+            // 
+            this.ItemCode.HeaderText = "Code";
+            this.ItemCode.Name = "ItemCode";
+            this.ItemCode.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            // 
+            // ItemRFID
+            // 
+            this.ItemRFID.HeaderText = "RFID";
+            this.ItemRFID.Name = "ItemRFID";
+            this.ItemRFID.ReadOnly = true;
+            this.ItemRFID.Visible = false;
+            // 
+            // ItemAccountName
+            // 
+            this.ItemAccountName.HeaderText = "Account Name";
+            this.ItemAccountName.Name = "ItemAccountName";
+            this.ItemAccountName.ReadOnly = true;
+            // 
+            // ItemDateOut
+            // 
+            this.ItemDateOut.HeaderText = "Data Out";
+            this.ItemDateOut.Name = "ItemDateOut";
+            this.ItemDateOut.ReadOnly = true;
+            // 
+            // ItemDateIn
+            // 
+            this.ItemDateIn.HeaderText = "Date In";
+            this.ItemDateIn.Name = "ItemDateIn";
+            this.ItemDateIn.ReadOnly = true;
             // 
             // MederwerkerForm
             // 
@@ -1064,14 +1089,6 @@
         private System.Windows.Forms.Button btnDeleteReservation;
         private System.Windows.Forms.Button btnChangeEvent;
         private System.Windows.Forms.Button btnDeleteEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventName;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateStart;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateEnd;
@@ -1079,6 +1096,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcRFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationRFID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemRFID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
     }
 }
 
