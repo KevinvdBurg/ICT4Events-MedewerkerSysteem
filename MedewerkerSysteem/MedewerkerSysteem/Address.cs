@@ -43,5 +43,12 @@ public class Address
         this.ZipCode = ZipCode;
 	}
 
+    public Address(string City, string Number, string ZipCode)
+    {
+        this.City = City;
+        this.Number = Number;
+        this.ZipCode = ZipCode;
+    }
+
 }
 

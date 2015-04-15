@@ -17,6 +17,8 @@ public class Administation
     public Account currentAccount { get; set; }
     private DBLogin dblogin = new DBLogin();
     private DBAccount dbaccount = new DBAccount();
+    private DBEvent dbevent = new DBEvent();
+    private DBReserve dbreserve = new DBReserve();
 
 	public IEnumerable<Reserve> Reserve
 	{
@@ -87,26 +89,35 @@ public class Administation
 	    
 	}
 
-	public Event FindEvent(string Code)
+	public Event FindEvent(string EventName)
 	{
-	    foreach (var item in COLLECTION)
-	    {
-	        if (item.EventID == Code)
-	        {
-	            return item;
-	        }
-	    }
+        Event foundEvent = dbevent.Select(EventName);
+
+        if (foundEvent != null)
+        {
+            return foundEvent;
+        }
+        else
+        {
+            MessageBox.Show("Event niet gevonden");
+            return null;
+        }
+
 	}
 
-	public Reserve FindReserve(string Code)
+	public Reserve FindReserve(decimal Code, Account account)
 	{
-	    foreach (var item in COLLECTION)
-	    {
-	        if (item.ReserveID == Code)
-	        {
-	            return item;
-	        }
-	    }
+        Reserve foundReserve = dbreserve.Select(Code, account);
+        if (foundReserve != null)
+        {
+            return foundReserve;
+        }
+        else
+        {
+            MessageBox.Show("Reservering niet gevonden");
+            return null;
+        }
+
 	}
 
 	public void Update(Account Account)

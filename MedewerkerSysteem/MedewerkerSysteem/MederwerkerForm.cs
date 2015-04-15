@@ -267,7 +267,7 @@ namespace MedewerkerSysteem
             try
             {
                 Account account = administation.FindAccount(tbLetterRFID.Text);
-                Reserve reserve = administation.FindReserve(tbSpotLocation.Text);
+                Reserve reserve = administation.FindReserve(nudReserveID.Value, account);
                 accounts.Add(account);
                 reserves.Add(reserve);
                 //Check if the RFID belongs to the name

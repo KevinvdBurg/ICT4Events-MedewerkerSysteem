@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
 
 public class DBReserve : Database
 {
@@ -26,5 +27,55 @@ public class DBReserve : Database
 		throw new System.NotImplementedException();
 	}
 
+
+    internal Reserve Select(decimal reserveringID, Account account)
+    {
+        ReserveSpot  resultaat = null;
+
+        string sql;
+        //sql = "select * from gebruiker where RFID = :rfid";
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
+        sql = "Select kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID where kr.reserveringID = :reserveringID" ;
+        
+        int KAMPEERPLEKID = 0;
+        bool BETAALD = false;
+        DateTime DATUMIN = new DateTime();
+        DateTime DATUMUIT = new DateTime();
+        int MAXPERSONEN = 0;
+        decimal PRIJS = 0;
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("reserveringID", reserveringID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    KAMPEERPLEKID = Convert.ToInt32(reader["EVENTID"]);
+                    BETAALD = Convert.ToString(reader["Naam"]);
+                    DATUMIN = Convert.ToInt32(reader["MAXPERSONEN"]);
+                    DATUMUIT = Convert.ToString(reader["BEGINDATUM"]);
+                    MAXPERSONEN = Convert.ToString(reader["EINDDATUM"]);
+                    PRIJS = Convert.ToString(reader["HUISNUMMER"]);
+                }
+                //resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
+
+                
+                resultaat = new ReserveSpot(new CampingSpot(location),new Group(name),account,new Category(details, Price, type,),enddate, startdate, rfid, paid);
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+    }
 }
 
