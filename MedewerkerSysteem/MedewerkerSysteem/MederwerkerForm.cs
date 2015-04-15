@@ -351,5 +351,76 @@ namespace MedewerkerSysteem
 
         }
 
+        private void dgwAccount_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgwAccount.SelectedRows != null)
+            {
+                btnChangeAccount.Enabled = true;
+                btnDeleteAccount.Enabled = true;
+            }
+            else
+            {
+                btnChangeAccount.Enabled = false;
+                btnDeleteAccount.Enabled = false;
+            }
+        }
+
+        private void dgwReserveItem_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgwReserveItem.SelectedRows != null)
+            {
+                btnChangeReservation.Enabled = true;
+                btnDeleteReservation.Enabled = true;
+            }
+            else
+            {
+                btnChangeReservation.Enabled = false;
+                btnDeleteReservation.Enabled = false;
+            }
+        }
+
+        private void dgwReserveSpot_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgwReserveSpot.SelectedRows != null)
+            {
+                btnChangeReservation.Enabled = true;
+                btnDeleteReservation.Enabled = true;
+            }
+            else
+            {
+                btnChangeReservation.Enabled = false;
+                btnDeleteReservation.Enabled = false;
+            }
+        }
+
+        private void dgwEvents_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgwEvents.SelectedRows != null)
+            {
+                btnChangeEvent.Enabled = true;
+                btnDeleteEvent.Enabled = true;
+            }
+            else
+            {
+                btnChangeEvent.Enabled = false;
+                btnDeleteEvent.Enabled = false;
+            }
+        }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            administation.Delete(administation.FindAccount(dgvcRFID.Selected.ToString()));
+        }
+
+        private void btnDeleteReservation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteEvent_Click(object sender, EventArgs e)
+        {
+            administation.Delete(administation.FindEvent(AdminEventName.Selected.ToString()));
+        }
+
     }
 }

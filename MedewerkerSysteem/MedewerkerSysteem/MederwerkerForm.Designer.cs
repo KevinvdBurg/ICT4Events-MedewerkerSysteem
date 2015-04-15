@@ -47,6 +47,8 @@
             this.tbLetterScan = new System.Windows.Forms.TextBox();
             this.lblLetterScan = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudReserveID = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnControl = new System.Windows.Forms.Button();
             this.tbLetterRFID = new System.Windows.Forms.TextBox();
             this.lblLetterRFID = new System.Windows.Forms.Label();
@@ -60,81 +62,78 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPaccount = new System.Windows.Forms.TabPage();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.btnChangeAccount = new System.Windows.Forms.Button();
             this.dgwAccount = new System.Windows.Forms.DataGridView();
-            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvcDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgvcEditPassword = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.tabPreserve = new System.Windows.Forms.TabPage();
+            this.btnChangeReservation = new System.Windows.Forms.Button();
+            this.btnDeleteReservation = new System.Windows.Forms.Button();
             this.btnReserveLocation = new System.Windows.Forms.Button();
             this.btnReserveItem = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPItem = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgwReserveItem = new System.Windows.Forms.DataGridView();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ItemDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPlocation = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgwReserveSpot = new System.Windows.Forms.DataGridView();
             this.LocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LocationAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LocationDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LocationDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationEdit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPadmin = new System.Windows.Forms.TabPage();
+            this.btnChangeEvent = new System.Windows.Forms.Button();
+            this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.tabCAdmin = new System.Windows.Forms.TabControl();
             this.tabPpressent = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dgwPresent = new System.Windows.Forms.DataGridView();
             this.AdminPresentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminPresentLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminPresentDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminPresentPayment = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPmedia = new System.Windows.Forms.TabPage();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dgwMedia = new System.Windows.Forms.DataGridView();
             this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminMediaText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminMediaReports = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminMediaOpen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPEvent = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgwEvents = new System.Windows.Forms.DataGridView();
             this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminEventEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AdminEventDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.nudReserveID = new System.Windows.Forms.NumericUpDown();
+            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudReserveID)).BeginInit();
             this.tabPaccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwAccount)).BeginInit();
             this.tabPreserve.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwReserveItem)).BeginInit();
             this.tabPlocation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwReserveSpot)).BeginInit();
             this.tabPadmin.SuspendLayout();
             this.tabCAdmin.SuspendLayout();
             this.tabPpressent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwPresent)).BeginInit();
             this.tabPmedia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwMedia)).BeginInit();
             this.tabPEvent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudReserveID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwEvents)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -145,17 +144,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(115, 107);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(791, 23);
+            this.btnLogout.Location = new System.Drawing.Point(1055, 28);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.Size = new System.Drawing.Size(100, 28);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Uitloggen";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -164,18 +165,20 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(745, 52);
+            this.comboBox1.Location = new System.Drawing.Point(993, 64);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 2;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(115, 26);
+            this.lblName.Location = new System.Drawing.Point(153, 32);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 20);
+            this.lblName.Size = new System.Drawing.Size(70, 25);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Naam:";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
@@ -184,9 +187,10 @@
             // 
             this.lblFuction.AutoSize = true;
             this.lblFuction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuction.Location = new System.Drawing.Point(115, 57);
+            this.lblFuction.Location = new System.Drawing.Point(153, 70);
+            this.lblFuction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFuction.Name = "lblFuction";
-            this.lblFuction.Size = new System.Drawing.Size(66, 20);
+            this.lblFuction.Size = new System.Drawing.Size(82, 25);
             this.lblFuction.TabIndex = 4;
             this.lblFuction.Text = "Functie:";
             this.lblFuction.Click += new System.EventHandler(this.lblFuction_Click);
@@ -195,18 +199,20 @@
             // 
             this.lbliFunction.AutoSize = true;
             this.lbliFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbliFunction.Location = new System.Drawing.Point(188, 57);
+            this.lbliFunction.Location = new System.Drawing.Point(251, 70);
+            this.lbliFunction.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbliFunction.Name = "lbliFunction";
-            this.lbliFunction.Size = new System.Drawing.Size(0, 20);
+            this.lbliFunction.Size = new System.Drawing.Size(0, 25);
             this.lbliFunction.TabIndex = 6;
             // 
             // lbliName
             // 
             this.lbliName.AutoSize = true;
             this.lbliName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbliName.Location = new System.Drawing.Point(188, 26);
+            this.lbliName.Location = new System.Drawing.Point(251, 32);
+            this.lbliName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbliName.Name = "lbliName";
-            this.lbliName.Size = new System.Drawing.Size(0, 20);
+            this.lbliName.Size = new System.Drawing.Size(0, 25);
             this.lbliName.TabIndex = 5;
             // 
             // tabCMedewerker
@@ -215,10 +221,11 @@
             this.tabCMedewerker.Controls.Add(this.tabPaccount);
             this.tabCMedewerker.Controls.Add(this.tabPreserve);
             this.tabCMedewerker.Controls.Add(this.tabPadmin);
-            this.tabCMedewerker.Location = new System.Drawing.Point(12, 114);
+            this.tabCMedewerker.Location = new System.Drawing.Point(16, 140);
+            this.tabCMedewerker.Margin = new System.Windows.Forms.Padding(4);
             this.tabCMedewerker.Name = "tabCMedewerker";
             this.tabCMedewerker.SelectedIndex = 0;
-            this.tabCMedewerker.Size = new System.Drawing.Size(903, 399);
+            this.tabCMedewerker.Size = new System.Drawing.Size(1204, 491);
             this.tabCMedewerker.TabIndex = 7;
             // 
             // tabPincheck
@@ -227,10 +234,11 @@
             this.tabPincheck.Controls.Add(this.groupBox1);
             this.tabPincheck.Controls.Add(this.label2);
             this.tabPincheck.Controls.Add(this.label1);
-            this.tabPincheck.Location = new System.Drawing.Point(4, 22);
+            this.tabPincheck.Location = new System.Drawing.Point(4, 25);
+            this.tabPincheck.Margin = new System.Windows.Forms.Padding(4);
             this.tabPincheck.Name = "tabPincheck";
-            this.tabPincheck.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPincheck.Size = new System.Drawing.Size(895, 373);
+            this.tabPincheck.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPincheck.Size = new System.Drawing.Size(1196, 462);
             this.tabPincheck.TabIndex = 0;
             this.tabPincheck.Text = "InCheck";
             this.tabPincheck.UseVisualStyleBackColor = true;
@@ -243,19 +251,21 @@
             this.groupBox2.Controls.Add(this.lblLetterStatus);
             this.groupBox2.Controls.Add(this.tbLetterScan);
             this.groupBox2.Controls.Add(this.lblLetterScan);
-            this.groupBox2.Location = new System.Drawing.Point(447, 46);
+            this.groupBox2.Location = new System.Drawing.Point(596, 57);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(442, 324);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(589, 399);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2. Scan Band";
             // 
             // btnChangePaid
             // 
-            this.btnChangePaid.Location = new System.Drawing.Point(74, 134);
-            this.btnChangePaid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePaid.Location = new System.Drawing.Point(99, 165);
+            this.btnChangePaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChangePaid.Name = "btnChangePaid";
-            this.btnChangePaid.Size = new System.Drawing.Size(56, 23);
+            this.btnChangePaid.Size = new System.Drawing.Size(75, 28);
             this.btnChangePaid.TabIndex = 11;
             this.btnChangePaid.Text = "Betaald";
             this.btnChangePaid.UseVisualStyleBackColor = true;
@@ -264,10 +274,10 @@
             // 
             // btnComplete
             // 
-            this.btnComplete.Location = new System.Drawing.Point(370, 134);
-            this.btnComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComplete.Location = new System.Drawing.Point(493, 165);
+            this.btnComplete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(64, 23);
+            this.btnComplete.Size = new System.Drawing.Size(85, 28);
             this.btnComplete.TabIndex = 10;
             this.btnComplete.Text = "Voltooi";
             this.btnComplete.UseVisualStyleBackColor = true;
@@ -276,33 +286,37 @@
             // 
             // tbLetterStatus
             // 
-            this.tbLetterStatus.Location = new System.Drawing.Point(66, 50);
+            this.tbLetterStatus.Location = new System.Drawing.Point(88, 62);
+            this.tbLetterStatus.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterStatus.Name = "tbLetterStatus";
-            this.tbLetterStatus.Size = new System.Drawing.Size(370, 20);
+            this.tbLetterStatus.Size = new System.Drawing.Size(492, 22);
             this.tbLetterStatus.TabIndex = 10;
             // 
             // lblLetterStatus
             // 
             this.lblLetterStatus.AutoSize = true;
-            this.lblLetterStatus.Location = new System.Drawing.Point(13, 53);
+            this.lblLetterStatus.Location = new System.Drawing.Point(17, 65);
+            this.lblLetterStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterStatus.Name = "lblLetterStatus";
-            this.lblLetterStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblLetterStatus.Size = new System.Drawing.Size(52, 17);
             this.lblLetterStatus.TabIndex = 9;
             this.lblLetterStatus.Text = "Status:";
             // 
             // tbLetterScan
             // 
-            this.tbLetterScan.Location = new System.Drawing.Point(66, 24);
+            this.tbLetterScan.Location = new System.Drawing.Point(88, 30);
+            this.tbLetterScan.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterScan.Name = "tbLetterScan";
-            this.tbLetterScan.Size = new System.Drawing.Size(370, 20);
+            this.tbLetterScan.Size = new System.Drawing.Size(492, 22);
             this.tbLetterScan.TabIndex = 8;
             // 
             // lblLetterScan
             // 
             this.lblLetterScan.AutoSize = true;
-            this.lblLetterScan.Location = new System.Drawing.Point(13, 27);
+            this.lblLetterScan.Location = new System.Drawing.Point(17, 33);
+            this.lblLetterScan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterScan.Name = "lblLetterScan";
-            this.lblLetterScan.Size = new System.Drawing.Size(35, 13);
+            this.lblLetterScan.Size = new System.Drawing.Size(44, 17);
             this.lblLetterScan.TabIndex = 7;
             this.lblLetterScan.Text = "Scan:";
             // 
@@ -320,20 +334,40 @@
             this.groupBox1.Controls.Add(this.tbLetterName);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lblLetterName);
-            this.groupBox1.Location = new System.Drawing.Point(6, 43);
+            this.groupBox1.Location = new System.Drawing.Point(8, 53);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 324);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(580, 399);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1. Scan Brief";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // nudReserveID
+            // 
+            this.nudReserveID.Location = new System.Drawing.Point(149, 128);
+            this.nudReserveID.Margin = new System.Windows.Forms.Padding(4);
+            this.nudReserveID.Name = "nudReserveID";
+            this.nudReserveID.Size = new System.Drawing.Size(423, 22);
+            this.nudReserveID.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 130);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Reserverings Code:";
+            // 
             // btnControl
             // 
-            this.btnControl.Location = new System.Drawing.Point(365, 171);
-            this.btnControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnControl.Location = new System.Drawing.Point(487, 210);
+            this.btnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(64, 23);
+            this.btnControl.Size = new System.Drawing.Size(85, 28);
             this.btnControl.TabIndex = 9;
             this.btnControl.Text = "Controlleer";
             this.btnControl.UseVisualStyleBackColor = true;
@@ -341,9 +375,10 @@
             // 
             // tbLetterRFID
             // 
-            this.tbLetterRFID.Location = new System.Drawing.Point(112, 129);
+            this.tbLetterRFID.Location = new System.Drawing.Point(149, 159);
+            this.tbLetterRFID.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterRFID.Name = "tbLetterRFID";
-            this.tbLetterRFID.Size = new System.Drawing.Size(317, 20);
+            this.tbLetterRFID.Size = new System.Drawing.Size(421, 22);
             this.tbLetterRFID.TabIndex = 8;
             this.tbLetterRFID.Enter += new System.EventHandler(this.tbLetterRFID_Enter);
             this.tbLetterRFID.MouseLeave += new System.EventHandler(this.tbLetterRFID_MouseLeave);
@@ -352,145 +387,154 @@
             // lblLetterRFID
             // 
             this.lblLetterRFID.AutoSize = true;
-            this.lblLetterRFID.Location = new System.Drawing.Point(6, 132);
+            this.lblLetterRFID.Location = new System.Drawing.Point(8, 162);
+            this.lblLetterRFID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterRFID.Name = "lblLetterRFID";
-            this.lblLetterRFID.Size = new System.Drawing.Size(35, 13);
+            this.lblLetterRFID.Size = new System.Drawing.Size(43, 17);
             this.lblLetterRFID.TabIndex = 7;
             this.lblLetterRFID.Text = "RFID:";
             // 
             // tbSpotLocation
             // 
-            this.tbSpotLocation.Location = new System.Drawing.Point(112, 79);
+            this.tbSpotLocation.Location = new System.Drawing.Point(149, 97);
+            this.tbSpotLocation.Margin = new System.Windows.Forms.Padding(4);
             this.tbSpotLocation.Name = "tbSpotLocation";
-            this.tbSpotLocation.Size = new System.Drawing.Size(317, 20);
+            this.tbSpotLocation.Size = new System.Drawing.Size(421, 22);
             this.tbSpotLocation.TabIndex = 6;
             // 
             // lblLetterLocation
             // 
             this.lblLetterLocation.AutoSize = true;
-            this.lblLetterLocation.Location = new System.Drawing.Point(6, 82);
+            this.lblLetterLocation.Location = new System.Drawing.Point(8, 101);
+            this.lblLetterLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterLocation.Name = "lblLetterLocation";
-            this.lblLetterLocation.Size = new System.Drawing.Size(75, 13);
+            this.lblLetterLocation.Size = new System.Drawing.Size(97, 17);
             this.lblLetterLocation.TabIndex = 5;
             this.lblLetterLocation.Text = "Plek Location:";
             // 
             // tbLetterGroupName
             // 
-            this.tbLetterGroupName.Location = new System.Drawing.Point(112, 53);
+            this.tbLetterGroupName.Location = new System.Drawing.Point(149, 65);
+            this.tbLetterGroupName.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterGroupName.Name = "tbLetterGroupName";
-            this.tbLetterGroupName.Size = new System.Drawing.Size(317, 20);
+            this.tbLetterGroupName.Size = new System.Drawing.Size(421, 22);
             this.tbLetterGroupName.TabIndex = 4;
             // 
             // lblLetterGroupName
             // 
             this.lblLetterGroupName.AutoSize = true;
-            this.lblLetterGroupName.Location = new System.Drawing.Point(6, 56);
+            this.lblLetterGroupName.Location = new System.Drawing.Point(8, 69);
+            this.lblLetterGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterGroupName.Name = "lblLetterGroupName";
-            this.lblLetterGroupName.Size = new System.Drawing.Size(70, 13);
+            this.lblLetterGroupName.Size = new System.Drawing.Size(93, 17);
             this.lblLetterGroupName.TabIndex = 3;
             this.lblLetterGroupName.Text = "Group Name:";
             // 
             // tbLetterName
             // 
-            this.tbLetterName.Location = new System.Drawing.Point(112, 27);
+            this.tbLetterName.Location = new System.Drawing.Point(149, 33);
+            this.tbLetterName.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterName.Name = "tbLetterName";
-            this.tbLetterName.Size = new System.Drawing.Size(317, 20);
+            this.tbLetterName.Size = new System.Drawing.Size(421, 22);
             this.tbLetterName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 65);
+            this.label4.Location = new System.Drawing.Point(12, 80);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 1;
             // 
             // lblLetterName
             // 
             this.lblLetterName.AutoSize = true;
-            this.lblLetterName.Location = new System.Drawing.Point(6, 30);
+            this.lblLetterName.Location = new System.Drawing.Point(8, 37);
+            this.lblLetterName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterName.Name = "lblLetterName";
-            this.lblLetterName.Size = new System.Drawing.Size(38, 13);
+            this.lblLetterName.Size = new System.Drawing.Size(49, 17);
             this.lblLetterName.TabIndex = 0;
             this.lblLetterName.Text = "Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 18);
+            this.label2.Location = new System.Drawing.Point(416, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 13);
+            this.label2.Size = new System.Drawing.Size(237, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Scan QR-Code op Brief / Scan Band";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(329, 18);
+            this.label1.Location = new System.Drawing.Point(439, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 0;
             // 
             // tabPaccount
             // 
+            this.tabPaccount.Controls.Add(this.btnDeleteAccount);
+            this.tabPaccount.Controls.Add(this.btnChangeAccount);
             this.tabPaccount.Controls.Add(this.dgwAccount);
             this.tabPaccount.Controls.Add(this.btnCreateAccount);
-            this.tabPaccount.Location = new System.Drawing.Point(4, 22);
+            this.tabPaccount.Location = new System.Drawing.Point(4, 25);
+            this.tabPaccount.Margin = new System.Windows.Forms.Padding(4);
             this.tabPaccount.Name = "tabPaccount";
-            this.tabPaccount.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPaccount.Size = new System.Drawing.Size(895, 373);
+            this.tabPaccount.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPaccount.Size = new System.Drawing.Size(1196, 462);
             this.tabPaccount.TabIndex = 1;
             this.tabPaccount.Text = "Account";
             this.tabPaccount.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteAccount
+            // 
+            this.btnDeleteAccount.Enabled = false;
+            this.btnDeleteAccount.Location = new System.Drawing.Point(416, 20);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(163, 27);
+            this.btnDeleteAccount.TabIndex = 3;
+            this.btnDeleteAccount.Text = "Account verwijderen";
+            this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
+            // 
+            // btnChangeAccount
+            // 
+            this.btnChangeAccount.Enabled = false;
+            this.btnChangeAccount.Location = new System.Drawing.Point(221, 20);
+            this.btnChangeAccount.Name = "btnChangeAccount";
+            this.btnChangeAccount.Size = new System.Drawing.Size(163, 28);
+            this.btnChangeAccount.TabIndex = 2;
+            this.btnChangeAccount.Text = "Account wijzigen";
+            this.btnChangeAccount.UseVisualStyleBackColor = true;
             // 
             // dgwAccount
             // 
             this.dgwAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvcName,
-            this.dgvcEdit,
-            this.dgvcDelete,
-            this.dgvcEditPassword});
-            this.dgwAccount.Location = new System.Drawing.Point(22, 57);
+            this.dgvcRFID,
+            this.dgvcEmail});
+            this.dgwAccount.Location = new System.Drawing.Point(29, 70);
+            this.dgwAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwAccount.MultiSelect = false;
             this.dgwAccount.Name = "dgwAccount";
-            this.dgwAccount.Size = new System.Drawing.Size(843, 294);
+            this.dgwAccount.ReadOnly = true;
+            this.dgwAccount.Size = new System.Drawing.Size(1124, 362);
             this.dgwAccount.TabIndex = 1;
             this.dgwAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAccount_CellContentClick);
-            // 
-            // dgvcName
-            // 
-            this.dgvcName.HeaderText = "Naam";
-            this.dgvcName.Name = "dgvcName";
-            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcName.Width = 500;
-            // 
-            // dgvcEdit
-            // 
-            this.dgvcEdit.HeaderText = "Wijzigen";
-            this.dgvcEdit.Name = "dgvcEdit";
-            this.dgvcEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgvcEdit.Text = "";
-            // 
-            // dgvcDelete
-            // 
-            this.dgvcDelete.HeaderText = "Verwijderen";
-            this.dgvcDelete.Name = "dgvcDelete";
-            this.dgvcDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dgvcEditPassword
-            // 
-            this.dgvcEditPassword.HeaderText = "WW";
-            this.dgvcEditPassword.Name = "dgvcEditPassword";
-            this.dgvcEditPassword.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcEditPassword.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgwAccount.SelectionChanged += new System.EventHandler(this.dgwAccount_SelectionChanged);
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(22, 16);
+            this.btnCreateAccount.Location = new System.Drawing.Point(29, 20);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(122, 23);
+            this.btnCreateAccount.Size = new System.Drawing.Size(163, 28);
             this.btnCreateAccount.TabIndex = 0;
             this.btnCreateAccount.Text = "Account Maken";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
@@ -498,22 +542,49 @@
             // 
             // tabPreserve
             // 
+            this.tabPreserve.Controls.Add(this.btnChangeReservation);
+            this.tabPreserve.Controls.Add(this.btnDeleteReservation);
             this.tabPreserve.Controls.Add(this.btnReserveLocation);
             this.tabPreserve.Controls.Add(this.btnReserveItem);
             this.tabPreserve.Controls.Add(this.tabControl1);
-            this.tabPreserve.Location = new System.Drawing.Point(4, 22);
+            this.tabPreserve.Location = new System.Drawing.Point(4, 25);
+            this.tabPreserve.Margin = new System.Windows.Forms.Padding(4);
             this.tabPreserve.Name = "tabPreserve";
-            this.tabPreserve.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPreserve.Size = new System.Drawing.Size(895, 373);
+            this.tabPreserve.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPreserve.Size = new System.Drawing.Size(1196, 462);
             this.tabPreserve.TabIndex = 2;
             this.tabPreserve.Text = "Reserveren";
             this.tabPreserve.UseVisualStyleBackColor = true;
             // 
+            // btnChangeReservation
+            // 
+            this.btnChangeReservation.Enabled = false;
+            this.btnChangeReservation.Location = new System.Drawing.Point(318, 21);
+            this.btnChangeReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChangeReservation.Name = "btnChangeReservation";
+            this.btnChangeReservation.Size = new System.Drawing.Size(145, 49);
+            this.btnChangeReservation.TabIndex = 4;
+            this.btnChangeReservation.Text = "Reservering wijzigen";
+            this.btnChangeReservation.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteReservation
+            // 
+            this.btnDeleteReservation.Enabled = false;
+            this.btnDeleteReservation.Location = new System.Drawing.Point(471, 21);
+            this.btnDeleteReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteReservation.Name = "btnDeleteReservation";
+            this.btnDeleteReservation.Size = new System.Drawing.Size(145, 49);
+            this.btnDeleteReservation.TabIndex = 3;
+            this.btnDeleteReservation.Text = "Reservering verwijderen";
+            this.btnDeleteReservation.UseVisualStyleBackColor = true;
+            this.btnDeleteReservation.Click += new System.EventHandler(this.btnDeleteReservation_Click);
+            // 
             // btnReserveLocation
             // 
-            this.btnReserveLocation.Location = new System.Drawing.Point(125, 17);
+            this.btnReserveLocation.Location = new System.Drawing.Point(167, 21);
+            this.btnReserveLocation.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserveLocation.Name = "btnReserveLocation";
-            this.btnReserveLocation.Size = new System.Drawing.Size(107, 23);
+            this.btnReserveLocation.Size = new System.Drawing.Size(143, 28);
             this.btnReserveLocation.TabIndex = 2;
             this.btnReserveLocation.Text = "Plek Reserveren";
             this.btnReserveLocation.UseVisualStyleBackColor = true;
@@ -521,9 +592,10 @@
             // 
             // btnReserveItem
             // 
-            this.btnReserveItem.Location = new System.Drawing.Point(10, 17);
+            this.btnReserveItem.Location = new System.Drawing.Point(13, 21);
+            this.btnReserveItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserveItem.Name = "btnReserveItem";
-            this.btnReserveItem.Size = new System.Drawing.Size(109, 23);
+            this.btnReserveItem.Size = new System.Drawing.Size(145, 28);
             this.btnReserveItem.TabIndex = 1;
             this.btnReserveItem.Text = "Item Reserveren";
             this.btnReserveItem.UseVisualStyleBackColor = true;
@@ -533,98 +605,93 @@
             // 
             this.tabControl1.Controls.Add(this.tabPItem);
             this.tabControl1.Controls.Add(this.tabPlocation);
-            this.tabControl1.Location = new System.Drawing.Point(0, 63);
+            this.tabControl1.Location = new System.Drawing.Point(0, 78);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(899, 310);
+            this.tabControl1.Size = new System.Drawing.Size(1199, 382);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPItem
             // 
-            this.tabPItem.Controls.Add(this.dataGridView1);
-            this.tabPItem.Location = new System.Drawing.Point(4, 22);
+            this.tabPItem.Controls.Add(this.dgwReserveItem);
+            this.tabPItem.Location = new System.Drawing.Point(4, 25);
+            this.tabPItem.Margin = new System.Windows.Forms.Padding(4);
             this.tabPItem.Name = "tabPItem";
-            this.tabPItem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPItem.Size = new System.Drawing.Size(891, 284);
+            this.tabPItem.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPItem.Size = new System.Drawing.Size(1191, 353);
             this.tabPItem.TabIndex = 0;
             this.tabPItem.Text = "Item";
             this.tabPItem.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgwReserveItem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwReserveItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwReserveItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemName,
             this.ItemAccountName,
             this.ItemDateOut,
-            this.ItemDateIn,
-            this.ItemEdit,
-            this.ItemDelete});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(879, 271);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ItemDateIn});
+            this.dgwReserveItem.Location = new System.Drawing.Point(8, 9);
+            this.dgwReserveItem.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwReserveItem.MultiSelect = false;
+            this.dgwReserveItem.Name = "dgwReserveItem";
+            this.dgwReserveItem.ReadOnly = true;
+            this.dgwReserveItem.Size = new System.Drawing.Size(1172, 334);
+            this.dgwReserveItem.TabIndex = 3;
+            this.dgwReserveItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgwReserveItem.SelectionChanged += new System.EventHandler(this.dgwReserveItem_SelectionChanged);
             // 
             // ItemName
             // 
             this.ItemName.HeaderText = "Name";
             this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
             // 
             // ItemAccountName
             // 
             this.ItemAccountName.HeaderText = "Account Name";
             this.ItemAccountName.Name = "ItemAccountName";
+            this.ItemAccountName.ReadOnly = true;
             // 
             // ItemDateOut
             // 
             this.ItemDateOut.HeaderText = "Data Out";
             this.ItemDateOut.Name = "ItemDateOut";
+            this.ItemDateOut.ReadOnly = true;
             // 
             // ItemDateIn
             // 
             this.ItemDateIn.HeaderText = "Date In";
             this.ItemDateIn.Name = "ItemDateIn";
-            // 
-            // ItemEdit
-            // 
-            this.ItemEdit.HeaderText = "Wijzigen";
-            this.ItemEdit.Name = "ItemEdit";
-            this.ItemEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ItemEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ItemDelete
-            // 
-            this.ItemDelete.HeaderText = "Verwijderen";
-            this.ItemDelete.Name = "ItemDelete";
-            this.ItemDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ItemDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ItemDateIn.ReadOnly = true;
             // 
             // tabPlocation
             // 
-            this.tabPlocation.Controls.Add(this.dataGridView2);
-            this.tabPlocation.Location = new System.Drawing.Point(4, 22);
+            this.tabPlocation.Controls.Add(this.dgwReserveSpot);
+            this.tabPlocation.Location = new System.Drawing.Point(4, 25);
+            this.tabPlocation.Margin = new System.Windows.Forms.Padding(4);
             this.tabPlocation.Name = "tabPlocation";
-            this.tabPlocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPlocation.Size = new System.Drawing.Size(891, 284);
+            this.tabPlocation.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPlocation.Size = new System.Drawing.Size(1191, 353);
             this.tabPlocation.TabIndex = 1;
             this.tabPlocation.Text = "Plek";
             this.tabPlocation.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgwReserveSpot
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwReserveSpot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwReserveSpot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LocationCode,
             this.LocationAccountName,
             this.LocationDateIn,
-            this.LocationDateOut,
-            this.LocationEdit,
-            this.LocationDelete});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 7);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(879, 271);
-            this.dataGridView2.TabIndex = 4;
+            this.LocationDateOut});
+            this.dgwReserveSpot.Location = new System.Drawing.Point(8, 9);
+            this.dgwReserveSpot.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwReserveSpot.Name = "dgwReserveSpot";
+            this.dgwReserveSpot.Size = new System.Drawing.Size(1172, 334);
+            this.dgwReserveSpot.TabIndex = 4;
+            this.dgwReserveSpot.SelectionChanged += new System.EventHandler(this.dgwReserveSpot_SelectionChanged);
             // 
             // LocationCode
             // 
@@ -646,64 +713,83 @@
             this.LocationDateOut.HeaderText = "DateOut";
             this.LocationDateOut.Name = "LocationDateOut";
             // 
-            // LocationEdit
-            // 
-            this.LocationEdit.HeaderText = "Wijzigen";
-            this.LocationEdit.Name = "LocationEdit";
-            // 
-            // LocationDelete
-            // 
-            this.LocationDelete.HeaderText = "Verwijderen";
-            this.LocationDelete.Name = "LocationDelete";
-            // 
             // tabPadmin
             // 
+            this.tabPadmin.Controls.Add(this.btnChangeEvent);
+            this.tabPadmin.Controls.Add(this.btnDeleteEvent);
             this.tabPadmin.Controls.Add(this.tabCAdmin);
             this.tabPadmin.Controls.Add(this.btnEvent);
-            this.tabPadmin.Location = new System.Drawing.Point(4, 22);
+            this.tabPadmin.Location = new System.Drawing.Point(4, 25);
+            this.tabPadmin.Margin = new System.Windows.Forms.Padding(4);
             this.tabPadmin.Name = "tabPadmin";
-            this.tabPadmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPadmin.Size = new System.Drawing.Size(895, 373);
+            this.tabPadmin.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPadmin.Size = new System.Drawing.Size(1196, 462);
             this.tabPadmin.TabIndex = 3;
             this.tabPadmin.Text = "Admin";
             this.tabPadmin.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeEvent
+            // 
+            this.btnChangeEvent.Enabled = false;
+            this.btnChangeEvent.Location = new System.Drawing.Point(172, 20);
+            this.btnChangeEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChangeEvent.Name = "btnChangeEvent";
+            this.btnChangeEvent.Size = new System.Drawing.Size(140, 28);
+            this.btnChangeEvent.TabIndex = 3;
+            this.btnChangeEvent.Text = "Event wijzigen";
+            this.btnChangeEvent.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteEvent
+            // 
+            this.btnDeleteEvent.Enabled = false;
+            this.btnDeleteEvent.Location = new System.Drawing.Point(320, 20);
+            this.btnDeleteEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteEvent.Name = "btnDeleteEvent";
+            this.btnDeleteEvent.Size = new System.Drawing.Size(140, 28);
+            this.btnDeleteEvent.TabIndex = 2;
+            this.btnDeleteEvent.Text = "Event verwijderen";
+            this.btnDeleteEvent.UseVisualStyleBackColor = true;
+            this.btnDeleteEvent.Click += new System.EventHandler(this.btnDeleteEvent_Click);
             // 
             // tabCAdmin
             // 
             this.tabCAdmin.Controls.Add(this.tabPpressent);
             this.tabCAdmin.Controls.Add(this.tabPmedia);
             this.tabCAdmin.Controls.Add(this.tabPEvent);
-            this.tabCAdmin.Location = new System.Drawing.Point(0, 57);
+            this.tabCAdmin.Location = new System.Drawing.Point(0, 70);
+            this.tabCAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.tabCAdmin.Name = "tabCAdmin";
             this.tabCAdmin.SelectedIndex = 0;
-            this.tabCAdmin.Size = new System.Drawing.Size(899, 320);
+            this.tabCAdmin.Size = new System.Drawing.Size(1199, 394);
             this.tabCAdmin.TabIndex = 1;
             // 
             // tabPpressent
             // 
-            this.tabPpressent.Controls.Add(this.dataGridView4);
-            this.tabPpressent.Location = new System.Drawing.Point(4, 22);
+            this.tabPpressent.Controls.Add(this.dgwPresent);
+            this.tabPpressent.Location = new System.Drawing.Point(4, 25);
+            this.tabPpressent.Margin = new System.Windows.Forms.Padding(4);
             this.tabPpressent.Name = "tabPpressent";
-            this.tabPpressent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPpressent.Size = new System.Drawing.Size(891, 294);
+            this.tabPpressent.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPpressent.Size = new System.Drawing.Size(1191, 365);
             this.tabPpressent.TabIndex = 0;
             this.tabPpressent.Text = "Aanwezigen";
             this.tabPpressent.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // dgwPresent
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwPresent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwPresent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AdminPresentName,
             this.AdminPresentLocation,
             this.AdminPresentDateIn,
             this.AdminPresentDateOut,
             this.AdminPresentPayment});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(843, 294);
-            this.dataGridView4.TabIndex = 2;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            this.dgwPresent.Location = new System.Drawing.Point(8, 7);
+            this.dgwPresent.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwPresent.Name = "dgwPresent";
+            this.dgwPresent.Size = new System.Drawing.Size(1124, 362);
+            this.dgwPresent.TabIndex = 2;
+            this.dgwPresent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // AdminPresentName
             // 
@@ -734,27 +820,29 @@
             // 
             // tabPmedia
             // 
-            this.tabPmedia.Controls.Add(this.dataGridView5);
-            this.tabPmedia.Location = new System.Drawing.Point(4, 22);
+            this.tabPmedia.Controls.Add(this.dgwMedia);
+            this.tabPmedia.Location = new System.Drawing.Point(4, 25);
+            this.tabPmedia.Margin = new System.Windows.Forms.Padding(4);
             this.tabPmedia.Name = "tabPmedia";
-            this.tabPmedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPmedia.Size = new System.Drawing.Size(891, 294);
+            this.tabPmedia.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPmedia.Size = new System.Drawing.Size(1191, 365);
             this.tabPmedia.TabIndex = 1;
             this.tabPmedia.Text = "Media";
             this.tabPmedia.UseVisualStyleBackColor = true;
             // 
-            // dataGridView5
+            // dgwMedia
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwMedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwMedia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AdminMediaCode,
             this.AdminMediaText,
             this.AdminMediaReports,
             this.AdminMediaOpen});
-            this.dataGridView5.Location = new System.Drawing.Point(6, 3);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(843, 294);
-            this.dataGridView5.TabIndex = 2;
+            this.dgwMedia.Location = new System.Drawing.Point(8, 4);
+            this.dgwMedia.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwMedia.Name = "dgwMedia";
+            this.dgwMedia.Size = new System.Drawing.Size(1124, 362);
+            this.dgwMedia.TabIndex = 2;
             // 
             // AdminMediaCode
             // 
@@ -778,29 +866,30 @@
             // 
             // tabPEvent
             // 
-            this.tabPEvent.Controls.Add(this.dataGridView3);
-            this.tabPEvent.Location = new System.Drawing.Point(4, 22);
+            this.tabPEvent.Controls.Add(this.dgwEvents);
+            this.tabPEvent.Location = new System.Drawing.Point(4, 25);
+            this.tabPEvent.Margin = new System.Windows.Forms.Padding(4);
             this.tabPEvent.Name = "tabPEvent";
-            this.tabPEvent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPEvent.Size = new System.Drawing.Size(891, 294);
+            this.tabPEvent.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPEvent.Size = new System.Drawing.Size(1191, 365);
             this.tabPEvent.TabIndex = 2;
             this.tabPEvent.Text = "Event";
             this.tabPEvent.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dgwEvents
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgwEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AdminEventName,
             this.AdminEventDateStart,
             this.AdminEventDateEnd,
-            this.AdminEventAttendeesCount,
-            this.AdminEventEdit,
-            this.AdminEventDelete});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(843, 294);
-            this.dataGridView3.TabIndex = 2;
+            this.AdminEventAttendeesCount});
+            this.dgwEvents.Location = new System.Drawing.Point(8, 7);
+            this.dgwEvents.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwEvents.Name = "dgwEvents";
+            this.dgwEvents.Size = new System.Drawing.Size(1124, 362);
+            this.dgwEvents.TabIndex = 2;
+            this.dgwEvents.SelectionChanged += new System.EventHandler(this.dgwEvents_SelectionChanged);
             // 
             // AdminEventName
             // 
@@ -822,25 +911,12 @@
             this.AdminEventAttendeesCount.HeaderText = "Aantal Bezoekers";
             this.AdminEventAttendeesCount.Name = "AdminEventAttendeesCount";
             // 
-            // AdminEventEdit
-            // 
-            this.AdminEventEdit.HeaderText = "Wijzigen";
-            this.AdminEventEdit.Name = "AdminEventEdit";
-            this.AdminEventEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminEventEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // AdminEventDelete
-            // 
-            this.AdminEventDelete.HeaderText = "Verwijderen";
-            this.AdminEventDelete.Name = "AdminEventDelete";
-            this.AdminEventDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdminEventDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // btnEvent
             // 
-            this.btnEvent.Location = new System.Drawing.Point(18, 16);
+            this.btnEvent.Location = new System.Drawing.Point(24, 20);
+            this.btnEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(105, 23);
+            this.btnEvent.Size = new System.Drawing.Size(140, 28);
             this.btnEvent.TabIndex = 0;
             this.btnEvent.Text = "Event Aanmaken";
             this.btnEvent.UseVisualStyleBackColor = true;
@@ -850,27 +926,32 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // label3
+            // dgvcName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Reserverings Code:";
+            this.dgvcName.HeaderText = "Naam";
+            this.dgvcName.Name = "dgvcName";
+            this.dgvcName.ReadOnly = true;
+            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcName.Width = 500;
             // 
-            // nudReserveID
+            // dgvcRFID
             // 
-            this.nudReserveID.Location = new System.Drawing.Point(112, 104);
-            this.nudReserveID.Name = "nudReserveID";
-            this.nudReserveID.Size = new System.Drawing.Size(317, 20);
-            this.nudReserveID.TabIndex = 11;
+            this.dgvcRFID.HeaderText = "RFID";
+            this.dgvcRFID.Name = "dgvcRFID";
+            this.dgvcRFID.ReadOnly = true;
+            this.dgvcRFID.Visible = false;
+            // 
+            // dgvcEmail
+            // 
+            this.dgvcEmail.HeaderText = "E-mail";
+            this.dgvcEmail.Name = "dgvcEmail";
+            this.dgvcEmail.ReadOnly = true;
             // 
             // MederwerkerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 534);
+            this.ClientSize = new System.Drawing.Size(1236, 657);
             this.Controls.Add(this.tabCMedewerker);
             this.Controls.Add(this.lbliFunction);
             this.Controls.Add(this.lbliName);
@@ -879,6 +960,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MederwerkerForm";
             this.Text = "Medewerker Form";
             this.Load += new System.EventHandler(this.MederwerkerForm_Load);
@@ -890,23 +972,23 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudReserveID)).EndInit();
             this.tabPaccount.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwAccount)).EndInit();
             this.tabPreserve.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPItem.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwReserveItem)).EndInit();
             this.tabPlocation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwReserveSpot)).EndInit();
             this.tabPadmin.ResumeLayout(false);
             this.tabCAdmin.ResumeLayout(false);
             this.tabPpressent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwPresent)).EndInit();
             this.tabPmedia.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwMedia)).EndInit();
             this.tabPEvent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudReserveID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwEvents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -948,25 +1030,19 @@
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgwReserveItem;
         private System.Windows.Forms.TabPage tabPlocation;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgwReserveSpot;
         private System.Windows.Forms.Button btnReserveLocation;
         private System.Windows.Forms.Button btnReserveItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationEdit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDelete;
         private System.Windows.Forms.Button btnEvent;
         private System.Windows.Forms.TabControl tabCAdmin;
         private System.Windows.Forms.TabPage tabPpressent;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dgwPresent;
         private System.Windows.Forms.TabPage tabPmedia;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView dgwMedia;
         private System.Windows.Forms.TabPage tabPEvent;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgwEvents;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaText;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaReports;
@@ -975,22 +1051,6 @@
         private System.Windows.Forms.Button btnComplete;
         private System.Windows.Forms.Button btnControl;
         private System.Windows.Forms.Button btnChangePaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
-        private System.Windows.Forms.DataGridViewButtonColumn ItemEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn ItemDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateStart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateEnd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
-        private System.Windows.Forms.DataGridViewButtonColumn AdminEventEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn AdminEventDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
-        private System.Windows.Forms.DataGridViewButtonColumn dgvcEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn dgvcDelete;
-        private System.Windows.Forms.DataGridViewButtonColumn dgvcEditPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateIn;
@@ -998,6 +1058,27 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn AdminPresentPayment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nudReserveID;
+        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button btnChangeAccount;
+        private System.Windows.Forms.Button btnChangeReservation;
+        private System.Windows.Forms.Button btnDeleteReservation;
+        private System.Windows.Forms.Button btnChangeEvent;
+        private System.Windows.Forms.Button btnDeleteEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcRFID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEmail;
     }
 }
 
