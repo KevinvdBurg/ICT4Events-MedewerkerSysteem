@@ -11,7 +11,7 @@ using System.Text;
 
 public abstract class Reserve
 {
-	public virtual int RFID
+	public virtual string RFID
 	{
 		get;
 		set;
@@ -47,7 +47,7 @@ public abstract class Reserve
         set;
     }
 
-	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, int RFID, bool Paid)
+	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID, bool Paid)
 	{
         this.Account = Account;
         this.Category = Category;

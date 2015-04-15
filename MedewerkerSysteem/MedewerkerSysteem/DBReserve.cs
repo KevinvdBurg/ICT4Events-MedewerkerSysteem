@@ -35,14 +35,20 @@ public class DBReserve : Database
         string sql;
         //sql = "select * from gebruiker where RFID = :rfid";
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
-        sql = "Select kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID where kr.reserveringID = :reserveringID" ;
-        
+        //sql = "Select kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID where kr.reserveringID = :reserveringID" ;
+        //sql = "Select kr.GEBRUIKERID, kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID where kr.reserveringID = :reserveringID";
+        sql = "Select gb.RFID, kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID where kr.reserveringID = :reserveringID";
+
+        string RFID = "";
         int KAMPEERPLEKID = 0;
         bool BETAALD = false;
         DateTime DATUMIN = new DateTime();
         DateTime DATUMUIT = new DateTime();
         int MAXPERSONEN = 0;
         decimal PRIJS = 0;
+        int GROEPID = 0;
+        string GROEPNAAM = "";
+        string DETAILS = "";
 
         try
         {
@@ -54,17 +60,21 @@ public class DBReserve : Database
             {
                 while (reader.Read())
                 {
+                    RFID = Convert.ToInt32(reader["RFID"]);
                     KAMPEERPLEKID = Convert.ToInt32(reader["EVENTID"]);
-                    BETAALD = Convert.ToString(reader["Naam"]);
-                    DATUMIN = Convert.ToInt32(reader["MAXPERSONEN"]);
-                    DATUMUIT = Convert.ToString(reader["BEGINDATUM"]);
-                    MAXPERSONEN = Convert.ToString(reader["EINDDATUM"]);
-                    PRIJS = Convert.ToString(reader["HUISNUMMER"]);
+                    BETAALD = Convert.ToBoolean(reader["BETAALD"]);
+                    DATUMIN = Convert.ToDateTime(reader["MAXPERSONEN"]);
+                    DATUMUIT = Convert.ToDateTime(reader["MAXPERSONEN"]);
+                    MAXPERSONEN = Convert.ToInt16(reader["EINDDATUM"]);
+                    PRIJS = Convert.ToDecimal(reader["MAXPERSONEN"]);
+                    GROEPID = Convert.ToInt32(reader["GROEPID"]);
+                    GROEPNAAM = Convert.ToString(reader["GROEPNAAM"]);
+                    DETAILS = Convert.ToString(reader["DETAILS"]);
                 }
                 //resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
 
-                
-                resultaat = new ReserveSpot(new CampingSpot(location),new Group(name),account,new Category(details, Price, type,),enddate, startdate, rfid, paid);
+
+                resultaat = new ReserveSpot(new CampingSpot(KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, rfid, BETAALD);
             }
         }
         catch (OracleException e)

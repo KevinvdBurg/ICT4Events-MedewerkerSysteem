@@ -17,9 +17,12 @@ public class Group
 		set;
 	}
 
-	public Group(string Name)
+    public int Id { get; set; }
+
+	public Group(string Name, int Id)
 	{
         this.Name = Name;
+	    this.Id = Id;
 	}
 
 }

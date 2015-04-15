@@ -11,13 +11,13 @@ using System.Text;
 
 public class CampingSpot
 {
-	public string Location
+	public int Location
 	{
 		get;
 		set;
 	}
 
-	public CampingSpot(string Location)
+	public CampingSpot(int Location)
 	{
         this.Location = Location;
 	}

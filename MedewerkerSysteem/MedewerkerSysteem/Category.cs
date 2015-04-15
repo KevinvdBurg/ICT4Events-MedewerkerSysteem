@@ -36,5 +36,11 @@ public class Category
         this.Type = Type;
 	}
 
+    public Category(string Details, decimal Price)
+    {
+        this.Price = Price;
+        this.Details = Details;
+    }
+
 }
 
