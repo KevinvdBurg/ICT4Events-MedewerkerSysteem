@@ -64,7 +64,6 @@ public class DBAddress : Database
         }
         catch (OracleException e)
         {
-
             Console.WriteLine(e.Message);
             throw;
         }

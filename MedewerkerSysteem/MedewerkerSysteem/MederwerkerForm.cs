@@ -25,6 +25,7 @@ namespace MedewerkerSysteem
         {
             InitializeComponent();
             administration = admin;
+            RefreshAccounts();
         }
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
@@ -418,7 +419,23 @@ namespace MedewerkerSysteem
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            administration.Delete(administration.FindAccount(dgvcRFID.Selected.ToString()));
+            int gridCount = 0;
+            string value = "";
+
+            foreach (DataGridViewRow row in dgwAccount.SelectedRows)
+                { 
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        
+                        if (gridCount == 2)
+                        {
+                            value = cell.Value.ToString();
+                        }
+                        gridCount++;
+                    }
+                }
+            administration.Delete(administration.FindAccount(value));
+            RefreshAccounts();
         }
 
         private void btnDeleteReservation_Click(object sender, EventArgs e)
@@ -435,7 +452,12 @@ namespace MedewerkerSysteem
 
         public void RefreshAccounts()
         {
-            
+            dgwAccount.Rows.Clear();
+            foreach (Account account in administration.FindAccountAll())
+            {
+                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
+            }
+           
         }
 
     }

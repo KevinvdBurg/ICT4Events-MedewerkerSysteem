@@ -65,9 +65,6 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.dgwAccount = new System.Windows.Forms.DataGridView();
-            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.tabPreserve = new System.Windows.Forms.TabPage();
             this.btnChangeReservation = new System.Windows.Forms.Button();
@@ -115,6 +112,9 @@
             this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -231,7 +231,7 @@
             this.tabPincheck.Controls.Add(this.label1);
             this.tabPincheck.Location = new System.Drawing.Point(4, 22);
             this.tabPincheck.Name = "tabPincheck";
-            this.tabPincheck.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPincheck.Padding = new System.Windows.Forms.Padding(3);
             this.tabPincheck.Size = new System.Drawing.Size(895, 373);
             this.tabPincheck.TabIndex = 0;
             this.tabPincheck.Text = "InCheck";
@@ -255,7 +255,7 @@
             // btnChangePaid
             // 
             this.btnChangePaid.Location = new System.Drawing.Point(74, 134);
-            this.btnChangePaid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePaid.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePaid.Name = "btnChangePaid";
             this.btnChangePaid.Size = new System.Drawing.Size(56, 23);
             this.btnChangePaid.TabIndex = 11;
@@ -267,7 +267,7 @@
             // btnComplete
             // 
             this.btnComplete.Location = new System.Drawing.Point(370, 134);
-            this.btnComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComplete.Margin = new System.Windows.Forms.Padding(2);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(64, 23);
             this.btnComplete.TabIndex = 10;
@@ -349,7 +349,7 @@
             // btnControl
             // 
             this.btnControl.Location = new System.Drawing.Point(365, 171);
-            this.btnControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnControl.Margin = new System.Windows.Forms.Padding(2);
             this.btnControl.Name = "btnControl";
             this.btnControl.Size = new System.Drawing.Size(64, 23);
             this.btnControl.TabIndex = 9;
@@ -457,7 +457,7 @@
             this.tabPaccount.Controls.Add(this.btnCreateAccount);
             this.tabPaccount.Location = new System.Drawing.Point(4, 22);
             this.tabPaccount.Name = "tabPaccount";
-            this.tabPaccount.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPaccount.Padding = new System.Windows.Forms.Padding(3);
             this.tabPaccount.Size = new System.Drawing.Size(895, 373);
             this.tabPaccount.TabIndex = 1;
             this.tabPaccount.Text = "Account";
@@ -467,7 +467,7 @@
             // 
             this.btnDeleteAccount.Enabled = false;
             this.btnDeleteAccount.Location = new System.Drawing.Point(312, 16);
-            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(122, 22);
             this.btnDeleteAccount.TabIndex = 3;
@@ -479,7 +479,7 @@
             // 
             this.btnChangeAccount.Enabled = false;
             this.btnChangeAccount.Location = new System.Drawing.Point(166, 16);
-            this.btnChangeAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAccount.Name = "btnChangeAccount";
             this.btnChangeAccount.Size = new System.Drawing.Size(122, 23);
             this.btnChangeAccount.TabIndex = 2;
@@ -491,8 +491,8 @@
             this.dgwAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvcName,
-            this.dgvcRFID,
-            this.dgvcEmail});
+            this.dgvcEmail,
+            this.dgvcRFID});
             this.dgwAccount.Location = new System.Drawing.Point(22, 57);
             this.dgwAccount.MultiSelect = false;
             this.dgwAccount.Name = "dgwAccount";
@@ -501,27 +501,6 @@
             this.dgwAccount.TabIndex = 1;
             this.dgwAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAccount_CellContentClick);
             this.dgwAccount.SelectionChanged += new System.EventHandler(this.dgwAccount_SelectionChanged);
-            // 
-            // dgvcName
-            // 
-            this.dgvcName.HeaderText = "Naam";
-            this.dgvcName.Name = "dgvcName";
-            this.dgvcName.ReadOnly = true;
-            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcName.Width = 500;
-            // 
-            // dgvcRFID
-            // 
-            this.dgvcRFID.HeaderText = "RFID";
-            this.dgvcRFID.Name = "dgvcRFID";
-            this.dgvcRFID.ReadOnly = true;
-            this.dgvcRFID.Visible = false;
-            // 
-            // dgvcEmail
-            // 
-            this.dgvcEmail.HeaderText = "E-mail";
-            this.dgvcEmail.Name = "dgvcEmail";
-            this.dgvcEmail.ReadOnly = true;
             // 
             // btnCreateAccount
             // 
@@ -542,7 +521,7 @@
             this.tabPreserve.Controls.Add(this.tabControl1);
             this.tabPreserve.Location = new System.Drawing.Point(4, 22);
             this.tabPreserve.Name = "tabPreserve";
-            this.tabPreserve.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPreserve.Padding = new System.Windows.Forms.Padding(3);
             this.tabPreserve.Size = new System.Drawing.Size(895, 373);
             this.tabPreserve.TabIndex = 2;
             this.tabPreserve.Text = "Reserveren";
@@ -604,7 +583,7 @@
             this.tabPItem.Controls.Add(this.dgwReserveItem);
             this.tabPItem.Location = new System.Drawing.Point(4, 22);
             this.tabPItem.Name = "tabPItem";
-            this.tabPItem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPItem.Padding = new System.Windows.Forms.Padding(3);
             this.tabPItem.Size = new System.Drawing.Size(891, 284);
             this.tabPItem.TabIndex = 0;
             this.tabPItem.Text = "Item";
@@ -671,7 +650,7 @@
             this.tabPlocation.Controls.Add(this.dgwReserveSpot);
             this.tabPlocation.Location = new System.Drawing.Point(4, 22);
             this.tabPlocation.Name = "tabPlocation";
-            this.tabPlocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPlocation.Padding = new System.Windows.Forms.Padding(3);
             this.tabPlocation.Size = new System.Drawing.Size(891, 284);
             this.tabPlocation.TabIndex = 1;
             this.tabPlocation.Text = "Plek";
@@ -726,7 +705,7 @@
             this.tabPadmin.Controls.Add(this.btnEvent);
             this.tabPadmin.Location = new System.Drawing.Point(4, 22);
             this.tabPadmin.Name = "tabPadmin";
-            this.tabPadmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPadmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabPadmin.Size = new System.Drawing.Size(895, 373);
             this.tabPadmin.TabIndex = 3;
             this.tabPadmin.Text = "Admin";
@@ -769,7 +748,7 @@
             this.tabPpressent.Controls.Add(this.dgwPresent);
             this.tabPpressent.Location = new System.Drawing.Point(4, 22);
             this.tabPpressent.Name = "tabPpressent";
-            this.tabPpressent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPpressent.Padding = new System.Windows.Forms.Padding(3);
             this.tabPpressent.Size = new System.Drawing.Size(891, 294);
             this.tabPpressent.TabIndex = 0;
             this.tabPpressent.Text = "Aanwezigen";
@@ -822,7 +801,7 @@
             this.tabPmedia.Controls.Add(this.dgwMedia);
             this.tabPmedia.Location = new System.Drawing.Point(4, 22);
             this.tabPmedia.Name = "tabPmedia";
-            this.tabPmedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPmedia.Padding = new System.Windows.Forms.Padding(3);
             this.tabPmedia.Size = new System.Drawing.Size(891, 294);
             this.tabPmedia.TabIndex = 1;
             this.tabPmedia.Text = "Media";
@@ -866,7 +845,7 @@
             this.tabPEvent.Controls.Add(this.dgwEvents);
             this.tabPEvent.Location = new System.Drawing.Point(4, 22);
             this.tabPEvent.Name = "tabPEvent";
-            this.tabPEvent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPEvent.Padding = new System.Windows.Forms.Padding(3);
             this.tabPEvent.Size = new System.Drawing.Size(891, 294);
             this.tabPEvent.TabIndex = 2;
             this.tabPEvent.Text = "Event";
@@ -919,6 +898,27 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // dgvcName
+            // 
+            this.dgvcName.HeaderText = "Naam";
+            this.dgvcName.Name = "dgvcName";
+            this.dgvcName.ReadOnly = true;
+            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcName.Width = 500;
+            // 
+            // dgvcEmail
+            // 
+            this.dgvcEmail.HeaderText = "E-mail";
+            this.dgvcEmail.Name = "dgvcEmail";
+            this.dgvcEmail.ReadOnly = true;
+            // 
+            // dgvcRFID
+            // 
+            this.dgvcRFID.HeaderText = "RFID";
+            this.dgvcRFID.Name = "dgvcRFID";
+            this.dgvcRFID.ReadOnly = true;
+            this.dgvcRFID.Visible = false;
             // 
             // MederwerkerForm
             // 
@@ -1040,9 +1040,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateStart;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateEnd;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcRFID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationRFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
@@ -1054,6 +1051,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcRFID;
     }
 }
 

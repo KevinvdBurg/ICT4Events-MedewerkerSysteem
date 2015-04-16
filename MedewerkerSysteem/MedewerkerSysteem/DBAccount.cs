@@ -17,10 +17,34 @@ public class DBAccount : Database
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete()
+	public virtual bool Delete(Account account)
 	{
-		throw new System.NotImplementedException();
+        bool resultaat = false;
+        string sql;
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        //sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
+        sql = "DELETE FROM Gebruiker WHERE RFID = :RFID";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("RFID", account.RFID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
 	}
+
 
 	public virtual void Insert()
 	{
@@ -62,7 +86,7 @@ public class DBAccount : Database
                     rfid = Convert.ToString(reader["rfid"]);
                     city = Convert.ToString(reader["plaats"]);
                     country = Convert.ToString(reader["Land"]);
-                    nr = Convert.ToString(reader["nr"]);
+                    nr = Convert.ToString(reader["huisnummer"]);
                     zipcode = Convert.ToString(reader["postcode"]);
                     email = Convert.ToString(reader["emailadres"]);
 
@@ -89,21 +113,12 @@ public class DBAccount : Database
         return resultaat;
     }
 
-    internal List<Account> SelectAll(string Code)
+    internal List<Account> SelectAll()
     {
         List<Account> resultaat = new List<Account>();
         string sql;
         sql = "select * from gebruiker";
-        string lastName = "";
-        string name = "";
         string type = "";
-        string rfid = "";
-        string city = "";
-        string country = "";
-        string nr = "";
-        string zipcode = "";
-        string email = "";
-
         try
         {
             Connect();
@@ -113,6 +128,15 @@ public class DBAccount : Database
             {
                 while (reader.Read())
                 {
+                    string name = Convert.ToString(reader["voornaam"]);
+                    string lastName = Convert.ToString(reader["achternaam"]);
+                    string rfid = Convert.ToString(reader["rfid"]);
+                    string city = Convert.ToString(reader["plaats"]);
+                    string country = Convert.ToString(reader["Land"]);
+                    string nr = Convert.ToString(reader["huisnummer"]);
+                    string zipcode = Convert.ToString(reader["postcode"]);
+                    string email = Convert.ToString(reader["emailadres"]);
+
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
                     {
                         type = "admin";
@@ -121,21 +145,12 @@ public class DBAccount : Database
                     {
                         type = "bezoeker";
                     }
-                    Account tempAccount =
-                        new Account(
-                            new Person(
-                                new Address(Convert.ToString(reader["plaats"]), 
-                                            Convert.ToString(reader["Land"]),
-                                            Convert.ToString(reader["nr"]), 
-                                            Convert.ToString(reader["postcode"])),
-                                Convert.ToString(reader["emailadres"]), 
-                                Convert.ToString(reader["voornaam"]),
-                                Convert.ToString(reader["achternaam"])), 
-                        type, Convert.ToString(reader["rfid"]));
+
+                    Account tempAccount = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid);
 
                     resultaat.Add(tempAccount);
-                }
 
+                }
             }
         }
         catch (OracleException e)
@@ -148,5 +163,7 @@ public class DBAccount : Database
         }
         return resultaat;
     }
+
+    
 }
 

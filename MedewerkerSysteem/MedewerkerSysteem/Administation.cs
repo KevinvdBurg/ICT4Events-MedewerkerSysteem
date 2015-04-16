@@ -60,7 +60,7 @@ public class Administation
 
 	public void Delete(Account Account)
 	{
-
+        dbaccount.Delete(Account);
 	}
 
 	public void Delete(Reserve Reserve)
@@ -92,6 +92,21 @@ public class Administation
         }
 	    
 	}
+    public List<Account> FindAccountAll()
+    {
+        List<Account> foundAccounts = dbaccount.SelectAll();
+
+        if (foundAccounts != null)
+        {
+            return foundAccounts;
+        }
+        else
+        {
+            MessageBox.Show("Accounts niet gevonden");
+            return null;
+        }
+
+    }
 
     /// <summary>
     /// Searched the database for all events for by event name

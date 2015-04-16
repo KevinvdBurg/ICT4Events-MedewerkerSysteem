@@ -50,15 +50,6 @@ public class Person
         this.LastName = LastName;
 	}
 
-    public Person(Address address, string name, string lastName, string email, DBAddress dbAddress)
-    {
-        Address = address;
-        Name = name;
-        LastName = lastName;
-        Email = email;
-        DBAddress = dbAddress;
-    }
-
 	public virtual void AddAddress(Address Address)
 	{
         dbaddress.Insert(Address);
