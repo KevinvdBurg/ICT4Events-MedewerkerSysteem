@@ -31,12 +31,17 @@ public class Event
 
     public int EventID { get; set; }
 
-	public Event(Location Location, int MaxPerson, string Name, int EventID)
+    public string BeginTime { get; set; }
+    public string EndTime { get; set; }
+
+    public Event(Location Location, int MaxPerson, string Name, int EventID, string BeginTime, string EndTime)
 	{
         this.Location = Location;
         this.MaxPerson = MaxPerson;
         this.Name = Name;
 	    this.EventID = EventID;
+        this.BeginTime = BeginTime;
+        this.EndTime = EndTime;
 	}
 
 }

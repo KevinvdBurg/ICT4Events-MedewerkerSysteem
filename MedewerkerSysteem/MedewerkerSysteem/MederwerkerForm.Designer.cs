@@ -106,15 +106,16 @@
             this.AdminMediaOpen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPEvent = new System.Windows.Forms.TabPage();
             this.dgwEvents = new System.Windows.Forms.DataGridView();
-            this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminEventDateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminEventDateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEventDateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEventDateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -858,32 +859,13 @@
             this.AdminEventName,
             this.AdminEventDateStart,
             this.AdminEventDateEnd,
-            this.AdminEventAttendeesCount});
+            this.AdminEventAttendeesCount,
+            this.AdminEventID});
             this.dgwEvents.Location = new System.Drawing.Point(6, 6);
             this.dgwEvents.Name = "dgwEvents";
             this.dgwEvents.Size = new System.Drawing.Size(843, 294);
             this.dgwEvents.TabIndex = 2;
             this.dgwEvents.SelectionChanged += new System.EventHandler(this.dgwEvents_SelectionChanged);
-            // 
-            // AdminEventName
-            // 
-            this.AdminEventName.HeaderText = "Naam";
-            this.AdminEventName.Name = "AdminEventName";
-            // 
-            // AdminEventDateStart
-            // 
-            this.AdminEventDateStart.HeaderText = "Datum Start";
-            this.AdminEventDateStart.Name = "AdminEventDateStart";
-            // 
-            // AdminEventDateEnd
-            // 
-            this.AdminEventDateEnd.HeaderText = "Datum Einde";
-            this.AdminEventDateEnd.Name = "AdminEventDateEnd";
-            // 
-            // AdminEventAttendeesCount
-            // 
-            this.AdminEventAttendeesCount.HeaderText = "Aantal Bezoekers";
-            this.AdminEventAttendeesCount.Name = "AdminEventAttendeesCount";
             // 
             // btnEvent
             // 
@@ -919,6 +901,32 @@
             this.dgvcRFID.Name = "dgvcRFID";
             this.dgvcRFID.ReadOnly = true;
             this.dgvcRFID.Visible = false;
+            // 
+            // AdminEventName
+            // 
+            this.AdminEventName.HeaderText = "Naam";
+            this.AdminEventName.Name = "AdminEventName";
+            // 
+            // AdminEventDateStart
+            // 
+            this.AdminEventDateStart.HeaderText = "Datum Start";
+            this.AdminEventDateStart.Name = "AdminEventDateStart";
+            // 
+            // AdminEventDateEnd
+            // 
+            this.AdminEventDateEnd.HeaderText = "Datum Einde";
+            this.AdminEventDateEnd.Name = "AdminEventDateEnd";
+            // 
+            // AdminEventAttendeesCount
+            // 
+            this.AdminEventAttendeesCount.HeaderText = "Aantal Bezoekers";
+            this.AdminEventAttendeesCount.Name = "AdminEventAttendeesCount";
+            // 
+            // AdminEventID
+            // 
+            this.AdminEventID.HeaderText = "Event ID";
+            this.AdminEventID.Name = "AdminEventID";
+            this.AdminEventID.Visible = false;
             // 
             // MederwerkerForm
             // 
@@ -1036,10 +1044,6 @@
         private System.Windows.Forms.Button btnDeleteReservation;
         private System.Windows.Forms.Button btnChangeEvent;
         private System.Windows.Forms.Button btnDeleteEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateStart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateEnd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationRFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
@@ -1054,6 +1058,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcRFID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventDateEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventAttendeesCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEventID;
     }
 }
 

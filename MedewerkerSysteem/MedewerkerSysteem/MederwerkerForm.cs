@@ -25,7 +25,7 @@ namespace MedewerkerSysteem
         {
             InitializeComponent();
             administration = admin;
-            RefreshAccounts();
+            RefreshAll();
         }
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
@@ -319,10 +319,6 @@ namespace MedewerkerSysteem
                 tbSpotLocation.Clear();
                 throw;
             }
-
-
-
-
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
@@ -459,6 +455,61 @@ namespace MedewerkerSysteem
             }
            
         }
+
+        public void RefreshItem()
+        {
+            dgwReserveItem.Rows.Clear();
+            /*foreach (Account account in administration.FindAccountAll())
+            {
+                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
+            }*/
+        }
+
+        public void RefreshSpot()
+        {
+            dgwReserveSpot.Rows.Clear();
+            /*foreach (Account account in administration.FindAccountAll())
+            {
+                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
+            }*/
+        }
+        public void RefreshMedia()
+        {
+            dgwMedia.Rows.Clear();
+            /*foreach (Account account in administration.FindAccountAll())
+            {
+                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
+            }*/
+        }
+
+        public void RefreshPresent()
+        {
+            dgwPresent.Rows.Clear();
+            /*foreach (Account account in administration.FindAccountAll())
+            {
+                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
+            }*/
+        }
+        public void RefreshEvent()
+        {
+            dgwEvents.Rows.Clear();
+
+            foreach (Event events in administration.FindEventAll())
+            {
+                dgwEvents.Rows.Add(events.Name, events.BeginTime, events.EndTime, events.MaxPerson, events.EventID);
+            }
+        }
+
+        public void RefreshAll()
+        {
+            RefreshAccounts();
+            RefreshItem();
+            RefreshSpot();
+            RefreshMedia();
+            RefreshPresent();
+            RefreshEvent();
+        }
+
 
     }
 }
