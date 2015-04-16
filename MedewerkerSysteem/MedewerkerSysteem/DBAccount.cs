@@ -88,5 +88,65 @@ public class DBAccount : Database
         }
         return resultaat;
     }
+
+    internal List<Account> SelectAll(string Code)
+    {
+        List<Account> resultaat = new List<Account>();
+        string sql;
+        sql = "select * from gebruiker";
+        string lastName = "";
+        string name = "";
+        string type = "";
+        string rfid = "";
+        string city = "";
+        string country = "";
+        string nr = "";
+        string zipcode = "";
+        string email = "";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    if (Convert.ToInt32(reader["isAdmin"]) > 0)
+                    {
+                        type = "admin";
+                    }
+                    else
+                    {
+                        type = "bezoeker";
+                    }
+                    Account tempAccount =
+                        new Account(
+                            new Person(
+                                new Address(Convert.ToString(reader["plaats"]), 
+                                            Convert.ToString(reader["Land"]),
+                                            Convert.ToString(reader["nr"]), 
+                                            Convert.ToString(reader["postcode"])),
+                                Convert.ToString(reader["emailadres"]), 
+                                Convert.ToString(reader["voornaam"]),
+                                Convert.ToString(reader["achternaam"])), 
+                        type, Convert.ToString(reader["rfid"]));
+
+                    resultaat.Add(tempAccount);
+                }
+
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+    }
 }
 

@@ -433,5 +433,10 @@ namespace MedewerkerSysteem
             administration.Delete(administration.FindEvent(AdminEventName.Selected.ToString()));
         }
 
+        public void RefreshAccounts()
+        {
+            
+        }
+
     }
 }
