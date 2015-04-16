@@ -71,12 +71,12 @@ public class Person
 
 	public virtual void FindAddress(Address Address)
 	{
-		throw new System.NotImplementedException();
+        dbaddress.Select(Address);
 	}
 
 	public virtual void UpdateAddress(Address Address)
 	{
-		throw new System.NotImplementedException();
+        dbaddress.Select(Address);
 	}
 
 }

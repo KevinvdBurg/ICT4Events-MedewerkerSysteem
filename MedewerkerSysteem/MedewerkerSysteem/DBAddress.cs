@@ -46,15 +46,71 @@ public class DBAddress : Database
         return resultaat;
     }
 
-	public virtual void Delete(Address address)
+	public virtual bool Delete(Address address)
 	{
-		
+        bool resultaat = false;
+        string sql;
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
+	    sql = "DELETE FROM LOCATIE WHERE LOCATIEID = :AddressID";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("AddressID", address.AddressID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
 	}
 
-	public virtual void Select()
-	{
-		throw new System.NotImplementedException();
-	}
+    internal Address Select(Address Address)
+    {
+        Address resultaat = null;
+        string sql;
+        sql = "Select * From Locatie WHERE LOCATIEID = :LOCATIEID";
+        string PLAATS = "";
+        string POSTCODE = "";
+        string HUISNUMMER = "";
+        string COUNTRY = "";
 
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("LOCATIEID", Address.AddressID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    PLAATS = Convert.ToString(reader["PLAATS"]);
+                    POSTCODE = Convert.ToString(reader["POSTCODE"]);
+                    HUISNUMMER = Convert.ToString(reader["HUISNUMMER"]);
+
+                }
+                resultaat = new Address(Address.AddressID, PLAATS, COUNTRY, HUISNUMMER, POSTCODE);
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+    }
 }
 
