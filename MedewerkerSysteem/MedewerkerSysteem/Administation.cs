@@ -114,6 +114,22 @@ public class Administation
 
 	}
 
+    public List<Event> FindEventAll()
+    {
+        List<Event> foundEvents = dbevent.SelectAll();
+
+        if (foundEvents != null)
+        {
+            return foundEvents;
+        }
+        else
+        {
+            MessageBox.Show("Geen Events gevonden");
+            return null;
+        }
+
+    }
+
     /// <summary>
     /// Searched the database for all reserves by code
     /// An Account is needed for the reservation

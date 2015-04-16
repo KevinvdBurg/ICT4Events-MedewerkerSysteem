@@ -81,7 +81,7 @@ public class DBEvent : Database
     /// <returns></returns>
     public virtual List<Event> SelectAll()
     {
-        List<Event> resultaat = null;
+        List<Event> resultaat = new List<Event>();
         Event AddedEvent = null;
         string sql;
         //sql = "select * from gebruiker where RFID = :rfid";
@@ -104,9 +104,7 @@ public class DBEvent : Database
             OracleDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
-                while (reader.Read())
-                {
-                    Event add = null;
+                while (reader.Read()){
                     eventid = Convert.ToInt32(reader["EVENTID"]);
                     name = Convert.ToString(reader["Naam"]);
                     maxpers = Convert.ToInt32(reader["MAXPERSONEN"]);

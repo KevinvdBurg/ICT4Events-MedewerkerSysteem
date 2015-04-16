@@ -19,6 +19,8 @@ namespace MedewerkerSysteem
 
         List<Account> accounts = new List<Account>();
         List<Reserve> reserves = new List<Reserve>();
+        List<Event> events = new List<Event>();
+
         public MederwerkerForm(Administation admin)
         {
             InitializeComponent();
@@ -39,6 +41,12 @@ namespace MedewerkerSysteem
 
             //Disabled controls until Phidget is attached
             openCmdLine(rfid);
+
+            events = administation.FindEventAll();
+            foreach (Event eventEvent in events)
+            {
+                cbEvents.Items.Add(eventEvent.Name);
+            }
 
         }
 
@@ -267,7 +275,7 @@ namespace MedewerkerSysteem
             try
             {
                 Account account = administation.FindAccount(tbLetterRFID.Text);
-                Reserve reserve = administation.FindReserve(nudReserveID.Value, account);
+                Reserve reserve = administation.FindReserve(Convert.ToInt32(nudReserveID.Value), account);
                 accounts.Add(account);
                 reserves.Add(reserve);
                 //Check if the RFID belongs to the name
