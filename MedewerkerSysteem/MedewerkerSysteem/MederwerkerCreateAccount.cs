@@ -12,13 +12,19 @@ namespace MedewerkerSysteem
 {
     public partial class MederwerkerCreateAccount : Form
     {
-        Administation administration = new Administation();
-        //TODO fill eventcombobox
+        private Administation administration = new Administation();
+        List<Event> events = new List<Event>();
         
         public MederwerkerCreateAccount()
         {
             InitializeComponent();
-            
+
+            events = administration.FindEventAll();
+            foreach (Event eventEvent in events)
+            {
+                cbCAaddevent.Items.Add(eventEvent.Name);
+                
+            }
             
         }
 
@@ -62,10 +68,14 @@ namespace MedewerkerSysteem
         private void btnCAaddevent_Click(object sender, EventArgs e)
         {
             //Geselecteerde event wordt toegevoegd aan de listbox
-            if (cbCAaddevent.SelectedText != null)
+            if (cbCAaddevent.SelectedText != null || cbCAaddevent.SelectedText !="")
             {
                 lbCAeventlist.Items.Add(cbCAaddevent.SelectedItem);
                 
+            }
+            else
+            {
+                MessageBox.Show("Geen Event aangeklikt");
             }
         }
     }

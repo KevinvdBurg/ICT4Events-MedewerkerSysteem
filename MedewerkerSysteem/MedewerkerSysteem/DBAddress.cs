@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Oracle.DataAccess.Client;
 
 public class DBAddress : Database
 {
@@ -16,14 +17,38 @@ public class DBAddress : Database
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Insert()
+	public virtual bool Insert(Address address)
 	{
-		throw new System.NotImplementedException();
-	}
+	    bool resultaat = false;
+        string sql;
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+	    sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("plaats", address.City));
+            cmd.Parameters.Add(new OracleParameter("postcode", address.ZipCode));
+            cmd.Parameters.Add(new OracleParameter("nr", address.Number));
+            OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+    }
 
-	public virtual void Delete()
+	public virtual void Delete(Address address)
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public virtual void Select()

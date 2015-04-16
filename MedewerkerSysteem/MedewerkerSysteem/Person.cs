@@ -11,6 +11,7 @@ using System.Text;
 
 public class Person
 {
+    private DBAddress dbaddress = new DBAddress();
 	public Address Address
 	{
 		get;
@@ -60,12 +61,12 @@ public class Person
 
 	public virtual void AddAddress(Address Address)
 	{
-		throw new System.NotImplementedException();
+        dbaddress.Insert(Address);
 	}
 
 	public virtual void DeleteAddress(Address Address)
 	{
-		throw new System.NotImplementedException();
+        dbaddress.Delete(Address);
 	}
 
 	public virtual void FindAddress(Address Address)

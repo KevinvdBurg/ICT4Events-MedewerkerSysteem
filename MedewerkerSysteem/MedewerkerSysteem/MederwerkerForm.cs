@@ -15,7 +15,7 @@ namespace MedewerkerSysteem
     public partial class MederwerkerForm : Form
     {
         private RFID rfid; //Declare an RFID object
-        private Administation administation = new Administation();
+        private Administation administration = new Administation();
 
         List<Account> accounts = new List<Account>();
         List<Reserve> reserves = new List<Reserve>();
@@ -24,7 +24,7 @@ namespace MedewerkerSysteem
         public MederwerkerForm(Administation admin)
         {
             InitializeComponent();
-             administation = admin;
+            administration = admin;
         }
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
@@ -42,10 +42,11 @@ namespace MedewerkerSysteem
             //Disabled controls until Phidget is attached
             openCmdLine(rfid);
 
-            events = administation.FindEventAll();
+            events = administration.FindEventAll();
             foreach (Event eventEvent in events)
             {
                 cbEvents.Items.Add(eventEvent.Name);
+
             }
 
         }
@@ -274,8 +275,8 @@ namespace MedewerkerSysteem
             tbLetterName.Clear();
             try
             {
-                Account account = administation.FindAccount(tbLetterRFID.Text);
-                Reserve reserve = administation.FindReserve(Convert.ToInt32(nudReserveID.Value), account);
+                Account account = administration.FindAccount(tbLetterRFID.Text);
+                Reserve reserve = administration.FindReserve(Convert.ToInt32(nudReserveID.Value), account);
                 accounts.Add(account);
                 reserves.Add(reserve);
                 //Check if the RFID belongs to the name
@@ -417,19 +418,19 @@ namespace MedewerkerSysteem
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            administation.Delete(administation.FindAccount(dgvcRFID.Selected.ToString()));
+            administration.Delete(administration.FindAccount(dgvcRFID.Selected.ToString()));
         }
 
         private void btnDeleteReservation_Click(object sender, EventArgs e)
         {
-            administation.FindReserve(Convert.ToInt32(ItemCode.Selected.ToString()),
-                administation.FindAccount(ItemRFID.Selected.ToString()));
+            administration.FindReserve(Convert.ToInt32(ItemCode.Selected.ToString()),
+                administration.FindAccount(ItemRFID.Selected.ToString()));
 
         }
 
         private void btnDeleteEvent_Click(object sender, EventArgs e)
         {
-            administation.Delete(administation.FindEvent(AdminEventName.Selected.ToString()));
+            administration.Delete(administration.FindEvent(AdminEventName.Selected.ToString()));
         }
 
     }

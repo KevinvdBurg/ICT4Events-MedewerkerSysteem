@@ -32,7 +32,7 @@ public class DBEvent : Database
         
         string sql;
         //sql = "select * from gebruiker where RFID = :rfid";
-        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
+        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
 
         int eventid = 0;
         string name = "";
@@ -42,6 +42,8 @@ public class DBEvent : Database
         string nr = "";
         string place = "";
         string zipcode = "";
+        int locatieID = 0;
+        string country = "";
 
         try
         {
@@ -61,8 +63,9 @@ public class DBEvent : Database
                     nr = Convert.ToString(reader["HUISNUMMER"]);
                     place = Convert.ToString(reader["PLAATS"]);
                     zipcode = Convert.ToString(reader["POSTCODE"]);
+                    locatieID = Convert.ToInt32(reader["LOCATIEID"]);
                 }
-                resultaat = new Event(new Location(new Address(place, nr, zipcode),name ),maxpers,name,eventid );
+                resultaat = new Event(new Location(new Address(locatieID, country, place, nr, zipcode), name), maxpers, name, eventid);
             }
         }
         catch (OracleException e)
@@ -85,7 +88,7 @@ public class DBEvent : Database
         Event AddedEvent = null;
         string sql;
         //sql = "select * from gebruiker where RFID = :rfid";
-        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
 
         int eventid = 0;
         string name = "";
@@ -95,6 +98,8 @@ public class DBEvent : Database
         string nr = "";
         string place = "";
         string zipcode = "";
+        int locatieID = 0;
+        string country = "";
 
         try
         {
@@ -113,7 +118,8 @@ public class DBEvent : Database
                     nr = Convert.ToString(reader["HUISNUMMER"]);
                     place = Convert.ToString(reader["PLAATS"]);
                     zipcode = Convert.ToString(reader["POSTCODE"]);
-                    AddedEvent = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
+                    locatieID = Convert.ToInt32(reader["LOCATIEID"]);
+                    AddedEvent = new Event(new Location(new Address(locatieID,country,  place, nr, zipcode), name), maxpers, name, eventid);
                     resultaat.Add(AddedEvent);
                 }
                 return resultaat;
