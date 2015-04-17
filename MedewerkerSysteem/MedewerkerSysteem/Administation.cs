@@ -189,6 +189,33 @@ public class Administation
 
 	}
 
+    public List<ReserveSpot> FindReserveSpotsAll()
+    {
+        List<ReserveSpot> foundReserves = dbreserve.SelectAllSpots();
+        if (foundReserves != null)
+        {
+            return foundReserves;
+        }
+        else
+        {
+            MessageBox.Show("Reservering niet gevonden");
+            return null;
+        }
+    }
+
+    public List<ReserveItem> FindReserveItemAll()
+    {
+        List<ReserveItem> foundReserves = dbreserve.SelectAllItems();
+        if (foundReserves != null)
+        {
+            return foundReserves;
+        }
+        else
+        {
+            MessageBox.Show("Reservering niet gevonden");
+            return null;
+        }
+    }
 	public void Update(Account Account)
 	{
 
