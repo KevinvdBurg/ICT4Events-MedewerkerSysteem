@@ -96,6 +96,10 @@
             this.tabCAdmin = new System.Windows.Forms.TabControl();
             this.tabPpressent = new System.Windows.Forms.TabPage();
             this.dgwPresent = new System.Windows.Forms.DataGridView();
+            this.AdminPresentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPmedia = new System.Windows.Forms.TabPage();
             this.dgwMedia = new System.Windows.Forms.DataGridView();
             this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,10 +115,8 @@
             this.AdminEventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.AdminPresentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -148,7 +150,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(115, 107);
             this.pictureBox1.TabIndex = 0;
@@ -157,7 +159,7 @@
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(1055, 28);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(100, 28);
             this.btnLogout.TabIndex = 1;
@@ -169,7 +171,7 @@
             // 
             this.cbEvents.FormattingEnabled = true;
             this.cbEvents.Location = new System.Drawing.Point(993, 64);
-            this.cbEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEvents.Margin = new System.Windows.Forms.Padding(4);
             this.cbEvents.Name = "cbEvents";
             this.cbEvents.Size = new System.Drawing.Size(160, 24);
             this.cbEvents.TabIndex = 2;
@@ -225,7 +227,7 @@
             this.tabCMedewerker.Controls.Add(this.tabPreserve);
             this.tabCMedewerker.Controls.Add(this.tabPadmin);
             this.tabCMedewerker.Location = new System.Drawing.Point(16, 140);
-            this.tabCMedewerker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCMedewerker.Margin = new System.Windows.Forms.Padding(4);
             this.tabCMedewerker.Name = "tabCMedewerker";
             this.tabCMedewerker.SelectedIndex = 0;
             this.tabCMedewerker.Size = new System.Drawing.Size(1204, 491);
@@ -238,9 +240,9 @@
             this.tabPincheck.Controls.Add(this.label2);
             this.tabPincheck.Controls.Add(this.label1);
             this.tabPincheck.Location = new System.Drawing.Point(4, 25);
-            this.tabPincheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPincheck.Margin = new System.Windows.Forms.Padding(4);
             this.tabPincheck.Name = "tabPincheck";
-            this.tabPincheck.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPincheck.Padding = new System.Windows.Forms.Padding(4);
             this.tabPincheck.Size = new System.Drawing.Size(1196, 462);
             this.tabPincheck.TabIndex = 0;
             this.tabPincheck.Text = "InCheck";
@@ -257,9 +259,9 @@
             this.groupBox2.Controls.Add(this.tbLetterScan);
             this.groupBox2.Controls.Add(this.lblLetterScan);
             this.groupBox2.Location = new System.Drawing.Point(596, 57);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(589, 399);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -292,7 +294,7 @@
             // tbLetterStatus
             // 
             this.tbLetterStatus.Location = new System.Drawing.Point(88, 62);
-            this.tbLetterStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLetterStatus.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterStatus.Name = "tbLetterStatus";
             this.tbLetterStatus.Size = new System.Drawing.Size(492, 22);
             this.tbLetterStatus.TabIndex = 10;
@@ -300,7 +302,7 @@
             // tbLetterRFID
             // 
             this.tbLetterRFID.Location = new System.Drawing.Point(99, 94);
-            this.tbLetterRFID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLetterRFID.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterRFID.Name = "tbLetterRFID";
             this.tbLetterRFID.Size = new System.Drawing.Size(481, 22);
             this.tbLetterRFID.TabIndex = 8;
@@ -333,7 +335,7 @@
             // tbLetterScan
             // 
             this.tbLetterScan.Location = new System.Drawing.Point(88, 30);
-            this.tbLetterScan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLetterScan.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterScan.Name = "tbLetterScan";
             this.tbLetterScan.Size = new System.Drawing.Size(492, 22);
             this.tbLetterScan.TabIndex = 8;
@@ -350,6 +352,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbEmail);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.nudReserveID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnControl);
@@ -361,9 +365,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lblLetterName);
             this.groupBox1.Location = new System.Drawing.Point(8, 53);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(580, 399);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -372,10 +376,10 @@
             // 
             // nudReserveID
             // 
-            this.nudReserveID.Location = new System.Drawing.Point(149, 23);
-            this.nudReserveID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudReserveID.Location = new System.Drawing.Point(171, 23);
+            this.nudReserveID.Margin = new System.Windows.Forms.Padding(4);
             this.nudReserveID.Name = "nudReserveID";
-            this.nudReserveID.Size = new System.Drawing.Size(423, 22);
+            this.nudReserveID.Size = new System.Drawing.Size(401, 22);
             this.nudReserveID.TabIndex = 11;
             // 
             // label3
@@ -401,37 +405,37 @@
             // 
             // tbSpotLocation
             // 
-            this.tbSpotLocation.Location = new System.Drawing.Point(149, 122);
-            this.tbSpotLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSpotLocation.Location = new System.Drawing.Point(169, 151);
+            this.tbSpotLocation.Margin = new System.Windows.Forms.Padding(4);
             this.tbSpotLocation.Name = "tbSpotLocation";
-            this.tbSpotLocation.Size = new System.Drawing.Size(421, 22);
+            this.tbSpotLocation.Size = new System.Drawing.Size(401, 22);
             this.tbSpotLocation.TabIndex = 6;
             this.tbSpotLocation.TextChanged += new System.EventHandler(this.tbSpotLocation_TextChanged);
             // 
             // lblLetterLocation
             // 
             this.lblLetterLocation.AutoSize = true;
-            this.lblLetterLocation.Location = new System.Drawing.Point(8, 126);
+            this.lblLetterLocation.Location = new System.Drawing.Point(8, 155);
             this.lblLetterLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterLocation.Name = "lblLetterLocation";
-            this.lblLetterLocation.Size = new System.Drawing.Size(97, 17);
+            this.lblLetterLocation.Size = new System.Drawing.Size(153, 17);
             this.lblLetterLocation.TabIndex = 5;
-            this.lblLetterLocation.Text = "Plek Location:";
+            this.lblLetterLocation.Text = "Kampeerplek Location:";
             this.lblLetterLocation.Click += new System.EventHandler(this.lblLetterLocation_Click);
             // 
             // tbLetterGroupName
             // 
-            this.tbLetterGroupName.Location = new System.Drawing.Point(149, 90);
-            this.tbLetterGroupName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLetterGroupName.Location = new System.Drawing.Point(171, 119);
+            this.tbLetterGroupName.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterGroupName.Name = "tbLetterGroupName";
-            this.tbLetterGroupName.Size = new System.Drawing.Size(421, 22);
+            this.tbLetterGroupName.Size = new System.Drawing.Size(399, 22);
             this.tbLetterGroupName.TabIndex = 4;
             this.tbLetterGroupName.TextChanged += new System.EventHandler(this.tbLetterGroupName_TextChanged);
             // 
             // lblLetterGroupName
             // 
             this.lblLetterGroupName.AutoSize = true;
-            this.lblLetterGroupName.Location = new System.Drawing.Point(8, 94);
+            this.lblLetterGroupName.Location = new System.Drawing.Point(8, 123);
             this.lblLetterGroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLetterGroupName.Name = "lblLetterGroupName";
             this.lblLetterGroupName.Size = new System.Drawing.Size(93, 17);
@@ -441,10 +445,10 @@
             // 
             // tbLetterName
             // 
-            this.tbLetterName.Location = new System.Drawing.Point(149, 58);
-            this.tbLetterName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbLetterName.Location = new System.Drawing.Point(171, 58);
+            this.tbLetterName.Margin = new System.Windows.Forms.Padding(4);
             this.tbLetterName.Name = "tbLetterName";
-            this.tbLetterName.Size = new System.Drawing.Size(421, 22);
+            this.tbLetterName.Size = new System.Drawing.Size(399, 22);
             this.tbLetterName.TabIndex = 2;
             this.tbLetterName.TextChanged += new System.EventHandler(this.tbLetterName_TextChanged);
             // 
@@ -494,9 +498,9 @@
             this.tabPaccount.Controls.Add(this.dgwAccount);
             this.tabPaccount.Controls.Add(this.btnCreateAccount);
             this.tabPaccount.Location = new System.Drawing.Point(4, 25);
-            this.tabPaccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPaccount.Margin = new System.Windows.Forms.Padding(4);
             this.tabPaccount.Name = "tabPaccount";
-            this.tabPaccount.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPaccount.Padding = new System.Windows.Forms.Padding(4);
             this.tabPaccount.Size = new System.Drawing.Size(1196, 462);
             this.tabPaccount.TabIndex = 1;
             this.tabPaccount.Text = "Account";
@@ -533,7 +537,7 @@
             this.dgvcEmail,
             this.dgvcRFID});
             this.dgwAccount.Location = new System.Drawing.Point(29, 70);
-            this.dgwAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgwAccount.Margin = new System.Windows.Forms.Padding(4);
             this.dgwAccount.MultiSelect = false;
             this.dgwAccount.Name = "dgwAccount";
             this.dgwAccount.ReadOnly = true;
@@ -566,7 +570,7 @@
             // btnCreateAccount
             // 
             this.btnCreateAccount.Location = new System.Drawing.Point(29, 20);
-            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(163, 28);
             this.btnCreateAccount.TabIndex = 0;
@@ -582,9 +586,9 @@
             this.tabPreserve.Controls.Add(this.btnReserveItem);
             this.tabPreserve.Controls.Add(this.tabControl1);
             this.tabPreserve.Location = new System.Drawing.Point(4, 25);
-            this.tabPreserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPreserve.Margin = new System.Windows.Forms.Padding(4);
             this.tabPreserve.Name = "tabPreserve";
-            this.tabPreserve.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPreserve.Padding = new System.Windows.Forms.Padding(4);
             this.tabPreserve.Size = new System.Drawing.Size(1196, 462);
             this.tabPreserve.TabIndex = 2;
             this.tabPreserve.Text = "Reserveren";
@@ -594,7 +598,7 @@
             // 
             this.btnChangeReservation.Enabled = false;
             this.btnChangeReservation.Location = new System.Drawing.Point(317, 21);
-            this.btnChangeReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeReservation.Name = "btnChangeReservation";
             this.btnChangeReservation.Size = new System.Drawing.Size(145, 49);
             this.btnChangeReservation.TabIndex = 4;
@@ -605,7 +609,7 @@
             // 
             this.btnDeleteReservation.Enabled = false;
             this.btnDeleteReservation.Location = new System.Drawing.Point(471, 21);
-            this.btnDeleteReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteReservation.Name = "btnDeleteReservation";
             this.btnDeleteReservation.Size = new System.Drawing.Size(145, 49);
             this.btnDeleteReservation.TabIndex = 3;
@@ -616,7 +620,7 @@
             // btnReserveLocation
             // 
             this.btnReserveLocation.Location = new System.Drawing.Point(167, 21);
-            this.btnReserveLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReserveLocation.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserveLocation.Name = "btnReserveLocation";
             this.btnReserveLocation.Size = new System.Drawing.Size(143, 28);
             this.btnReserveLocation.TabIndex = 2;
@@ -627,7 +631,7 @@
             // btnReserveItem
             // 
             this.btnReserveItem.Location = new System.Drawing.Point(13, 21);
-            this.btnReserveItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReserveItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnReserveItem.Name = "btnReserveItem";
             this.btnReserveItem.Size = new System.Drawing.Size(145, 28);
             this.btnReserveItem.TabIndex = 1;
@@ -640,7 +644,7 @@
             this.tabControl1.Controls.Add(this.tabPItem);
             this.tabControl1.Controls.Add(this.tabPlocation);
             this.tabControl1.Location = new System.Drawing.Point(0, 78);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1199, 382);
@@ -650,9 +654,9 @@
             // 
             this.tabPItem.Controls.Add(this.dgwReserveItem);
             this.tabPItem.Location = new System.Drawing.Point(4, 25);
-            this.tabPItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPItem.Margin = new System.Windows.Forms.Padding(4);
             this.tabPItem.Name = "tabPItem";
-            this.tabPItem.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPItem.Padding = new System.Windows.Forms.Padding(4);
             this.tabPItem.Size = new System.Drawing.Size(1191, 353);
             this.tabPItem.TabIndex = 0;
             this.tabPItem.Text = "Item";
@@ -669,7 +673,7 @@
             this.ItemDateOut,
             this.ItemDateIn});
             this.dgwReserveItem.Location = new System.Drawing.Point(8, 9);
-            this.dgwReserveItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgwReserveItem.Margin = new System.Windows.Forms.Padding(4);
             this.dgwReserveItem.MultiSelect = false;
             this.dgwReserveItem.Name = "dgwReserveItem";
             this.dgwReserveItem.ReadOnly = true;
@@ -719,9 +723,9 @@
             // 
             this.tabPlocation.Controls.Add(this.dgwReserveSpot);
             this.tabPlocation.Location = new System.Drawing.Point(4, 25);
-            this.tabPlocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPlocation.Margin = new System.Windows.Forms.Padding(4);
             this.tabPlocation.Name = "tabPlocation";
-            this.tabPlocation.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPlocation.Padding = new System.Windows.Forms.Padding(4);
             this.tabPlocation.Size = new System.Drawing.Size(1191, 353);
             this.tabPlocation.TabIndex = 1;
             this.tabPlocation.Text = "Plek";
@@ -737,7 +741,7 @@
             this.LocationDateIn,
             this.LocationDateOut});
             this.dgwReserveSpot.Location = new System.Drawing.Point(8, 9);
-            this.dgwReserveSpot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgwReserveSpot.Margin = new System.Windows.Forms.Padding(4);
             this.dgwReserveSpot.Name = "dgwReserveSpot";
             this.dgwReserveSpot.Size = new System.Drawing.Size(1172, 334);
             this.dgwReserveSpot.TabIndex = 4;
@@ -776,9 +780,9 @@
             this.tabPadmin.Controls.Add(this.tabCAdmin);
             this.tabPadmin.Controls.Add(this.btnEvent);
             this.tabPadmin.Location = new System.Drawing.Point(4, 25);
-            this.tabPadmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPadmin.Margin = new System.Windows.Forms.Padding(4);
             this.tabPadmin.Name = "tabPadmin";
-            this.tabPadmin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPadmin.Padding = new System.Windows.Forms.Padding(4);
             this.tabPadmin.Size = new System.Drawing.Size(1196, 462);
             this.tabPadmin.TabIndex = 3;
             this.tabPadmin.Text = "Admin";
@@ -788,7 +792,7 @@
             // 
             this.btnChangeEvent.Enabled = false;
             this.btnChangeEvent.Location = new System.Drawing.Point(172, 20);
-            this.btnChangeEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangeEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeEvent.Name = "btnChangeEvent";
             this.btnChangeEvent.Size = new System.Drawing.Size(140, 28);
             this.btnChangeEvent.TabIndex = 3;
@@ -799,7 +803,7 @@
             // 
             this.btnDeleteEvent.Enabled = false;
             this.btnDeleteEvent.Location = new System.Drawing.Point(320, 20);
-            this.btnDeleteEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteEvent.Name = "btnDeleteEvent";
             this.btnDeleteEvent.Size = new System.Drawing.Size(140, 28);
             this.btnDeleteEvent.TabIndex = 2;
@@ -813,7 +817,7 @@
             this.tabCAdmin.Controls.Add(this.tabPmedia);
             this.tabCAdmin.Controls.Add(this.tabPEvent);
             this.tabCAdmin.Location = new System.Drawing.Point(0, 70);
-            this.tabCAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.tabCAdmin.Name = "tabCAdmin";
             this.tabCAdmin.SelectedIndex = 0;
             this.tabCAdmin.Size = new System.Drawing.Size(1199, 394);
@@ -823,9 +827,9 @@
             // 
             this.tabPpressent.Controls.Add(this.dgwPresent);
             this.tabPpressent.Location = new System.Drawing.Point(4, 25);
-            this.tabPpressent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPpressent.Margin = new System.Windows.Forms.Padding(4);
             this.tabPpressent.Name = "tabPpressent";
-            this.tabPpressent.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPpressent.Padding = new System.Windows.Forms.Padding(4);
             this.tabPpressent.Size = new System.Drawing.Size(1191, 365);
             this.tabPpressent.TabIndex = 0;
             this.tabPpressent.Text = "Aanwezigen";
@@ -840,19 +844,39 @@
             this.AdminPresentDateIn,
             this.AdminPresentDateOut});
             this.dgwPresent.Location = new System.Drawing.Point(8, 7);
-            this.dgwPresent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgwPresent.Margin = new System.Windows.Forms.Padding(4);
             this.dgwPresent.Name = "dgwPresent";
             this.dgwPresent.Size = new System.Drawing.Size(1124, 362);
             this.dgwPresent.TabIndex = 2;
             this.dgwPresent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
+            // AdminPresentName
+            // 
+            this.AdminPresentName.HeaderText = "Naam";
+            this.AdminPresentName.Name = "AdminPresentName";
+            // 
+            // AdminPresentLocation
+            // 
+            this.AdminPresentLocation.HeaderText = "Plek Locatie";
+            this.AdminPresentLocation.Name = "AdminPresentLocation";
+            // 
+            // AdminPresentDateIn
+            // 
+            this.AdminPresentDateIn.HeaderText = "Datum In";
+            this.AdminPresentDateIn.Name = "AdminPresentDateIn";
+            // 
+            // AdminPresentDateOut
+            // 
+            this.AdminPresentDateOut.HeaderText = "Datum Uit";
+            this.AdminPresentDateOut.Name = "AdminPresentDateOut";
+            // 
             // tabPmedia
             // 
             this.tabPmedia.Controls.Add(this.dgwMedia);
             this.tabPmedia.Location = new System.Drawing.Point(4, 25);
-            this.tabPmedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPmedia.Margin = new System.Windows.Forms.Padding(4);
             this.tabPmedia.Name = "tabPmedia";
-            this.tabPmedia.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPmedia.Padding = new System.Windows.Forms.Padding(4);
             this.tabPmedia.Size = new System.Drawing.Size(1191, 365);
             this.tabPmedia.TabIndex = 1;
             this.tabPmedia.Text = "Media";
@@ -867,7 +891,7 @@
             this.AdminMediaReports,
             this.AdminMediaOpen});
             this.dgwMedia.Location = new System.Drawing.Point(8, 4);
-            this.dgwMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgwMedia.Margin = new System.Windows.Forms.Padding(4);
             this.dgwMedia.Name = "dgwMedia";
             this.dgwMedia.Size = new System.Drawing.Size(1124, 362);
             this.dgwMedia.TabIndex = 2;
@@ -896,9 +920,9 @@
             // 
             this.tabPEvent.Controls.Add(this.dgwEvents);
             this.tabPEvent.Location = new System.Drawing.Point(4, 25);
-            this.tabPEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPEvent.Margin = new System.Windows.Forms.Padding(4);
             this.tabPEvent.Name = "tabPEvent";
-            this.tabPEvent.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPEvent.Padding = new System.Windows.Forms.Padding(4);
             this.tabPEvent.Size = new System.Drawing.Size(1191, 365);
             this.tabPEvent.TabIndex = 2;
             this.tabPEvent.Text = "Event";
@@ -914,7 +938,7 @@
             this.AdminEventAttendeesCount,
             this.AdminEventID});
             this.dgwEvents.Location = new System.Drawing.Point(8, 7);
-            this.dgwEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgwEvents.Margin = new System.Windows.Forms.Padding(4);
             this.dgwEvents.Name = "dgwEvents";
             this.dgwEvents.Size = new System.Drawing.Size(1124, 362);
             this.dgwEvents.TabIndex = 2;
@@ -949,7 +973,7 @@
             // btnEvent
             // 
             this.btnEvent.Location = new System.Drawing.Point(24, 20);
-            this.btnEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnEvent.Name = "btnEvent";
             this.btnEvent.Size = new System.Drawing.Size(140, 28);
             this.btnEvent.TabIndex = 0;
@@ -961,25 +985,23 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // AdminPresentName
+            // tbEmail
             // 
-            this.AdminPresentName.HeaderText = "Naam";
-            this.AdminPresentName.Name = "AdminPresentName";
+            this.tbEmail.Location = new System.Drawing.Point(171, 89);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(399, 22);
+            this.tbEmail.TabIndex = 13;
             // 
-            // AdminPresentLocation
+            // label5
             // 
-            this.AdminPresentLocation.HeaderText = "Plek Locatie";
-            this.AdminPresentLocation.Name = "AdminPresentLocation";
-            // 
-            // AdminPresentDateIn
-            // 
-            this.AdminPresentDateIn.HeaderText = "Datum In";
-            this.AdminPresentDateIn.Name = "AdminPresentDateIn";
-            // 
-            // AdminPresentDateOut
-            // 
-            this.AdminPresentDateOut.HeaderText = "Datum Uit";
-            this.AdminPresentDateOut.Name = "AdminPresentDateOut";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 93);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Email:";
             // 
             // MederwerkerForm
             // 
@@ -994,7 +1016,7 @@
             this.Controls.Add(this.cbEvents);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MederwerkerForm";
             this.Text = "Medewerker Form";
             this.Load += new System.EventHandler(this.MederwerkerForm_Load);
@@ -1116,6 +1138,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdminPresentDateOut;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -278,14 +278,15 @@ namespace MedewerkerSysteem
             tbLetterName.Clear();
             try
             {
-                Account account = administration.FindAccount(tbLetterRFID.Text);
+                Account account = administration.FindAccount(tbEmail.Text);
                 Reserve reserve = administration.FindReserve(Convert.ToInt32(nudReserveID.Value), account);
+                
                 accounts.Add(account);
                 reserves.Add(reserve);
                 //Check if the RFID belongs to the name
                 //If correct fill in name and payment status
-                if (account.Person.LastName == tbLetterName.Text && reserve.Account == account && account.RFID == tbLetterRFID.Text
-                    /*&& reserve.Group.Name == tbLetterGroupName.Text*/)
+                if (account.Person.LastName == tbLetterName.Text && reserve.Account == account)
+                    /*&& reserve.Group.Name == tbLetterGroupName.Text*/
                 {
                     tbLetterScan.Text = "Succes";
                     //if status: paid set btnComplete to true
