@@ -42,7 +42,7 @@
             this.tbWachtwoord.Name = "tbWachtwoord";
             this.tbWachtwoord.Size = new System.Drawing.Size(166, 20);
             this.tbWachtwoord.TabIndex = 17;
-            this.tbWachtwoord.Text = "bryaniscool";
+            this.tbWachtwoord.Text = "keviniscool";
             // 
             // tbEmail
             // 
@@ -50,7 +50,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(166, 20);
             this.tbEmail.TabIndex = 16;
-            this.tbEmail.Text = "bryan@email.com";
+            this.tbEmail.Text = "kevin@email.com";
             // 
             // btnLogin
             // 
