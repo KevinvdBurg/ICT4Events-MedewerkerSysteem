@@ -53,12 +53,19 @@ public class Administation
 
 	public void Add(Reserve Reserve)
 	{
-
+	    if (Reserve is ReserveSpot)
+	    {
+	        dbreserve.Insert(Reserve as ReserveSpot);
+	    }
+        else if(Reserve is ReserveItem)
+	    {
+	        //dbreserve.Insert(Reserve as ReserveItem);
+	    }
 	}
 
 	public void AddEvent(Event Event)
 	{
-
+	    dbevent.Insert(Event);
 	}
 
 	public void Delete(Account Account)
@@ -68,12 +75,19 @@ public class Administation
 
 	public void Delete(Reserve Reserve)
 	{
-		
+        if (Reserve is ReserveSpot)
+        {
+            //dbreserve.Delete(Reserve as ReserveSpot);
+        }
+        else if (Reserve is ReserveItem)
+        {
+            //dbreserve.Delete(Reserve as ReserveItem);
+        }
 	}
 
 	public void Delete(Event Event)
 	{
-		
+	    //TODO
 	}
     /// <summary>
     /// Searched the database for all Accounts for the given Code
