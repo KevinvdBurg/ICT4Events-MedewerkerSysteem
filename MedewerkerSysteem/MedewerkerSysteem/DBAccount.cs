@@ -203,7 +203,7 @@ public class DBAccount : Database
                     string nr = Convert.ToString(reader["huisnummer"]);
                     string zipcode = Convert.ToString(reader["postcode"]);
                     string email = Convert.ToString(reader["emailadres"]);
-
+                    string wachtwoord = Convert.ToString(reader["wachtwoord"]);
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
                     {
                         type = "admin";
@@ -213,8 +213,8 @@ public class DBAccount : Database
                         type = "bezoeker";
                     }
 
-                    Account tempAccount = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid);
-
+                    Account tempAccount = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
+                    
                     resultaat.Add(tempAccount);
 
                 }

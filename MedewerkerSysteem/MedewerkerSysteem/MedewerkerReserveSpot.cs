@@ -12,14 +12,23 @@ namespace MedewerkerSysteem
 {
     public partial class MedewerkerReserveSpot : Form
     {
+        Administation administation = new Administation();
         public MedewerkerReserveSpot()
         {
             InitializeComponent();
+            //todo find highest reserveID and add 1
+            
         }
 
         private void btnRScancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnRSreserve_Click(object sender, EventArgs e)
+        {
+            
+            ReserveSpot reserveSpot = new ReserveSpot();
         }
     }
 }
