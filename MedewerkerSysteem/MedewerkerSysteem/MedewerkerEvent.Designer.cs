@@ -31,8 +31,6 @@
             this.gbReserveSpot = new System.Windows.Forms.GroupBox();
             this.nudEid = new System.Windows.Forms.NumericUpDown();
             this.lblCAid = new System.Windows.Forms.Label();
-            this.lblCAcountry = new System.Windows.Forms.Label();
-            this.tbEcountry = new System.Windows.Forms.TextBox();
             this.tbEcity = new System.Windows.Forms.TextBox();
             this.lblCAcity = new System.Windows.Forms.Label();
             this.lblCAzipcode = new System.Windows.Forms.Label();
@@ -51,17 +49,20 @@
             this.lblEdataout = new System.Windows.Forms.Label();
             this.lblEname = new System.Windows.Forms.Label();
             this.btnECreateEvent = new System.Windows.Forms.Button();
+            this.nudEhuisnummer = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbReserveSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmaxvisitors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEhuisnummer)).BeginInit();
             this.SuspendLayout();
             // 
             // gbReserveSpot
             // 
+            this.gbReserveSpot.Controls.Add(this.nudEhuisnummer);
+            this.gbReserveSpot.Controls.Add(this.label1);
             this.gbReserveSpot.Controls.Add(this.nudEid);
             this.gbReserveSpot.Controls.Add(this.lblCAid);
-            this.gbReserveSpot.Controls.Add(this.lblCAcountry);
-            this.gbReserveSpot.Controls.Add(this.tbEcountry);
             this.gbReserveSpot.Controls.Add(this.tbEcity);
             this.gbReserveSpot.Controls.Add(this.lblCAcity);
             this.gbReserveSpot.Controls.Add(this.lblCAzipcode);
@@ -90,7 +91,7 @@
             // nudEid
             // 
             this.nudEid.Location = new System.Drawing.Point(318, 35);
-            this.nudEid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudEid.Margin = new System.Windows.Forms.Padding(2);
             this.nudEid.Name = "nudEid";
             this.nudEid.Size = new System.Drawing.Size(90, 20);
             this.nudEid.TabIndex = 38;
@@ -111,28 +112,10 @@
             this.lblCAid.TabIndex = 37;
             this.lblCAid.Text = "Nummer:";
             // 
-            // lblCAcountry
-            // 
-            this.lblCAcountry.AutoSize = true;
-            this.lblCAcountry.Location = new System.Drawing.Point(10, 157);
-            this.lblCAcountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCAcountry.Name = "lblCAcountry";
-            this.lblCAcountry.Size = new System.Drawing.Size(34, 13);
-            this.lblCAcountry.TabIndex = 36;
-            this.lblCAcountry.Text = "Land:";
-            // 
-            // tbEcountry
-            // 
-            this.tbEcountry.Location = new System.Drawing.Point(114, 153);
-            this.tbEcountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbEcountry.Name = "tbEcountry";
-            this.tbEcountry.Size = new System.Drawing.Size(310, 20);
-            this.tbEcountry.TabIndex = 35;
-            // 
             // tbEcity
             // 
             this.tbEcity.Location = new System.Drawing.Point(114, 121);
-            this.tbEcity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEcity.Margin = new System.Windows.Forms.Padding(2);
             this.tbEcity.Name = "tbEcity";
             this.tbEcity.Size = new System.Drawing.Size(310, 20);
             this.tbEcity.TabIndex = 34;
@@ -150,7 +133,7 @@
             // lblCAzipcode
             // 
             this.lblCAzipcode.AutoSize = true;
-            this.lblCAzipcode.Location = new System.Drawing.Point(262, 102);
+            this.lblCAzipcode.Location = new System.Drawing.Point(8, 149);
             this.lblCAzipcode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCAzipcode.Name = "lblCAzipcode";
             this.lblCAzipcode.Size = new System.Drawing.Size(55, 13);
@@ -159,8 +142,8 @@
             // 
             // tbEzipcode
             // 
-            this.tbEzipcode.Location = new System.Drawing.Point(310, 98);
-            this.tbEzipcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEzipcode.Location = new System.Drawing.Point(114, 149);
+            this.tbEzipcode.Margin = new System.Windows.Forms.Padding(2);
             this.tbEzipcode.Name = "tbEzipcode";
             this.tbEzipcode.Size = new System.Drawing.Size(114, 20);
             this.tbEzipcode.TabIndex = 31;
@@ -168,7 +151,7 @@
             // tbEstreetname
             // 
             this.tbEstreetname.Location = new System.Drawing.Point(114, 98);
-            this.tbEstreetname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEstreetname.Margin = new System.Windows.Forms.Padding(2);
             this.tbEstreetname.Name = "tbEstreetname";
             this.tbEstreetname.Size = new System.Drawing.Size(144, 20);
             this.tbEstreetname.TabIndex = 30;
@@ -186,7 +169,7 @@
             // tbEname
             // 
             this.tbEname.Location = new System.Drawing.Point(117, 35);
-            this.tbEname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEname.Margin = new System.Windows.Forms.Padding(2);
             this.tbEname.Name = "tbEname";
             this.tbEname.Size = new System.Drawing.Size(141, 20);
             this.tbEname.TabIndex = 18;
@@ -284,6 +267,30 @@
             this.btnECreateEvent.UseVisualStyleBackColor = true;
             this.btnECreateEvent.Click += new System.EventHandler(this.btnRSreserve_Click);
             // 
+            // nudEhuisnummer
+            // 
+            this.nudEhuisnummer.Location = new System.Drawing.Point(313, 150);
+            this.nudEhuisnummer.Margin = new System.Windows.Forms.Padding(2);
+            this.nudEhuisnummer.Name = "nudEhuisnummer";
+            this.nudEhuisnummer.Size = new System.Drawing.Size(90, 20);
+            this.nudEhuisnummer.TabIndex = 40;
+            this.nudEhuisnummer.ThousandsSeparator = true;
+            this.nudEhuisnummer.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(241, 154);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Huisnummer:";
+            // 
             // MedewerkerEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +303,7 @@
             this.gbReserveSpot.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmaxvisitors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEhuisnummer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,8 +323,6 @@
         private System.Windows.Forms.Label lblElocationname;
         private System.Windows.Forms.NumericUpDown nudEmaxvisitors;
         private System.Windows.Forms.TextBox tbEname;
-        private System.Windows.Forms.Label lblCAcountry;
-        private System.Windows.Forms.TextBox tbEcountry;
         private System.Windows.Forms.TextBox tbEcity;
         private System.Windows.Forms.Label lblCAcity;
         private System.Windows.Forms.Label lblCAzipcode;
@@ -325,5 +331,7 @@
         private System.Windows.Forms.Label lblCAstreetname;
         private System.Windows.Forms.NumericUpDown nudEid;
         private System.Windows.Forms.Label lblCAid;
+        private System.Windows.Forms.NumericUpDown nudEhuisnummer;
+        private System.Windows.Forms.Label label1;
     }
 }

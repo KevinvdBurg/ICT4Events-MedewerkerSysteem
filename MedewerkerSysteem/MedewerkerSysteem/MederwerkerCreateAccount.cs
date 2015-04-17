@@ -44,7 +44,7 @@ namespace MedewerkerSysteem
         private void btnCAcreate_Click(object sender, EventArgs e)
         {
             //Adres wordt aangemaakt
-            Address address = new Address(tbCAcity.Text, tbCAcountry.Text, Convert.ToString(nudCAnumber.Value), tbCAzipcode.Text);
+            Address address = new Address(tbCAcity.Text, Convert.ToString(nudCAnumber.Value), tbCAzipcode.Text);
             //Persoon wordt aangemaakt
             Person person = new Person(address, tbCAemail.Text, tbCAname.Text, tbCAlastname.Text);
             //Account wordt aangemaakt

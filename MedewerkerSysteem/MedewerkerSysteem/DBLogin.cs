@@ -73,7 +73,6 @@ namespace MedewerkerSysteem
                     lastName = Convert.ToString(reader["achternaam"]);
                     rfid = Convert.ToString(reader["rfid"]);
                     city = Convert.ToString(reader["plaats"]);
-                    country = Convert.ToString(reader["Land"]);
                     nr = Convert.ToString(reader["huisnummer"]);
                     zipcode = Convert.ToString(reader["Postcode"]);
                     wachtwoord = Convert.ToString(reader["wachtwoord"]);
@@ -88,7 +87,7 @@ namespace MedewerkerSysteem
                 }
 
                 //account = new Account(new Person(email, lastName, name), type, rfid);
-                account = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
+                account = new Account(new Person(new Address(city, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
 
             }
             catch (OracleException e)

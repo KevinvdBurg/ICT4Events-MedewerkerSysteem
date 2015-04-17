@@ -29,14 +29,9 @@ public class Address
 		set;
 	}
 
-	public string Country
-	{
-		get;
-		set;
-	}
 
 
-    public Address(string City, string Country, string Number, string ZipCode)
+    public Address(string City, string Number, string ZipCode)
     {
         this.City = City;
         this.Number = Number;

@@ -104,7 +104,7 @@ public class DBAddress : Database
 
                 }
                 
-                resultaat = new Address(PLAATS, COUNTRY, HUISNUMMER, POSTCODE);
+                resultaat = new Address(PLAATS, HUISNUMMER, POSTCODE);
             }
         }
         catch (OracleException e)

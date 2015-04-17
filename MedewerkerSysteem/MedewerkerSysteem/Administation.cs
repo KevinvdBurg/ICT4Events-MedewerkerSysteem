@@ -48,7 +48,7 @@ public class Administation
 
 	public void Add(Account Account)
 	{
-
+	    dbaccount.Insert(Account);
 	}
 
 	public void Add(Reserve Reserve)

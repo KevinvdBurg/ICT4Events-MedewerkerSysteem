@@ -93,7 +93,7 @@ public class DBEvent : Database
                     place = Convert.ToString(reader["PLAATS"]);
                     zipcode = Convert.ToString(reader["POSTCODE"]);
                 }
-                resultaat = new Event(new Location(new Address(country, place, nr, zipcode), name), maxpers, name, eventid, begindate, enddate);
+                resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid, begindate, enddate);
             }
         }
         catch (OracleException e)
@@ -145,7 +145,7 @@ public class DBEvent : Database
                     nr = Convert.ToString(reader["HUISNUMMER"]);
                     place = Convert.ToString(reader["PLAATS"]);
                     zipcode = Convert.ToString(reader["POSTCODE"]);
-                    AddedEvent = new Event(new Location(new Address( country, place, nr, zipcode), name), maxpers, name, eventid, begindate, enddate);
+                    AddedEvent = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid, begindate, enddate);
                     resultaat.Add(AddedEvent);
                 }
                 return resultaat;

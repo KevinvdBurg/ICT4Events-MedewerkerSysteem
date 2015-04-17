@@ -8,16 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
 public class DBAccount : Database
 {
-	public virtual bool Update(Account Account)
+	public  bool Update(Account Account)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual bool Delete(Account account)
+	public  bool Delete(Account account)
 	{
         bool resultaat = false;
         string sql;
@@ -46,11 +47,12 @@ public class DBAccount : Database
 	}
 
 
-	public virtual bool Insert(Account account)
+	public  bool Insert(Account account)
 	{
         bool resultaat = false;
         string sql;
-        sql = "INSERT INTO GEBRUIKER (RFID, EMAILADRES, WACHTWOORD, PLAATS, POSTCODE, HUISNUMMER, ISADMIN, VOORNAAM, ACHTERNAAM, LAND) VALUES (:RFID, :emailadres, :wachtwoord, :plaats, :postcode, :huisnummer, :isadmin, :voornaam, :achternaam, :land)";
+        //sql = "INSERT INTO GEBRUIKER(RFID, EMAILADRES, WACHTWOORD, PLAATS, POSTCODE, HUISNUMMER, ISADMIN, VOORNAAM, ACHTERNAAM) VALUES (:RFID, :emailadres, :wachtwoord, :plaats, :postcode, :huisnummer, :isadmin, :voornaam, :achternaam)";
+        sql = "INSERT INTO GEBRUIKER(RFID, EMAILADRES, WACHTWOORD, PLAATS, POSTCODE, HUISNUMMER, ISADMIN, VOORNAAM, ACHTERNAAM) VALUES (:RFID, :emailadres, :wachtwoord, :plaats, :postcode, :huisnummer, :isadmin, :voornaam, :achternaam)";
         try
         {
             Connect();
@@ -64,7 +66,8 @@ public class DBAccount : Database
             cmd.Parameters.Add(new OracleParameter("isadmin", "0"));
             cmd.Parameters.Add(new OracleParameter("voornaam", account.Person.Name));
             cmd.Parameters.Add(new OracleParameter("achternaam", account.Person.LastName));
-            cmd.Parameters.Add(new OracleParameter("land", account.Person.Address.Country));
+            MessageBox.Show(Convert.ToString(cmd));
+
             cmd.ExecuteNonQuery();
             //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
@@ -84,7 +87,7 @@ public class DBAccount : Database
        // throw new System.NotImplementedException();
 	}
 
-	public virtual void Select()
+	public  void Select()
 	{
 	}
 
@@ -134,7 +137,7 @@ public class DBAccount : Database
                         type = "bezoeker";
                     }
                 }
-                resultaat = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
+                resultaat = new Account(new Person(new Address(city, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
             }
         }
         catch (OracleException e)
@@ -200,7 +203,6 @@ public class DBAccount : Database
                     string lastName = Convert.ToString(reader["achternaam"]);
                     string rfid = Convert.ToString(reader["rfid"]);
                     string city = Convert.ToString(reader["plaats"]);
-                    string country = Convert.ToString(reader["Land"]);
                     string nr = Convert.ToString(reader["huisnummer"]);
                     string zipcode = Convert.ToString(reader["postcode"]);
                     string email = Convert.ToString(reader["emailadres"]);
@@ -214,7 +216,7 @@ public class DBAccount : Database
                         type = "bezoeker";
                     }
 
-                    Account tempAccount = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
+                    Account tempAccount = new Account(new Person(new Address(city, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
                     
                     resultaat.Add(tempAccount);
 
