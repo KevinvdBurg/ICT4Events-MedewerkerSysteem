@@ -12,7 +12,7 @@ using Oracle.DataAccess.Client;
 
 public class DBAddress : Database
 {
-    Administation administation = new Administation();
+    
 	public virtual void Update()
 	{
 		throw new System.NotImplementedException();
@@ -50,6 +50,7 @@ public class DBAddress : Database
 
 	public virtual bool Delete(Address address )
 	{
+        Administation administation = new Administation();
         bool resultaat = false;
         string sql;
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
@@ -78,6 +79,7 @@ public class DBAddress : Database
 
     internal Address Select(Address Address)
     {
+        Administation administation = new Administation();
         Address resultaat = null;
         string sql;
         sql = "Select * From Locatie WHERE LOCATIEID = :LOCATIEID";
