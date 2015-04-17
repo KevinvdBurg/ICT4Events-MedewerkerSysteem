@@ -230,57 +230,61 @@ public class Administation
 
     public CampingSpot FindCampingSpot(int id)
     {
-        CampingSpot foundCampingSpot = dbreserve.Select(/*id*/);
-        if (foundCampingSpot != null)
-        {
-            return foundCampingSpot;
-        }
-        else
-        {
-            MessageBox.Show("Kampeerplek niet gevonden");
-            return null;
-        }
+        //CampingSpot foundCampingSpot = dbreserve.Select(/*id*/);
+        //if (foundCampingSpot != null)
+        //{
+        //    return foundCampingSpot;
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Kampeerplek niet gevonden");
+        //    return null;
+        //}
+        return null;
     }
 
     public List<CampingSpot> FindCampingSpotsAll()
     {
-        List<CampingSpot> foundSpots = dbreserve.SelectAllSpots();
-        if (foundSpots != null)
-        {
-            return foundSpots;
-        }
-        else
-        {
-            MessageBox.Show("Kampeerplekken niet gevonden");
-            return null;
-        }
+        //List<CampingSpot> foundSpots = dbreserve.SelectAllSpots();
+        //if (foundSpots != null)
+        //{
+        //    return foundSpots;
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Kampeerplekken niet gevonden");
+        //    return null;
+        //}
+        return null;
     }
 
     public Item FindÍtem(int id)
     {
-        Item founditem = dbreserve.Select(/*id*/);
-        if (founditem != null)
-        {
-            return founditem;
-        }
-        else
-        {
-            MessageBox.Show("Item niet gevonden");
-            return null;
-        }
+        //Item founditem = dbreserve.Select(/*id*/);
+        //if (founditem != null)
+        //{
+        //    return founditem;
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Item niet gevonden");
+        //    return null;
+        //}
+        return null;
     }
 
     public List<Item> FindItemsAll()
     {
-        List<Item> foundItems = dbreserve.Select( /*id*/);
-        if (foundItems != null)
-        {
-            return foundItems;
-        }
-        else
-        {
-            MessageBox.Show("Items niet gevonden");
-        }
+        //List<Item> foundItems = dbreserve.Select( /*id*/);
+        //if (foundItems != null)
+        //{
+        //    return foundItems;
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Items niet gevonden");
+        //}
+        return null;
     }
 
 	public void Update(Account Account)

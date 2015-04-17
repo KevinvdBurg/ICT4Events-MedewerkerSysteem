@@ -13,13 +13,13 @@ public abstract class Reserve
 {
 	
 
-	public virtual DateTime StartDate
+	public virtual string StartDate
 	{
 		get;
 		set;
 	}
 
-	public virtual DateTime EndDate
+	public virtual string EndDate
 	{
 		get;
 		set;
@@ -45,14 +45,14 @@ public abstract class Reserve
 
     public int ReserveringsID { get; set; }
 
-	public Reserve(Account Account, Category Category, DateTime EndDate, DateTime StartDate,  bool Paid, int reserveringsID)
+    public Reserve(Account Account, Category Category, string EndDate, string StartDate, bool Paid, int ReserveringsID)
 	{
         this.Account = Account;
         this.Category = Category;
         this.EndDate = EndDate;
         this.StartDate = StartDate;
-        
-	    this.ReserveringsID = reserveringsID;
+
+        this.ReserveringsID = ReserveringsID;
 	}
 
 }

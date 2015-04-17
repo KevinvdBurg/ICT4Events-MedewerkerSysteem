@@ -23,7 +23,8 @@ public class ReserveItem : Reserve
 		set;
 	}
 
-	public ReserveItem(Item Item, bool Present, Account Account, Category Category, string EndDate, string StartDate, string RFID, bool Paid) : base(Account, Category, EndDate, StartDate, RFID, Paid)
+    public ReserveItem(Item Item, bool Present, Account Account, Category Category, string EndDate, string StartDate, bool Paid, int ReserveringsID)
+        : base(Account, Category, EndDate, StartDate, Paid, ReserveringsID)
 	{
         this.Item = Item;
         this.Present = Present;

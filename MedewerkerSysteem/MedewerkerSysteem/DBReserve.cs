@@ -34,9 +34,9 @@ public class DBReserve : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("reserveringid", ));
+            cmd.Parameters.Add(new OracleParameter("reserveringid",reservespot.ReserveringsID ));
             cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
-            cmd.Parameters.Add(new OracleParameter("kampeerplekid", reservespot.));
+            cmd.Parameters.Add(new OracleParameter("kampeerplekid", reservespot.CampingSpot));
             cmd.Parameters.Add(new OracleParameter("betaald", paid));
             cmd.Parameters.Add(new OracleParameter("datumin", reservespot.StartDate));
             cmd.Parameters.Add(new OracleParameter("datumuit", reservespot.EndDate));
@@ -63,7 +63,7 @@ public class DBReserve : Database
 	}
 
 
-    internal Reserve Select(decimal reserveringID, Account account)
+    internal Reserve Select(int reserveringID, Account account)
     {
         ReserveSpot  resultaat = null;
         string sql;
@@ -76,8 +76,8 @@ public class DBReserve : Database
         string RFID = "";
         int KAMPEERPLEKID = 0;
         bool BETAALD = false;
-        DateTime DATUMIN = new DateTime();
-        DateTime DATUMUIT = new DateTime();
+        string DATUMIN = "";
+        string DATUMUIT = "";
         int MAXPERSONEN = 0;
         decimal PRIJS = 0;
         int GROEPID = 0;
@@ -97,8 +97,8 @@ public class DBReserve : Database
                     RFID = Convert.ToString(reader["RFID"]);
                     KAMPEERPLEKID = Convert.ToInt32(reader["EVENTID"]);
                     BETAALD = Convert.ToBoolean(reader["BETAALD"]);
-                    DATUMIN = Convert.ToDateTime(reader["MAXPERSONEN"]);
-                    DATUMUIT = Convert.ToDateTime(reader["MAXPERSONEN"]);
+                    DATUMIN = Convert.ToString(reader["MAXPERSONEN"]);
+                    DATUMUIT = Convert.ToString(reader["MAXPERSONEN"]);
                     MAXPERSONEN = Convert.ToInt16(reader["EINDDATUM"]);
                     PRIJS = Convert.ToDecimal(reader["MAXPERSONEN"]);
                     GROEPID = Convert.ToInt32(reader["GROEPID"]);
@@ -108,7 +108,7 @@ public class DBReserve : Database
                 //resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
 
 
-                resultaat = new ReserveSpot(new CampingSpot(KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, RFID, BETAALD);
+                resultaat = new ReserveSpot(new CampingSpot(KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, BETAALD, reserveringID);
             }
         }
         catch (OracleException e)
@@ -139,12 +139,12 @@ public class DBReserve : Database
             {
                 while (reader.Read())
                 {
-                    string reserveringID = Convert.ToString(reader["reserveringID"]);
+                    int reserveringID = Convert.ToInt32(reader["reserveringID"]);
                     string EMAILADRES = Convert.ToString(reader["EMAILADRES"]);
                     string wachtwoord = Convert.ToString(reader["wachtwoord"]);
                     string DATUMIN = Convert.ToString(reader["DATUMIN"]);
                     string DATUMUIT = Convert.ToString(reader["DATUMUIT"]);
-                    bool BETAALD = Convert.ToBoolean(reader["BETAALD"]);
+                    
                     int kampeerplekid = Convert.ToInt32(reader["kampeerplekid"]);
                     string GROEPNAAM = Convert.ToString(reader["GROEPNAAM"]);
                     int GROEPID = Convert.ToInt32(reader["GROEPID"]);
@@ -158,8 +158,15 @@ public class DBReserve : Database
                     string DETAILS = Convert.ToString(reader["DETAILS"]);
                     decimal PRIJS = Convert.ToDecimal(reader["PRIJS"]);
 
+                    int BETAALD = Convert.ToInt32(reader["BETAALD"]);
 
-                    ReserveSpot tempResev = new ReserveSpot(new CampingSpot(kampeerplekid), new Group(GROEPNAAM, GROEPID), new Account(new Person(new Address(plaats, land, huisnummer, postcode), EMAILADRES, voornaam, achternaam), type, rfid, wachtwoord), new Category(DETAILS, PRIJS), DATUMUIT, DATUMIN, rfid, BETAALD);
+                    bool boolbetaald = false;
+                    if (BETAALD == 1)
+                    {
+                        boolbetaald = true;
+                    }
+
+                    ReserveSpot tempResev = new ReserveSpot(new CampingSpot(kampeerplekid), new Group(GROEPNAAM, GROEPID), new Account(new Person(new Address(plaats, land, huisnummer, postcode), EMAILADRES, voornaam, achternaam), type, rfid, wachtwoord), new Category(DETAILS, PRIJS), DATUMUIT, DATUMIN, boolbetaald, reserveringID);
 
                     resultaat.Add(tempResev);
 

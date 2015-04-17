@@ -148,12 +148,11 @@ public class DBAccount : Database
         return resultaat;
     }
 
-    public int FindAccountID(string zipCode, string Code)
+    public int FindAccountID(string Code)
     {
         int accountID = -1;
         string sql;
         sql = "select GEBRUIKERID from gebruiker where RFID = :rfid";
-        
 
         try
         {

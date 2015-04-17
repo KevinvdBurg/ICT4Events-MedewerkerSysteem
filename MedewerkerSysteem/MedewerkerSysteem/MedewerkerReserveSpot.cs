@@ -28,7 +28,7 @@ namespace MedewerkerSysteem
         private void btnRSreserve_Click(object sender, EventArgs e)
         {
             
-            ReserveSpot reserveSpot = new ReserveSpot();
+            //ReserveSpot reserveSpot = new ReserveSpot();
         }
     }
 }
