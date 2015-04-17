@@ -103,6 +103,7 @@ public class DBAccount : Database
             string nr = "";
             string zipcode = "";
             string email = "";
+            string wachtwoord = "";
 
         try
         {
@@ -122,6 +123,7 @@ public class DBAccount : Database
                     nr = Convert.ToString(reader["huisnummer"]);
                     zipcode = Convert.ToString(reader["postcode"]);
                     email = Convert.ToString(reader["emailadres"]);
+                    wachtwoord = Convert.ToString(reader["wachtwoord"]);
 
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
                     {
@@ -132,7 +134,7 @@ public class DBAccount : Database
                         type = "bezoeker";
                     }
                 }
-                resultaat = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid);
+                resultaat = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
             }
         }
         catch (OracleException e)
@@ -146,7 +148,7 @@ public class DBAccount : Database
         return resultaat;
     }
 
-    public int FindAccountID(string Code)
+    public int FindAccountID(string zipCode, string Code)
     {
         int accountID = -1;
         string sql;

@@ -53,6 +53,7 @@ namespace MedewerkerSysteem
             string country = "";
             string nr = "";
             string zipcode = "";
+            string wachtwoord = "";
 
             string sql;
             sql = "select * from gebruiker where emailadres = :email";
@@ -75,7 +76,7 @@ namespace MedewerkerSysteem
                     country = Convert.ToString(reader["Land"]);
                     nr = Convert.ToString(reader["huisnummer"]);
                     zipcode = Convert.ToString(reader["Postcode"]);
-
+                    wachtwoord = Convert.ToString(reader["wachtwoord"]);
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
                     {
                         type = "admin";
@@ -87,7 +88,7 @@ namespace MedewerkerSysteem
                 }
 
                 //account = new Account(new Person(email, lastName, name), type, rfid);
-                account = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid);
+                account = new Account(new Person(new Address(city, country, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
 
             }
             catch (OracleException e)

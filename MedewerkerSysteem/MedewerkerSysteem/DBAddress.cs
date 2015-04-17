@@ -12,6 +12,7 @@ using Oracle.DataAccess.Client;
 
 public class DBAddress : Database
 {
+    Administation administation = new Administation();
 	public virtual void Update()
 	{
 		throw new System.NotImplementedException();
@@ -47,7 +48,7 @@ public class DBAddress : Database
         return resultaat;
     }
 
-	public virtual bool Delete(Address address)
+	public virtual bool Delete(Address address )
 	{
         bool resultaat = false;
         string sql;
@@ -59,7 +60,7 @@ public class DBAddress : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("AddressID", address.AddressID));
+            cmd.Parameters.Add(new OracleParameter("AddressID", administation.FindAddressID(address.ZipCode, address.Number)));
             OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
@@ -89,7 +90,7 @@ public class DBAddress : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("LOCATIEID", Address.AddressID));
+            cmd.Parameters.Add(new OracleParameter("LOCATIEID", administation.FindAddressID(Address.ZipCode, Address.Number)));
             OracleDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
@@ -100,7 +101,8 @@ public class DBAddress : Database
                     HUISNUMMER = Convert.ToString(reader["HUISNUMMER"]);
 
                 }
-                resultaat = new Address(Address.AddressID, PLAATS, COUNTRY, HUISNUMMER, POSTCODE);
+                
+                resultaat = new Address(PLAATS, COUNTRY, HUISNUMMER, POSTCODE);
             }
         }
         catch (OracleException e)
