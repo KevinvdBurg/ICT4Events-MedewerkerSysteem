@@ -60,8 +60,8 @@ namespace MedewerkerSysteem
             administration.Add(account);
             //address wordt opgeslagen in de database door person.AddAddress()
             person.AddAddress(address);
-            MederwerkerForm MF = new MederwerkerForm(administration);
-            MF.Show();
+            //MederwerkerForm MF = new MederwerkerForm(administration);
+            //MF.Show();
             Close();
 
         }

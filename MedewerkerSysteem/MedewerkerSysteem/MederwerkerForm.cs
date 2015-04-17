@@ -74,26 +74,30 @@ namespace MedewerkerSysteem
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             MederwerkerCreateAccount CA = new MederwerkerCreateAccount();
-            Close();
-            CA.Show();
+            //Close();
+            CA.ShowDialog();
+            RefreshAll();
         }
 
         private void btnReserveItem_Click(object sender, EventArgs e)
         {
             MedewerkerReserveItem IR = new MedewerkerReserveItem();
-            IR.Show();
+            IR.ShowDialog();
+            RefreshAll();
         }
 
         private void btnReserveLocation_Click(object sender, EventArgs e)
         {
             MedewerkerReserveSpot SR = new MedewerkerReserveSpot();
-            SR.Show();
+            SR.ShowDialog();
+            RefreshAll();
         }
 
         private void btnEvent_Click(object sender, EventArgs e)
         {
             MedewerkerEvent E = new MedewerkerEvent();
-            E.Show();
+            E.ShowDialog();
+            RefreshAll();
         }
 
         //attach event handler...display the serial number of the attached RFID phidget
@@ -295,6 +299,7 @@ namespace MedewerkerSysteem
                         //TODO check if customer already inside
                         btnComplete.Visible = true;
                         tbLetterStatus.Text = "Betaald";
+                        
                     }
                     else
                     {

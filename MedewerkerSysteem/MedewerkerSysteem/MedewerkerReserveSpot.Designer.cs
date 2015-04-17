@@ -30,6 +30,8 @@
         {
             this.btnRScancel = new System.Windows.Forms.Button();
             this.gbReserveSpot = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dtpRSdatein = new System.Windows.Forms.DateTimePicker();
             this.dtpRSdateuit = new System.Windows.Forms.DateTimePicker();
             this.cbRSspotnumbers = new System.Windows.Forms.ComboBox();
@@ -39,8 +41,6 @@
             this.lblRSspotname = new System.Windows.Forms.Label();
             this.lblRSname = new System.Windows.Forms.Label();
             this.btnRSreserve = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbReserveSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,7 @@
             // btnRScancel
             // 
             this.btnRScancel.Location = new System.Drawing.Point(291, 246);
-            this.btnRScancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRScancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnRScancel.Name = "btnRScancel";
             this.btnRScancel.Size = new System.Drawing.Size(133, 44);
             this.btnRScancel.TabIndex = 13;
@@ -71,18 +71,34 @@
             this.gbReserveSpot.Controls.Add(this.lblRSname);
             this.gbReserveSpot.Controls.Add(this.btnRSreserve);
             this.gbReserveSpot.Location = new System.Drawing.Point(16, 15);
-            this.gbReserveSpot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbReserveSpot.Margin = new System.Windows.Forms.Padding(4);
             this.gbReserveSpot.Name = "gbReserveSpot";
-            this.gbReserveSpot.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbReserveSpot.Padding = new System.Windows.Forms.Padding(4);
             this.gbReserveSpot.Size = new System.Drawing.Size(601, 325);
             this.gbReserveSpot.TabIndex = 3;
             this.gbReserveSpot.TabStop = false;
             this.gbReserveSpot.Text = "Plek Reserveren";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Reserveringsnummer:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(165, 129);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 14;
+            // 
             // dtpRSdatein
             // 
             this.dtpRSdatein.Location = new System.Drawing.Point(165, 213);
-            this.dtpRSdatein.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpRSdatein.Margin = new System.Windows.Forms.Padding(4);
             this.dtpRSdatein.Name = "dtpRSdatein";
             this.dtpRSdatein.Size = new System.Drawing.Size(400, 22);
             this.dtpRSdatein.TabIndex = 12;
@@ -90,7 +106,7 @@
             // dtpRSdateuit
             // 
             this.dtpRSdateuit.Location = new System.Drawing.Point(165, 170);
-            this.dtpRSdateuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpRSdateuit.Margin = new System.Windows.Forms.Padding(4);
             this.dtpRSdateuit.Name = "dtpRSdateuit";
             this.dtpRSdateuit.Size = new System.Drawing.Size(400, 22);
             this.dtpRSdateuit.TabIndex = 11;
@@ -99,7 +115,7 @@
             // 
             this.cbRSspotnumbers.FormattingEnabled = true;
             this.cbRSspotnumbers.Location = new System.Drawing.Point(165, 81);
-            this.cbRSspotnumbers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRSspotnumbers.Margin = new System.Windows.Forms.Padding(4);
             this.cbRSspotnumbers.Name = "cbRSspotnumbers";
             this.cbRSspotnumbers.Size = new System.Drawing.Size(400, 24);
             this.cbRSspotnumbers.TabIndex = 10;
@@ -108,7 +124,7 @@
             // 
             this.cbRSname.FormattingEnabled = true;
             this.cbRSname.Location = new System.Drawing.Point(165, 49);
-            this.cbRSname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRSname.Margin = new System.Windows.Forms.Padding(4);
             this.cbRSname.Name = "cbRSname";
             this.cbRSname.Size = new System.Drawing.Size(399, 24);
             this.cbRSname.TabIndex = 9;
@@ -156,7 +172,7 @@
             // btnRSreserve
             // 
             this.btnRSreserve.Location = new System.Drawing.Point(432, 246);
-            this.btnRSreserve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRSreserve.Margin = new System.Windows.Forms.Padding(4);
             this.btnRSreserve.Name = "btnRSreserve";
             this.btnRSreserve.Size = new System.Drawing.Size(133, 44);
             this.btnRSreserve.TabIndex = 0;
@@ -164,29 +180,13 @@
             this.btnRSreserve.UseVisualStyleBackColor = true;
             this.btnRSreserve.Click += new System.EventHandler(this.btnRSreserve_Click);
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(165, 129);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Reserveringsnummer:";
-            // 
             // MedewerkerReserveSpot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 352);
             this.Controls.Add(this.gbReserveSpot);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MedewerkerReserveSpot";
             this.Text = "Plek Reserveren";
             this.gbReserveSpot.ResumeLayout(false);
