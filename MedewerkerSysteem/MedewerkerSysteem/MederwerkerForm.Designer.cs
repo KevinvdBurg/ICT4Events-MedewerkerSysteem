@@ -65,6 +65,9 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnChangeAccount = new System.Windows.Forms.Button();
             this.dgwAccount = new System.Windows.Forms.DataGridView();
+            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.tabPreserve = new System.Windows.Forms.TabPage();
             this.btnChangeReservation = new System.Windows.Forms.Button();
@@ -106,16 +109,13 @@
             this.AdminMediaOpen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPEvent = new System.Windows.Forms.TabPage();
             this.dgwEvents = new System.Windows.Forms.DataGridView();
-            this.btnEvent = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventDateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventAttendeesCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdminEventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEvent = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -243,6 +243,8 @@
             this.groupBox2.Controls.Add(this.btnChangePaid);
             this.groupBox2.Controls.Add(this.btnComplete);
             this.groupBox2.Controls.Add(this.tbLetterStatus);
+            this.groupBox2.Controls.Add(this.tbLetterRFID);
+            this.groupBox2.Controls.Add(this.lblLetterRFID);
             this.groupBox2.Controls.Add(this.lblLetterStatus);
             this.groupBox2.Controls.Add(this.tbLetterScan);
             this.groupBox2.Controls.Add(this.lblLetterScan);
@@ -255,7 +257,7 @@
             // 
             // btnChangePaid
             // 
-            this.btnChangePaid.Location = new System.Drawing.Point(74, 134);
+            this.btnChangePaid.Location = new System.Drawing.Point(297, 134);
             this.btnChangePaid.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePaid.Name = "btnChangePaid";
             this.btnChangePaid.Size = new System.Drawing.Size(56, 23);
@@ -314,8 +316,6 @@
             this.groupBox1.Controls.Add(this.nudReserveID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnControl);
-            this.groupBox1.Controls.Add(this.tbLetterRFID);
-            this.groupBox1.Controls.Add(this.lblLetterRFID);
             this.groupBox1.Controls.Add(this.tbSpotLocation);
             this.groupBox1.Controls.Add(this.lblLetterLocation);
             this.groupBox1.Controls.Add(this.tbLetterGroupName);
@@ -333,7 +333,7 @@
             // 
             // nudReserveID
             // 
-            this.nudReserveID.Location = new System.Drawing.Point(112, 104);
+            this.nudReserveID.Location = new System.Drawing.Point(112, 19);
             this.nudReserveID.Name = "nudReserveID";
             this.nudReserveID.Size = new System.Drawing.Size(317, 20);
             this.nudReserveID.TabIndex = 11;
@@ -341,7 +341,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 106);
+            this.label3.Location = new System.Drawing.Point(6, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 10;
@@ -360,10 +360,11 @@
             // 
             // tbLetterRFID
             // 
-            this.tbLetterRFID.Location = new System.Drawing.Point(112, 129);
+            this.tbLetterRFID.Location = new System.Drawing.Point(74, 76);
             this.tbLetterRFID.Name = "tbLetterRFID";
-            this.tbLetterRFID.Size = new System.Drawing.Size(317, 20);
+            this.tbLetterRFID.Size = new System.Drawing.Size(362, 20);
             this.tbLetterRFID.TabIndex = 8;
+            this.tbLetterRFID.TextChanged += new System.EventHandler(this.tbLetterRFID_TextChanged);
             this.tbLetterRFID.Enter += new System.EventHandler(this.tbLetterRFID_Enter);
             this.tbLetterRFID.MouseLeave += new System.EventHandler(this.tbLetterRFID_MouseLeave);
             this.tbLetterRFID.MouseHover += new System.EventHandler(this.tbLetterRFID_MouseHover);
@@ -371,50 +372,56 @@
             // lblLetterRFID
             // 
             this.lblLetterRFID.AutoSize = true;
-            this.lblLetterRFID.Location = new System.Drawing.Point(6, 132);
+            this.lblLetterRFID.Location = new System.Drawing.Point(13, 79);
             this.lblLetterRFID.Name = "lblLetterRFID";
             this.lblLetterRFID.Size = new System.Drawing.Size(35, 13);
             this.lblLetterRFID.TabIndex = 7;
             this.lblLetterRFID.Text = "RFID:";
+            this.lblLetterRFID.Click += new System.EventHandler(this.lblLetterRFID_Click);
             // 
             // tbSpotLocation
             // 
-            this.tbSpotLocation.Location = new System.Drawing.Point(112, 79);
+            this.tbSpotLocation.Location = new System.Drawing.Point(112, 99);
             this.tbSpotLocation.Name = "tbSpotLocation";
             this.tbSpotLocation.Size = new System.Drawing.Size(317, 20);
             this.tbSpotLocation.TabIndex = 6;
+            this.tbSpotLocation.TextChanged += new System.EventHandler(this.tbSpotLocation_TextChanged);
             // 
             // lblLetterLocation
             // 
             this.lblLetterLocation.AutoSize = true;
-            this.lblLetterLocation.Location = new System.Drawing.Point(6, 82);
+            this.lblLetterLocation.Location = new System.Drawing.Point(6, 102);
             this.lblLetterLocation.Name = "lblLetterLocation";
             this.lblLetterLocation.Size = new System.Drawing.Size(75, 13);
             this.lblLetterLocation.TabIndex = 5;
             this.lblLetterLocation.Text = "Plek Location:";
+            this.lblLetterLocation.Click += new System.EventHandler(this.lblLetterLocation_Click);
             // 
             // tbLetterGroupName
             // 
-            this.tbLetterGroupName.Location = new System.Drawing.Point(112, 53);
+            this.tbLetterGroupName.Location = new System.Drawing.Point(112, 73);
             this.tbLetterGroupName.Name = "tbLetterGroupName";
             this.tbLetterGroupName.Size = new System.Drawing.Size(317, 20);
             this.tbLetterGroupName.TabIndex = 4;
+            this.tbLetterGroupName.TextChanged += new System.EventHandler(this.tbLetterGroupName_TextChanged);
             // 
             // lblLetterGroupName
             // 
             this.lblLetterGroupName.AutoSize = true;
-            this.lblLetterGroupName.Location = new System.Drawing.Point(6, 56);
+            this.lblLetterGroupName.Location = new System.Drawing.Point(6, 76);
             this.lblLetterGroupName.Name = "lblLetterGroupName";
             this.lblLetterGroupName.Size = new System.Drawing.Size(70, 13);
             this.lblLetterGroupName.TabIndex = 3;
             this.lblLetterGroupName.Text = "Group Name:";
+            this.lblLetterGroupName.Click += new System.EventHandler(this.lblLetterGroupName_Click);
             // 
             // tbLetterName
             // 
-            this.tbLetterName.Location = new System.Drawing.Point(112, 27);
+            this.tbLetterName.Location = new System.Drawing.Point(112, 47);
             this.tbLetterName.Name = "tbLetterName";
             this.tbLetterName.Size = new System.Drawing.Size(317, 20);
             this.tbLetterName.TabIndex = 2;
+            this.tbLetterName.TextChanged += new System.EventHandler(this.tbLetterName_TextChanged);
             // 
             // label4
             // 
@@ -427,11 +434,12 @@
             // lblLetterName
             // 
             this.lblLetterName.AutoSize = true;
-            this.lblLetterName.Location = new System.Drawing.Point(6, 30);
+            this.lblLetterName.Location = new System.Drawing.Point(6, 50);
             this.lblLetterName.Name = "lblLetterName";
             this.lblLetterName.Size = new System.Drawing.Size(38, 13);
             this.lblLetterName.TabIndex = 0;
             this.lblLetterName.Text = "Name:";
+            this.lblLetterName.Click += new System.EventHandler(this.lblLetterName_Click);
             // 
             // label2
             // 
@@ -502,6 +510,27 @@
             this.dgwAccount.TabIndex = 1;
             this.dgwAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAccount_CellContentClick);
             this.dgwAccount.SelectionChanged += new System.EventHandler(this.dgwAccount_SelectionChanged);
+            // 
+            // dgvcName
+            // 
+            this.dgvcName.HeaderText = "Naam";
+            this.dgvcName.Name = "dgvcName";
+            this.dgvcName.ReadOnly = true;
+            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcName.Width = 500;
+            // 
+            // dgvcEmail
+            // 
+            this.dgvcEmail.HeaderText = "E-mail";
+            this.dgvcEmail.Name = "dgvcEmail";
+            this.dgvcEmail.ReadOnly = true;
+            // 
+            // dgvcRFID
+            // 
+            this.dgvcRFID.HeaderText = "RFID";
+            this.dgvcRFID.Name = "dgvcRFID";
+            this.dgvcRFID.ReadOnly = true;
+            this.dgvcRFID.Visible = false;
             // 
             // btnCreateAccount
             // 
@@ -867,41 +896,6 @@
             this.dgwEvents.TabIndex = 2;
             this.dgwEvents.SelectionChanged += new System.EventHandler(this.dgwEvents_SelectionChanged);
             // 
-            // btnEvent
-            // 
-            this.btnEvent.Location = new System.Drawing.Point(18, 16);
-            this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(105, 23);
-            this.btnEvent.TabIndex = 0;
-            this.btnEvent.Text = "Event Aanmaken";
-            this.btnEvent.UseVisualStyleBackColor = true;
-            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // dgvcName
-            // 
-            this.dgvcName.HeaderText = "Naam";
-            this.dgvcName.Name = "dgvcName";
-            this.dgvcName.ReadOnly = true;
-            this.dgvcName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcName.Width = 500;
-            // 
-            // dgvcEmail
-            // 
-            this.dgvcEmail.HeaderText = "E-mail";
-            this.dgvcEmail.Name = "dgvcEmail";
-            this.dgvcEmail.ReadOnly = true;
-            // 
-            // dgvcRFID
-            // 
-            this.dgvcRFID.HeaderText = "RFID";
-            this.dgvcRFID.Name = "dgvcRFID";
-            this.dgvcRFID.ReadOnly = true;
-            this.dgvcRFID.Visible = false;
-            // 
             // AdminEventName
             // 
             this.AdminEventName.HeaderText = "Naam";
@@ -927,6 +921,20 @@
             this.AdminEventID.HeaderText = "Event ID";
             this.AdminEventID.Name = "AdminEventID";
             this.AdminEventID.Visible = false;
+            // 
+            // btnEvent
+            // 
+            this.btnEvent.Location = new System.Drawing.Point(18, 16);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Size = new System.Drawing.Size(105, 23);
+            this.btnEvent.TabIndex = 0;
+            this.btnEvent.Text = "Event Aanmaken";
+            this.btnEvent.UseVisualStyleBackColor = true;
+            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // MederwerkerForm
             // 

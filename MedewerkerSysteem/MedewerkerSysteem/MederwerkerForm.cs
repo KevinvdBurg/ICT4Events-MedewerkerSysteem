@@ -73,6 +73,7 @@ namespace MedewerkerSysteem
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             MederwerkerCreateAccount CA = new MederwerkerCreateAccount();
+            this.Close();
             CA.Show();
         }
 
@@ -508,6 +509,46 @@ namespace MedewerkerSysteem
             RefreshMedia();
             RefreshPresent();
             RefreshEvent();
+        }
+
+        private void lblLetterLocation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSpotLocation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbLetterGroupName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLetterGroupName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLetterName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbLetterName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLetterRFID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbLetterRFID_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
