@@ -148,7 +148,17 @@ public class Administation
 
     public int FindAccountID(string code)
     {
-        //int foundAccountID = dbaccount.
+        int foundAccountID = dbaccount.FindAccountID(code);
+
+        if (foundAccountID != null)
+        {
+            return foundAccountID;
+        }
+        else
+        {
+            MessageBox.Show("Account niet gevonden");
+            return Convert.ToInt32(null);
+        }
     }
 
     public List<Event> FindEventAll()
