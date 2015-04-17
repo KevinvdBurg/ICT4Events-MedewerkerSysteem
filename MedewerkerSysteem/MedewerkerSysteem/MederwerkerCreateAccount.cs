@@ -50,10 +50,8 @@ namespace MedewerkerSysteem
             //Persoon wordt aangemaakt
             Person person = new Person(address, tbCAemail.Text, tbCAname.Text, tbCAlastname.Text);
             //Account wordt aangemaakt
-            Account account = new Account(person, "bezoeker", test);
-
-            //test int
-            int i = 1;
+            Account account = new Account(person, "bezoeker", test, tbCApassword.Text);
+           
             foreach (Event item in lbCAeventlist.Items)
             {
                 AccountEvent accountEvent = new AccountEvent(false, account.RFID, item.EventID);

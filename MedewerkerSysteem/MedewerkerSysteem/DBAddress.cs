@@ -30,7 +30,8 @@ public class DBAddress : Database
             cmd.Parameters.Add(new OracleParameter("plaats", address.City));
             cmd.Parameters.Add(new OracleParameter("postcode", address.ZipCode));
             cmd.Parameters.Add(new OracleParameter("nr", address.Number));
-            OracleDataReader reader = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
         catch (OracleException e)

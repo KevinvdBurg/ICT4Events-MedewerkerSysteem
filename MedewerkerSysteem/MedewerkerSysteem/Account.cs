@@ -30,11 +30,14 @@ public class Account
 		set;
 	}
 
-	public Account(Person Person, string type, string RFID)
+    public string Wachtwoord { get; set; }
+
+	public Account(Person Person, string type, string RFID, string wachtwoord)
 	{
         this.Person = Person;
 	    this.Type = type;
-        this.RFID = RFID; 
+        this.RFID = RFID;
+	    this.Wachtwoord = wachtwoord;
 	}
 
     public Account()

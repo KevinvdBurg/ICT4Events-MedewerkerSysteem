@@ -65,7 +65,8 @@ public class DBAccount : Database
             cmd.Parameters.Add(new OracleParameter("voornaam", account.Person.Name));
             cmd.Parameters.Add(new OracleParameter("achternaam", account.Person.LastName));
             cmd.Parameters.Add(new OracleParameter("land", account.Person.Address.Country));
-            OracleDataReader reader = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
         catch (OracleException e)
