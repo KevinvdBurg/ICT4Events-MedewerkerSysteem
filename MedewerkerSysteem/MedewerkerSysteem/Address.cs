@@ -11,7 +11,6 @@ using System.Text;
 
 public class Address
 {
-    public int AddressID { get; set; }
 	public string ZipCode
 	{
 		get;
@@ -36,18 +35,9 @@ public class Address
 		set;
 	}
 
-	public Address(int AddressID, string City, string Country, string Number, string ZipCode)
-	{
-	    this.AddressID = AddressID;
-        this.City = City;
-        this.Country = Country;
-        this.Number = Number;
-        this.ZipCode = ZipCode;
-	}
 
     public Address(string City, string Country, string Number, string ZipCode)
     {
-        this.AddressID = AddressID;
         this.City = City;
         this.Number = Number;
         this.ZipCode = ZipCode;

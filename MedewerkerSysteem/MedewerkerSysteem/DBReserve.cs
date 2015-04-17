@@ -127,7 +127,7 @@ public class DBReserve : Database
         List<ReserveSpot> resultaat = new List<ReserveSpot>();
         string sql;
         //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
-        sql = "select kr.reserveringID, gb.EMAILADRES, gb.wachtwoord, kr.DATUMIN, kr.DATUMUIT, kr.BETAALD, kp.kampeerplekid, g.GROEPNAAM, g.GROEPID, gb.plaats ,gb.postcode,gb.huisnummer, gb.voornaam, gb.achternaam, gb.land, gb.rfid  from Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner Join kampeerplekcategorie kpc ON kpc.kampeerplekcategorieid = kp.CATEGORIEID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID";
+        sql = "select kr.reserveringID, gb.EMAILADRES, gb.wachtwoord, kr.DATUMIN, kr.DATUMUIT, kr.BETAALD, kp.kampeerplekid, g.GROEPNAAM, g.GROEPID, gb.plaats ,gb.postcode,gb.huisnummer, gb.voornaam, gb.achternaam, gb.land, gb.rfid, kpc.DETAILS, kpc.PRIJS  from Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner Join kampeerplekcategorie kpc ON kpc.kampeerplekcategorieid = kp.CATEGORIEID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID";
             //sql = "select * from gebruiker";
         string type = "";
         try
@@ -141,12 +141,25 @@ public class DBReserve : Database
                 {
                     string reserveringID = Convert.ToString(reader["reserveringID"]);
                     string EMAILADRES = Convert.ToString(reader["EMAILADRES"]);
+                    string wachtwoord = Convert.ToString(reader["wachtwoord"]);
                     string DATUMIN = Convert.ToString(reader["DATUMIN"]);
                     string DATUMUIT = Convert.ToString(reader["DATUMUIT"]);
-                    wachtwoord
+                    bool BETAALD = Convert.ToBoolean(reader["BETAALD"]);
+                    int kampeerplekid = Convert.ToInt32(reader["kampeerplekid"]);
+                    string GROEPNAAM = Convert.ToString(reader["GROEPNAAM"]);
+                    int GROEPID = Convert.ToInt32(reader["GROEPID"]);
+                    string plaats = Convert.ToString(reader["plaats"]);
+                    string postcode = Convert.ToString(reader["postcode"]);
+                    string huisnummer = Convert.ToString(reader["huisnummer"]);
+                    string voornaam = Convert.ToString(reader["voornaam"]);
+                    string achternaam = Convert.ToString(reader["achternaam"]);
+                    string land = Convert.ToString(reader["land"]);
+                    string rfid = Convert.ToString(reader["rfid"]);
+                    string DETAILS = Convert.ToString(reader["DETAILS"]);
+                    decimal PRIJS = Convert.ToDecimal(reader["PRIJS"]);
 
 
-                    ReserveSpot tempResev = new ReserveSpot(new CampingSpot(), new Group(Name, id), new Account(new Person(new Address(AddressID, City, Country, nr, ZipCode),EMAILADRES, naam, LastName ),type,rfid,wachtwoord ),new Category(Details, price),DATUMUIT,DATUMIN,rfid,paid);
+                    ReserveSpot tempResev = new ReserveSpot(new CampingSpot(kampeerplekid), new Group(GROEPNAAM, GROEPID), new Account(new Person(new Address(plaats, land, huisnummer, postcode), EMAILADRES, voornaam, achternaam), type, rfid, wachtwoord), new Category(DETAILS, PRIJS), DATUMUIT, DATUMIN, rfid, BETAALD);
 
                     resultaat.Add(tempResev);
 
