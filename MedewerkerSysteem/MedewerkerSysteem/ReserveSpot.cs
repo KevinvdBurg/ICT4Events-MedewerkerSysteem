@@ -25,7 +25,7 @@ public class ReserveSpot : Reserve
 		set;
 	}
 
-	public ReserveSpot (CampingSpot CampingSpot, Group Group, Account Account, Category Category, DateTime EndDate, DateTime StartDate, string RFID, bool Paid) : base (Account, Category, EndDate, StartDate, RFID, Paid)
+	public ReserveSpot (CampingSpot CampingSpot, Group Group, Account Account, Category Category, string EndDate, string StartDate, string RFID, bool Paid) : base (Account, Category, EndDate, StartDate, RFID, Paid)
 	{
         this.CampingSpot = CampingSpot;
         this.Group = Group;
