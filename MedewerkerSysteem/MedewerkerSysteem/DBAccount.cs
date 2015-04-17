@@ -146,6 +146,40 @@ public class DBAccount : Database
         return resultaat;
     }
 
+    public int FindAccountID(string Code)
+    {
+        int accountID = -1;
+        string sql;
+        sql = "select GEBRUIKERID from gebruiker where RFID = :rfid";
+        
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("RFID", Code));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    accountID = Convert.ToInt32(reader["gebruikerID"]);
+                   
+                }
+                return accountID;
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return accountID;
+    }
+
     internal List<Account> SelectAll()
     {
         List<Account> resultaat = new List<Account>();

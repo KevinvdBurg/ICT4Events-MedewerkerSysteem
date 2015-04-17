@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -130,7 +131,7 @@ public class Administation
 
 	}
 
-    public int FindAddress(string zipcode, string number)
+    public int FindAddressID(string zipcode, string number)
     {
         int foundAddressID = dbaddress.FindAdressID(zipcode, number);
 
@@ -143,7 +144,11 @@ public class Administation
             MessageBox.Show("AdresID niet gevonden");
             return Convert.ToInt32(null);
         }
+    }
 
+    public int FindAccountID(string code)
+    {
+        //int foundAccountID = dbaccount.
     }
 
     public List<Event> FindEventAll()

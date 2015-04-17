@@ -17,9 +17,37 @@ public class DBReserve : Database
 		throw new System.NotImplementedException();
 	}
 
-    public virtual void Insert()
+    public virtual bool Insert(ReserveSpot reserve)
 	{
-		throw new System.NotImplementedException();
+        Administation administation = new Administation();
+        Account account = administation.FindAccount(reserve.Account.RFID);
+        int Account;
+        bool resultaat = false;
+        string sql;
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        sql = "INSERT INTO KAMPEERPLEKRESERVERING (RESERVERINGID, GEBRUIKERID, KAMPEERPLEKID, BETAALD, DATUMIN, DATUMUIT) VALUES (:reserveringid, :gebruikerid, :kampeerplekid, :betaald, :datumin, :datumuit)";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("reserveringid", reserve.));
+            cmd.Parameters.Add(new OracleParameter("gebruikerid", reserve.Account.));
+            cmd.Parameters.Add(new OracleParameter("nr", address.Number));
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
 	}
 
 	public virtual void Select()
