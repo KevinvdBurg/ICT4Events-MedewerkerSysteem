@@ -46,9 +46,41 @@ public class DBAccount : Database
 	}
 
 
-	public virtual void Insert()
+	public virtual bool Insert(Account account)
 	{
-		throw new System.NotImplementedException();
+        bool resultaat = false;
+        string sql;
+        sql = "INSERT INTO GEBRUIKER (RFID, EMAILADRES, WACHTWOORD, PLAATS, POSTCODE, HUISNUMMER, ISADMIN, VOORNAAM, ACHTERNAAM, LAND) VALUES (:RFID, :emailadres, :wachtwoord, :plaats, :postcode, :huisnummer, :isadmin, :voornaam, :achternaam, :land)";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("RFID", account.RFID));
+            cmd.Parameters.Add(new OracleParameter("email", account.Person.Email));
+            cmd.Parameters.Add(new OracleParameter("wachtwoord", account.Wachtwoord));
+            cmd.Parameters.Add(new OracleParameter("plaats", account.Person.Address.City));
+            cmd.Parameters.Add(new OracleParameter("postcode", account.Person.Address.ZipCode));
+            cmd.Parameters.Add(new OracleParameter("huisnummer", account.Person.Address.Number));
+            cmd.Parameters.Add(new OracleParameter("isadmin", "0"));
+            cmd.Parameters.Add(new OracleParameter("voornaam", account.Person.Name));
+            cmd.Parameters.Add(new OracleParameter("achternaam", account.Person.LastName));
+            cmd.Parameters.Add(new OracleParameter("land", account.Person.Address.Country));
+            OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
+
+       // throw new System.NotImplementedException();
 	}
 
 	public virtual void Select()
