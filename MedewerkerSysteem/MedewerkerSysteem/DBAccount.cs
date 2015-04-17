@@ -24,14 +24,16 @@ public class DBAccount : Database
         string sql;
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
         //sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
-        sql = "DELETE FROM Gebruiker WHERE Emailadres = :email";
+        sql = "DELETE FROM Gebruiker WHERE EMAILADRES = :email";
 
         try
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
             cmd.Parameters.Add(new OracleParameter("email", account.Person.Email));
-            OracleDataReader reader = cmd.ExecuteReader();
+            //MessageBox.Show(cmd.ExecuteNonQueryAsync());
+            cmd.ExecuteNonQueryAsync();
+            
             resultaat = true;
         }
         catch (OracleException e)
