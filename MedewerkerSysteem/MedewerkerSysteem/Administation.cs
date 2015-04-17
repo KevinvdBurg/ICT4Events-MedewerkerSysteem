@@ -19,6 +19,7 @@ public class Administation
     private DBAccount dbaccount = new DBAccount();
     private DBEvent dbevent = new DBEvent();
     private DBReserve dbreserve = new DBReserve();
+    private DBAddress dbaddress = new DBAddress();
 
 	public IEnumerable<Reserve> Reserve
 	{
@@ -128,6 +129,22 @@ public class Administation
         }
 
 	}
+
+    public int FindAddress(string zipcode, string number)
+    {
+        int foundAddressID = dbaddress.FindAdressID(zipcode, number);
+
+        if (foundAddressID != null)
+        {
+            return foundAddressID;
+        }
+        else
+        {
+            MessageBox.Show("AdresID niet gevonden");
+            return Convert.ToInt32(null);
+        }
+
+    }
 
     public List<Event> FindEventAll()
     {

@@ -112,5 +112,39 @@ public class DBAddress : Database
         }
         return resultaat;
     }
+
+    public int FindAdressID(string zipcode, string number)
+    {
+        
+        string sql;
+        sql = "Select LOCATIEID From Locatie WHERE POSTCODE = :postcode AND HUISNUMMER = :huisnummer";
+        int ADRESID = -1;
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("postcode", zipcode));
+            cmd.Parameters.Add(new OracleParameter("huisnummer", number));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    ADRESID = Convert.ToInt32(reader["LOCATIEID"]);
+                }
+                return ADRESID;
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return ADRESID;
+    }
 }
 

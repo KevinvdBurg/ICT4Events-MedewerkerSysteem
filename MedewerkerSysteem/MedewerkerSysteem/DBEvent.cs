@@ -29,7 +29,7 @@ public class DBEvent : Database
             cmd.Parameters.Add(new OracleParameter("maxpersonen", Event.MaxPerson));
             cmd.Parameters.Add(new OracleParameter("begindatum", Event.BeginTime));
             cmd.Parameters.Add(new OracleParameter("einddatum", Event.EndTime));
-            cmd.Parameters.Add(new OracleParameter("locatieid", ))
+            cmd.Parameters.Add(new OracleParameter("locatieid", administation.FindAddress(Event.Location.Address.ZipCode, Event.Location.Address.Number)));
             OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
