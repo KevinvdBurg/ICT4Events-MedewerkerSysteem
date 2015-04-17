@@ -55,6 +55,7 @@ namespace MedewerkerSysteem
             foreach (Event item in lbCAeventlist.Items)
             {
                 AccountEvent accountEvent = new AccountEvent(false, account.RFID, item.EventID);
+
             }
 
             //Account wordt opgeslagen in de database door administration.Add()
