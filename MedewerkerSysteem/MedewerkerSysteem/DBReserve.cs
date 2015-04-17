@@ -52,7 +52,7 @@ public class DBReserve : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
  }
@@ -117,7 +117,7 @@ public class DBReserve : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }
@@ -179,7 +179,7 @@ public class DBReserve : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }

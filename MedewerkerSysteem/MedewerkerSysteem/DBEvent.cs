@@ -42,7 +42,7 @@ public class DBEvent : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
 	}
@@ -102,7 +102,7 @@ public class DBEvent : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }
@@ -157,7 +157,7 @@ public class DBEvent : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }

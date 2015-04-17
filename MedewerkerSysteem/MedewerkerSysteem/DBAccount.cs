@@ -40,7 +40,7 @@ public class DBAccount : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
 	}
@@ -77,7 +77,7 @@ public class DBAccount : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
 
@@ -143,7 +143,7 @@ public class DBAccount : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }
@@ -176,7 +176,7 @@ public class DBAccount : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return accountID;
     }
@@ -227,7 +227,7 @@ public class DBAccount : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }

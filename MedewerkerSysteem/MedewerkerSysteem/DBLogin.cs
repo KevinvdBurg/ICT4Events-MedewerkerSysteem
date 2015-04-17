@@ -36,7 +36,7 @@ namespace MedewerkerSysteem
             }
             finally
             {
-                connection.Close();
+                DisConnect();
             }
             return resultaat;
         }
@@ -97,7 +97,7 @@ namespace MedewerkerSysteem
             }
             finally
             {
-                connection.Close();
+                DisConnect();
             }
             return account;
         }
