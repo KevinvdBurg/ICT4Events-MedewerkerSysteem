@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -63,7 +63,9 @@
     <Compile Include="Database.cs" />
     <Compile Include="DBAccount.cs" />
     <Compile Include="DBAddress.cs" />
+    <Compile Include="DBCampingspot.cs" />
     <Compile Include="DBEvent.cs" />
+    <Compile Include="DBItem.cs" />
     <Compile Include="DBLogin.cs" />
     <Compile Include="DBReserve.cs" />
     <Compile Include="Event.cs" />
