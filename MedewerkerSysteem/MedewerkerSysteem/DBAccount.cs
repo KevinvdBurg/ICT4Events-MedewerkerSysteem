@@ -149,17 +149,17 @@ public class DBAccount : Database
         return resultaat;
     }
 
-    public int FindAccountID(string Code)
+    public int FindAccountID(string email)
     {
         int accountID = -1;
         string sql;
-        sql = "select GEBRUIKERID from gebruiker where RFID = :rfid";
+        sql = "select GEBRUIKERID from gebruiker where Emailadres = :email";
 
         try
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("RFID", Code));
+            cmd.Parameters.Add(new OracleParameter("email", email));
             OracleDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {

@@ -162,9 +162,9 @@ public class Administation
         }
     }
 
-    public int FindAccountID(string code)
+    public int FindAccountID(string email)
     {
-        int foundAccountID = dbaccount.FindAccountID(code);
+        int foundAccountID = dbaccount.FindAccountID(email);
 
         if (foundAccountID != null)
         {
@@ -190,7 +190,21 @@ public class Administation
             MessageBox.Show("Geen Events gevonden");
             return null;
         }
+    }
 
+    public List<Event> FindEventAllPerAccount(Account account)
+    {
+        List<Event> foundEvents = dbevent.SelectAll();
+
+        if (foundEvents != null)
+        {
+            return foundEvents;
+        }
+        else
+        {
+            MessageBox.Show("Geen Events gevonden");
+            return null;
+        }
     }
 
     /// <summary>

@@ -558,6 +558,29 @@ namespace MedewerkerSysteem
 
         }
 
+        private void btnChangeAccount_Click(object sender, EventArgs e)
+        {
+            int gridCount = 0;
+            string value = "";
+
+            foreach (DataGridViewRow row in dgwAccount.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+
+                    if (gridCount == 1)
+                    {
+                        value = cell.Value.ToString();
+                    }
+                    gridCount++;
+                }
+            }
+
+            MederwerkerUpdateAccount MUA = new MederwerkerUpdateAccount(administration.FindAccount(value));
+            MUA.Show();
+            Close();
+        }
+
 
     }
 }
