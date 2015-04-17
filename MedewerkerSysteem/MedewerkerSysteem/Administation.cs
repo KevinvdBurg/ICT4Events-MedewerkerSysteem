@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using MedewerkerSysteem;
@@ -219,6 +220,20 @@ public class Administation
         if (foundReserves != null)
         {
             return foundReserves;
+        }
+        else
+        {
+            MessageBox.Show("Reservering niet gevonden");
+            return null;
+        }
+    }
+
+    public CampingSpot FindCampingSpot(int id)
+    {
+        CampingSpot foundCampingSpot = dbreserve.Select(/*id*/);
+        if (foundCampingSpot != null)
+        {
+            return foundCampingSpot;
         }
         else
         {
