@@ -43,7 +43,7 @@ public class DBAddress : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }
@@ -72,7 +72,7 @@ public class DBAddress : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
 	}
@@ -113,7 +113,7 @@ public class DBAddress : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return resultaat;
     }
@@ -147,7 +147,7 @@ public class DBAddress : Database
         }
         finally
         {
-            connection.Close();
+            DisConnect();
         }
         return ADRESID;
     }
