@@ -237,10 +237,52 @@ public class Administation
         }
         else
         {
-            MessageBox.Show("Reservering niet gevonden");
+            MessageBox.Show("Kampeerplek niet gevonden");
             return null;
         }
     }
+
+    public List<CampingSpot> FindCampingSpotsAll()
+    {
+        List<CampingSpot> foundSpots = dbreserve.SelectAllSpots();
+        if (foundSpots != null)
+        {
+            return foundSpots;
+        }
+        else
+        {
+            MessageBox.Show("Kampeerplekken niet gevonden");
+            return null;
+        }
+    }
+
+    public Item FindÍtem(int id)
+    {
+        Item founditem = dbreserve.Select(/*id*/);
+        if (founditem != null)
+        {
+            return founditem;
+        }
+        else
+        {
+            MessageBox.Show("Item niet gevonden");
+            return null;
+        }
+    }
+
+    public List<Item> FindItemsAll()
+    {
+        List<Item> foundItems = dbreserve.Select( /*id*/);
+        if (foundItems != null)
+        {
+            return foundItems;
+        }
+        else
+        {
+            MessageBox.Show("Items niet gevonden");
+        }
+    }
+
 	public void Update(Account Account)
 	{
 
