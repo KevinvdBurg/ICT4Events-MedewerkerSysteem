@@ -470,10 +470,10 @@ namespace MedewerkerSysteem
         public void RefreshSpot()
         {
             dgwReserveSpot.Rows.Clear();
-            /*foreach (Account account in administration.FindAccountAll())
+            foreach (ReserveSpot spot in administration.FindReserveSpotsAll())
             {
-                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
-            }*/
+                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName, spot.StartDate, spot.EndDate);
+            }
         }
         public void RefreshMedia()
         {
