@@ -14,6 +14,7 @@ namespace MedewerkerSysteem
 {
     public partial class MederwerkerCreateAccount : Form
     {
+        
         private Administation administration = new Administation();
         List<Event> events = new List<Event>();
 
@@ -35,7 +36,6 @@ namespace MedewerkerSysteem
 
         private void btnCAcancel_Click(object sender, EventArgs e)
         {
-            new MederwerkerForm(administration).Show();
             Close();
         }
 
@@ -60,7 +60,9 @@ namespace MedewerkerSysteem
             administration.Add(account);
             //address wordt opgeslagen in de database door person.AddAddress()
             person.AddAddress(address);
-            new MederwerkerForm(administration).Show();
+            MederwerkerForm MF = new MederwerkerForm(administration);
+            MF.Show();
+            Close();
 
         }
 

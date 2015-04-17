@@ -74,7 +74,7 @@ namespace MedewerkerSysteem
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             MederwerkerCreateAccount CA = new MederwerkerCreateAccount();
-            this.Close();
+            Close();
             CA.Show();
         }
 
@@ -425,7 +425,7 @@ namespace MedewerkerSysteem
                     foreach (DataGridViewCell cell in row.Cells)
                     {
                         
-                        if (gridCount == 2)
+                        if (gridCount == 1)
                         {
                             value = cell.Value.ToString();
                         }

@@ -24,13 +24,13 @@ public class DBAccount : Database
         string sql;
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
         //sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
-        sql = "DELETE FROM Gebruiker WHERE RFID = :RFID";
+        sql = "DELETE FROM Gebruiker WHERE Emailadres = :email";
 
         try
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("RFID", account.RFID));
+            cmd.Parameters.Add(new OracleParameter("email", account.Person.Email));
             OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
@@ -57,7 +57,7 @@ public class DBAccount : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("RFID", account.RFID));
+            cmd.Parameters.Add(new OracleParameter("RFID", null));
             cmd.Parameters.Add(new OracleParameter("email", account.Person.Email));
             cmd.Parameters.Add(new OracleParameter("wachtwoord", account.Wachtwoord));
             cmd.Parameters.Add(new OracleParameter("plaats", account.Person.Address.City));
@@ -66,21 +66,19 @@ public class DBAccount : Database
             cmd.Parameters.Add(new OracleParameter("isadmin", "0"));
             cmd.Parameters.Add(new OracleParameter("voornaam", account.Person.Name));
             cmd.Parameters.Add(new OracleParameter("achternaam", account.Person.LastName));
-            MessageBox.Show(Convert.ToString(cmd));
-
             cmd.ExecuteNonQuery();
             //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
         catch (OracleException e)
         {
-
             Console.WriteLine(e.Message);
             throw;
         }
         finally
         {
             DisConnect();
+            
         }
         return resultaat;
 
@@ -92,27 +90,26 @@ public class DBAccount : Database
 	}
 
 
-    internal Account Select(string Code)
+    internal Account Select(string email)
     {
         Account resultaat = null;
         string sql;
-        sql = "select * from gebruiker where RFID = :rfid";
+        sql = "select * from gebruiker where EMAILadres = :email";
             string lastName = "";
             string name = "";
             string type = "";
             string rfid = "";
             string city = "";
-            string country = "";
             string nr = "";
             string zipcode = "";
-            string email = "";
+            //string email = "";
             string wachtwoord = "";
 
         try
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("RFID", Code));
+            cmd.Parameters.Add(new OracleParameter("EMAIL", email));
             OracleDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {
@@ -122,7 +119,6 @@ public class DBAccount : Database
                     lastName = Convert.ToString(reader["achternaam"]);
                     rfid = Convert.ToString(reader["rfid"]);
                     city = Convert.ToString(reader["plaats"]);
-                    country = Convert.ToString(reader["Land"]);
                     nr = Convert.ToString(reader["huisnummer"]);
                     zipcode = Convert.ToString(reader["postcode"]);
                     email = Convert.ToString(reader["emailadres"]);
