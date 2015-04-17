@@ -43,14 +43,12 @@ namespace MedewerkerSysteem
         
         private void btnCAcreate_Click(object sender, EventArgs e)
         {
-            //tijdelijke int ipv RFID
-            string test = "test";
             //Adres wordt aangemaakt
-            Address address = new Address(tbCAcity.Text, tbCAcountry.Text, tbCAstreetname.Text, tbCAzipcode.Text);
+            Address address = new Address(tbCAcity.Text, tbCAcountry.Text, Convert.ToString(nudCAnumber.Value), tbCAzipcode.Text);
             //Persoon wordt aangemaakt
             Person person = new Person(address, tbCAemail.Text, tbCAname.Text, tbCAlastname.Text);
             //Account wordt aangemaakt
-            Account account = new Account(person, "bezoeker", test, tbCApassword.Text);
+            Account account = new Account(person, "bezoeker", " ", tbCApassword.Text);
            
             foreach (Event item in lbCAeventlist.Items)
             {
@@ -83,6 +81,26 @@ namespace MedewerkerSysteem
         private void MederwerkerCreateAccount_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void lblCAcity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCAcountry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCAGroup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCAzipcode_Click(object sender, EventArgs e)
+        {
+
         }
 
        
