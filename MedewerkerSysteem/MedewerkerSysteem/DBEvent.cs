@@ -12,9 +12,38 @@ using Oracle.DataAccess.Client;
 
 public class DBEvent : Database
 {
-	public virtual void Insert()
+	public virtual bool Insert(Event Event)
 	{
+        Administation administation = new Administation();
+        bool resultaat = false;
+        string sql;
+        //int locatieID = administation.
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        sql = "INSERT INTO EVENT (EVENTID, NAAM, MAXPERSONEN, BEGINDATUM, EINDDATUM, LOCATIEID) VALUES (:eventid, :naam, :maxpersonen. :begindatum, :einddatum, :locatieid)";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("eventid", Event.EventID));
+            cmd.Parameters.Add(new OracleParameter("naam", Event.Name));
+            cmd.Parameters.Add(new OracleParameter("maxpersonen", Event.MaxPerson));
+            cmd.Parameters.Add(new OracleParameter("begindatum", Event.BeginTime));
+            cmd.Parameters.Add(new OracleParameter("einddatum", Event.EndTime));
+            cmd.Parameters.Add(new OracleParameter("locatieid", ))
+            OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
 
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return resultaat;
 	}
 
 	public virtual void Select()
