@@ -11,19 +11,19 @@ using System.Text;
 
 public class Category
 {
-	public virtual decimal Price
+	public  decimal Price
 	{
 		get;
 		set;
 	}
 
-	public virtual string Details
+	public  string Details
 	{
 		get;
 		set;
 	}
 
-	public virtual string Type
+	public  string Type
 	{
 		get;
 		set;

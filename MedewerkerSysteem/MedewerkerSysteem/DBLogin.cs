@@ -13,7 +13,7 @@ namespace MedewerkerSysteem
         {
             bool resultaat = false;
             string sql;
-            sql = "select * from gebruiker where emailadres = :email and wachtwoord = :password";
+            sql = "select * from gebruiker where emailadres = :email and wachtwoord = :password and isadmin = 1";
 
             try
             {
