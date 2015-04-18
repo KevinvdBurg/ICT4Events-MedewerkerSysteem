@@ -37,14 +37,9 @@ namespace MedewerkerSysteem
                         price = Convert.ToDecimal(reader["prijs"]);
                         details = Convert.ToString(reader["details"]);
                         campingspotid = Convert.ToInt32(reader["kampeerplekid"]);
-
-<<<<<<< HEAD
-                        //resultaat.Add(tempSpot);
-
-=======
                         CampingSpot campingSpot = new CampingSpot(new CategorySpots(maxpersons, details, price), campingspotid);
                         resultaat.Add(campingSpot);
->>>>>>> origin/master
+
                     }
                 }
             }
