@@ -127,6 +127,7 @@
     <Compile Include="MedewerkerUpdateReserveSpot.Designer.cs">
       <DependentUpon>MedewerkerUpdateReserveSpot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Media.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

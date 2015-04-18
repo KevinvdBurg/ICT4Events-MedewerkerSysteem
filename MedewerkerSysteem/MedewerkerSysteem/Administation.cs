@@ -278,6 +278,20 @@ public class Administation
         }
     }
 
+    public List<Media> FindMediaItemAll()
+    {
+        List<Media> foundMedia = dbevent.SelectAllMedia();
+        if (foundMedia != null)
+        {
+            return foundMedia;
+        }
+        else
+        {
+            MessageBox.Show("Media Items zijn niet gevonden");
+            return null;
+        }
+    }
+
     public CampingSpot FindCampingSpot(int id)
     {
         //CampingSpot foundCampingSpot = dbreserve.Select(/*id*/);

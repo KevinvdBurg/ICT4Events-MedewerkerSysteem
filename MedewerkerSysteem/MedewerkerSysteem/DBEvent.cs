@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MedewerkerSysteem;
 using Oracle.DataAccess.Client;
 
 public class DBEvent : Database
@@ -219,6 +220,44 @@ public class DBEvent : Database
         }
         return resultaat;
     }
+
+    public virtual List<Media> SelectAllMedia()
+    {
+        List<Media> resultaat = new List<Media>();
+        string sql;
+         sql = "Select p.postID,p.AANTALREPORTS,bt.INHOUD, bd.BESTANDSLOCATIE FROM post p LEFT JOIN BESTAND bd ON p.POSTID = bd.POSTID LEFT JOIN BERICHT bt ON p.POSTID = bt.POSTID  WHERE AANTALREPORTS >= 5";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int postID = Convert.ToInt32(reader["postID"]);
+                    int AANTALREPORTS = Convert.ToInt32(reader["AANTALREPORTS"]);
+                    string INHOUD = Convert.ToString(reader["INHOUD"]);
+                    string BESTANDSLOCATIE = Convert.ToString(reader["BESTANDSLOCATIE"]);
+
+                   Media newMedia = new Media(postID,AANTALREPORTS,INHOUD, BESTANDSLOCATIE);
+                   resultaat.Add(newMedia);
+                }
+                return resultaat;
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
 
 	public virtual void Update(Event Event)
 	{

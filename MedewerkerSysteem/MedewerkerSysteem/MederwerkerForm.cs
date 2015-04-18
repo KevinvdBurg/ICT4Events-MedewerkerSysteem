@@ -374,7 +374,7 @@ namespace MedewerkerSysteem
 
             if (tbLetterRFID.Text != "")
             {
-                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+                //administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
             }
             else
             {
@@ -539,10 +539,10 @@ namespace MedewerkerSysteem
         public void RefreshItem()
         {
             dgwReserveItem.Rows.Clear();
-            /*foreach (Account account in administration.FindAccountAll())
+            foreach (ReserveItem item in administration.FindReserveItemAll())
             {
-                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
-            }*/
+                dgwReserveItem.Rows.Add(item.ReserveringsID, item.Item.Name, item.Account.Person.LastName, item.EndDate, item.StartDate, item.Account.RFID);
+            }
         }
 
         public void RefreshSpot()
@@ -556,18 +556,18 @@ namespace MedewerkerSysteem
         public void RefreshMedia()
         {
             dgwMedia.Rows.Clear();
-            /*foreach (Account account in administration.FindAccountAll())
+            foreach (Media item in administration.FindMediaItemAll())
             {
-                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
-            }*/
+                dgwMedia.Rows.Add(item.PostID, item.Inhoud, item.Bestandlocatie, item.AANTALREPORTS);
+            }
         }
 
         public void RefreshPresent()
         {
             dgwPresent.Rows.Clear();
-            /*foreach (Account account in administration.FindAccountAll())
+            /*foreach (ReserveSpot item in administration.FindReserveItemAll())
             {
-                dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
+                dgwAccount.Rows.Add();
             }*/
         }
         public void RefreshEvent()

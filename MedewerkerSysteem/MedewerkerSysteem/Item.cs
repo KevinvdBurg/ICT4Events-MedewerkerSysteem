@@ -17,10 +17,18 @@ public class Item
 		set;
 	}
 
+    public string Name { get; set; }
+
 	public Item(string Brand)
 	{
         this.Brand = Brand;
 	}
+
+    public Item(string Brand, string Name)
+    {
+        this.Brand = Brand;
+        this.Name = Name;
+    }
 
 }
 

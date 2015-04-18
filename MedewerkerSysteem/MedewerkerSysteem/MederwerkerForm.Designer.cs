@@ -78,12 +78,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPItem = new System.Windows.Forms.TabPage();
             this.dgwReserveItem = new System.Windows.Forms.DataGridView();
-            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPlocation = new System.Windows.Forms.TabPage();
             this.dgwReserveSpot = new System.Windows.Forms.DataGridView();
             this.LocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,10 +97,6 @@
             this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPmedia = new System.Windows.Forms.TabPage();
             this.dgwMedia = new System.Windows.Forms.DataGridView();
-            this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaText = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaReports = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaOpen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPEvent = new System.Windows.Forms.TabPage();
             this.dgwEvents = new System.Windows.Forms.DataGridView();
             this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,6 +106,17 @@
             this.AdminEventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaReports = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnOpenMediaItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -644,55 +645,19 @@
             this.dgwReserveItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemCode,
             this.ItemName,
-            this.ItemRFID,
             this.ItemAccountName,
             this.ItemDateOut,
-            this.ItemDateIn});
-            this.dgwReserveItem.Location = new System.Drawing.Point(6, 7);
+            this.ItemDateIn,
+            this.ItemRFID});
+            this.dgwReserveItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgwReserveItem.Location = new System.Drawing.Point(3, 3);
             this.dgwReserveItem.MultiSelect = false;
             this.dgwReserveItem.Name = "dgwReserveItem";
             this.dgwReserveItem.ReadOnly = true;
-            this.dgwReserveItem.Size = new System.Drawing.Size(879, 271);
+            this.dgwReserveItem.Size = new System.Drawing.Size(885, 278);
             this.dgwReserveItem.TabIndex = 3;
             this.dgwReserveItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgwReserveItem.SelectionChanged += new System.EventHandler(this.dgwReserveItem_SelectionChanged);
-            // 
-            // ItemCode
-            // 
-            this.ItemCode.HeaderText = "Code";
-            this.ItemCode.Name = "ItemCode";
-            this.ItemCode.ReadOnly = true;
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "Name";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            // 
-            // ItemRFID
-            // 
-            this.ItemRFID.HeaderText = "RFID";
-            this.ItemRFID.Name = "ItemRFID";
-            this.ItemRFID.ReadOnly = true;
-            this.ItemRFID.Visible = false;
-            // 
-            // ItemAccountName
-            // 
-            this.ItemAccountName.HeaderText = "Account Name";
-            this.ItemAccountName.Name = "ItemAccountName";
-            this.ItemAccountName.ReadOnly = true;
-            // 
-            // ItemDateOut
-            // 
-            this.ItemDateOut.HeaderText = "Data Out";
-            this.ItemDateOut.Name = "ItemDateOut";
-            this.ItemDateOut.ReadOnly = true;
-            // 
-            // ItemDateIn
-            // 
-            this.ItemDateIn.HeaderText = "Date In";
-            this.ItemDateIn.Name = "ItemDateIn";
-            this.ItemDateIn.ReadOnly = true;
             // 
             // tabPlocation
             // 
@@ -714,9 +679,10 @@
             this.LocationAccountName,
             this.LocationDateIn,
             this.LocationDateOut});
-            this.dgwReserveSpot.Location = new System.Drawing.Point(6, 7);
+            this.dgwReserveSpot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgwReserveSpot.Location = new System.Drawing.Point(3, 3);
             this.dgwReserveSpot.Name = "dgwReserveSpot";
-            this.dgwReserveSpot.Size = new System.Drawing.Size(879, 271);
+            this.dgwReserveSpot.Size = new System.Drawing.Size(885, 278);
             this.dgwReserveSpot.TabIndex = 4;
             this.dgwReserveSpot.SelectionChanged += new System.EventHandler(this.dgwReserveSpot_SelectionChanged);
             // 
@@ -748,6 +714,7 @@
             // 
             // tabPadmin
             // 
+            this.tabPadmin.Controls.Add(this.btnOpenMediaItem);
             this.tabPadmin.Controls.Add(this.btnChangeEvent);
             this.tabPadmin.Controls.Add(this.btnDeleteEvent);
             this.tabPadmin.Controls.Add(this.tabCAdmin);
@@ -811,9 +778,10 @@
             this.AdminPresentLocation,
             this.AdminPresentDateIn,
             this.AdminPresentDateOut});
-            this.dgwPresent.Location = new System.Drawing.Point(6, 6);
+            this.dgwPresent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgwPresent.Location = new System.Drawing.Point(3, 3);
             this.dgwPresent.Name = "dgwPresent";
-            this.dgwPresent.Size = new System.Drawing.Size(843, 294);
+            this.dgwPresent.Size = new System.Drawing.Size(885, 288);
             this.dgwPresent.TabIndex = 2;
             this.dgwPresent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
@@ -854,32 +822,13 @@
             this.dgwMedia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AdminMediaCode,
             this.AdminMediaText,
-            this.AdminMediaReports,
-            this.AdminMediaOpen});
-            this.dgwMedia.Location = new System.Drawing.Point(6, 3);
+            this.AdminMediaLocation,
+            this.AdminMediaReports});
+            this.dgwMedia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgwMedia.Location = new System.Drawing.Point(3, 3);
             this.dgwMedia.Name = "dgwMedia";
-            this.dgwMedia.Size = new System.Drawing.Size(843, 294);
+            this.dgwMedia.Size = new System.Drawing.Size(885, 288);
             this.dgwMedia.TabIndex = 2;
-            // 
-            // AdminMediaCode
-            // 
-            this.AdminMediaCode.HeaderText = "Code";
-            this.AdminMediaCode.Name = "AdminMediaCode";
-            // 
-            // AdminMediaText
-            // 
-            this.AdminMediaText.HeaderText = "Tekst";
-            this.AdminMediaText.Name = "AdminMediaText";
-            // 
-            // AdminMediaReports
-            // 
-            this.AdminMediaReports.HeaderText = "Report Count";
-            this.AdminMediaReports.Name = "AdminMediaReports";
-            // 
-            // AdminMediaOpen
-            // 
-            this.AdminMediaOpen.HeaderText = "Bekijken";
-            this.AdminMediaOpen.Name = "AdminMediaOpen";
             // 
             // tabPEvent
             // 
@@ -901,9 +850,10 @@
             this.AdminEventDateEnd,
             this.AdminEventAttendeesCount,
             this.AdminEventID});
-            this.dgwEvents.Location = new System.Drawing.Point(6, 6);
+            this.dgwEvents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgwEvents.Location = new System.Drawing.Point(3, 3);
             this.dgwEvents.Name = "dgwEvents";
-            this.dgwEvents.Size = new System.Drawing.Size(843, 294);
+            this.dgwEvents.Size = new System.Drawing.Size(885, 288);
             this.dgwEvents.TabIndex = 2;
             this.dgwEvents.SelectionChanged += new System.EventHandler(this.dgwEvents_SelectionChanged);
             // 
@@ -946,6 +896,71 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // ItemCode
+            // 
+            this.ItemCode.HeaderText = "Code";
+            this.ItemCode.Name = "ItemCode";
+            this.ItemCode.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            // 
+            // ItemAccountName
+            // 
+            this.ItemAccountName.HeaderText = "Account Name";
+            this.ItemAccountName.Name = "ItemAccountName";
+            this.ItemAccountName.ReadOnly = true;
+            // 
+            // ItemDateOut
+            // 
+            this.ItemDateOut.HeaderText = "Data Out";
+            this.ItemDateOut.Name = "ItemDateOut";
+            this.ItemDateOut.ReadOnly = true;
+            // 
+            // ItemDateIn
+            // 
+            this.ItemDateIn.HeaderText = "Date In";
+            this.ItemDateIn.Name = "ItemDateIn";
+            this.ItemDateIn.ReadOnly = true;
+            // 
+            // ItemRFID
+            // 
+            this.ItemRFID.HeaderText = "RFID";
+            this.ItemRFID.Name = "ItemRFID";
+            this.ItemRFID.ReadOnly = true;
+            // 
+            // AdminMediaCode
+            // 
+            this.AdminMediaCode.HeaderText = "Code";
+            this.AdminMediaCode.Name = "AdminMediaCode";
+            // 
+            // AdminMediaText
+            // 
+            this.AdminMediaText.HeaderText = "Tekst";
+            this.AdminMediaText.Name = "AdminMediaText";
+            // 
+            // AdminMediaLocation
+            // 
+            this.AdminMediaLocation.HeaderText = "BestandLocatie";
+            this.AdminMediaLocation.Name = "AdminMediaLocation";
+            // 
+            // AdminMediaReports
+            // 
+            this.AdminMediaReports.HeaderText = "Report Count";
+            this.AdminMediaReports.Name = "AdminMediaReports";
+            // 
+            // btnOpenMediaItem
+            // 
+            this.btnOpenMediaItem.Location = new System.Drawing.Point(369, 16);
+            this.btnOpenMediaItem.Name = "btnOpenMediaItem";
+            this.btnOpenMediaItem.Size = new System.Drawing.Size(107, 23);
+            this.btnOpenMediaItem.TabIndex = 4;
+            this.btnOpenMediaItem.Text = "Open Media Item";
+            this.btnOpenMediaItem.UseVisualStyleBackColor = true;
             // 
             // MederwerkerForm
             // 
@@ -1041,10 +1056,6 @@
         private System.Windows.Forms.DataGridView dgwMedia;
         private System.Windows.Forms.TabPage tabPEvent;
         private System.Windows.Forms.DataGridView dgwEvents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaText;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaReports;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaOpen;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btnComplete;
         private System.Windows.Forms.Button btnControl;
@@ -1062,12 +1073,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationDateOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemRFID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcRFID;
@@ -1083,6 +1088,17 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnChainRFID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemDateIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemRFID;
+        private System.Windows.Forms.Button btnOpenMediaItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminMediaReports;
     }
 }
 
