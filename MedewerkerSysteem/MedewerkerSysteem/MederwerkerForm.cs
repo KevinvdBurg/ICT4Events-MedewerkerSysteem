@@ -372,7 +372,14 @@ namespace MedewerkerSysteem
         {
             //TODO checkin person
 
-
+            if (tbLetterRFID.Text != "")
+            {
+                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+            }
+            else
+            {
+                MessageBox.Show("Koppel eerst een RFID");
+            }
 
             //Empty lists
             accounts.Clear();
