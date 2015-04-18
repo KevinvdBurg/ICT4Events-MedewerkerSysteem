@@ -22,6 +22,7 @@ public class Administation
     private DBEvent dbevent = new DBEvent();
     private DBReserve dbreserve = new DBReserve();
     private DBAddress dbaddress = new DBAddress();
+    private DBCampingspot dbCampingspot = new DBCampingspot();
 
 	public IEnumerable<Reserve> Reserve
 	{
@@ -289,16 +290,16 @@ public class Administation
 
     public List<CampingSpot> FindCampingSpotsAll()
     {
-        //List<CampingSpot> foundSpots = dbreserve.SelectAllSpots();
-        //if (foundSpots != null)
-        //{
-        //    return foundSpots;
-        //}
-        //else
-        //{
-        //    MessageBox.Show("Kampeerplekken niet gevonden");
-        //    return null;
-        //}
+        List<CampingSpot> foundSpots = dbCampingspot.SelectAllSpots();
+        if (foundSpots != null)
+        {
+            return foundSpots;
+        }
+        else
+        {
+            MessageBox.Show("Kampeerplekken niet gevonden");
+            return null;
+        }
         return null;
     }
 

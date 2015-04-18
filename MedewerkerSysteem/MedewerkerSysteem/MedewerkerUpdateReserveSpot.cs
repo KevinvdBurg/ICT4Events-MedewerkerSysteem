@@ -16,5 +16,10 @@ namespace MedewerkerSysteem
         {
             InitializeComponent();
         }
+
+        private void btnRSreserve_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

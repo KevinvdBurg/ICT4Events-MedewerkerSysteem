@@ -177,6 +177,7 @@
             this.btnRSreserve.TabIndex = 0;
             this.btnRSreserve.Text = "Reserveren";
             this.btnRSreserve.UseVisualStyleBackColor = true;
+            this.btnRSreserve.Click += new System.EventHandler(this.btnRSreserve_Click);
             // 
             // MedewerkerUpdateReserveSpot
             // 

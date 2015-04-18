@@ -28,11 +28,11 @@ namespace MedewerkerSysteem
                     {
                         i++;
                     }
-                    
                 }
                 if (i < item.Category.MaxPerson)
                 {
                     campingSpots.Add(item);
+                    cbRSspotnumbers.Items.Add(item.SpotID);
                 }
             }
 
