@@ -278,7 +278,6 @@ namespace MedewerkerSysteem
         {
             //btnChangePaid.Visible = false;
             //btnComplete.Visible = false;
-            tbLetterScan.Clear();
             tbLetterName.Clear();
 
             int caseSwitch = 1;
@@ -380,13 +379,14 @@ namespace MedewerkerSysteem
 
         private void btnChangePaid_Click(object sender, EventArgs e)
         {
-            btnComplete.Visible = true;
-            btnChangePaid.Visible = false;
+            //btnComplete.Visible = true;
+            //btnChangePaid.Visible = false;
 
-            foreach (var item in reserves)
-            {
-                item.Paid = true;
-            }
+            //foreach (var item in reserves)
+            //{
+            //    item.Paid = true;
+            //}
+            administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
         }
 
         private void dgwAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -632,7 +632,15 @@ namespace MedewerkerSysteem
 
         private void btnChainRFID_Click(object sender, EventArgs e)
         {
-
+            if (tbLetterRFID.Text != "")
+            {
+                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+            }
+            else
+            {
+                MessageBox.Show("Vul RFID in");
+            }
+            
         }
 
 

@@ -336,6 +336,19 @@ public class Administation
 
 	}
 
+    public void ChainRFID(string email, string rfid)
+    {
+        bool SuccesChain = dbaccount.ChainRFID(email, rfid);
+        if (SuccesChain)
+        {
+            MessageBox.Show("Koppeling Gelukt");
+        }
+        else
+        {
+            MessageBox.Show("Koppeling Mislukt");
+        }
+    }
+
     /// <summary>
     /// Log the use in the application
     /// </summary>

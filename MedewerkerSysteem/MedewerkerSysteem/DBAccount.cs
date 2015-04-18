@@ -232,6 +232,34 @@ public class DBAccount : Database
         return resultaat;
     }
 
+    public bool ChainRFID(string email, string rfid)
+    {
+        string ReplaceEmail = "'" + email + "'";
+        string ReplaceRFID = "'" + rfid + "'";
+        bool resultaat = false;
+        string sql;
+        //sql = "UPDATE GEBRUIKER SET RFID = :rfid WHERE EMAILADRES = :email";
+        string testsql = "UPDATE GEBRUIKER SET RFID =" + ReplaceRFID + " WHERE EMAILADRES =" + ReplaceEmail;
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(testsql, connection);
+            cmd.Parameters.Add(new OracleParameter("EMAIL", ReplaceEmail));
+            cmd.Parameters.Add(new OracleParameter("rfid", ReplaceRFID));
+            cmd.ExecuteNonQuery();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
     
 }
 
