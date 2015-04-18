@@ -17,6 +17,10 @@ namespace MedewerkerSysteem
             //
             sql = "select maxpersonen, prijs, details, kampeerplekid from kampeerplekcategorie kpc, kampeerplek kp where kampeerplekcategorieid in (select categorieid from kampeerplek)";
             //sql = "";
+            string details;
+            int maxpersons;
+            decimal price;
+            int campingspotid;
 
 
             string type = "";
@@ -29,9 +33,13 @@ namespace MedewerkerSysteem
                 {
                     while (reader.Read())
                     {
+                        maxpersons = Convert.ToInt32(reader["maxpersonen"]);
+                        price = Convert.ToDecimal(reader["prijs"]);
+                        details = Convert.ToString(reader["details"]);
+                        campingspotid = Convert.ToInt32(reader["kampeerplekid"]);
 
-                        resultaat.Add(tempSpot);
-
+                        CampingSpot campingSpot = new CampingSpot(new CategorySpots(maxpersons, details, price), campingspotid);
+                        resultaat.Add(campingSpot);
                     }
                 }
             }
