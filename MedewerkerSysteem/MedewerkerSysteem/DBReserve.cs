@@ -228,6 +228,30 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    internal bool UpdatePayment(int reserveringID)
+    {
+        bool resultaat = false;
+        string sql;
+        sql = "UPDATE KAMPEERPLEKRESERVERING SET BETAALD = 1 WHERE RESERVERINGID =" + reserveringID;
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            //cmd.Parameters.Add(new OracleParameter("reserveringID", reserveringID));
+            cmd.ExecuteNonQuery();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
 
 }
 

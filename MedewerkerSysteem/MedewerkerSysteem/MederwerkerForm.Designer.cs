@@ -40,6 +40,7 @@
             this.tabCMedewerker = new System.Windows.Forms.TabControl();
             this.tabPincheck = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnChainRFID = new System.Windows.Forms.Button();
             this.btnChangePaid = new System.Windows.Forms.Button();
             this.btnComplete = new System.Windows.Forms.Button();
             this.tbLetterStatus = new System.Windows.Forms.TextBox();
@@ -115,7 +116,6 @@
             this.AdminEventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.btnChainRFID = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -232,7 +232,7 @@
             this.tabPincheck.Controls.Add(this.label1);
             this.tabPincheck.Location = new System.Drawing.Point(4, 22);
             this.tabPincheck.Name = "tabPincheck";
-            this.tabPincheck.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPincheck.Padding = new System.Windows.Forms.Padding(3);
             this.tabPincheck.Size = new System.Drawing.Size(895, 373);
             this.tabPincheck.TabIndex = 0;
             this.tabPincheck.Text = "InCheck";
@@ -254,10 +254,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2. Betalings status RFID koppelen";
             // 
+            // btnChainRFID
+            // 
+            this.btnChainRFID.Location = new System.Drawing.Point(311, 134);
+            this.btnChainRFID.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChainRFID.Name = "btnChainRFID";
+            this.btnChainRFID.Size = new System.Drawing.Size(125, 23);
+            this.btnChainRFID.TabIndex = 12;
+            this.btnChainRFID.Text = "KoppelRIFD";
+            this.btnChainRFID.UseVisualStyleBackColor = true;
+            this.btnChainRFID.Click += new System.EventHandler(this.btnChainRFID_Click);
+            // 
             // btnChangePaid
             // 
             this.btnChangePaid.Location = new System.Drawing.Point(311, 100);
-            this.btnChangePaid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePaid.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePaid.Name = "btnChangePaid";
             this.btnChangePaid.Size = new System.Drawing.Size(125, 23);
             this.btnChangePaid.TabIndex = 11;
@@ -268,7 +279,7 @@
             // btnComplete
             // 
             this.btnComplete.Location = new System.Drawing.Point(312, 168);
-            this.btnComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComplete.Margin = new System.Windows.Forms.Padding(2);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(126, 23);
             this.btnComplete.TabIndex = 10;
@@ -373,7 +384,7 @@
             // btnControl
             // 
             this.btnControl.Location = new System.Drawing.Point(354, 50);
-            this.btnControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnControl.Margin = new System.Windows.Forms.Padding(2);
             this.btnControl.Name = "btnControl";
             this.btnControl.Size = new System.Drawing.Size(75, 23);
             this.btnControl.TabIndex = 9;
@@ -471,7 +482,7 @@
             this.tabPaccount.Controls.Add(this.btnCreateAccount);
             this.tabPaccount.Location = new System.Drawing.Point(4, 22);
             this.tabPaccount.Name = "tabPaccount";
-            this.tabPaccount.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPaccount.Padding = new System.Windows.Forms.Padding(3);
             this.tabPaccount.Size = new System.Drawing.Size(895, 373);
             this.tabPaccount.TabIndex = 1;
             this.tabPaccount.Text = "Account";
@@ -481,7 +492,7 @@
             // 
             this.btnDeleteAccount.Enabled = false;
             this.btnDeleteAccount.Location = new System.Drawing.Point(312, 16);
-            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(122, 22);
             this.btnDeleteAccount.TabIndex = 3;
@@ -493,7 +504,7 @@
             // 
             this.btnChangeAccount.Enabled = false;
             this.btnChangeAccount.Location = new System.Drawing.Point(166, 16);
-            this.btnChangeAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAccount.Name = "btnChangeAccount";
             this.btnChangeAccount.Size = new System.Drawing.Size(122, 23);
             this.btnChangeAccount.TabIndex = 2;
@@ -557,7 +568,7 @@
             this.tabPreserve.Controls.Add(this.tabControl1);
             this.tabPreserve.Location = new System.Drawing.Point(4, 22);
             this.tabPreserve.Name = "tabPreserve";
-            this.tabPreserve.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPreserve.Padding = new System.Windows.Forms.Padding(3);
             this.tabPreserve.Size = new System.Drawing.Size(895, 373);
             this.tabPreserve.TabIndex = 2;
             this.tabPreserve.Text = "Reserveren";
@@ -620,7 +631,7 @@
             this.tabPItem.Controls.Add(this.dgwReserveItem);
             this.tabPItem.Location = new System.Drawing.Point(4, 22);
             this.tabPItem.Name = "tabPItem";
-            this.tabPItem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPItem.Padding = new System.Windows.Forms.Padding(3);
             this.tabPItem.Size = new System.Drawing.Size(891, 284);
             this.tabPItem.TabIndex = 0;
             this.tabPItem.Text = "Item";
@@ -687,7 +698,7 @@
             this.tabPlocation.Controls.Add(this.dgwReserveSpot);
             this.tabPlocation.Location = new System.Drawing.Point(4, 22);
             this.tabPlocation.Name = "tabPlocation";
-            this.tabPlocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPlocation.Padding = new System.Windows.Forms.Padding(3);
             this.tabPlocation.Size = new System.Drawing.Size(891, 284);
             this.tabPlocation.TabIndex = 1;
             this.tabPlocation.Text = "Plek";
@@ -742,7 +753,7 @@
             this.tabPadmin.Controls.Add(this.btnEvent);
             this.tabPadmin.Location = new System.Drawing.Point(4, 22);
             this.tabPadmin.Name = "tabPadmin";
-            this.tabPadmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPadmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabPadmin.Size = new System.Drawing.Size(895, 373);
             this.tabPadmin.TabIndex = 3;
             this.tabPadmin.Text = "Admin";
@@ -785,7 +796,7 @@
             this.tabPpressent.Controls.Add(this.dgwPresent);
             this.tabPpressent.Location = new System.Drawing.Point(4, 22);
             this.tabPpressent.Name = "tabPpressent";
-            this.tabPpressent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPpressent.Padding = new System.Windows.Forms.Padding(3);
             this.tabPpressent.Size = new System.Drawing.Size(891, 294);
             this.tabPpressent.TabIndex = 0;
             this.tabPpressent.Text = "Aanwezigen";
@@ -830,7 +841,7 @@
             this.tabPmedia.Controls.Add(this.dgwMedia);
             this.tabPmedia.Location = new System.Drawing.Point(4, 22);
             this.tabPmedia.Name = "tabPmedia";
-            this.tabPmedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPmedia.Padding = new System.Windows.Forms.Padding(3);
             this.tabPmedia.Size = new System.Drawing.Size(891, 294);
             this.tabPmedia.TabIndex = 1;
             this.tabPmedia.Text = "Media";
@@ -874,7 +885,7 @@
             this.tabPEvent.Controls.Add(this.dgwEvents);
             this.tabPEvent.Location = new System.Drawing.Point(4, 22);
             this.tabPEvent.Name = "tabPEvent";
-            this.tabPEvent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPEvent.Padding = new System.Windows.Forms.Padding(3);
             this.tabPEvent.Size = new System.Drawing.Size(891, 294);
             this.tabPEvent.TabIndex = 2;
             this.tabPEvent.Text = "Event";
@@ -935,17 +946,6 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // btnChainRFID
-            // 
-            this.btnChainRFID.Location = new System.Drawing.Point(311, 134);
-            this.btnChainRFID.Margin = new System.Windows.Forms.Padding(2);
-            this.btnChainRFID.Name = "btnChainRFID";
-            this.btnChainRFID.Size = new System.Drawing.Size(125, 23);
-            this.btnChainRFID.TabIndex = 12;
-            this.btnChainRFID.Text = "KoppelRIFD";
-            this.btnChainRFID.UseVisualStyleBackColor = true;
-            this.btnChainRFID.Click += new System.EventHandler(this.btnChainRFID_Click);
-            // 
             // MederwerkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -961,6 +961,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "MederwerkerForm";
             this.Text = "Medewerker Form";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MederwerkerForm_FormClosed);
             this.Load += new System.EventHandler(this.MederwerkerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCMedewerker.ResumeLayout(false);

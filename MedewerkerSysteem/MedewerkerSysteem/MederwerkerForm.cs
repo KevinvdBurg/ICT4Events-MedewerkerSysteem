@@ -16,7 +16,7 @@ namespace MedewerkerSysteem
     {
         private RFID rfid; //Declare an RFID object
         private Administation administration = new Administation();
-
+        new Database  db = new Database();
         List<Account> accounts = new List<Account>();
         List<Reserve> reserves = new List<Reserve>();
         List<Event> events = new List<Event>();
@@ -258,6 +258,7 @@ namespace MedewerkerSysteem
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            db.DisConnect();
             Close();
         }
 
@@ -386,7 +387,27 @@ namespace MedewerkerSysteem
             //{
             //    item.Paid = true;
             //}
-            administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+            if (tbLetterStatus.Text != "Betaald")
+            {
+                administration.ChangePaymentStat(Convert.ToInt32(nudReserveID.Value));
+            }
+            else
+            {
+                MessageBox.Show("Klant heeft al betaald");
+            }
+        }
+
+        private void btnChainRFID_Click(object sender, EventArgs e)
+        {
+            if (tbLetterRFID.Text != "")
+            {
+                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+            }
+            else
+            {
+                MessageBox.Show("Vul RFID in");
+            }
+
         }
 
         private void dgwAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -630,18 +651,12 @@ namespace MedewerkerSysteem
 
         }
 
-        private void btnChainRFID_Click(object sender, EventArgs e)
+        private void MederwerkerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (tbLetterRFID.Text != "")
-            {
-                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
-            }
-            else
-            {
-                MessageBox.Show("Vul RFID in");
-            }
             
         }
+
+        
 
 
     }

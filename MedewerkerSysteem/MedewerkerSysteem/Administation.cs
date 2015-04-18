@@ -349,6 +349,19 @@ public class Administation
         }
     }
 
+    public void ChangePaymentStat(int reserveringsID)
+    {
+        bool SuccesChangeStat = dbreserve.UpdatePayment(reserveringsID);
+        if (SuccesChangeStat)
+        {
+            MessageBox.Show("Betaling voltooid");
+        }
+        else
+        {
+            MessageBox.Show("Betaling Mislukt");
+        }
+    }
+
     /// <summary>
     /// Log the use in the application
     /// </summary>

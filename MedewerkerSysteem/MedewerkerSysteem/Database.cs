@@ -39,7 +39,9 @@ public class Database
     public void DisConnect()
     {
         connection.Close();
+        connection.Dispose();
     }
+
     
 
 }
