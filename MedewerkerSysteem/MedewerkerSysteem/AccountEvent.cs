@@ -9,14 +9,14 @@ namespace MedewerkerSysteem
     class AccountEvent
     {
         public bool Present { get; set; }
-        public string RFID { get; set; }
+        public int AccountID { get; set; }
 
         public int EventID { get; set; }
 
-        public AccountEvent(bool Present, string RFID, int EventID)
+        public AccountEvent(bool Present, int accountID, int EventID)
         {
             this.Present = Present;
-            this.RFID = RFID;
+            this.AccountID = accountID;
             this.EventID = EventID;
         }
     }
