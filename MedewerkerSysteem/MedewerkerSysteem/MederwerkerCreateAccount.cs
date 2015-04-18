@@ -52,7 +52,8 @@ namespace MedewerkerSysteem
            
             foreach (Event item in lbCAeventlist.Items)
             {
-                AccountEvent accountEvent = new AccountEvent(false, account.RFID, item.EventID);
+                AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(account.Person.Email), item.EventID);
+                administration.Add(accountEvent);
 
             }
 
