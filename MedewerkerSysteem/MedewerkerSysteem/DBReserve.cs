@@ -195,7 +195,7 @@ public class DBReserve : Database
     {
         List<string> resultaat = new List<string>();
         string sql;
-        sql = "Select kpr.KAMPEERPLEKID, g.achternaam, g.emailadres, gp.GROEPNAAM, kpr.BETAALD From Kampeerplekreservering kpr Inner Join Gebruiker g ON g.gebruikerId = kpr.GEBRUIKERID INNER JOIN GROEPSRESERVERING gr ON gr.RESERVERINGID = kpr.RESERVERINGID INNER JOIN GROEP gp ON gp.groepid = gr.groepid WHERE kpr.RESERVERINGID = :reserveringID";
+        sql = "Select kpr.KAMPEERPLEKID, g.achternaam, g.emailadres, gp.GROEPNAAM, kpr.BETAALD From Kampeerplekreservering kpr Inner Join Gebruiker g ON g.gebruikerId = kpr.GEBRUIKERID FULL OUTER JOIN GROEPSRESERVERING gr ON gr.RESERVERINGID = kpr.RESERVERINGID FULL OUTER JOIN GROEP gp ON gp.groepid = gr.groepid WHERE kpr.RESERVERINGID = :reserveringID";
 
         try
         {
@@ -233,9 +233,9 @@ public class DBReserve : Database
 
     internal bool UpdatePayment(int reserveringID)
     {
+        string updateID = "'" + reserveringID + "'";
         bool resultaat = false;
-        string sql;
-        sql = "UPDATE KAMPEERPLEKRESERVERING SET BETAALD = 1 WHERE RESERVERINGID =" + reserveringID;
+        string sql = "UPDATE KAMPEERPLEKRESERVERING SET BETAALD = 1 WHERE RESERVERINGID = " + updateID;
         try
         {
             Connect();

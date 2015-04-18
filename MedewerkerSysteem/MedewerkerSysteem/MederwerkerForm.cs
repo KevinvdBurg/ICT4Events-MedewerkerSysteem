@@ -394,7 +394,11 @@ namespace MedewerkerSysteem
             //}
             if (tbLetterStatus.Text != "Betaald")
             {
-                administration.ChangePaymentStat(Convert.ToInt32(nudReserveID.Value));
+                if (administration.ChangePaymentStat(Convert.ToInt32(nudReserveID.Value)))
+                {
+                    tbLetterStatus.Text = "Betaald";
+                }
+                
             }
             else
             {
