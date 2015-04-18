@@ -12,6 +12,7 @@ using Phidgets.Events; //Needed for the phidget event handling classes
 
 namespace MedewerkerSysteem
 {
+
     public partial class MederwerkerForm : Form
     {
         private RFID rfid; //Declare an RFID object
@@ -20,6 +21,8 @@ namespace MedewerkerSysteem
         List<Account> accounts = new List<Account>();
         List<Reserve> reserves = new List<Reserve>();
         List<Event> events = new List<Event>();
+
+        private string CurrentEvent = "";
 
         public MederwerkerForm(Administation admin)
         {
@@ -368,6 +371,8 @@ namespace MedewerkerSysteem
         {
             //TODO checkin person
 
+
+
             //Empty lists
             accounts.Clear();
             reserves.Clear();
@@ -654,6 +659,11 @@ namespace MedewerkerSysteem
         private void MederwerkerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void cbEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CurrentEvent = e.ToString();
         }
 
         

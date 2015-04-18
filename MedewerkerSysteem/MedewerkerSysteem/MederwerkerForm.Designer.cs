@@ -171,6 +171,7 @@
             this.cbEvents.Name = "cbEvents";
             this.cbEvents.Size = new System.Drawing.Size(121, 21);
             this.cbEvents.TabIndex = 2;
+            this.cbEvents.SelectedIndexChanged += new System.EventHandler(this.cbEvents_SelectedIndexChanged);
             // 
             // lblName
             // 
