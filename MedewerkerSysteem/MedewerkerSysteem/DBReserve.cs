@@ -71,7 +71,7 @@ public class DBReserve : Database
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
         //sql = "Select kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID where kr.reserveringID = :reserveringID" ;
         //sql = "Select kr.GEBRUIKERID, kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID where kr.reserveringID = :reserveringID";
-        sql = "Select gb.RFID, kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID where kr.reserveringID = :reserveringID";
+        sql = "Select gb.RFID, kr.reserveringID, kp.KAMPEERPLEKID, kp.LOCATIEID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID where kr.reserveringID = :reserveringID";
 
         string RFID = "";
         int KAMPEERPLEKID = 0;
@@ -83,6 +83,7 @@ public class DBReserve : Database
         int GROEPID = 0;
         string GROEPNAAM = "";
         string DETAILS = "";
+        int locatieID = 0;
 
         try
         {
@@ -96,6 +97,7 @@ public class DBReserve : Database
                 {
                     RFID = Convert.ToString(reader["RFID"]);
                     KAMPEERPLEKID = Convert.ToInt32(reader["KAMPEERPLEKID"]);
+                    locatieID = Convert.ToInt32(reader["LOCATIEID"]);
                     BETAALD = Convert.ToBoolean(reader["BETAALD"]);
                     DATUMIN = Convert.ToString(reader["MAXPERSONEN"]);
                     DATUMUIT = Convert.ToString(reader["MAXPERSONEN"]);
@@ -108,7 +110,7 @@ public class DBReserve : Database
                 //resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid);
 
 
-                resultaat = new ReserveSpot(new CampingSpot(new CategorySpots(MAXPERSONEN, DETAILS, PRIJS),KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, BETAALD, reserveringID);
+                resultaat = new ReserveSpot(new CampingSpot(new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), locatieID,KAMPEERPLEKID), new Group(GROEPNAAM, GROEPID), account, new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), DATUMUIT, DATUMIN, BETAALD, reserveringID);
             }
         }
         catch (OracleException e)
@@ -127,7 +129,7 @@ public class DBReserve : Database
         List<ReserveSpot> resultaat = new List<ReserveSpot>();
         string sql;
         //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
-        sql = "select kr.reserveringID, gb.EMAILADRES, gb.wachtwoord, kr.DATUMIN, kr.DATUMUIT, kr.BETAALD, kp.kampeerplekid, g.GROEPNAAM, g.GROEPID, gb.plaats ,gb.postcode,gb.huisnummer, gb.voornaam, gb.achternaam, gb.rfid, kpc.DETAILS, kpc.PRIJS, kpc.MAXPERSONEN   from Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner Join kampeerplekcategorie kpc ON kpc.kampeerplekcategorieid = kp.CATEGORIEID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID";
+        sql = "select kr.reserveringID, gb.EMAILADRES, gb.wachtwoord, kr.DATUMIN, kr.DATUMUIT, kr.BETAALD, kp.kampeerplekid, kp.locatieid, g.GROEPNAAM, g.GROEPID, gb.plaats ,gb.postcode,gb.huisnummer, gb.voornaam, gb.achternaam, gb.rfid, kpc.DETAILS, kpc.PRIJS, kpc.MAXPERSONEN   from Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner Join kampeerplekcategorie kpc ON kpc.kampeerplekcategorieid = kp.CATEGORIEID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID";
             //sql = "select * from gebruiker";
         string type = "";
         try
@@ -146,6 +148,7 @@ public class DBReserve : Database
                     string DATUMUIT = Convert.ToString(reader["DATUMUIT"]);
                     
                     int kampeerplekid = Convert.ToInt32(reader["kampeerplekid"]);
+                    int locatieid = Convert.ToInt32(reader["locatieid"]);
                     string GROEPNAAM = Convert.ToString(reader["GROEPNAAM"]);
                     int GROEPID = Convert.ToInt32(reader["GROEPID"]);
                     string plaats = Convert.ToString(reader["plaats"]);
@@ -165,7 +168,7 @@ public class DBReserve : Database
                         boolbetaald = true;
                     }
 
-                    ReserveSpot tempResev = new ReserveSpot(new CampingSpot(new CategorySpots(MAXPERSONEN, DETAILS, PRIJS),kampeerplekid), new Group(GROEPNAAM, GROEPID), new Account(new Person(new Address(plaats, huisnummer, postcode), EMAILADRES, voornaam, achternaam), type, rfid, wachtwoord), new Category(DETAILS, PRIJS), DATUMUIT, DATUMIN, boolbetaald, reserveringID);
+                    ReserveSpot tempResev = new ReserveSpot(new CampingSpot(new CategorySpots(MAXPERSONEN, DETAILS, PRIJS), locatieid, kampeerplekid), new Group(GROEPNAAM, GROEPID), new Account(new Person(new Address(plaats, huisnummer, postcode), EMAILADRES, voornaam, achternaam), type, rfid, wachtwoord), new Category(DETAILS, PRIJS), DATUMUIT, DATUMIN, boolbetaald, reserveringID);
 
                     resultaat.Add(tempResev);
 
