@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MedewerkerSysteem
 {
-    class AccountEvent
+    public class AccountEvent
     {
         public bool Present { get; set; }
         public int AccountID { get; set; }
