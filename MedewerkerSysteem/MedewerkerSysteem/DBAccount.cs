@@ -23,6 +23,11 @@ public class DBAccount : Database
     public bool Insert(AccountEvent accountEvent)
     {
         bool resultaat = false;
+        int present = 0;
+        if (accountEvent.Present)
+        {
+            present = 1;
+        }
         string sql;
         sql = "INSERT INTO gebruikerevent (GEBRUIKERID, EVENTID, AANWEZIG) VALUES (:gebruikerid, :eventid, :aanwezig)";
         try
@@ -31,7 +36,7 @@ public class DBAccount : Database
             OracleCommand cmd = new OracleCommand(sql, connection);
             cmd.Parameters.Add(new OracleParameter("gebruikerid", accountEvent.AccountID));
             cmd.Parameters.Add(new OracleParameter("eventid", accountEvent.EventID));
-            cmd.Parameters.Add(new OracleParameter("aanwezig", accountEvent.Present));
+            cmd.Parameters.Add(new OracleParameter("aanwezig", present));
             cmd.ExecuteNonQuery();
             //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
