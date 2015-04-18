@@ -6,9 +6,11 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MedewerkerSysteem;
 using Oracle.DataAccess.Client;
 
 public class DBAccount : Database
@@ -17,6 +19,34 @@ public class DBAccount : Database
 	{
 		throw new System.NotImplementedException();
 	}
+
+    public bool Insert(AccountEvent accountEvent)
+    {
+        bool resultaat = false;
+        string sql;
+        sql = "INSERT INTO gebruikerevent (GEBRUIKERID, EVENTID, AANWEZIG) VALUES (:gebruikerid, :eventid, :aanwezig)";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("gebruikerid", accountEvent.AccountID));
+            cmd.Parameters.Add(new OracleParameter("eventid", accountEvent.EventID));
+            cmd.Parameters.Add(new OracleParameter("aanwezig", accountEvent.Present));
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
 
 	public  bool Delete(Account account)
 	{
