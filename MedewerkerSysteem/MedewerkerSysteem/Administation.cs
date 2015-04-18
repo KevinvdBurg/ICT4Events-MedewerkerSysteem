@@ -213,6 +213,22 @@ public class Administation
         }
     }
 
+    public AccountEvent FindAccountEvent(int AccountID, int EventID)
+    {
+        AccountEvent founAccountEvent = dbaccount.FindAccountEvent(AccountID, EventID);
+        return founAccountEvent;
+    }
+
+    public void ChangeAccountEvent(bool present)
+    {
+        int result = 0;
+        if (present)
+        {
+            result = 1;
+        }
+        dbaccount.UpdateAccountEvent(result);
+    }
+
     /// <summary>
     /// Searched the database for all reserves by code
     /// An Account is needed for the reservation

@@ -20,6 +20,11 @@ public class DBAccount : Database
 		throw new System.NotImplementedException();
 	}
 
+    public bool UpdateAccountEvent(int present)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public bool Insert(AccountEvent accountEvent)
     {
         bool resultaat = false;
@@ -122,8 +127,49 @@ public class DBAccount : Database
        // throw new System.NotImplementedException();
 	}
 
-	public  void Select()
+	public  AccountEvent FindAccountEvent(int AccountID, int EventID)
 	{
+	    AccountEvent resultaat = null;
+	    string sql;
+	    sql = "select * from gebruikerevent where gebruikerid = :accountid AND eventid = :eventid";
+	    int present = 0;
+	    try
+	    {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("accountid", AccountID));
+	        cmd.Parameters.Add(new OracleParameter("eventid", EventID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    AccountID = Convert.ToInt32(reader["accountid"]);
+                    EventID = Convert.ToInt32(reader["eventid"]);
+                    present = Convert.ToInt32(reader["aanwezig"]);
+                }
+                if (present == 0)
+                {
+                    resultaat = new AccountEvent(false, AccountID, EventID);
+                }
+                else
+                {
+                    resultaat = new AccountEvent(true, AccountID, EventID);
+                }
+                
+            }
+	    }
+        catch (OracleException e)
+	    {
+            Console.WriteLine(e.Message);
+            throw;
+	    }
+        finally
+        {
+            DisConnect();
+
+        }
+        return resultaat;
 	}
 
 
