@@ -95,7 +95,7 @@ public class DBReserve : Database
                 while (reader.Read())
                 {
                     RFID = Convert.ToString(reader["RFID"]);
-                    KAMPEERPLEKID = Convert.ToInt32(reader["EVENTID"]);
+                    KAMPEERPLEKID = Convert.ToInt32(reader["KAMPEERPLEKID"]);
                     BETAALD = Convert.ToBoolean(reader["BETAALD"]);
                     DATUMIN = Convert.ToString(reader["MAXPERSONEN"]);
                     DATUMUIT = Convert.ToString(reader["MAXPERSONEN"]);
