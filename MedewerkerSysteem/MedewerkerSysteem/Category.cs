@@ -23,18 +23,20 @@ public class Category
 		set;
 	}
 
-	public  string Type
-	{
-		get;
-		set;
-	}
 
-	public Category(string Details, decimal Price, string Type)
-	{
-        this.Price = Price;
-        this.Details = Details;
-        this.Type = Type;
-	}
+
+    //public  string Type
+    //{
+    //    get;
+    //    set;
+    //}
+
+    //public Category(string Details, decimal Price, string Type)
+    //{
+    //    this.Price = Price;
+    //    this.Details = Details;
+    //    this.Type = Type;
+    //}
 
     public Category(string Details, decimal Price)
     {

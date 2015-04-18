@@ -15,12 +15,13 @@ namespace MedewerkerSysteem
             List<CampingSpot> resultaat = new List<CampingSpot>();
             string sql;
             //
-            sql = "select maxpersonen, prijs, details, kampeerplekid from kampeerplekcategorie kpc, kampeerplek kp where kampeerplekcategorieid in (select categorieid from kampeerplek)";
+            sql = "select maxpersonen, prijs, details, kampeerplekid, locatienid from kampeerplekcategorie kpc, kampeerplek kp, locatie l where kampeerplekcategorieid in (select categorieid from kampeerplek)";
             //sql = "";
             string details;
             int maxpersons;
             decimal price;
             int campingspotid;
+            int locatieID;
 
 
             string type = "";
@@ -37,12 +38,13 @@ namespace MedewerkerSysteem
                         price = Convert.ToDecimal(reader["prijs"]);
                         details = Convert.ToString(reader["details"]);
                         campingspotid = Convert.ToInt32(reader["kampeerplekid"]);
-                        CampingSpot campingSpot = new CampingSpot(new CategorySpots(maxpersons, details, price), campingspotid);
+                        locatieID = Convert.ToInt32(reader["locatieid"]);
+                        CampingSpot campingSpot = new CampingSpot(new CategorySpots(maxpersons, details, price), locatieID, campingspotid);
                         resultaat.Add(campingSpot);
 
                     }
+                   }
                 }
-            }
             catch (OracleException e)
             {
                 throw;

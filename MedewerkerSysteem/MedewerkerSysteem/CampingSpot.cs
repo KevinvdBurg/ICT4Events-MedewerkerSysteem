@@ -20,11 +20,14 @@ public class CampingSpot
     public CategorySpots Category { get; set; }
     public int LocationID { get; set; }
 
-    public CampingSpot(CategorySpots category, int locationid)
+    public int SpotID { get; set; }
+
+    public CampingSpot(CategorySpots category, int locationid, int spotID)
 	{
         //this.Location = Location;
         this.Category = category;
 	    this.LocationID = locationid;
+        this.SpotID = spotID;
 	}
 
 }
