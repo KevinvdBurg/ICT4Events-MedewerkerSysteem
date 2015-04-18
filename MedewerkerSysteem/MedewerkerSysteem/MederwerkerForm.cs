@@ -374,7 +374,17 @@ namespace MedewerkerSysteem
 
             if (tbLetterRFID.Text != "")
             {
-                //administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
+                AccountEvent accountEvent = administration.FindAccountEvent(administration.FindAccountID(tbEmail.Text), currentEvent.EventID);
+                if (accountEvent.Present)
+                {
+                    MessageBox.Show("Deelnemer is al binnen");
+                }
+                else
+                {
+                    accountEvent.Present = true;
+                    //administration.ChangeAccountEvent;
+                }
             }
             else
             {
@@ -544,7 +554,7 @@ namespace MedewerkerSysteem
                 dgwReserveItem.Rows.Add(item.ReserveringsID, item.Item.Name, item.Account.Person.LastName, item.EndDate, item.StartDate, item.Account.RFID);
             }
         }
-
+    
         public void RefreshSpot()
         {
             dgwReserveSpot.Rows.Clear();
