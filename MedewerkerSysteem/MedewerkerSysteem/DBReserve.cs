@@ -187,5 +187,47 @@ public class DBReserve : Database
     {
         throw new NotImplementedException();
     }
+
+    internal List<string> Check(int reserveringID)
+    {
+        List<string> resultaat = new List<string>();
+        string sql;
+        sql = "Select kpr.KAMPEERPLEKID, g.achternaam, g.emailadres, gp.GROEPNAAM, kpr.BETAALD From Kampeerplekreservering kpr Inner Join Gebruiker g ON g.gebruikerId = kpr.GEBRUIKERID INNER JOIN GROEPSRESERVERING gr ON gr.RESERVERINGID = kpr.RESERVERINGID INNER JOIN GROEP gp ON gp.groepid = gr.groepid WHERE kpr.RESERVERINGID = :reserveringID";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("reserveringID", reserveringID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string KAMPEERPLEKID = Convert.ToString(reader["KAMPEERPLEKID"]);
+                    string ACHTERNAAM = Convert.ToString(reader["achternaam"]);
+                    string emailadres = Convert.ToString(reader["emailadres"]);
+                    string GROEPNAAM = Convert.ToString(reader["GROEPNAAM"]);
+                    string BETAALD = Convert.ToString(reader["BETAALD"]);
+                    resultaat.Add(KAMPEERPLEKID);
+                    resultaat.Add(ACHTERNAAM);
+                    resultaat.Add(emailadres);
+                    resultaat.Add(GROEPNAAM);
+                    resultaat.Add(BETAALD);
+                }
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
+
 }
 

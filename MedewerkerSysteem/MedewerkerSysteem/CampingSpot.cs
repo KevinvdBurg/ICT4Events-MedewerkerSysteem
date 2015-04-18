@@ -11,15 +11,20 @@ using System.Text;
 
 public class CampingSpot
 {
-	public int Location
-	{
-		get;
-		set;
-	}
+    //public int Location
+    //{
+    //    get;
+    //    set;
+    //}
 
-	public CampingSpot(int Location)
+    public CategorySpots Category { get; set; }
+    public int LocationID { get; set; }
+
+    public CampingSpot(CategorySpots category, int locationid)
 	{
-        this.Location = Location;
+        //this.Location = Location;
+        this.Category = category;
+	    this.LocationID = locationid;
 	}
 
 }

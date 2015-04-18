@@ -276,57 +276,92 @@ namespace MedewerkerSysteem
 
         private void btnControl_Click(object sender, EventArgs e)
         {
-            btnChangePaid.Visible = false;
-            btnComplete.Visible = false;
+            //btnChangePaid.Visible = false;
+            //btnComplete.Visible = false;
             tbLetterScan.Clear();
             tbLetterName.Clear();
-            try
+
+            int caseSwitch = 1;
+            
+            foreach (string check in administration.CheckReserve(Convert.ToInt32(nudReserveID.Value)))
             {
-                Account account = administration.FindAccount(tbEmail.Text);
-                Reserve reserve = administration.FindReserve(Convert.ToInt32(nudReserveID.Value), account);
-                
-                accounts.Add(account);
-                reserves.Add(reserve);
-                //Check if the RFID belongs to the name
-                //If correct fill in name and payment status
-                if (account.Person.LastName == tbLetterName.Text && reserve.Account == account)
-                   
+                switch (caseSwitch)
                 {
-                    tbLetterScan.Text = "Succes";
-                    //if status: paid set btnComplete to true
-                    if (reserve.Paid)
-                    {
-                        //TODO check if customer already inside
-                        btnComplete.Visible = true;
-                        tbLetterStatus.Text = "Betaald";
-                        
-                    }
-                    else
-                    {
-                        btnChangePaid.Visible = true;
-                        tbLetterStatus.Text = "Nog te betalen: " + reserve.Category.Price;
-                    }
+                    case 1:
+                        tbSpotLocation.Text = check;
+                        break;
+                    case 2:
+                        tbLetterName.Text = check;
+                        break;
+                    case 3:
+                        tbEmail.Text = check;
+                        break;
+                    case 4:
+                        tbLetterGroupName.Text = check;
+                        break;
+                    case 5:
+                        if (check == "1")
+                        {
+                            tbLetterStatus.Text = "Betaald";
+                        }
+                        else
+                        {
+                            tbLetterStatus.Text = "Niet Betaald";
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Check Added");
+                        break;
                 }
-                else
-                {
-                    tbLetterScan.Text = "Failed";
-                    tbLetterStatus.Clear();
-                    tbLetterName.Clear();
-                    tbLetterRFID.Clear();
-                    tbLetterGroupName.Clear();
-                    tbSpotLocation.Clear();
-                }
+                caseSwitch++;
             }
-            catch (Exception)
-            {
-                tbLetterScan.Text = "Failed";
-                tbLetterStatus.Clear();
-                tbLetterName.Clear();
-                tbLetterRFID.Clear();
-                tbLetterGroupName.Clear();
-                tbSpotLocation.Clear();
-                throw;
-            }
+            //try
+            //{
+            //    Account account = administration.FindAccount(tbEmail.Text);
+            //    Reserve reserve = administration.FindReserve(Convert.ToInt32(nudReserveID.Value), account);
+
+            //    accounts.Add(account);
+            //    reserves.Add(reserve);
+            //    //Check if the RFID belongs to the name
+            //    //If correct fill in name and payment status
+            //    if (account.Person.LastName == tbLetterName.Text && reserve.Account == account)
+
+            //    {
+            //        tbLetterScan.Text = "Succes";
+            //        //if status: paid set btnComplete to true
+            //        if (reserve.Paid)
+            //        {
+            //            //TODO check if customer already inside
+            //            btnComplete.Visible = true;
+            //            tbLetterStatus.Text = "Betaald";
+
+            //        }
+            //        else
+            //        {
+            //            btnChangePaid.Visible = true;
+            //            tbLetterStatus.Text = "Nog te betalen: " + reserve.Category.Price;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        tbLetterScan.Text = "Failed";
+            //        tbLetterStatus.Clear();
+            //        tbLetterName.Clear();
+            //        tbLetterRFID.Clear();
+            //        tbLetterGroupName.Clear();
+            //        tbSpotLocation.Clear();
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    tbLetterScan.Text = "Failed";
+            //    tbLetterStatus.Clear();
+            //    tbLetterName.Clear();
+            //    tbLetterRFID.Clear();
+            //    tbLetterGroupName.Clear();
+            //    tbSpotLocation.Clear();
+            //    throw;
+            //}
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
@@ -336,7 +371,6 @@ namespace MedewerkerSysteem
             //Empty lists
             accounts.Clear();
             reserves.Clear();
-            tbLetterScan.Clear();
             tbLetterStatus.Clear();
             tbLetterName.Clear();
             tbLetterRFID.Clear();
@@ -525,7 +559,7 @@ namespace MedewerkerSysteem
 
         private void tbSpotLocation_TextChanged(object sender, EventArgs e)
         {
-
+                
         }
 
         private void tbLetterGroupName_TextChanged(object sender, EventArgs e)
@@ -582,6 +616,21 @@ namespace MedewerkerSysteem
         }
 
         private void btnChangeReservation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChainRFID_Click(object sender, EventArgs e)
         {
 
         }

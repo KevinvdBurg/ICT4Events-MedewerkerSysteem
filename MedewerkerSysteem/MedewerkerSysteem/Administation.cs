@@ -243,6 +243,21 @@ public class Administation
         }
     }
 
+    public List<string> CheckReserve(int Code)
+    {
+        List<string> checkedReserve = dbreserve.Check(Code);
+        if (checkedReserve != null)
+        {
+            return checkedReserve;
+        }
+        else
+        {
+            MessageBox.Show("Reservering niet gevonden");
+            return null;
+        }
+
+    }
+
     public List<ReserveItem> FindReserveItemAll()
     {
         List<ReserveItem> foundReserves = dbreserve.SelectAllItems();
