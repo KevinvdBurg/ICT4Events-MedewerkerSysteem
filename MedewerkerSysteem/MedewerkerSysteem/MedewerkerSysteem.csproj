@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -120,6 +120,12 @@
     <Compile Include="MedewerkerReserveSpot.Designer.cs">
       <DependentUpon>MedewerkerReserveSpot.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedewerkerUpdateReserveSpot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedewerkerUpdateReserveSpot.Designer.cs">
+      <DependentUpon>MedewerkerUpdateReserveSpot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MedewerkerReserveSpot.resx">
       <DependentUpon>MedewerkerReserveSpot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedewerkerUpdateReserveSpot.resx">
+      <DependentUpon>MedewerkerUpdateReserveSpot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
