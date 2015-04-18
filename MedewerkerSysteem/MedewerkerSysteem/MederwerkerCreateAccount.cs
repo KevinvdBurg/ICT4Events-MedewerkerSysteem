@@ -50,17 +50,19 @@ namespace MedewerkerSysteem
             //Account wordt aangemaakt
             Account account = new Account(person, "bezoeker", " ", tbCApassword.Text);
            
+            
+
+            //Account wordt opgeslagen in de database door administration.Add()
+            administration.Add(account);
+            //address wordt opgeslagen in de database door person.AddAddress()
+            person.AddAddress(address);
+
             foreach (Event item in lbCAeventlist.Items)
             {
                 AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(account.Person.Email), item.EventID);
                 administration.Add(accountEvent);
 
             }
-
-            //Account wordt opgeslagen in de database door administration.Add()
-            administration.Add(account);
-            //address wordt opgeslagen in de database door person.AddAddress()
-            person.AddAddress(address);
             //MederwerkerForm MF = new MederwerkerForm(administration);
             //MF.Show();
             Close();

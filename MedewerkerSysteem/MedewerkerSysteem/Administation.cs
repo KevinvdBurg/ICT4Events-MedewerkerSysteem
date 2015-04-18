@@ -52,6 +52,11 @@ public class Administation
 	    dbaccount.Insert(Account);
 	}
 
+    public void Add(AccountEvent account)
+    {
+        dbaccount.Insert(account);
+    }
+
 	public void Add(Reserve Reserve)
 	{
 	    if (Reserve is ReserveSpot)
@@ -303,7 +308,7 @@ public class Administation
         return null;
     }
 
-    public Item FindÍtem(int id)
+    public Item FindItem(int id)
     {
         //Item founditem = dbreserve.Select(/*id*/);
         //if (founditem != null)
