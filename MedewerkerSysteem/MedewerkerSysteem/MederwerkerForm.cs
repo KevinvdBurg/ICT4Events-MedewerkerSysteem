@@ -21,8 +21,7 @@ namespace MedewerkerSysteem
         List<Account> accounts = new List<Account>();
         List<Reserve> reserves = new List<Reserve>();
         List<Event> events = new List<Event>();
-
-        private string CurrentEvent = "";
+        private Event currentEvent = null;
 
         public MederwerkerForm(Administation admin)
         {
@@ -48,11 +47,13 @@ namespace MedewerkerSysteem
             openCmdLine(rfid);
 
             events = administration.FindEventAll();
-            foreach (Event eventEvent in events)
-            {
-                cbEvents.Items.Add(eventEvent.Name);
+            cbEvents.DataSource = events;
+            cbEvents.DisplayMember = "Name";
 
-            }
+            currentEvent = (Event)cbEvents.SelectedItem;
+
+            Console.Write(currentEvent.EventID);
+            
 
         }
 
@@ -667,11 +668,8 @@ namespace MedewerkerSysteem
 
         private void cbEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentEvent = e.ToString();
+            currentEvent = (Event)cbEvents.SelectedItem;
         }
-
-        
-
 
     }
 }
