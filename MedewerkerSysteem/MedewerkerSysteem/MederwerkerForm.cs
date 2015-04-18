@@ -290,7 +290,7 @@ namespace MedewerkerSysteem
                 //Check if the RFID belongs to the name
                 //If correct fill in name and payment status
                 if (account.Person.LastName == tbLetterName.Text && reserve.Account == account)
-                    /*&& reserve.Group.Name == tbLetterGroupName.Text*/
+                   
                 {
                     tbLetterScan.Text = "Succes";
                     //if status: paid set btnComplete to true
@@ -577,8 +577,13 @@ namespace MedewerkerSysteem
             }
 
             MederwerkerUpdateAccount MUA = new MederwerkerUpdateAccount(administration.FindAccount(value));
-            MUA.Show();
-            Close();
+            MUA.ShowDialog();
+            //Close();
+        }
+
+        private void btnChangeReservation_Click(object sender, EventArgs e)
+        {
+
         }
 
 
