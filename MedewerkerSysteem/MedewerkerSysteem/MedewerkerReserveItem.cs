@@ -20,7 +20,7 @@ namespace MedewerkerSysteem
         {
             InitializeComponent();
             
-            foreach (var item in administation.FindItemsAll())
+            foreach (var item in administation.FindItems())
             {
                 bool check = false;
                 foreach (var item2 in administation.FindReserveItemAll())

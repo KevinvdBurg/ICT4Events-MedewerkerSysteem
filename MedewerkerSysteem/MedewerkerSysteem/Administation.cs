@@ -66,7 +66,7 @@ public class Administation
 	    }
         else if(Reserve is ReserveItem)
 	    {
-	        //dbreserve.Insert(Reserve as ReserveItem);
+	        dbreserve.Insert(Reserve as ReserveItem);
 	    }
 	}
 

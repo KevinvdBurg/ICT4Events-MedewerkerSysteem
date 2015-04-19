@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using Oracle.DataAccess.Client;
 
@@ -47,6 +48,19 @@ public class DBReserve : Database
         return result;
     }
 
+
+    public bool Insert(ReserveItem reserveItem)
+    {
+        Administation administation = new Administation();
+        int paid = 0;
+        int accountID = administation.FindAccountID(reserveItem.Account.Person.Email);
+        bool resultaat = false;
+        if (reserveItem.Paid)
+        {
+            paid = 1;
+        }
+        string sql = "INSERT  INTO verhuur (VERHUURID, GEBRUIKERID, ITEMID, DATUMIN, "
+    }
     public bool Insert(ReserveSpot reservespot)
     {
         Administation administation = new Administation();
