@@ -37,6 +37,7 @@ namespace MedewerkerSysteem
 
         private void btnMdelete_Click(object sender, EventArgs e)
         {
+            //verwijderd de media post die op dit moment open staat
             administration.Delete(currentMedia);
             Close();
         }
