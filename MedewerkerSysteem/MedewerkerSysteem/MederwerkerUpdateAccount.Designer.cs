@@ -71,6 +71,7 @@
             btnUAaddevent.TabIndex = 12;
             btnUAaddevent.Text = "Toevoegen";
             btnUAaddevent.UseVisualStyleBackColor = true;
+            btnUAaddevent.Click += new System.EventHandler(this.btnUAaddevent_Click);
             // 
             // groupBox1
             // 
@@ -254,6 +255,7 @@
             this.lbUAeventlist.Name = "lbUAeventlist";
             this.lbUAeventlist.Size = new System.Drawing.Size(310, 82);
             this.lbUAeventlist.TabIndex = 13;
+            this.lbUAeventlist.SelectedIndexChanged += new System.EventHandler(this.lbUAeventlist_SelectedIndexChanged);
             // 
             // cbUAGroup
             // 

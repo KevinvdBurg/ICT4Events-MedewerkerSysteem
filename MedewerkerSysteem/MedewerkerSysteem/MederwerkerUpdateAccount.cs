@@ -16,6 +16,10 @@ namespace MedewerkerSysteem
         private Administation administration = new Administation();
         
         List<Event> events = new List<Event>();
+        //List<Event> eventList = new List<Event>();
+
+        BindingList<Event> eventList = new BindingList<Event>();
+
 
         private DBEvent dbevent = new DBEvent();
         public MederwerkerUpdateAccount(Account account)
@@ -25,9 +29,13 @@ namespace MedewerkerSysteem
             events = administration.FindEventAll();
             cbUAaddevent.DataSource = events;
             cbUAaddevent.DisplayMember = "Name";
-
-            
-
+            foreach (Event eventt in dbevent.SelectAllperAccount(UpdateAccount))
+            {
+                Event selection = eventt;
+                eventList.Add(selection);
+            }
+            ShowData();
+            //eventList = dbevent.SelectAllperAccount(UpdateAccount);
         }
 
         private void MederwerkerUpdateAccount_Load(object sender, EventArgs e)
@@ -41,7 +49,7 @@ namespace MedewerkerSysteem
             nudUAnumber.Value = Convert.ToDecimal(UpdateAccount.Person.Address.Number);
             tbUAcity.Text = UpdateAccount.Person.Address.City;
 
-            lbUAeventlist.DataSource = dbevent.SelectAllperAccount(UpdateAccount);
+            lbUAeventlist.DataSource = eventList;
             lbUAeventlist.DisplayMember = "name";
 
             //todo 
@@ -72,15 +80,56 @@ namespace MedewerkerSysteem
             //address wordt opgeslagen in de database door person.AddAddress()
             person.AddAddress(address);
 
-            foreach (Event item in lbUAeventlist.Items)
-            {
-                AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(account.Person.Email), item.EventID);
-                
-                administration.Update(accountEvent);
-
-            }
+           
 
             Close();
+        }
+
+        private void btnUAaddevent_Click(object sender, EventArgs e)
+        {
+            Event SelectedEvent = (Event) cbUAaddevent.SelectedItem;
+            //Geselecteerde event wordt toegevoegd aan de listbox
+            if (cbUAaddevent.SelectedText != null || cbUAaddevent.SelectedText != "")
+            {
+                if (lbUAeventlist.Items.Count == 0)
+                {
+                    eventList.Add(SelectedEvent);
+                    AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(tbUAemail.Text), SelectedEvent.EventID);
+                    administration.Add(accountEvent);
+                }
+                else
+                {
+                    foreach (Event eventCheck in lbUAeventlist.Items)
+                    {
+                        if (eventCheck.EventID != SelectedEvent.EventID)
+                        {
+                            eventList.Add(SelectedEvent);
+                            AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(tbUAemail.Text), SelectedEvent.EventID);
+                            administration.Add(accountEvent);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Event is al toegevoegt");
+                        }
+                    }
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Geen Event aangeklikt");
+            }   
+        }
+
+        private void lbUAeventlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowData()
+        {
+            lbUAeventlist.DataSource = eventList;
+            lbUAeventlist.DisplayMember = "name";
         }
     }
 }
