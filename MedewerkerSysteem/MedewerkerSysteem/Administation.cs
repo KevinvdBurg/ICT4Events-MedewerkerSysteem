@@ -510,5 +510,15 @@ public class Administation
     {
         dbevent.UpdateEvent(tempEvent, Oldzip, huisnummer);
     }
+
+    public void DeleteItemRes(int value)
+    {
+        dbreserve.DeleteItem(value);
+    }
+
+    public void DeleteSpotRes(int value)
+    {
+        dbreserve.DeleteSpot(value);
+    }
 }
 

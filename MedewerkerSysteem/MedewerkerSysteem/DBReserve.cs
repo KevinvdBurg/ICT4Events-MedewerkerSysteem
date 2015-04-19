@@ -498,5 +498,65 @@ public class DBReserve : Database
         }
         return resultaat;
     }
+
+    public bool DeleteItem(int value)
+    {
+        bool resultaat = false;
+        string sql;
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        //sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
+        sql = "DELETE FROM VERHUUR WHERE VERHUURID = :VERHUURID";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("VERHUURID", value));
+            //MessageBox.Show(cmd.ExecuteNonQueryAsync());
+            cmd.ExecuteNonQueryAsync();
+
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
+    public bool DeleteSpot(int value)
+    {
+        bool resultaat = false;
+        string sql;
+        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        //sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
+        sql = "DELETE FROM KAMPEERPLEKRESERVERING WHERE RESERVERINGID = :RESERVERINGID";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("RESERVERINGID", value));
+            //MessageBox.Show(cmd.ExecuteNonQueryAsync());
+            cmd.ExecuteNonQueryAsync();
+
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
 }
 
