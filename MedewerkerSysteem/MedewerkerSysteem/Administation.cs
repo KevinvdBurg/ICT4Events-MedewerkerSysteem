@@ -25,41 +25,37 @@ public class Administation
     private DBCampingspot dbCampingspot = new DBCampingspot();
     private DBItem dbItem = new DBItem();
 
-	public IEnumerable<Reserve> Reserve
-	{
-		get;
-		set;
-	}
-
-	public IEnumerable<Account> Account
-	{
-		get;
-		set;
-	}
-
-	public IEnumerable<Event> Event
-	{
-		get;
-		set;
-	}
-
     public Administation()
     {
 
     }
 
+    /// <summary>
+    /// Een Account wordt doorgestuurd naar dbAccount.Insert zodat het account aan de database toegevoegd kan worden
+    /// </summary>
+    /// <param name="Account"></param>
 	public void Add(Account Account)
 	{
 	    dbaccount.Insert(Account);
 	}
 
+    /// <summary>
+    /// Een AccountEvent wordt doorgetuurd naar dbAccount.Insert zodat het accountevent aan de database toegevoegd kan worden
+    /// </summary>
+    /// <param name="accountevent"></param>
     public void Add(AccountEvent accountevent)
     {
         dbaccount.Insert(accountevent);
     }
 
+    /// <summary>
+    /// Een reservering en eventid wordt doorgestuurd naar dbReserve. zodat de reservering aan de database toegevoegd kan worden
+    /// </summary>
+    /// <param name="Reserve"></param>
+    /// <param name="CurrentEventID"></param>
     public void Add(Reserve Reserve, int CurrentEventID)
 	{
+        //De if statement splitst de reservering uit tussen plek reserveringen en item reserveringen
 	    if (Reserve is ReserveSpot)
 	    {
             dbreserve.Insert(Reserve as ReserveSpot, CurrentEventID);
@@ -70,11 +66,19 @@ public class Administation
 	    }
 	}
 
+    /// <summary>
+    /// Een event wordt doorgestuurd naar dbEvent zodat er een event toegevoegd kan worden aan de database
+    /// </summary>
+    /// <param name="Event"></param>
 	public void AddEvent(Event Event)
 	{
 	    dbevent.Insert(Event);
 	}
 
+    /// <summary>
+    /// Een account wordt doorgestuurd naar 
+    /// </summary>
+    /// <param name="Account"></param>
 	public void Delete(Account Account)
 	{
         dbaccount.Delete(Account);
@@ -509,16 +513,6 @@ public class Administation
     public void UpdateEvent(Event tempEvent, string Oldzip, int huisnummer)
     {
         dbevent.UpdateEvent(tempEvent, Oldzip, huisnummer);
-    }
-
-    public void DeleteItemRes(int value)
-    {
-        dbreserve.DeleteItem(value);
-    }
-
-    public void DeleteSpotRes(int value)
-    {
-        dbreserve.DeleteSpot(value);
     }
 }
 

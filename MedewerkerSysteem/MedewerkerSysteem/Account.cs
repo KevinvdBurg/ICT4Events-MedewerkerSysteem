@@ -24,12 +24,6 @@ public class Account
 		set;
 	}
 
-	public IEnumerable<Reserve> Reserve
-	{
-		get;
-		set;
-	}
-
     public string Wachtwoord { get; set; }
 
 	public Account(Person Person, string type, string RFID, string wachtwoord)
