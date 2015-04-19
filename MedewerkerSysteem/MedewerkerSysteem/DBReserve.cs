@@ -79,7 +79,7 @@ public class DBReserve : Database
     }
 
 
-    public bool Insert(ReserveItem reserveItem)
+    public bool Insert(ReserveItem reserveItem, int CurrentEventID)
     {
         Administation administation = new Administation();
         int paid = 0;
@@ -117,7 +117,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
-    public bool Insert(ReserveSpot reservespot)
+    public bool Insert(ReserveSpot reservespot, int CurrentEventID)
     {
         Administation administation = new Administation();
         int paid = 0;
@@ -129,10 +129,12 @@ public class DBReserve : Database
         }
         string sql;
         string sql2;
+        string sql3;
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
         sql =
             "INSERT INTO KAMPEERPLEKRESERVERING (RESERVERINGID, GEBRUIKERID, KAMPEERPLEKID, BETAALD, DATUMIN, DATUMUIT) VALUES (:reserveringid, :gebruikerid, :kampeerplekid, :betaald, :datumin, :datumuit)";
         sql2 = "INSERT INTO GEBRUIKERKAMPEERRES (GEBRUIKERID, RESERVERINGID ) VALUES (:gebruikerid, :reserveringid)";
+        sql3 = "INSERT INTO GEBRUIKEREVENT (GEBRUIKERID, EVENTID, AANWEZIG) VALUES (:gebruikerid, :currentevent, '0')"; 
         try
         {
             Connect();
@@ -162,8 +164,8 @@ public class DBReserve : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql2, connection);
-            cmd.Parameters.Add(new OracleParameter("reserveringid", reservespot.ReserveringsID));
             cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
+            cmd.Parameters.Add(new OracleParameter("reserveringid", reservespot.ReserveringsID));
             cmd.ExecuteNonQuery();
             //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
@@ -177,6 +179,27 @@ public class DBReserve : Database
         {
             DisConnect();
         }
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql3, connection);
+            cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
+            cmd.Parameters.Add(new OracleParameter("currentevent", CurrentEventID));
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+
         return resultaat;
     }
 

@@ -16,9 +16,11 @@ namespace MedewerkerSysteem
         List<CampingSpot> campingSpots = new List<CampingSpot>();
         List<Account> accounts = new List<Account>(); 
         private int number;
-        public MedewerkerReserveSpot()
+        private int CurrentEvent = 0;
+        public MedewerkerReserveSpot(int CurrentEvent)
         {
             InitializeComponent();
+            this.CurrentEvent = CurrentEvent;
             //todo find highest reserveID and add 1
             
             foreach (var item in administation.FindCampingSpotsAll())
@@ -65,7 +67,7 @@ namespace MedewerkerSysteem
                         if (item2.Person.Email == cbRSname.SelectedItem.ToString())
                         {
                             Account account = item2;
-                            administation.Add(new ReserveSpot(campingSpot, null, account, campingSpot.Category, dtpRSdateuit.Text, dtpRSdatein.Text, cbRSPaid.Checked, Convert.ToInt32(nudRSreservationNumber.Value)));
+                            administation.Add(new ReserveSpot(campingSpot, null, account, campingSpot.Category, dtpRSdateuit.Text, dtpRSdatein.Text, cbRSPaid.Checked, Convert.ToInt32(nudRSreservationNumber.Value)), CurrentEvent);
                             Close();
                         }
                     }

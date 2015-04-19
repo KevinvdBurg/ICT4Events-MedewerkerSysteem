@@ -16,9 +16,11 @@ namespace MedewerkerSysteem
         List<Account> accounts = new List<Account>();
         List<Item> items = new List<Item>();
         private int number;
-        public MedewerkerReserveItem()
+        private int CurrentEvent = 0;
+        public MedewerkerReserveItem(int CurrentEvent)
         {
             InitializeComponent();
+            this.CurrentEvent = CurrentEvent;
             int i = 0;
             int b = 0;
             foreach (var item in administation.FindItems())
@@ -65,7 +67,7 @@ namespace MedewerkerSysteem
                         {
                             
                             Account account = item2;
-                            administation.Add(new ReserveItem(item, true, account, item.category, dtpIRdateuit.Text, dtpIRdatein.Text, cbRIpaid.Checked, number ));
+                            administation.Add(new ReserveItem(item, true, account, item.category, dtpIRdateuit.Text, dtpIRdatein.Text, cbRIpaid.Checked, number), CurrentEvent);
                             
                             Close();
                         }

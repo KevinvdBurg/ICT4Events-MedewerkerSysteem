@@ -58,15 +58,15 @@ public class Administation
         dbaccount.Insert(accountevent);
     }
 
-	public void Add(Reserve Reserve)
+    public void Add(Reserve Reserve, int CurrentEventID)
 	{
 	    if (Reserve is ReserveSpot)
 	    {
-	        dbreserve.Insert(Reserve as ReserveSpot);
+            dbreserve.Insert(Reserve as ReserveSpot, CurrentEventID);
 	    }
         else if(Reserve is ReserveItem)
 	    {
-	        dbreserve.Insert(Reserve as ReserveItem);
+	        dbreserve.Insert(Reserve as ReserveItem, CurrentEventID);
 	    }
 	}
 

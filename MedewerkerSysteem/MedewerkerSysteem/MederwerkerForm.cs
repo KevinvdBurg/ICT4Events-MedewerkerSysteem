@@ -85,14 +85,14 @@ namespace MedewerkerSysteem
 
         private void btnReserveItem_Click(object sender, EventArgs e)
         {
-            MedewerkerReserveItem IR = new MedewerkerReserveItem();
+            MedewerkerReserveItem IR = new MedewerkerReserveItem(Convert.ToInt32(currentEvent.EventID));
             IR.ShowDialog();
             RefreshAll();
         }
 
         private void btnReserveLocation_Click(object sender, EventArgs e)
         {
-            MedewerkerReserveSpot SR = new MedewerkerReserveSpot();
+            MedewerkerReserveSpot SR = new MedewerkerReserveSpot(Convert.ToInt32(currentEvent.EventID));
             SR.ShowDialog();
             RefreshAll();
         }
@@ -374,7 +374,6 @@ namespace MedewerkerSysteem
 
             if (tbLetterRFID.Text != "")
             {
-                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
                 AccountEvent accountEvent = administration.FindAccountEvent(administration.FindAccountID(tbEmail.Text), currentEvent.EventID);
                 if (accountEvent.Present)
                 {
@@ -384,6 +383,7 @@ namespace MedewerkerSysteem
                 {
                     accountEvent.Present = true;
                     administration.ChangeAccountEvent(accountEvent);
+                     MessageBox.Show("Deelnemer is nu aanwezig gemeld");
                 }
             }
             else
