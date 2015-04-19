@@ -93,11 +93,6 @@ namespace MedewerkerSysteem
 
         }
 
-        private void lblCAcountry_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblCAGroup_Click(object sender, EventArgs e)
         {
 

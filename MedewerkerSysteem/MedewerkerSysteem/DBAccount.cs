@@ -340,6 +340,30 @@ public class DBAccount : Database
         return; 
     }
 
+    public bool UpdateAccountEvent(AccountEvent accountEvent)
+    {
+        bool resultaat = false;
+        string sql;
+        sql = "UPDATE GEBRUIKEREVENT SET AANWEZIG = '1'  WHERE GEBRUIKERID = :GEBRUIKERID";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("GEBRUIKERID", accountEvent.AccountID));
+            cmd.ExecuteNonQuery();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
     public void AccountEvent(AccountEvent accountEvent)
     {
         
@@ -347,7 +371,37 @@ public class DBAccount : Database
 
     public AccountEvent FindAccountEvent(int accountId, int eventId)
     {
-        throw new NotImplementedException();
+        AccountEvent accountEvent = null;
+        string sql;
+
+        sql = "SELECT AANWEZIG, GEBRUIKERID, EVENTID FROM GEBRUIKEREVENT WHERE GEBRUIKERID = :accountId AND EVENTID = :eventId";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+
+            cmd.Parameters.Add(new OracleParameter("accountId", accountId));
+            cmd.Parameters.Add(new OracleParameter("eventId", eventId));
+
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    accountEvent = new AccountEvent(Convert.ToBoolean(reader["AANWEZIG"]), Convert.ToInt32(reader["GEBRUIKERID"]), Convert.ToInt32(reader["EVENTID"]));
+                }
+                return accountEvent;
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return accountEvent;
     }
 }
 
