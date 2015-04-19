@@ -13,14 +13,14 @@ using Oracle.DataAccess.Client;
 
 public class DBEvent : Database
 {
-	public virtual bool Insert(Event Event)
+	public bool Insert(Event Event)
 	{
         Administation administation = new Administation();
         bool resultaat = false;
         string sql;
         //int locatieID = administation.
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
-        sql = "INSERT INTO EVENT (EVENTID, NAAM, MAXPERSONEN, BEGINDATUM, EINDDATUM, LOCATIEID) VALUES (:eventid, :naam, :maxpersonen. :begindatum, :einddatum, :locatieid)";
+        sql = "INSERT INTO EVENT (EVENTID, NAAM, MAXPERSONEN, BEGINDATUM, EINDDATUM, LOCATIEID) VALUES (:eventid, :naam, :maxpersonen, :begindatum, :einddatum, :locatieid)";
         try
         {
             Connect();

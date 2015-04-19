@@ -66,6 +66,7 @@ namespace MedewerkerSysteem
                         {
                             Account account = item2;
                             administation.Add(new ReserveSpot(campingSpot, null, account, campingSpot.Category, dtpRSdateuit.ToString(), dtpRSdatein.ToString(), cbRSPaid.Checked, Convert.ToInt32(nudRSreservationNumber.Value)));
+                            Close();
                         }
                     }
                 }
