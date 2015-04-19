@@ -505,5 +505,10 @@ public class Administation
     {
         return dbevent.SelectMedia(value);
     }
+
+    public void UpdateEvent(string name, string s, string zipCode, int toInt32, int i)
+    {
+        throw new NotImplementedException();
+    }
 }
 

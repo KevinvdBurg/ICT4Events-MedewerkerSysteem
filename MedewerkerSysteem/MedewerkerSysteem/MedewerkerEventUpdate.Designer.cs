@@ -202,6 +202,7 @@
             this.btnECreateEvent.TabIndex = 0;
             this.btnECreateEvent.Text = "Update Event";
             this.btnECreateEvent.UseVisualStyleBackColor = true;
+            this.btnECreateEvent.Click += new System.EventHandler(this.btnECreateEvent_Click);
             // 
             // MedewerkerEventUpdate
             // 

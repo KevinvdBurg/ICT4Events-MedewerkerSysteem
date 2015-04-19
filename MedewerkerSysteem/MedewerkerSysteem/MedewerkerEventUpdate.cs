@@ -13,6 +13,8 @@ namespace MedewerkerSysteem
     public partial class MedewerkerEventUpdate : Form
     {
         Event currentEvent = null;
+
+        Administation administation = new Administation();
         public MedewerkerEventUpdate(Event eventt)
         {
             InitializeComponent();
@@ -27,6 +29,11 @@ namespace MedewerkerSysteem
             nudEhuisnummer.Value = Convert.ToInt32(currentEvent.Location.Address.Number);
             nudEmaxvisitors.Value = Convert.ToInt32(currentEvent.MaxPerson);
 
+        }
+
+        private void btnECreateEvent_Click(object sender, EventArgs e)
+        {
+            administation.UpdateEvent(currentEvent.Name, currentEvent.Location.Name, currentEvent.Location.Address.ZipCode, Convert.ToInt32(currentEvent.Location.Address.Number), Convert.ToInt32(currentEvent.MaxPerson));
         }
     }
 }
