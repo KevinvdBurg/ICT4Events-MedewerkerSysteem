@@ -169,6 +169,21 @@ public class Administation
 
 	}
 
+    public Event FindEvent(int EventID)
+    {
+        Event foundEvent = dbevent.Select(EventID);
+
+        if (foundEvent != null)
+        {
+            return foundEvent;
+        }
+        else
+        {
+            MessageBox.Show("Event niet gevonden");
+            return null;
+        }
+    }
+
     public int FindAddressID(string zipcode, string number)
     {
         int foundAddressID = dbaddress.FindAdressID(zipcode, number);
@@ -249,6 +264,8 @@ public class Administation
             return null;
         }
     }
+
+    
 
     public void ChangeAccountEvent(bool present)
     {

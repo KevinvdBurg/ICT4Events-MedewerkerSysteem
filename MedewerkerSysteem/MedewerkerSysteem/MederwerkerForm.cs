@@ -730,8 +730,8 @@ namespace MedewerkerSysteem
                     gridCount++;
                 }
             }
-
-            MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(value));
+            
+            MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(Convert.ToInt32(value)));
             MEU.ShowDialog();
             RefreshMedia();
         }
