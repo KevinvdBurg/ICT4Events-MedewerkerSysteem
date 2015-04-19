@@ -16,6 +16,7 @@ using Oracle.DataAccess.Client;
 
 public class DBAccount : Database
 {
+    //Zoekt op het oude email en geeft hem een nieuw email
 	public  bool Update(Account Account, string oldemail)
 	{
 	    bool resultaat = false;
@@ -59,6 +60,7 @@ public class DBAccount : Database
         }
         return resultaat;
 	}
+
 
     public bool Insert(AccountEvent accountEvent)
     {
@@ -306,7 +308,7 @@ public class DBAccount : Database
         }
         return resultaat;
     }
-
+    //rfid koppelen aan een account
     public bool ChainRFID(string email, string rfid)
     {
         string ReplaceEmail = "'" + email + "'";
@@ -339,7 +341,7 @@ public class DBAccount : Database
     {
         return; 
     }
-
+    //zet een gebruiker op aanwezig
     public bool UpdateAccountEvent(AccountEvent accountEvent)
     {
         bool resultaat = false;
@@ -368,7 +370,7 @@ public class DBAccount : Database
     {
         
     }
-
+    //kijkt of een gebruiker aanwezig is
     public AccountEvent FindAccountEvent(int accountId, int eventId)
     {
         AccountEvent accountEvent = null;
