@@ -9,15 +9,55 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MedewerkerSysteem;
 using Oracle.DataAccess.Client;
 
 public class DBAccount : Database
 {
-	public  bool Update(Account Account)
+	public  bool Update(Account Account, string oldemail)
 	{
-		throw new System.NotImplementedException();
+	    bool resultaat = false;
+        string sql;
+        int gebruikersID = FindAccountID(oldemail);
+        //sql = "select * from gebruiker";
+       // sql = "UPDATE GEBRUIKER SET EMAILADRES = ':email', WACHTWOORD = ':wachtwoord', PLAATS = ':plaats', POSTCODE = ':postcode', HUISNUMMER = ':huisnummer', VOORNAAM = ':voornaam', ACHTERNAAM = ':achternaam' WHERE GEBRUIKERID = ':gebruikerID'";
+        sql = "UPDATE GEBRUIKER SET EMAILADRES = :email, WACHTWOORD = :wachtwoord, PLAATS = :plaats, POSTCODE = :postcode, HUISNUMMER = :huisnummer, VOORNAAM = :voornaam, ACHTERNAAM = :achternaam WHERE GEBRUIKERID = :gebruikerID";
+
+        
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            
+            if (Account.Person.Email == null || Regex.Replace(Account.Person.Email, @"\s+", "") == "")
+            {
+                cmd.Parameters.Add(new OracleParameter("email", oldemail));
+            }
+            else
+            {
+                cmd.Parameters.Add(new OracleParameter("email", Account.Person.Email));
+            }
+            cmd.Parameters.Add(new OracleParameter("wachtwoord", Account.Wachtwoord));
+            cmd.Parameters.Add(new OracleParameter("plaats", Account.Person.Address.City));
+            cmd.Parameters.Add(new OracleParameter("postcode", Account.Person.Address.ZipCode));
+            cmd.Parameters.Add(new OracleParameter("huisnummer", Account.Person.Address.Number));
+            cmd.Parameters.Add(new OracleParameter("voornaam", Account.Person.Name));
+            cmd.Parameters.Add(new OracleParameter("achternaam", Account.Person.LastName));
+            cmd.Parameters.Add(new OracleParameter("gebruikerID", gebruikersID));
+            cmd.ExecuteNonQuery();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
 	}
 
     public bool Insert(AccountEvent accountEvent)
@@ -300,6 +340,10 @@ public class DBAccount : Database
         return; 
     }
 
+    public void UpdateAccountEvent(AccountEvent accountEvent)
+    {
+        
+    }
 
     public AccountEvent FindAccountEvent(int accountId, int eventId)
     {

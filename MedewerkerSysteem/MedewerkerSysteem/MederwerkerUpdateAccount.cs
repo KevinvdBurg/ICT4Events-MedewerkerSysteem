@@ -33,7 +33,7 @@ namespace MedewerkerSysteem
         private void MederwerkerUpdateAccount_Load(object sender, EventArgs e)
         {
             tbUAname.Text = UpdateAccount.Person.Name;
-            tbUAlastname.Text = UpdateAccount.Person.Name;
+            tbUAlastname.Text = UpdateAccount.Person.LastName;
             tbUAemail.Text = UpdateAccount.Person.Email;
             tbUApassword.Text = UpdateAccount.Wachtwoord;
             tbUArepassword.Text = UpdateAccount.Wachtwoord;
@@ -55,7 +55,31 @@ namespace MedewerkerSysteem
 
         private void btnUAupdate_Click(object sender, EventArgs e)
         {
-            //todo Update query
+            //Adres wordt aangemaakt
+            Address address = new Address(tbUAcity.Text, Convert.ToString(nudUAnumber.Value), tbUAzipcode.Text);
+            //Persoon wordt aangemaakt
+            Person person = new Person(address, tbUAnewemail.Text, tbUAname.Text, tbUAlastname.Text);
+            //Account wordt aangemaakt
+            Account account = new Account(person, "bezoeker",null, tbUApassword.Text);
+
+
+
+            //Account wordt geupdate
+            administration.Update(account, tbUAemail.Text);
+            
+
+
+            //address wordt opgeslagen in de database door person.AddAddress()
+            person.AddAddress(address);
+
+            foreach (Event item in lbUAeventlist.Items)
+            {
+                AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(account.Person.Email), item.EventID);
+                
+                administration.Update(accountEvent);
+
+            }
+
             Close();
         }
     }

@@ -382,10 +382,15 @@ public class Administation
         return null;
     }
 
-	public void Update(Account Account)
+	public void Update(Account Account, string oldemail)
 	{
-
+	    dbaccount.Update(Account, oldemail);
 	}
+
+    public void Update(AccountEvent AccountEvent)
+    {
+        dbaccount.UpdateAccountEvent(AccountEvent);
+    }
 
     public void ChainRFID(string email, string rfid)
     {

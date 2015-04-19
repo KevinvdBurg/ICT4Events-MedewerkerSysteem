@@ -56,13 +56,26 @@
             this.lblCAfirstname = new System.Windows.Forms.Label();
             this.tbUAname = new System.Windows.Forms.TextBox();
             this.btnUAupdate = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbUAnewemail = new System.Windows.Forms.TextBox();
             btnUAaddevent = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudUAnumber)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnUAaddevent
+            // 
+            btnUAaddevent.Location = new System.Drawing.Point(347, 349);
+            btnUAaddevent.Name = "btnUAaddevent";
+            btnUAaddevent.Size = new System.Drawing.Size(77, 23);
+            btnUAaddevent.TabIndex = 12;
+            btnUAaddevent.Text = "Toevoegen";
+            btnUAaddevent.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tbUAnewemail);
             this.groupBox1.Controls.Add(this.nudUAnumber);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbUAlastname);
@@ -226,15 +239,6 @@
             this.lblCApaymentstat.TabIndex = 14;
             this.lblCApaymentstat.Text = "Betaald?";
             // 
-            // btnUAaddevent
-            // 
-            btnUAaddevent.Location = new System.Drawing.Point(347, 349);
-            btnUAaddevent.Name = "btnUAaddevent";
-            btnUAaddevent.Size = new System.Drawing.Size(77, 23);
-            btnUAaddevent.TabIndex = 12;
-            btnUAaddevent.Text = "Toevoegen";
-            btnUAaddevent.UseVisualStyleBackColor = true;
-            // 
             // cbUAaddevent
             // 
             this.cbUAaddevent.FormattingEnabled = true;
@@ -271,7 +275,7 @@
             // lblCArepassword
             // 
             this.lblCArepassword.AutoSize = true;
-            this.lblCArepassword.Location = new System.Drawing.Point(6, 158);
+            this.lblCArepassword.Location = new System.Drawing.Point(5, 182);
             this.lblCArepassword.Name = "lblCArepassword";
             this.lblCArepassword.Size = new System.Drawing.Size(91, 13);
             this.lblCArepassword.TabIndex = 8;
@@ -279,7 +283,7 @@
             // 
             // tbUArepassword
             // 
-            this.tbUArepassword.Location = new System.Drawing.Point(114, 155);
+            this.tbUArepassword.Location = new System.Drawing.Point(113, 179);
             this.tbUArepassword.Name = "tbUArepassword";
             this.tbUArepassword.Size = new System.Drawing.Size(310, 20);
             this.tbUArepassword.TabIndex = 4;
@@ -287,7 +291,7 @@
             // lblCApassword
             // 
             this.lblCApassword.AutoSize = true;
-            this.lblCApassword.Location = new System.Drawing.Point(6, 117);
+            this.lblCApassword.Location = new System.Drawing.Point(5, 141);
             this.lblCApassword.Name = "lblCApassword";
             this.lblCApassword.Size = new System.Drawing.Size(71, 13);
             this.lblCApassword.TabIndex = 6;
@@ -295,7 +299,7 @@
             // 
             // tbUApassword
             // 
-            this.tbUApassword.Location = new System.Drawing.Point(114, 114);
+            this.tbUApassword.Location = new System.Drawing.Point(113, 138);
             this.tbUApassword.Name = "tbUApassword";
             this.tbUApassword.Size = new System.Drawing.Size(310, 20);
             this.tbUApassword.TabIndex = 3;
@@ -311,6 +315,7 @@
             // 
             // tbUAemail
             // 
+            this.tbUAemail.Enabled = false;
             this.tbUAemail.Location = new System.Drawing.Point(114, 74);
             this.tbUAemail.Name = "tbUAemail";
             this.tbUAemail.Size = new System.Drawing.Size(310, 20);
@@ -341,6 +346,22 @@
             this.btnUAupdate.Text = "Update";
             this.btnUAupdate.UseVisualStyleBackColor = true;
             this.btnUAupdate.Click += new System.EventHandler(this.btnUAupdate_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "New E-mail:";
+            // 
+            // tbUAnewemail
+            // 
+            this.tbUAnewemail.Location = new System.Drawing.Point(113, 108);
+            this.tbUAnewemail.Name = "tbUAnewemail";
+            this.tbUAnewemail.Size = new System.Drawing.Size(310, 20);
+            this.tbUAnewemail.TabIndex = 30;
             // 
             // MederwerkerUpdateAccount
             // 
@@ -387,5 +408,7 @@
         private System.Windows.Forms.Label lblCAfirstname;
         private System.Windows.Forms.TextBox tbUAname;
         private System.Windows.Forms.Button btnUAupdate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbUAnewemail;
     }
 }

@@ -660,6 +660,7 @@ namespace MedewerkerSysteem
 
             MederwerkerUpdateAccount MUA = new MederwerkerUpdateAccount(administration.FindAccount(value));
             MUA.ShowDialog();
+            RefreshAccounts();
             //Close();
         }
 
