@@ -19,7 +19,8 @@ namespace MedewerkerSysteem
         public MedewerkerReserveItem()
         {
             InitializeComponent();
-            
+            int i = 0;
+            int b = 0;
             foreach (var item in administation.FindItems())
             {
                 bool check = false;
@@ -29,14 +30,18 @@ namespace MedewerkerSysteem
                     {
                         check = true;
                     }
+                    b++;
                 }
                 if (!check)
                 {
                     cbIRitemname.Items.Add(item.Name);
                     items.Add(item);
                 }
+                i++;
             }
-           // number = administation.FindHighestItemReserveID() + 1;
+            int j = i;
+            int a = b;
+            number = administation.FindHighestItemReserveID() + 1;
             foreach (var item in administation.FindAccountAll())
             {
                 cbIRname.Items.Add(item.Person.Email);
@@ -54,7 +59,7 @@ namespace MedewerkerSysteem
             {
                 if (item.Name == cbIRitemname.SelectedItem.ToString())
                 {
-                    foreach (var item2 in accounts)
+                    foreach (var item2 in administation.FindAccountAll())
                     {
                         if (item2.Person.Email == cbIRname.SelectedItem.ToString())
                         {

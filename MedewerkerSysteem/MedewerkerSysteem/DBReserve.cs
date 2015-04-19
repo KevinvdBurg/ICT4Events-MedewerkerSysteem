@@ -48,6 +48,36 @@ public class DBReserve : Database
         return result;
     }
 
+    public int HighestReserveItemID()
+    {
+        int result = 0;
+        string sql = "SELECT MAX(verhuurid) As highest FROM verhuur";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    result = Convert.ToInt32(reader["highest"]);
+                }
+            }
+
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return result;
+    }
+
 
     public bool Insert(ReserveItem reserveItem)
     {

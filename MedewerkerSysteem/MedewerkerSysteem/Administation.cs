@@ -148,10 +148,10 @@ public class Administation
         return foundID;
     }
 
-    //public int FindHighestItemReserveID()
-    //{
-    //    return dbItem.
-    //}
+    public int FindHighestItemReserveID()
+    {
+        return dbreserve.HighestReserveItemID();
+    }
 
     public int FindItemID(string naam)
     {
