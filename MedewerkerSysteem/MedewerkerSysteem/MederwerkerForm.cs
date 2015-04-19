@@ -571,6 +571,9 @@ namespace MedewerkerSysteem
             administration.Delete(administration.FindEvent(AdminEventName.Selected.ToString()));
         }
 
+        /// <summary>
+        /// Deze methode refresht de datagridview met daarin de accounts
+        /// </summary>
         public void RefreshAccounts()
         {
             dgwAccount.Rows.Clear();
@@ -581,6 +584,9 @@ namespace MedewerkerSysteem
 
         }
 
+        /// <summary>
+        /// Deze methode refresht de datagridview met daarin gereserveerde items
+        /// </summary>
         public void RefreshItem()
         {
             dgwReserveItem.Rows.Clear();
@@ -591,6 +597,9 @@ namespace MedewerkerSysteem
             }
         }
 
+        /// <summary>
+        /// Deze methode refresht de datagridview met daarin de gemaakte reserveringen voor de kampeerplekken
+        /// </summary>
         public void RefreshSpot()
         {
             dgwReserveSpot.Rows.Clear();
@@ -599,7 +608,10 @@ namespace MedewerkerSysteem
                 dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName,spot.StartDate, spot.EndDate, spot.Account.Person.Email);
             }
         }
-
+        
+        /// <summary>
+        /// Deze methode refresht de datagridview met daarin de geraporteerde media berichten
+        /// </summary>
         public void RefreshMedia()
         {
             dgwMedia.Rows.Clear();
@@ -609,6 +621,9 @@ namespace MedewerkerSysteem
             }
         }
 
+        /// <summary>
+        /// Deze methode refresht de datagridview met daarin alle aanwezigen
+        /// </summary>
         public void RefreshPresent()
         {
             dgwPresent.Rows.Clear();
@@ -618,6 +633,9 @@ namespace MedewerkerSysteem
             }
         }
 
+        /// <summary>
+        /// Deze methode refresht de datagridview met daarin de events
+        /// </summary>
         public void RefreshEvent()
         {
             dgwEvents.Rows.Clear();
@@ -628,6 +646,7 @@ namespace MedewerkerSysteem
             }
         }
 
+        //Deze methode refresht alles
         public void RefreshAll()
         {
             RefreshAccounts();
@@ -678,8 +697,14 @@ namespace MedewerkerSysteem
 
         }
 
+        /// <summary>
+        /// Deze button zorgt ervoor dat er wijzigingen gedaan kunnen worden in de gegevens van een gebruiker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChangeAccount_Click(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             string value = "";
 
@@ -695,15 +720,21 @@ namespace MedewerkerSysteem
                     gridCount++;
                 }
             }
-
+            //Er wordt hier een nieuw form aangemaakt en het juiste account opgehaald
             MederwerkerUpdateAccount MUA = new MederwerkerUpdateAccount(administration.FindAccount(value));
+            //Het form wordt geopend
             MUA.ShowDialog();
             RefreshAccounts();
-            //Close();
         }
 
+        /// <summary>
+        /// De betalingstatus van een reservering van een item wordt veranderd naar "Betaald"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChangeReservation_Click(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             string value = "";
 
@@ -720,6 +751,7 @@ namespace MedewerkerSysteem
                     gridCount++;
                 }
             }
+            //betaling status van de juiste reservering wordt veranderd
             administration.ChangePaymentStat(Convert.ToInt32(value));
         }
 
@@ -744,8 +776,14 @@ namespace MedewerkerSysteem
             RefreshAll();
         }
 
+        /// <summary>
+        /// Het juiste mediabestand wordt opgehaald en geopend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOpenMediaItem_Click(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             string value = "";
 
@@ -761,14 +799,22 @@ namespace MedewerkerSysteem
                     gridCount++;
                 }
             }
-
+            //Er word een nieuw form gemaakt waar het juiste media bestand aan meegegeven wordt
             MedewerkerMedia MM = new MedewerkerMedia(administration.FindMedia(value));
+            //Het form wordt geopend
             MM.ShowDialog();
+            //refresh methode wordt aangeroepen
             RefreshMedia();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChangeEvent_Click(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             int value = 0;
 
@@ -786,11 +832,13 @@ namespace MedewerkerSysteem
 
             MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(value));
             MEU.ShowDialog();
+            //refresh methode wordt aangeroepen
             RefreshEvent();
         }
 
         private void btnChangeReservation_Click_1(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             int value = 0;
 
@@ -811,6 +859,7 @@ namespace MedewerkerSysteem
 
         private void btnDeleteReservation_Click_1(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             int value = 0;
             string value2 = "";
