@@ -664,7 +664,21 @@ namespace MedewerkerSysteem
 
         private void btnChangeReservation_Click(object sender, EventArgs e)
         {
+            int gridCount = 0;
+            string value = "";
 
+            foreach (DataGridViewRow row in dgwAccount.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+
+                    if (gridCount == 1)
+                    {
+                        value = cell.Value.ToString();
+                    }
+                    gridCount++;
+                }
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
