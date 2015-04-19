@@ -452,7 +452,8 @@ public class DBEvent : Database
         string sql;
         string sql2;
         sql = "UPDATE EVENT SET NAAM = :name, MAXPERSONEN = :maxbezoeker WHERE EVENTID = :EventID";
-        sql2 = "UPDATE LOCATIE SET PLAATS = :locationName, POSTCODE = :zipCode, HUISNUMMER = :huisnummer WHERE LocatieID = :LocatieID";
+        sql2 = "UPDATE LOCATIE SET PLAATS = :locationName, POSTCODE = :zipCode, HUISNUMMER = :huisnummer WHERE LocatieID = :LocatieID";
+
 
         try
         {
