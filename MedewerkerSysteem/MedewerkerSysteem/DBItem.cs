@@ -58,7 +58,35 @@ namespace MedewerkerSysteem
         }
         public int ItemID(string naam)
         {
+            int itemID = -1;
             string sql = "SELECT itemid FROM item i WHERE naam = :naam";
+            try
+            {
+                Connect();
+                OracleCommand cmd = new OracleCommand(sql, connection);
+                cmd.Parameters.Add(new OracleParameter("email", naam));
+                OracleDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        itemID = Convert.ToInt32(reader["itemid"]);
+
+                    }
+                    return itemID;
+                }
+            }
+            catch (OracleException e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+            finally
+            {
+                DisConnect();
+            }
+            return itemID;
+            
         }
     }
     

@@ -144,9 +144,14 @@ public class Administation
 
     public int FindHighestEventID()
     {
-        int foundID = dbreserve.HighestID();
+        int foundID = dbevent.HighestID();
         return foundID;
     }
+
+    //public int FindHighestItemReserveID()
+    //{
+    //    return dbItem.
+    //}
 
     public int FindItemID(string naam)
     {
