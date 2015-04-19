@@ -248,6 +248,11 @@ public class Administation
         dbaccount.UpdateAccountEvent(result);
     }
 
+    public void ChangeAccountEvent(AccountEvent accountEvent)
+    {
+        dbaccount.UpdateAccountEvent(accountEvent);
+    }
+
     /// <summary>
     /// Searched the database for all reserves by code
     /// An Account is needed for the reservation
