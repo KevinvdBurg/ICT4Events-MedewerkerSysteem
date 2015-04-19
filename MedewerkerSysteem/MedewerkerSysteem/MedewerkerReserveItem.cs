@@ -73,5 +73,10 @@ namespace MedewerkerSysteem
                 }
             }
         }
+
+        private void MedewerkerReserveItem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

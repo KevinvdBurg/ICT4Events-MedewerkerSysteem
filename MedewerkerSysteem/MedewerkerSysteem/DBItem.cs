@@ -16,8 +16,8 @@ namespace MedewerkerSysteem
             //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
             //sql =
             //   "Select I.DETAILS, I.MERK, I.NAAM, I.PRIJS, ic.naam  from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT itemcategorie FROM item";
-            sql =
-                "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT it.itemcategorieid FROM item it)";
+            //sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT it.itemcategorieid FROM item it)";
+            sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam FROM item i INNER JOIN itemcategorie ic ON i.itemcategorieid = ic.itemcategorieid";
             string TYPE = "";
             try
             {
