@@ -258,6 +258,43 @@ public class DBEvent : Database
         return resultaat;
     }
 
+    public virtual List<AccountEvent> SelectAllPresent(int EventID)
+    {
+        List<AccountEvent> resultaat = new List<AccountEvent>();
+        string sql;
+         sql =  "Select g.GEBRUIKERID, g.Achternaam, kpr.KAMPEERPLEKID, kpr.DATUMIN, kpr.DATUMUIT From GebruikerEvent ge Inner Join Event e ON e.EventID = ge.eventID Inner join Gebruiker g ON g.GebruikerID = ge.GEBRUIKERID inner Join Kampeerplekreservering kpr ON kpr.GEBRUIKERID = g.GEBRUIKERID WHERE ge.aanwezig = 1 AND e.EVENTID = :eventID";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("eventID", EventID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string Achternaam = Convert.ToString(reader["Achternaam"]);
+                    int KAMPEERPLEKID = Convert.ToInt32(reader["KAMPEERPLEKID"]);
+                    string DATUMIN = Convert.ToString(reader["DATUMIN"]);
+                    string DATUMUIT = Convert.ToString(reader["DATUMUIT"]);
+                    int GEBRUIKERID = Convert.ToInt32(reader["GEBRUIKERID"]);
+                    AccountEvent tempAccountEvent = new AccountEvent(true, GEBRUIKERID, EventID, KAMPEERPLEKID, DATUMIN, DATUMUIT, Achternaam);
+                    resultaat.Add(tempAccountEvent);
+                }
+                return resultaat;
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
+
 
 	public virtual void Update(Event Event)
 	{

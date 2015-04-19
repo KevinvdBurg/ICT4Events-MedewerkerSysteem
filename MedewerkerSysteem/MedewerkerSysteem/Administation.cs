@@ -219,6 +219,21 @@ public class Administation
         return founAccountEvent;
     }
 
+    public List<AccountEvent> FindAllAccountEvent(int EventID)
+    {
+        List<AccountEvent> foundAccountEvents = dbevent.SelectAllPresent(EventID);
+
+        if (foundAccountEvents != null)
+        {
+            return foundAccountEvents;
+        }
+        else
+        {
+            MessageBox.Show("Geen Events accounts gevonden");
+            return null;
+        }
+    }
+
     public void ChangeAccountEvent(bool present)
     {
         int result = 0;

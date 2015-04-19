@@ -295,8 +295,15 @@ public class DBAccount : Database
         return resultaat;
     }
 
+    public void UpdateAccountEvent(int pressent)
+    {
+        return; 
+    }
 
 
-    
+    public AccountEvent FindAccountEvent(int accountId, int eventId)
+    {
+        throw new NotImplementedException();
+    }
 }
 

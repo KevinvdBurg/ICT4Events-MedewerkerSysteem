@@ -28,7 +28,7 @@ namespace MedewerkerSysteem
             
             InitializeComponent();
             administration = admin;
-            RefreshAll();
+            
         }
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace MedewerkerSysteem
 
             currentEvent = (Event)cbEvents.SelectedItem;
 
-            Console.Write(currentEvent.EventID);
+            RefreshAll();
             
 
         }
@@ -575,10 +575,10 @@ namespace MedewerkerSysteem
         public void RefreshPresent()
         {
             dgwPresent.Rows.Clear();
-            /*foreach (ReserveSpot item in administration.FindReserveItemAll())
+            foreach (AccountEvent item in administration.FindAllAccountEvent(currentEvent.EventID))
             {
-                dgwAccount.Rows.Add();
-            }*/
+                dgwPresent.Rows.Add(item.LastName, item.LocatieID, item.DateIn, item.DateOut);
+            }
         }
         public void RefreshEvent()
         {
@@ -686,6 +686,7 @@ namespace MedewerkerSysteem
         private void cbEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentEvent = (Event)cbEvents.SelectedItem;
+            RefreshAll();
         }
 
     }
