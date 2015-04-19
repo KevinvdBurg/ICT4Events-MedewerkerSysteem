@@ -13,9 +13,12 @@ namespace MedewerkerSysteem
     public partial class MedewerkerEvent : Form
     {
         Administation administation = new Administation();
+        private int number;
         public MedewerkerEvent()
         {
             InitializeComponent();
+            number = administation.FindHighestReserveID();
+            nudEid.Minimum = number + 1;
         }
 
         private void btnRScancel_Click(object sender, EventArgs e)

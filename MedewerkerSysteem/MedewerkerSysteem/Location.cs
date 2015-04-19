@@ -11,6 +11,7 @@ using System.Text;
 
 public class Location
 {
+    DBAddress dbAddress = new DBAddress();
 	public Address Address
 	{
 		get;
@@ -23,11 +24,7 @@ public class Location
 		set;
 	}
 
-	public DBAddress DBAddress
-	{
-		get;
-		set;
-	}
+	
 
 	public Location(Address Address, string Name)
 	{
@@ -35,22 +32,22 @@ public class Location
         this.Name = Name;
 	}
 
-    public virtual void AddAddress(Address Address)
+    public void AddAddress(Address address)
     {
-        throw new System.NotImplementedException();
+        dbAddress.Insert(address);
     }
 
-    public virtual void DeleteAddress(Address Address)
+    public void DeleteAddress(Address address)
     {
-        throw new System.NotImplementedException();
+        dbAddress.Delete(address);
     }
 
-    public virtual void FindAddress(Address Address)
+    public void FindAddress(string zipcode, string housenumber)
     {
-        throw new System.NotImplementedException();
+        dbAddress.Select(zipcode, housenumber);
     }
 
-    public virtual void UpdateAddress(Address Address)
+    public virtual void UpdateAddress(Address address)
     {
         throw new System.NotImplementedException();
     }

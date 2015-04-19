@@ -77,7 +77,7 @@ public class DBAddress : Database
         return resultaat;
 	}
 
-    internal Address Select(Address Address)
+    internal Address Select(string zipcode, string housenumber)
     {
         Administation administation = new Administation();
         Address resultaat = null;
@@ -92,7 +92,7 @@ public class DBAddress : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("LOCATIEID", administation.FindAddressID(Address.ZipCode, Address.Number)));
+            cmd.Parameters.Add(new OracleParameter("LOCATIEID", administation.FindAddressID(zipcode, housenumber)));
             OracleDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {

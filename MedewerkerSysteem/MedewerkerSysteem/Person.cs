@@ -50,25 +50,25 @@ public class Person
         this.LastName = LastName;
 	}
 
-	public virtual void AddAddress(Address Address)
+	public void AddAddress(Address Address)
 	{
         dbaddress.Insert(Address);
 	}
 
-	public virtual void DeleteAddress(Address Address)
+	public void DeleteAddress(Address Address)
 	{
         dbaddress.Delete(Address);
 	}
 
-	public virtual void FindAddress(Address Address)
+	public void FindAddress()
 	{
-        dbaddress.Select(Address);
+        dbaddress.Select(Address.ZipCode, Address.Number);
 	}
 
-	public virtual void UpdateAddress(Address Address)
-	{
-        dbaddress.Select(Address);
-	}
+    //public void UpdateAddress(Address Address)
+    //{
+    //    dbaddress.Select(Address);
+    //}
 
 }
 

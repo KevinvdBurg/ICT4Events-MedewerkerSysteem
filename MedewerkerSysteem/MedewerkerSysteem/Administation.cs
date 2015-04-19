@@ -136,6 +136,12 @@ public class Administation
         return foundID;
     }
 
+    public int FindHighestEventID()
+    {
+        int foundID = dbreserve.HighestID();
+        return foundID;
+    }
+
     /// <summary>
     /// Searched the database for all events for by event name
     /// </summary>

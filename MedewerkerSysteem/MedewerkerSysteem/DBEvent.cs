@@ -48,10 +48,35 @@ public class DBEvent : Database
         return resultaat;
 	}
 
-	public virtual void Select()
-	{
-		
-	}
+    public int HighestID()
+    {
+        int result = 0;
+        string sql = "SELECT MAX(eventid) As highest FROM event";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    result = Convert.ToInt32(reader["highest"]);
+                }
+            }
+
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return result;
+    }
     /// <summary>
     /// Returned the selected Event by name
     /// </summary>
