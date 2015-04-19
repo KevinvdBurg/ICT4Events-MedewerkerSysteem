@@ -10,6 +10,10 @@ namespace MedewerkerSysteem
 {
     class DBCampingspot : Database
     {
+        /// <summary>
+        /// retourneert een lijst met alle kampeerplekken uit de database
+        /// </summary>
+        /// <returns></returns>
         public List<CampingSpot> SelectAllSpots()
         {
             List<CampingSpot> resultaat = new List<CampingSpot>();

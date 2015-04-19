@@ -13,6 +13,11 @@ using Oracle.DataAccess.Client;
 
 public class DBEvent : Database
 {
+    /// <summary>
+    /// Voegt het gegeven event toe aan de database
+    /// </summary>
+    /// <param name="Event"></param>
+    /// <returns></returns>
 	public bool Insert(Event Event)
 	{
         Administation administation = new Administation();
@@ -79,6 +84,7 @@ public class DBEvent : Database
     }
     /// <summary>
     /// Returned the selected Event by name
+    /// retouneert het geselecteerde event op naam
     /// </summary>
     /// <param name="EventName"></param>
     /// <returns></returns>
@@ -133,7 +139,12 @@ public class DBEvent : Database
         return resultaat;
     }
 
-    public virtual Event Select(int EventID)
+    /// <summary>
+    /// Doorzoekt de database naar een event met een passend id
+    /// </summary>
+    /// <param name="EventID"></param>
+    /// <returns></returns>
+    public  Event Select(int EventID)
     {
         Event resultaat = null;
 
@@ -185,9 +196,10 @@ public class DBEvent : Database
     }
     /// <summary>
     /// Returned all Events in a list
+    /// retouneert een lijst van events waar een account heen gaat
     /// </summary>
     /// <returns></returns>
-    public virtual List<Event> SelectAllperAccount(Account account)
+    public List<Event> SelectAllperAccount(Account account)
     {
         Administation administation = new Administation();
         List<Event> resultaat = new List<Event>();
@@ -244,8 +256,11 @@ public class DBEvent : Database
         return resultaat;
     }
 
-
-    public virtual List<Event> SelectAll()
+    /// <summary>
+    /// retouneerd een lijst van alle events uit de database
+    /// </summary>
+    /// <returns></returns>
+    public  List<Event> SelectAll()
     {
         List<Event> resultaat = new List<Event>();
         Event AddedEvent = null;
@@ -297,7 +312,12 @@ public class DBEvent : Database
         return resultaat;
     }
 
-    public virtual List<Media> SelectAllMedia()
+
+    /// <summary>
+    /// Retouneert een lijst met alle media uit de database met meer dan 5 reports
+    /// </summary>
+    /// <returns></returns>
+    public List<Media> SelectAllMedia()
     {
         List<Media> resultaat = new List<Media>();
         string sql;
@@ -334,7 +354,12 @@ public class DBEvent : Database
         return resultaat;
     }
 
-    public virtual List<AccountEvent> SelectAllPresent(int EventID)
+    /// <summary>
+    /// Retouneert een lijst met alle aanwezige accounts
+    /// </summary>
+    /// <param name="EventID"></param>
+    /// <returns></returns>
+    public List<AccountEvent> SelectAllPresent(int EventID)
     {
         List<AccountEvent> resultaat = new List<AccountEvent>();
         string sql;
@@ -371,12 +396,11 @@ public class DBEvent : Database
         return resultaat;
     }
 
-
-	public virtual void Update(Event Event)
-	{
-		
-	}
-
+    /// <summary>
+    /// Retourneerd een bepaald media object uit de database waarbij postID gelijk is aan value
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     public Media SelectMedia(string value)
     {
         Media resultaat = null;
@@ -415,6 +439,12 @@ public class DBEvent : Database
         return resultaat;
     }
 
+
+    /// <summary>
+    /// Verwijderd media uit de database
+    /// </summary>
+    /// <param name="media"></param>
+    /// <returns></returns>
     public bool DeleteMedia(Media media)
     {
         bool resultaat = false;
@@ -443,6 +473,13 @@ public class DBEvent : Database
         return resultaat;
     }
 
+    /// <summary>
+    /// Update Event in de database
+    /// </summary>
+    /// <param name="Event"></param>
+    /// <param name="oldzip"></param>
+    /// <param name="oldhuisnummer"></param>
+    /// <returns></returns>
     public bool UpdateEvent(Event Event, string oldzip, int oldhuisnummer)
     {
         Administation administation = new Administation();
