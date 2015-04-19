@@ -540,7 +540,7 @@ namespace MedewerkerSysteem
 
         private void btnDeleteReservation_Click(object sender, EventArgs e)
         {
-            int gridCount = -1;
+            int gridCount = 0;
             int value = 0;
             string value2 = "";
 
@@ -556,10 +556,13 @@ namespace MedewerkerSysteem
                     {
                         value2 = cell.Value.ToString();
                     }
+                    gridCount++;
                 }
-                gridCount++;
+                
             }
-            administration.Delete(administration.FindReserve(value, administration.FindAccount(value2)));
+
+
+            //administration.Delete(administration.FindReserve(value, administration.FindAccount(value2)));
         }
 
 
@@ -593,8 +596,7 @@ namespace MedewerkerSysteem
             dgwReserveSpot.Rows.Clear();
             foreach (ReserveSpot spot in administration.FindReserveSpotsAll())
             {
-                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName,
-                    spot.StartDate, spot.EndDate, spot.Account.Person.Email);
+                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName,spot.StartDate, spot.EndDate, spot.Account.Person.Email);
             }
         }
 
