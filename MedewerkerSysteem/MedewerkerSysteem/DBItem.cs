@@ -15,9 +15,7 @@ namespace MedewerkerSysteem
         public List<Item> SelectAllItems()
         {
             List<Item> resultaat = new List<Item>();
-            string sql;
-            
-            sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam FROM item i INNER JOIN itemcategorie ic ON i.itemcategorieid = ic.itemcategorieid";
+            string sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam FROM item i INNER JOIN itemcategorie ic ON i.itemcategorieid = ic.itemcategorieid";
             string TYPE = "";
             try
             {

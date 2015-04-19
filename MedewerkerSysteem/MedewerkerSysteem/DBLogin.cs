@@ -18,8 +18,7 @@ namespace MedewerkerSysteem
         public bool loginCheck(string email, string password)
         {
             bool resultaat = false;
-            string sql;
-            sql = "select * from gebruiker where emailadres = :email and wachtwoord = :password and isadmin = 1";
+            string sql = "select * from gebruiker where emailadres = :email and wachtwoord = :password and isadmin = 1";
 
             try
             {
@@ -67,8 +66,7 @@ namespace MedewerkerSysteem
             string zipcode = "";
             string wachtwoord = "";
 
-            string sql;
-            sql = "select * from gebruiker where emailadres = :email";
+            string sql = "select * from gebruiker where emailadres = :email";
 
             try
             {
@@ -96,8 +94,6 @@ namespace MedewerkerSysteem
                         type = "bezoeker";
                     }
                 }
-
-                //account = new Account(new Person(email, lastName, name), type, rfid);
                 account = new Account(new Person(new Address(city, nr, zipcode), email, name, lastName), type, rfid, wachtwoord);
 
             }

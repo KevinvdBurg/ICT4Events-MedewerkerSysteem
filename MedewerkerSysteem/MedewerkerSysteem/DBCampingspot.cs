@@ -17,10 +17,8 @@ namespace MedewerkerSysteem
         public List<CampingSpot> SelectAllSpots()
         {
             List<CampingSpot> resultaat = new List<CampingSpot>();
-            string sql;
-            //
-            sql = "select kpc.maxpersonen, kpc.prijs, kpc.details, kp.kampeerplekid, kp.locatieid from kampeerplekcategorie kpc, kampeerplek kp where kampeerplekcategorieid in (select categorieid from kampeerplek)";
-            //sql = "";
+            string sql = "select kpc.maxpersonen, kpc.prijs, kpc.details, kp.kampeerplekid, kp.locatieid from kampeerplekcategorie kpc, kampeerplek kp where kampeerplekcategorieid in (select categorieid from kampeerplek)";
+            
             string details;
             int maxpersons;
             decimal price;

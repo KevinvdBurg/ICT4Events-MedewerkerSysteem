@@ -22,10 +22,7 @@ public class DBEvent : Database
 	{
         Administation administation = new Administation();
         bool resultaat = false;
-        string sql;
-        //int locatieID = administation.
-        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
-        sql = "INSERT INTO EVENT (EVENTID, NAAM, MAXPERSONEN, BEGINDATUM, EINDDATUM, LOCATIEID) VALUES (:eventid, :naam, :maxpersonen, :begindatum, :einddatum, :locatieid)";
+        string sql = "INSERT INTO EVENT (EVENTID, NAAM, MAXPERSONEN, BEGINDATUM, EINDDATUM, LOCATIEID) VALUES (:eventid, :naam, :maxpersonen, :begindatum, :einddatum, :locatieid)";
         try
         {
             Connect();
@@ -92,9 +89,7 @@ public class DBEvent : Database
     {
         Event resultaat = null;
         
-        string sql;
-        //sql = "select * from gebruiker where RFID = :rfid";
-        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
+        string sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
 
         int eventid = 0;
         string name = "";
@@ -148,9 +143,7 @@ public class DBEvent : Database
     {
         Event resultaat = null;
 
-        string sql;
-        //sql = "select * from gebruiker where RFID = :rfid";
-        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.EventID = :EventID";
+        string sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.EventID = :EventID";
 
         int eventid = 0;
         string name = "";
@@ -204,9 +197,7 @@ public class DBEvent : Database
         Administation administation = new Administation();
         List<Event> resultaat = new List<Event>();
         Event AddedEvent = null;
-        string sql;
-        //sql = "select * from gebruiker where RFID = :rfid";
-        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Inner Join GebruikerEvent ge ON ge.EVENTID = e.EVENTID  where ge.GEBRUIKERID = :AccountID";
+        string sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Inner Join GebruikerEvent ge ON ge.EVENTID = e.EVENTID  where ge.GEBRUIKERID = :AccountID";
 
         int eventid = 0;
         string name = "";
@@ -264,9 +255,7 @@ public class DBEvent : Database
     {
         List<Event> resultaat = new List<Event>();
         Event AddedEvent = null;
-        string sql;
-        //sql = "select * from gebruiker where RFID = :rfid";
-        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
+        string sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
 
         int eventid = 0;
         string name = "";
@@ -320,8 +309,7 @@ public class DBEvent : Database
     public List<Media> SelectAllMedia()
     {
         List<Media> resultaat = new List<Media>();
-        string sql;
-         sql = "Select p.postID,p.AANTALREPORTS,bt.INHOUD, bd.BESTANDSLOCATIE FROM post p LEFT JOIN BESTAND bd ON p.POSTID = bd.POSTID LEFT JOIN BERICHT bt ON p.POSTID = bt.POSTID  WHERE AANTALREPORTS >= 5";
+        string sql = "Select p.postID,p.AANTALREPORTS,bt.INHOUD, bd.BESTANDSLOCATIE FROM post p LEFT JOIN BESTAND bd ON p.POSTID = bd.POSTID LEFT JOIN BERICHT bt ON p.POSTID = bt.POSTID  WHERE AANTALREPORTS >= 5";
 
         try
         {
@@ -362,8 +350,7 @@ public class DBEvent : Database
     public List<AccountEvent> SelectAllPresent(int EventID)
     {
         List<AccountEvent> resultaat = new List<AccountEvent>();
-        string sql;
-         sql =  "Select g.GEBRUIKERID, g.Achternaam, kpr.KAMPEERPLEKID, kpr.DATUMIN, kpr.DATUMUIT From GebruikerEvent ge Inner Join Event e ON e.EventID = ge.eventID Inner join Gebruiker g ON g.GebruikerID = ge.GEBRUIKERID inner Join Kampeerplekreservering kpr ON kpr.GEBRUIKERID = g.GEBRUIKERID WHERE ge.aanwezig = 1 AND e.EVENTID = :eventID";
+        string sql =  "Select g.GEBRUIKERID, g.Achternaam, kpr.KAMPEERPLEKID, kpr.DATUMIN, kpr.DATUMUIT From GebruikerEvent ge Inner Join Event e ON e.EventID = ge.eventID Inner join Gebruiker g ON g.GebruikerID = ge.GEBRUIKERID inner Join Kampeerplekreservering kpr ON kpr.GEBRUIKERID = g.GEBRUIKERID WHERE ge.aanwezig = 1 AND e.EVENTID = :eventID";
         try
         {
             Connect();
@@ -404,8 +391,7 @@ public class DBEvent : Database
     public Media SelectMedia(string value)
     {
         Media resultaat = null;
-        string sql;
-        sql = "Select p.postID,p.AANTALREPORTS,bt.INHOUD, bd.BESTANDSLOCATIE, gb.achternaam FROM post p LEFT JOIN BESTAND bd ON p.POSTID = bd.POSTID LEFT JOIN BERICHT bt ON p.POSTID = bt.POSTID  inner join gebruiker gb ON p.GebruikerID = gb.GEBRUIKERID WHERE p.POSTID = :postID";
+        string sql = "Select p.postID,p.AANTALREPORTS,bt.INHOUD, bd.BESTANDSLOCATIE, gb.achternaam FROM post p LEFT JOIN BESTAND bd ON p.POSTID = bd.POSTID LEFT JOIN BERICHT bt ON p.POSTID = bt.POSTID  inner join gebruiker gb ON p.GebruikerID = gb.GEBRUIKERID WHERE p.POSTID = :postID";
         try
         {
             Connect();
@@ -448,8 +434,7 @@ public class DBEvent : Database
     public bool DeleteMedia(Media media)
     {
         bool resultaat = false;
-        string sql;
-        sql = "DELETE FROM Post WHERE PostID = :PostID";
+        string sql = "DELETE FROM Post WHERE PostID = :PostID";
 
         try
         {
