@@ -12,9 +12,17 @@ namespace MedewerkerSysteem
 {
     public partial class MedewerkerEventUpdate : Form
     {
-        public MedewerkerEventUpdate()
+        Event currentEvent = null;
+        public MedewerkerEventUpdate(Event eventt)
         {
             InitializeComponent();
+            currentEvent = eventt;
+        }
+
+        private void MedewerkerEventUpdate_Load(object sender, EventArgs e)
+        {
+            tbEname.Text = currentEvent.Name;
+
         }
     }
 }

@@ -31,8 +31,6 @@
             this.gbReserveSpot = new System.Windows.Forms.GroupBox();
             this.nudEhuisnummer = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.nudEid = new System.Windows.Forms.NumericUpDown();
-            this.lblCAid = new System.Windows.Forms.Label();
             this.tbEcity = new System.Windows.Forms.TextBox();
             this.lblCAcity = new System.Windows.Forms.Label();
             this.lblCAzipcode = new System.Windows.Forms.Label();
@@ -53,7 +51,6 @@
             this.btnECreateEvent = new System.Windows.Forms.Button();
             this.gbReserveSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEhuisnummer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmaxvisitors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,8 +58,6 @@
             // 
             this.gbReserveSpot.Controls.Add(this.nudEhuisnummer);
             this.gbReserveSpot.Controls.Add(this.label1);
-            this.gbReserveSpot.Controls.Add(this.nudEid);
-            this.gbReserveSpot.Controls.Add(this.lblCAid);
             this.gbReserveSpot.Controls.Add(this.tbEcity);
             this.gbReserveSpot.Controls.Add(this.lblCAcity);
             this.gbReserveSpot.Controls.Add(this.lblCAzipcode);
@@ -111,30 +106,6 @@
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Huisnummer:";
-            // 
-            // nudEid
-            // 
-            this.nudEid.Location = new System.Drawing.Point(318, 35);
-            this.nudEid.Margin = new System.Windows.Forms.Padding(2);
-            this.nudEid.Name = "nudEid";
-            this.nudEid.Size = new System.Drawing.Size(90, 20);
-            this.nudEid.TabIndex = 38;
-            this.nudEid.ThousandsSeparator = true;
-            this.nudEid.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblCAid
-            // 
-            this.lblCAid.AutoSize = true;
-            this.lblCAid.Location = new System.Drawing.Point(264, 39);
-            this.lblCAid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCAid.Name = "lblCAid";
-            this.lblCAid.Size = new System.Drawing.Size(49, 13);
-            this.lblCAid.TabIndex = 37;
-            this.lblCAid.Text = "Nummer:";
             // 
             // tbEcity
             // 
@@ -195,7 +166,7 @@
             this.tbEname.Location = new System.Drawing.Point(117, 35);
             this.tbEname.Margin = new System.Windows.Forms.Padding(2);
             this.tbEname.Name = "tbEname";
-            this.tbEname.Size = new System.Drawing.Size(141, 20);
+            this.tbEname.Size = new System.Drawing.Size(307, 20);
             this.tbEname.TabIndex = 18;
             // 
             // lblEmaxvisitors
@@ -302,10 +273,10 @@
             this.Controls.Add(this.gbReserveSpot);
             this.Name = "MedewerkerEventUpdate";
             this.Text = "MedewerkerEventUpdate";
+            this.Load += new System.EventHandler(this.MedewerkerEventUpdate_Load);
             this.gbReserveSpot.ResumeLayout(false);
             this.gbReserveSpot.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEhuisnummer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmaxvisitors)).EndInit();
             this.ResumeLayout(false);
 
@@ -316,8 +287,6 @@
         private System.Windows.Forms.GroupBox gbReserveSpot;
         private System.Windows.Forms.NumericUpDown nudEhuisnummer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nudEid;
-        private System.Windows.Forms.Label lblCAid;
         private System.Windows.Forms.TextBox tbEcity;
         private System.Windows.Forms.Label lblCAcity;
         private System.Windows.Forms.Label lblCAzipcode;

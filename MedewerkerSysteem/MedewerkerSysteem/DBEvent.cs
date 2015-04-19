@@ -132,6 +132,57 @@ public class DBEvent : Database
         }
         return resultaat;
     }
+
+    public virtual Event Select(int EventID)
+    {
+        Event resultaat = null;
+
+        string sql;
+        //sql = "select * from gebruiker where RFID = :rfid";
+        sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.LOCATIEID, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.EventID = :EventID";
+
+        int eventid = 0;
+        string name = "";
+        int maxpers = 0;
+        string begindate = "";
+        string enddate = "";
+        string nr = "";
+        string place = "";
+        string zipcode = "";
+        string country = "";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("EventID", EventID));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    eventid = Convert.ToInt32(reader["EVENTID"]);
+                    name = Convert.ToString(reader["Naam"]);
+                    maxpers = Convert.ToInt32(reader["MAXPERSONEN"]);
+                    begindate = Convert.ToString(reader["BEGINDATUM"]);
+                    enddate = Convert.ToString(reader["EINDDATUM"]);
+                    nr = Convert.ToString(reader["HUISNUMMER"]);
+                    place = Convert.ToString(reader["PLAATS"]);
+                    zipcode = Convert.ToString(reader["POSTCODE"]);
+                }
+                resultaat = new Event(new Location(new Address(place, nr, zipcode), name), maxpers, name, eventid, begindate, enddate);
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
     /// <summary>
     /// Returned all Events in a list
     /// </summary>
