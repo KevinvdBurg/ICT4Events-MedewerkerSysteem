@@ -276,7 +276,7 @@ public class DBReserve : Database
     {
         string updateID = "'" + reserveringID + "'";
         bool resultaat = false;
-        string sql = "UPDATE KAMPEERPLEKRESERVERING SET BETAALD = 1 WHERE RESERVERINGID = " + updateID;
+        string sql = "UPDATE KAMPEERPLEKRESERVERING SET BETAALD = '1' WHERE RESERVERINGID = " + updateID;
         try
         {
             Connect();

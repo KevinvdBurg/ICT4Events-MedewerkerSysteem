@@ -65,7 +65,7 @@ namespace MedewerkerSysteem
                         if (item2.Person.Email == cbRSname.SelectedItem.ToString())
                         {
                             Account account = item2;
-                            administation.Add(new ReserveSpot(campingSpot, null, account, campingSpot.Category, dtpRSdateuit.ToString(), dtpRSdatein.ToString(), cbRSPaid.Checked, Convert.ToInt32(nudRSreservationNumber.Value)));
+                            administation.Add(new ReserveSpot(campingSpot, null, account, campingSpot.Category, dtpRSdateuit.Text, dtpRSdatein.Text, cbRSPaid.Checked, Convert.ToInt32(nudRSreservationNumber.Value)));
                             Close();
                         }
                     }
