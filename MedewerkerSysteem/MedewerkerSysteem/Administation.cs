@@ -23,6 +23,7 @@ public class Administation
     private DBReserve dbreserve = new DBReserve();
     private DBAddress dbaddress = new DBAddress();
     private DBCampingspot dbCampingspot = new DBCampingspot();
+    private DBItem dbItem = new DBItem();
 
 	public IEnumerable<Reserve> Reserve
 	{
@@ -294,6 +295,23 @@ public class Administation
             return null;
         }
     }
+
+    public List<Item> FindItems()
+    {
+        List<Item> foundItems = dbItem.SelectAllItems();
+        if (foundItems != null)
+        {
+            return foundItems;
+        }
+        else
+        {
+            {
+                MessageBox.Show("Geen items gevonden");
+                return null;
+            }
+        }
+    }
+         
 
     public List<string> CheckReserve(int Code)
     {

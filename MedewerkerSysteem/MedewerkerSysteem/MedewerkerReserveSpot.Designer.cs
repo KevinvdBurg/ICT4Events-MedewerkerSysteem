@@ -30,6 +30,7 @@
         {
             this.btnRScancel = new System.Windows.Forms.Button();
             this.gbReserveSpot = new System.Windows.Forms.GroupBox();
+            this.cbRSPaid = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nudRSreservationNumber = new System.Windows.Forms.NumericUpDown();
             this.dtpRSdatein = new System.Windows.Forms.DateTimePicker();
@@ -41,7 +42,6 @@
             this.lblRSspotname = new System.Windows.Forms.Label();
             this.lblRSname = new System.Windows.Forms.Label();
             this.btnRSreserve = new System.Windows.Forms.Button();
-            this.cbRSPaid = new System.Windows.Forms.CheckBox();
             this.gbReserveSpot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRSreservationNumber)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,16 @@
             this.gbReserveSpot.TabIndex = 3;
             this.gbReserveSpot.TabStop = false;
             this.gbReserveSpot.Text = "Plek Reserveren";
+            // 
+            // cbRSPaid
+            // 
+            this.cbRSPaid.AutoSize = true;
+            this.cbRSPaid.Location = new System.Drawing.Point(467, 133);
+            this.cbRSPaid.Name = "cbRSPaid";
+            this.cbRSPaid.Size = new System.Drawing.Size(78, 21);
+            this.cbRSPaid.TabIndex = 17;
+            this.cbRSPaid.Text = "Betaald";
+            this.cbRSPaid.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -167,9 +177,9 @@
             this.lblRSname.Location = new System.Drawing.Point(8, 49);
             this.lblRSname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRSname.Name = "lblRSname";
-            this.lblRSname.Size = new System.Drawing.Size(49, 17);
+            this.lblRSname.Size = new System.Drawing.Size(46, 17);
             this.lblRSname.TabIndex = 2;
-            this.lblRSname.Text = "Naam:";
+            this.lblRSname.Text = "Email:";
             // 
             // btnRSreserve
             // 
@@ -181,16 +191,6 @@
             this.btnRSreserve.Text = "Reserveren";
             this.btnRSreserve.UseVisualStyleBackColor = true;
             this.btnRSreserve.Click += new System.EventHandler(this.btnRSreserve_Click);
-            // 
-            // cbRSPaid
-            // 
-            this.cbRSPaid.AutoSize = true;
-            this.cbRSPaid.Location = new System.Drawing.Point(467, 133);
-            this.cbRSPaid.Name = "cbRSPaid";
-            this.cbRSPaid.Size = new System.Drawing.Size(78, 21);
-            this.cbRSPaid.TabIndex = 17;
-            this.cbRSPaid.Text = "Betaald";
-            this.cbRSPaid.UseVisualStyleBackColor = true;
             // 
             // MedewerkerReserveSpot
             // 
