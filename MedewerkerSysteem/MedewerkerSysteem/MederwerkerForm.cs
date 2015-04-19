@@ -710,6 +710,7 @@ namespace MedewerkerSysteem
 
             MedewerkerMedia MM = new MedewerkerMedia(administration.FindMedia(value));
             MM.ShowDialog();
+            RefreshMedia();
         }
 
     }

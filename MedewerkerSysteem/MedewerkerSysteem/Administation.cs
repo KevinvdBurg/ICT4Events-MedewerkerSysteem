@@ -96,6 +96,11 @@ public class Administation
 	{
 	    //TODO
 	}
+
+    public void Delete(Media Media)
+    {
+        dbevent.DeleteMedia(Media);
+    }
     /// <summary>
     /// Searched the database for all Accounts for the given Code
     /// </summary>
