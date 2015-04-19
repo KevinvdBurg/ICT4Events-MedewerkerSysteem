@@ -38,6 +38,11 @@ namespace MedewerkerSysteem
             //eventList = dbevent.SelectAllperAccount(UpdateAccount);
         }
 
+        /// <summary>
+        /// De account gegevens worden uit de database geladen en in de juiste textboxen gezet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MederwerkerUpdateAccount_Load(object sender, EventArgs e)
         {
             tbUAname.Text = UpdateAccount.Person.Name;
@@ -51,16 +56,23 @@ namespace MedewerkerSysteem
 
             lbUAeventlist.DataSource = eventList;
             lbUAeventlist.DisplayMember = "name";
-
-            //todo 
-            //get payment stat
         }
 
+        /// <summary>
+        /// Sluit het form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCAcancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// De updates worden naar de database gestuurd en het form wordt gesloten
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUAupdate_Click(object sender, EventArgs e)
         {
             //Adres wordt aangemaakt
@@ -70,21 +82,20 @@ namespace MedewerkerSysteem
             //Account wordt aangemaakt
             Account account = new Account(person, "bezoeker",null, tbUApassword.Text);
 
-
-
             //Account wordt geupdate
             administration.Update(account, tbUAemail.Text);
-            
-
 
             //address wordt opgeslagen in de database door person.AddAddress()
             person.AddAddress(address);
 
-           
-
             Close();
         }
 
+        /// <summary>
+        /// Er wordt een event toegevoegd aan de listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUAaddevent_Click(object sender, EventArgs e)
         {
             Event SelectedEvent = (Event) cbUAaddevent.SelectedItem;
