@@ -20,7 +20,7 @@ namespace MedewerkerSysteem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            //Logt de gebruiker in en met de gegeven email en wachtwoord
             if (administration.Login(tbEmail.Text, tbWachtwoord.Text))
             {
                 administration.setCurrentAccount(tbEmail.Text);

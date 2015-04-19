@@ -26,6 +26,11 @@ namespace MedewerkerSysteem
             Close();
         }
 
+        /// <summary>
+        /// Maakt een Nieuwe event aan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRSreserve_Click(object sender, EventArgs e)
         {
 

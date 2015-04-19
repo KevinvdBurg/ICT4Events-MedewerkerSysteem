@@ -57,6 +57,7 @@ namespace MedewerkerSysteem
 
         private void btnRSreserve_Click(object sender, EventArgs e)
         {
+            //Maakt een plek reservering aan voor een deelnemer
             foreach (var item in campingSpots)
             {
                 if (item.SpotID == Convert.ToInt32(cbRSspotnumbers.SelectedItem))

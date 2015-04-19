@@ -285,6 +285,7 @@ namespace MedewerkerSysteem
             rfid.close();
         }
 
+
         private void btnControl_Click(object sender, EventArgs e)
         {
             tbLetterName.Clear();

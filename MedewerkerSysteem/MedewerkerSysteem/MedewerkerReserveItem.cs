@@ -57,6 +57,7 @@ namespace MedewerkerSysteem
 
         private void btnIRreserve_Click(object sender, EventArgs e)
         {
+            //Maakt een item reservering aan voor een deelnemer
             foreach (var item in items)
             {
                 if (item.Name == cbIRitemname.SelectedItem.ToString())

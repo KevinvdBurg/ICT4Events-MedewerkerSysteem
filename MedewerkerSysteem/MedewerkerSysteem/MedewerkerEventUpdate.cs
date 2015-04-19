@@ -31,6 +31,11 @@ namespace MedewerkerSysteem
 
         }
 
+        /// <summary>
+        /// Update een bestaand event met alle gegevens data in de textboxes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnECreateEvent_Click(object sender, EventArgs e)
         {
             Event TempEvent = new Event(new Location(new Address(tbEcity.Text, Convert.ToString(nudEhuisnummer.Value), tbEzipcode.Text), tbEcity.Text), Convert.ToInt32(nudEmaxvisitors.Value), tbEname.Text, currentEvent.EventID, currentEvent.BeginTime, currentEvent.EndTime);
