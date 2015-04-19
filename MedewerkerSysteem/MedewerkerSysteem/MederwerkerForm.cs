@@ -287,12 +287,10 @@ namespace MedewerkerSysteem
 
         private void btnControl_Click(object sender, EventArgs e)
         {
-            //btnChangePaid.Visible = false;
-            //btnComplete.Visible = false;
             tbLetterName.Clear();
 
             int caseSwitch = 1;
-
+            //De foreach loop vult alle textboxes met de juiste informatie van de reservering
             foreach (string check in administration.CheckReserve(Convert.ToInt32(nudReserveID.Value)))
             {
                 switch (caseSwitch)
@@ -377,13 +375,14 @@ namespace MedewerkerSysteem
         private void btnComplete_Click(object sender, EventArgs e)
         {
             //TODO checkin person
-
+            //Checkt of de deelnemer al een RFID heeft gekregen, zo niet dan komt er een messagebox met de error "koppel eerst een RFID"
             if (tbLetterRFID.Text != "")
             {
 
                 administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
                 AccountEvent accountEvent = administration.FindAccountEvent(administration.FindAccountID(tbEmail.Text), currentEvent.EventID);
 
+                //Checkt of de deelnemer al binnen is, op deze manier kunnen er niet meerdere mensen onder 1 reservering binnen komen.
                 if (accountEvent.Present)
                 {
                     MessageBox.Show("Deelnemer is al binnen");
@@ -419,6 +418,8 @@ namespace MedewerkerSysteem
             //{
             //    item.Paid = true;
             //}
+            
+            //Veranderd de betaalstatus van de deelnemer naar betaald als de deelnemer nog niet betaald heeft
             if (tbLetterStatus.Text != "Betaald")
             {
                 if (administration.ChangePaymentStat(Convert.ToInt32(nudReserveID.Value)))
@@ -435,6 +436,7 @@ namespace MedewerkerSysteem
 
         private void btnChainRFID_Click(object sender, EventArgs e)
         {
+            //Als de deelnemer nog geen RFID heeft dan wordt de RDIF code die als laatst gescand is aan de desbetreffende deelnemer gekoppeld
             if (tbLetterRFID.Text != "")
             {
                 administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
@@ -512,9 +514,11 @@ namespace MedewerkerSysteem
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
+            //gridcount is nodig om de juiste column index te controleren
             int gridCount = 0;
             string value = "";
 
+            
             foreach (DataGridViewRow row in dgwAccount.SelectedRows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -522,12 +526,15 @@ namespace MedewerkerSysteem
 
                     if (gridCount == 1)
                     {
+                        //de reserveringscode wordt tijdelijk opgeslagen
                         value = cell.Value.ToString();
                     }
                     gridCount++;
                 }
             }
+            //Het juiste account wordt opgehaald en verwijderd uit de database
             administration.Delete(administration.FindAccount(value));
+            //refresht de datagrid view van accounts
             RefreshAccounts();
         }
 
