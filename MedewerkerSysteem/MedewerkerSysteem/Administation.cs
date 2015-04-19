@@ -52,9 +52,9 @@ public class Administation
 	    dbaccount.Insert(Account);
 	}
 
-    public void Add(AccountEvent account)
+    public void Add(AccountEvent accountevent)
     {
-        dbaccount.Insert(account);
+        dbaccount.Insert(accountevent);
     }
 
 	public void Add(Reserve Reserve)
@@ -386,11 +386,6 @@ public class Administation
 	{
 	    dbaccount.Update(Account, oldemail);
 	}
-
-    public void Update(AccountEvent AccountEvent)
-    {
-        dbaccount.UpdateAccountEvent(AccountEvent);
-    }
 
     public void ChainRFID(string email, string rfid)
     {

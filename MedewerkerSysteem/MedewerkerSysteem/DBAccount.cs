@@ -340,7 +340,7 @@ public class DBAccount : Database
         return; 
     }
 
-    public void UpdateAccountEvent(AccountEvent accountEvent)
+    public void AccountEvent(AccountEvent accountEvent)
     {
         
     }
