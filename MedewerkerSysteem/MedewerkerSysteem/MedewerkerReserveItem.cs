@@ -39,7 +39,7 @@ namespace MedewerkerSysteem
                
                 
             }
-            number = administation.FindHighestReserveID() + 1;
+            number = administation.FindHighestItemReserveID() + 1;
             foreach (var item in administation.FindAccountAll())
             {
                 cbIRname.Items.Add(item.Person.Email);

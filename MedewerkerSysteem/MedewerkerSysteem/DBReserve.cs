@@ -54,12 +54,36 @@ public class DBReserve : Database
         Administation administation = new Administation();
         int paid = 0;
         int accountID = administation.FindAccountID(reserveItem.Account.Person.Email);
+        int itemID = administation.FindItemID(reserveItem.Item.Name);
         bool resultaat = false;
         if (reserveItem.Paid)
         {
             paid = 1;
         }
-        string sql = "INSERT  INTO verhuur (VERHUURID, GEBRUIKERID, ITEMID, DATUMIN, "
+        string sql =
+            "INSERT  INTO verhuur (VERHUURID, GEBRUIKERID, ITEMID, DATUMIN, DATUMUIT) VALUES (:verhuurid, :gebruikerid, :itemid, :datumin, :datumuit)";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("verhuurid", reserveItem.ReserveringsID));
+            cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
+            cmd.Parameters.Add(new OracleParameter("itemid", itemID));
+            cmd.Parameters.Add(new OracleParameter("datumin", reserveItem.StartDate));
+            cmd.Parameters.Add(new OracleParameter("datumuit", reserveItem.EndDate));
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
     }
     public bool Insert(ReserveSpot reservespot)
     {
