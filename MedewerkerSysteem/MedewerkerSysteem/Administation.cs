@@ -451,5 +451,9 @@ public class Administation
     }
 
 
+    public Media FindMedia(string value)
+    {
+        return dbevent.SelectMedia(value);
+    }
 }
 

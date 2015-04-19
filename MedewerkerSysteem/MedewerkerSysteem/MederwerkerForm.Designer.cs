@@ -78,6 +78,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPItem = new System.Windows.Forms.TabPage();
             this.dgwReserveItem = new System.Windows.Forms.DataGridView();
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPlocation = new System.Windows.Forms.TabPage();
             this.dgwReserveSpot = new System.Windows.Forms.DataGridView();
             this.LocationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +92,7 @@
             this.LocationDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LocationDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPadmin = new System.Windows.Forms.TabPage();
+            this.btnOpenMediaItem = new System.Windows.Forms.Button();
             this.btnChangeEvent = new System.Windows.Forms.Button();
             this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.tabCAdmin = new System.Windows.Forms.TabControl();
@@ -97,6 +104,10 @@
             this.AdminPresentDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPmedia = new System.Windows.Forms.TabPage();
             this.dgwMedia = new System.Windows.Forms.DataGridView();
+            this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaText = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminMediaReports = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPEvent = new System.Windows.Forms.TabPage();
             this.dgwEvents = new System.Windows.Forms.DataGridView();
             this.AdminEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,17 +117,6 @@
             this.AdminEventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEvent = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemDateIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemRFID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaText = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminMediaReports = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnOpenMediaItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCMedewerker.SuspendLayout();
             this.tabPincheck.SuspendLayout();
@@ -659,6 +659,42 @@
             this.dgwReserveItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgwReserveItem.SelectionChanged += new System.EventHandler(this.dgwReserveItem_SelectionChanged);
             // 
+            // ItemCode
+            // 
+            this.ItemCode.HeaderText = "Code";
+            this.ItemCode.Name = "ItemCode";
+            this.ItemCode.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            // 
+            // ItemAccountName
+            // 
+            this.ItemAccountName.HeaderText = "Account Name";
+            this.ItemAccountName.Name = "ItemAccountName";
+            this.ItemAccountName.ReadOnly = true;
+            // 
+            // ItemDateOut
+            // 
+            this.ItemDateOut.HeaderText = "Data Out";
+            this.ItemDateOut.Name = "ItemDateOut";
+            this.ItemDateOut.ReadOnly = true;
+            // 
+            // ItemDateIn
+            // 
+            this.ItemDateIn.HeaderText = "Date In";
+            this.ItemDateIn.Name = "ItemDateIn";
+            this.ItemDateIn.ReadOnly = true;
+            // 
+            // ItemRFID
+            // 
+            this.ItemRFID.HeaderText = "RFID";
+            this.ItemRFID.Name = "ItemRFID";
+            this.ItemRFID.ReadOnly = true;
+            // 
             // tabPlocation
             // 
             this.tabPlocation.Controls.Add(this.dgwReserveSpot);
@@ -726,6 +762,16 @@
             this.tabPadmin.TabIndex = 3;
             this.tabPadmin.Text = "Admin";
             this.tabPadmin.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenMediaItem
+            // 
+            this.btnOpenMediaItem.Location = new System.Drawing.Point(452, 16);
+            this.btnOpenMediaItem.Name = "btnOpenMediaItem";
+            this.btnOpenMediaItem.Size = new System.Drawing.Size(107, 23);
+            this.btnOpenMediaItem.TabIndex = 4;
+            this.btnOpenMediaItem.Text = "Open Media Item";
+            this.btnOpenMediaItem.UseVisualStyleBackColor = true;
+            this.btnOpenMediaItem.Click += new System.EventHandler(this.btnOpenMediaItem_Click);
             // 
             // btnChangeEvent
             // 
@@ -830,6 +876,26 @@
             this.dgwMedia.Size = new System.Drawing.Size(885, 288);
             this.dgwMedia.TabIndex = 2;
             // 
+            // AdminMediaCode
+            // 
+            this.AdminMediaCode.HeaderText = "Code";
+            this.AdminMediaCode.Name = "AdminMediaCode";
+            // 
+            // AdminMediaText
+            // 
+            this.AdminMediaText.HeaderText = "Tekst";
+            this.AdminMediaText.Name = "AdminMediaText";
+            // 
+            // AdminMediaLocation
+            // 
+            this.AdminMediaLocation.HeaderText = "BestandLocatie";
+            this.AdminMediaLocation.Name = "AdminMediaLocation";
+            // 
+            // AdminMediaReports
+            // 
+            this.AdminMediaReports.HeaderText = "Report Count";
+            this.AdminMediaReports.Name = "AdminMediaReports";
+            // 
             // tabPEvent
             // 
             this.tabPEvent.Controls.Add(this.dgwEvents);
@@ -896,71 +962,6 @@
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // ItemCode
-            // 
-            this.ItemCode.HeaderText = "Code";
-            this.ItemCode.Name = "ItemCode";
-            this.ItemCode.ReadOnly = true;
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "Name";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            // 
-            // ItemAccountName
-            // 
-            this.ItemAccountName.HeaderText = "Account Name";
-            this.ItemAccountName.Name = "ItemAccountName";
-            this.ItemAccountName.ReadOnly = true;
-            // 
-            // ItemDateOut
-            // 
-            this.ItemDateOut.HeaderText = "Data Out";
-            this.ItemDateOut.Name = "ItemDateOut";
-            this.ItemDateOut.ReadOnly = true;
-            // 
-            // ItemDateIn
-            // 
-            this.ItemDateIn.HeaderText = "Date In";
-            this.ItemDateIn.Name = "ItemDateIn";
-            this.ItemDateIn.ReadOnly = true;
-            // 
-            // ItemRFID
-            // 
-            this.ItemRFID.HeaderText = "RFID";
-            this.ItemRFID.Name = "ItemRFID";
-            this.ItemRFID.ReadOnly = true;
-            // 
-            // AdminMediaCode
-            // 
-            this.AdminMediaCode.HeaderText = "Code";
-            this.AdminMediaCode.Name = "AdminMediaCode";
-            // 
-            // AdminMediaText
-            // 
-            this.AdminMediaText.HeaderText = "Tekst";
-            this.AdminMediaText.Name = "AdminMediaText";
-            // 
-            // AdminMediaLocation
-            // 
-            this.AdminMediaLocation.HeaderText = "BestandLocatie";
-            this.AdminMediaLocation.Name = "AdminMediaLocation";
-            // 
-            // AdminMediaReports
-            // 
-            this.AdminMediaReports.HeaderText = "Report Count";
-            this.AdminMediaReports.Name = "AdminMediaReports";
-            // 
-            // btnOpenMediaItem
-            // 
-            this.btnOpenMediaItem.Location = new System.Drawing.Point(369, 16);
-            this.btnOpenMediaItem.Name = "btnOpenMediaItem";
-            this.btnOpenMediaItem.Size = new System.Drawing.Size(107, 23);
-            this.btnOpenMediaItem.TabIndex = 4;
-            this.btnOpenMediaItem.Text = "Open Media Item";
-            this.btnOpenMediaItem.UseVisualStyleBackColor = true;
             // 
             // MederwerkerForm
             // 

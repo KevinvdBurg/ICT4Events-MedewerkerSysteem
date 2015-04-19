@@ -690,5 +690,27 @@ namespace MedewerkerSysteem
             RefreshAll();
         }
 
+        private void btnOpenMediaItem_Click(object sender, EventArgs e)
+        {
+            int gridCount = 0;
+            string value = "";
+
+            foreach (DataGridViewRow row in dgwMedia.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+
+                    if (gridCount == 0)
+                    {
+                        value = cell.Value.ToString();
+                    }
+                    gridCount++;
+                }
+            }
+
+            MedewerkerMedia MM = new MedewerkerMedia(administration.FindMedia(value));
+            MM.ShowDialog();
+        }
+
     }
 }
