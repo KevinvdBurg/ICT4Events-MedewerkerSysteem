@@ -31,10 +31,11 @@ namespace MedewerkerSysteem
 
             Address address = new Address(tbEcity.Text, Convert.ToString(nudEhuisnummer.Value), tbEzipcode.Text);
             Location location = new Location(address, tbElocation.Text);
-            Event newEvent = new Event(location, Convert.ToInt32(nudEmaxvisitors.Value), tbEname.Text, Convert.ToInt32(nudEid.Value), Convert.ToString(dtpEdatestart), Convert.ToString(dtpEdateend));
+            Event newEvent = new Event(location, Convert.ToInt32(nudEmaxvisitors.Value), tbEname.Text, Convert.ToInt32(nudEid.Value), dtpEdatestart.Text, dtpEdateend.Text);
             
             location.AddAddress(address);
             administation.AddEvent(newEvent);
+            Close();
         }
     }
 }

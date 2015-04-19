@@ -302,7 +302,7 @@ public class DBReserve : Database
         string sql;
         //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
         sql =
-            "Select gb.EMAILADRES, gb.VOORNAAM, gb.ACHTERNAAM, gb.HUISNUMMER, gb.POSTCODE, gb.HUISNUMMER, gb.ISADMIN, gb.PLAATS, gb.WACHTWOORD, gb.RFID, v.DATUMIN, v.DATUMUIT, I.DETAILS, I.MERK, I.NAAM, I.PRIJS, v.VERHUURID  from verhuur v Inner Join Gebruiker gb On gb.GEBRUIKERID = v.GEBRUIKERID Inner Join Item I On i.ItemID = v.Itemid Inner Join Itemcategorie IC ON IC.ItemcategorieID = I.ITEMCATEGORIEID";
+            "Select gb.EMAILADRES, gb.VOORNAAM, gb.ACHTERNAAM, gb.HUISNUMMER, gb.POSTCODE, gb.HUISNUMMER, gb.ISADMIN, gb.PLAATS, gb.WACHTWOORD, gb.RFID, v.DATUMIN, v.DATUMUIT, I.DETAILS, I.MERK, I.NAAM, I.PRIJS, v.VERHUURID, ic.naam  from verhuur v Inner Join Gebruiker gb On gb.GEBRUIKERID = v.GEBRUIKERID Inner Join Item I On i.ItemID = v.Itemid Inner Join Itemcategorie IC ON IC.ItemcategorieID = I.ITEMCATEGORIEID";
 
         string TYPE = "";
         try
@@ -334,6 +334,7 @@ public class DBReserve : Database
                     string STARTDATE = Convert.ToString(reader["DATUMIN"]);
                     bool Paid = true;
                     int ReserveringsID = Convert.ToInt32(reader["VERHUURID"]);
+                    string icnaam = Convert.ToString(reader["ic.naam"]);
                     bool boolbetaald = false;
 
                     if (Convert.ToInt32(reader["isAdmin"]) > 0)
@@ -344,9 +345,9 @@ public class DBReserve : Database
                     {
                         TYPE = "bezoeker";
                     }
-
+                    Item item = new Item(new CategoryItems(icnaam, DETAILS, PRICE), BRAND, ITEMNAAM);
                     ReserveItem tempResev = new ReserveItem(
-                        new Item(BRAND, ITEMNAAM),
+                        item,
                         PRESSENT,
                         new Account(
                             new Person(

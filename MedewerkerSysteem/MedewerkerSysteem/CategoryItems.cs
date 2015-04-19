@@ -22,5 +22,10 @@ public class CategoryItems : Category
         this.Name = Name;
 	}
 
+    public CategoryItems(string Name, string Details, decimal Price) : base(Details, Price)
+    {
+        this.Name = Name;
+    }
+
 }
 

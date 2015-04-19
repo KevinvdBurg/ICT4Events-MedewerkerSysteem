@@ -19,15 +19,18 @@ public class Item
 
     public string Name { get; set; }
 
+    public CategoryItems category { get; set; }
+
 	public Item(string Brand)
 	{
         this.Brand = Brand;
 	}
 
-    public Item(string Brand, string Name)
+    public Item(CategoryItems category, string Brand, string Name)
     {
         this.Brand = Brand;
         this.Name = Name;
+        this.category = category;
     }
 
 }
