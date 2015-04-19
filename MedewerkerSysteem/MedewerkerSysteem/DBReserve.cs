@@ -20,7 +20,7 @@ public class DBReserve : Database
     public int HighestID()
     {
         int result = 0;
-        string sql = "SELECT MAX(reserveringid) FROM kampeerplekreservering";
+        string sql = "SELECT MAX(reserveringid) As highest FROM kampeerplekreservering";
         try
         {
             Connect();
@@ -30,7 +30,7 @@ public class DBReserve : Database
             {
                 while (reader.Read())
                 {
-                    result = Convert.ToInt32(reader["reserveringid"]);
+                    result = Convert.ToInt32(reader["highest"]);
                 }
             }
             
@@ -47,11 +47,11 @@ public class DBReserve : Database
         return result;
     }
 
-    public virtual bool Insert(ReserveSpot reservespot)
+    public bool Insert(ReserveSpot reservespot)
     {
         Administation administation = new Administation();
         int paid = 0;
-        int accountID = administation.FindAccountID(reservespot.Account.RFID);
+        int accountID = administation.FindAccountID(reservespot.Account.Person.Email);
         bool resultaat = false;
         if (reservespot.Paid)
         {
@@ -67,7 +67,7 @@ public class DBReserve : Database
             OracleCommand cmd = new OracleCommand(sql, connection);
             cmd.Parameters.Add(new OracleParameter("reserveringid", reservespot.ReserveringsID));
             cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
-            cmd.Parameters.Add(new OracleParameter("kampeerplekid", reservespot.CampingSpot));
+            cmd.Parameters.Add(new OracleParameter("kampeerplekid", reservespot.CampingSpot.SpotID));
             cmd.Parameters.Add(new OracleParameter("betaald", paid));
             cmd.Parameters.Add(new OracleParameter("datumin", reservespot.StartDate));
             cmd.Parameters.Add(new OracleParameter("datumuit", reservespot.EndDate));
@@ -77,7 +77,6 @@ public class DBReserve : Database
         }
         catch (OracleException e)
         {
-
             Console.WriteLine(e.Message);
             throw;
         }

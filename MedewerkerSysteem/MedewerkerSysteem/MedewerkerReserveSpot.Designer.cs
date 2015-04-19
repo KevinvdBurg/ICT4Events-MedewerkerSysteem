@@ -31,7 +31,7 @@
             this.btnRScancel = new System.Windows.Forms.Button();
             this.gbReserveSpot = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudRSreservationNumber = new System.Windows.Forms.NumericUpDown();
             this.dtpRSdatein = new System.Windows.Forms.DateTimePicker();
             this.dtpRSdateuit = new System.Windows.Forms.DateTimePicker();
             this.cbRSspotnumbers = new System.Windows.Forms.ComboBox();
@@ -41,8 +41,9 @@
             this.lblRSspotname = new System.Windows.Forms.Label();
             this.lblRSname = new System.Windows.Forms.Label();
             this.btnRSreserve = new System.Windows.Forms.Button();
+            this.cbRSPaid = new System.Windows.Forms.CheckBox();
             this.gbReserveSpot.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRSreservationNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRScancel
@@ -58,8 +59,9 @@
             // 
             // gbReserveSpot
             // 
+            this.gbReserveSpot.Controls.Add(this.cbRSPaid);
             this.gbReserveSpot.Controls.Add(this.label1);
-            this.gbReserveSpot.Controls.Add(this.numericUpDown1);
+            this.gbReserveSpot.Controls.Add(this.nudRSreservationNumber);
             this.gbReserveSpot.Controls.Add(this.btnRScancel);
             this.gbReserveSpot.Controls.Add(this.dtpRSdatein);
             this.gbReserveSpot.Controls.Add(this.dtpRSdateuit);
@@ -88,12 +90,12 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Reserveringsnummer:";
             // 
-            // numericUpDown1
+            // nudRSreservationNumber
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(165, 129);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 14;
+            this.nudRSreservationNumber.Location = new System.Drawing.Point(165, 129);
+            this.nudRSreservationNumber.Name = "nudRSreservationNumber";
+            this.nudRSreservationNumber.Size = new System.Drawing.Size(120, 22);
+            this.nudRSreservationNumber.TabIndex = 14;
             // 
             // dtpRSdatein
             // 
@@ -180,6 +182,16 @@
             this.btnRSreserve.UseVisualStyleBackColor = true;
             this.btnRSreserve.Click += new System.EventHandler(this.btnRSreserve_Click);
             // 
+            // cbRSPaid
+            // 
+            this.cbRSPaid.AutoSize = true;
+            this.cbRSPaid.Location = new System.Drawing.Point(467, 133);
+            this.cbRSPaid.Name = "cbRSPaid";
+            this.cbRSPaid.Size = new System.Drawing.Size(78, 21);
+            this.cbRSPaid.TabIndex = 17;
+            this.cbRSPaid.Text = "Betaald";
+            this.cbRSPaid.UseVisualStyleBackColor = true;
+            // 
             // MedewerkerReserveSpot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -191,7 +203,7 @@
             this.Text = "Plek Reserveren";
             this.gbReserveSpot.ResumeLayout(false);
             this.gbReserveSpot.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRSreservationNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,6 +222,7 @@
         private System.Windows.Forms.Label lblRSname;
         private System.Windows.Forms.Button btnRSreserve;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudRSreservationNumber;
+        private System.Windows.Forms.CheckBox cbRSPaid;
     }
 }

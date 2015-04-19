@@ -14,6 +14,7 @@ namespace MedewerkerSysteem
     {
         Administation administation = new Administation();
         List<CampingSpot> campingSpots = new List<CampingSpot>();
+        List<Account> accounts = new List<Account>(); 
         private int number;
         public MedewerkerReserveSpot()
         {
@@ -36,9 +37,15 @@ namespace MedewerkerSysteem
                     cbRSspotnumbers.Items.Add(item.SpotID);
                 }
             }
+            number = administation.FindHighestReserveID();
+            nudRSreservationNumber.Minimum = number + 1;
+            accounts = administation.FindAccountAll();
+            foreach (var item in accounts)
+            {
+                cbRSname.Items.Add(item.Person.Email);
+            }
 
-
-
+            
         }
 
         private void btnRScancel_Click(object sender, EventArgs e)
@@ -48,8 +55,24 @@ namespace MedewerkerSysteem
 
         private void btnRSreserve_Click(object sender, EventArgs e)
         {
+            foreach (var item in campingSpots)
+            {
+                if (item.SpotID == Convert.ToInt32(cbRSspotnumbers.SelectedItem))
+                {
+                    CampingSpot campingSpot = item;
+                    foreach (var item2 in accounts)
+                    {
+                        if (item2.Person.Email == cbRSname.SelectedItem.ToString())
+                        {
+                            Account account = item2;
+                            administation.Add(new ReserveSpot(campingSpot, null, account, campingSpot.Category, dtpRSdateuit.ToString(), dtpRSdatein.ToString(), cbRSPaid.Checked, Convert.ToInt32(nudRSreservationNumber.Value)));
+                        }
+                    }
+                }
+            }
             
-            //ReserveSpot reserveSpot = new ReserveSpot();
+
+            
         }
     }
 }
