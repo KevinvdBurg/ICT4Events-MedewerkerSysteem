@@ -148,6 +148,11 @@ public class Administation
         return foundID;
     }
 
+    public int FindItemID(string naam)
+    {
+        return dbItem.ItemID(naam);
+    }
+
     /// <summary>
     /// Searched the database for all events for by event name
     /// </summary>

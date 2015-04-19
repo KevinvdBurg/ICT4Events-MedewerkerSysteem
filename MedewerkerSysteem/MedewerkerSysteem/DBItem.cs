@@ -15,8 +15,9 @@ namespace MedewerkerSysteem
             string sql;
             //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
             //sql =
-             //   "Select I.DETAILS, I.MERK, I.NAAM, I.PRIJS, ic.naam  from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT itemcategorie FROM item";
-            sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT it.itemcategorieid FROM item it)";
+            //   "Select I.DETAILS, I.MERK, I.NAAM, I.PRIJS, ic.naam  from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT itemcategorie FROM item";
+            sql =
+                "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT it.itemcategorieid FROM item it)";
             string TYPE = "";
             try
             {
@@ -33,20 +34,10 @@ namespace MedewerkerSysteem
                         string DETAILS = Convert.ToString(reader["DETAILS"]);
                         Decimal PRICE = Convert.ToDecimal(reader["PRIJS"]);
                         string icnaam = Convert.ToString(reader["icnaam"]);
-                       
+
 
                         Item item = new Item(new CategoryItems(icnaam, DETAILS, PRICE), BRAND, ITEMNAAM);
-                        //Item tempItem = new ReserveItem(
-                        //    item,
-                        //    PRESSENT,
-                        //    new Account(
-                        //        new Person(
-                        //            new Address(CITY, NUMBER, ZIPCODE),
-                        //            EMAIL, NAME, LASTNAME),
-                        //        TYPE, RFIDd, WACHTWOORD),
-                        //    new Category(DETAILS, PRICE),
-                        //    EndDate, STARTDATE, Paid, ReserveringsID);
-
+                       
                         resultaat.Add(item);
 
                     }
@@ -56,6 +47,7 @@ namespace MedewerkerSysteem
             }
             catch (OracleException e)
             {
+                Console.WriteLine(e.Message);
                 throw;
             }
             finally
@@ -64,5 +56,11 @@ namespace MedewerkerSysteem
             }
             return resultaat;
         }
+        public int ItemID(string naam)
+        {
+            string sql = "SELECT itemid FROM item i WHERE naam = :naam";
+        }
     }
+    
+
 }

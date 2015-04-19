@@ -84,7 +84,9 @@ public class DBReserve : Database
         {
             DisConnect();
         }
+        return resultaat;
     }
+
     public bool Insert(ReserveSpot reservespot)
     {
         Administation administation = new Administation();
