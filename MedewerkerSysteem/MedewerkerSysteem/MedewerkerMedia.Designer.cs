@@ -179,6 +179,7 @@
             this.Controls.Add(this.gbMediaReports);
             this.Name = "MedewerkerMedia";
             this.Text = "Media Reports";
+            this.Load += new System.EventHandler(this.MedewerkerMedia_Load);
             this.gbMediaReports.ResumeLayout(false);
             this.gbMediaReports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMreportcount)).EndInit();

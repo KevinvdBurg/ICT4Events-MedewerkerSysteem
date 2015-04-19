@@ -6,6 +6,7 @@
         public int AANTALREPORTS { get; set; }
         public string Inhoud { get; set; }
         public string Bestandlocatie { get; set; }
+        public string AccountName { get; set; }
 
         public Media(int postId, int aantalreports, string inhoud, string bestandlocatie)
         {
@@ -13,6 +14,15 @@
             AANTALREPORTS = aantalreports;
             Inhoud = inhoud;
             Bestandlocatie = bestandlocatie;    
+        }
+
+        public Media(int postId, int aantalreports, string inhoud, string bestandlocatie, string accountName)
+        {
+            PostID = postId;
+            AANTALREPORTS = aantalreports;
+            Inhoud = inhoud;
+            Bestandlocatie = bestandlocatie;
+            AccountName = accountName;
         }
     }
 }

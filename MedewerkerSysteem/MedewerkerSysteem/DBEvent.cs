@@ -328,7 +328,40 @@ public class DBEvent : Database
 
     public Media SelectMedia(string value)
     {
-        throw new NotImplementedException();
+        Media resultaat = null;
+        string sql;
+        sql = "Select p.postID,p.AANTALREPORTS,bt.INHOUD, bd.BESTANDSLOCATIE, gb.achternaam FROM post p LEFT JOIN BESTAND bd ON p.POSTID = bd.POSTID LEFT JOIN BERICHT bt ON p.POSTID = bt.POSTID  inner join gebruiker gb ON p.GebruikerID = gb.GEBRUIKERID WHERE p.POSTID = :postID";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("postID", value));
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int postID = Convert.ToInt32(reader["postID"]);
+                    int AANTALREPORTS = Convert.ToInt32(reader["AANTALREPORTS"]);
+                    string INHOUD = Convert.ToString(reader["INHOUD"]);
+                    string BESTANDSLOCATIE = Convert.ToString(reader["BESTANDSLOCATIE"]);
+                    string achternaam = Convert.ToString(reader["achternaam"]);
+
+                    Media newMedia = new Media(postID, AANTALREPORTS, INHOUD, BESTANDSLOCATIE, achternaam);
+                    resultaat = newMedia;
+                }
+                return resultaat;
+            }
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
     }
 }
 
