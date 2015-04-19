@@ -76,7 +76,7 @@ public class Administation
 	}
 
     /// <summary>
-    /// Een account wordt doorgestuurd naar 
+    /// Een account wordt doorgestuurd naar dbaccount.Delete zodat dit account uit de database verwijderd kan worden
     /// </summary>
     /// <param name="Account"></param>
 	public void Delete(Account Account)
@@ -84,29 +84,33 @@ public class Administation
         dbaccount.Delete(Account);
 	}
 
-	public void Delete(Reserve Reserve)
-	{
-        if (Reserve is ReserveSpot)
-        {
-            //dbreserve.Delete(Reserve as ReserveSpot);
-        }
-        else if (Reserve is ReserveItem)
-        {
-            //dbreserve.Delete(Reserve as ReserveItem);
-        }
-	}
+    //public void Delete(Reserve Reserve)
+    //{
+    //    if (Reserve is ReserveSpot)
+    //    {
+    //        //dbreserve.Delete(Reserve as ReserveSpot);
+    //    }
+    //    else if (Reserve is ReserveItem)
+    //    {
+    //        //dbreserve.Delete(Reserve as ReserveItem);
+    //    }
+    //}
 
 	public void Delete(Event Event)
 	{
 	    //TODO
 	}
 
+    /// <summary>
+    /// Een Media object wordt doorgestuurd naar dbevent.DeleteMedia zodat media verwijderd kan worden uit de database 
+    /// </summary>
+    /// <param name="Media"></param>
     public void Delete(Media Media)
     {
         dbevent.DeleteMedia(Media);
     }
     /// <summary>
-    /// Searched the database for all Accounts for the given Code
+    /// Doorzoekt alle accounts in de database naar het account met een email die gelijk is aan Code
     /// </summary>
     /// <param name="Code"></param>
     /// <returns></returns>
@@ -125,6 +129,11 @@ public class Administation
         }
 	    
 	}
+
+    /// <summary>
+    /// Geeft een lijst terug met alle bekende accounts uit de database
+    /// </summary>
+    /// <returns></returns>
     public List<Account> FindAccountAll()
     {
         List<Account> foundAccounts = dbaccount.SelectAll();
@@ -140,23 +149,40 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar de hoogste reseveringscode
+    /// </summary>
+    /// <returns></returns>
     public int FindHighestReserveID()
     {
         int foundID = dbreserve.HighestID();
         return foundID;
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar de hoogste eventid
+    /// </summary>
+    /// <returns></returns>
     public int FindHighestEventID()
     {
         int foundID = dbevent.HighestID();
         return foundID;
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar de hoogste verhuurid
+    /// </summary>
+    /// <returns></returns>
     public int FindHighestItemReserveID()
     {
         return dbreserve.HighestReserveItemID();
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar een item met een naam die gelijk is aan naam
+    /// </summary>
+    /// <param name="naam"></param>
+    /// <returns></returns>
     public int FindItemID(string naam)
     {
         return dbItem.ItemID(naam);
@@ -183,6 +209,11 @@ public class Administation
 
 	}
 
+    /// <summary>
+    /// Doorzoekt alle events in de database naar een event met de passende eventid
+    /// </summary>
+    /// <param name="EventID"></param>
+    /// <returns></returns>
     public Event FindEvent(int EventID)
     {
         Event foundEvent = dbevent.Select(EventID);
@@ -198,6 +229,12 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar een adres met een passende postcode en huisnummer en retourneert vervolgens het adresid
+    /// </summary>
+    /// <param name="zipcode"></param>
+    /// <param name="number"></param>
+    /// <returns></returns>
     public int FindAddressID(string zipcode, string number)
     {
         int foundAddressID = dbaddress.FindAdressID(zipcode, number);
@@ -213,6 +250,11 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar een account met een passend email en retouneert vervolgens het accountid
+    /// </summary>
+    /// <param name="email"></param>
+    /// <returns></returns>
     public int FindAccountID(string email)
     {
         int foundAccountID = dbaccount.FindAccountID(email);
@@ -228,6 +270,10 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Retouneert alle Events in de database
+    /// </summary>
+    /// <returns></returns>
     public List<Event> FindEventAll()
     {
         List<Event> foundEvents = dbevent.SelectAll();
@@ -243,6 +289,7 @@ public class Administation
         }
     }
 
+    //Retouneert alle AccountEvents bekend in de database per account
     public List<Event> FindEventAllPerAccount(Account account)
     {
         List<Event> foundEvents = dbevent.SelectAll();
@@ -258,12 +305,23 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar een AccountEvent met een passend accountid en eventid en retourneert vervolgens dit accountevent
+    /// </summary>
+    /// <param name="AccountID"></param>
+    /// <param name="EventID"></param>
+    /// <returns></returns>
     public AccountEvent FindAccountEvent(int AccountID, int EventID)
     {
         AccountEvent founAccountEvent = dbaccount.FindAccountEvent(AccountID, EventID);
         return founAccountEvent;
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar alle AccountEvent met een passen eventId en retourneert vervolgens deze lijst
+    /// </summary>
+    /// <param name="EventID"></param>
+    /// <returns></returns>
     public List<AccountEvent> FindAllAccountEvent(int EventID)
     {
         List<AccountEvent> foundAccountEvents = dbevent.SelectAllPresent(EventID);
@@ -279,26 +337,32 @@ public class Administation
         }
     }
 
-    
+    ///// <summary>
+    ///// Veranderd een accountEvent in de database
+    ///// </summary>
+    ///// <param name="present"></param>
+    //public void ChangeAccountEvent(bool present)
+    //{
+    //    int result = 0;
+    //    if (present)
+    //    {
+    //        result = 1;
+    //    }
+    //    dbaccount.UpdateAccountEvent(result);
+    //}
 
-    public void ChangeAccountEvent(bool present)
-    {
-        int result = 0;
-        if (present)
-        {
-            result = 1;
-        }
-        dbaccount.UpdateAccountEvent(result);
-    }
-
+    /// <summary>
+    /// Doorzoekt de database naar een passen accountEvent en zet deze op aanwezig
+    /// </summary>
+    /// <param name="accountEvent"></param>
     public void ChangeAccountEvent(AccountEvent accountEvent)
     {
         dbaccount.UpdateAccountEvent(accountEvent);
     }
 
     /// <summary>
-    /// Searched the database for all reserves by code
-    /// An Account is needed for the reservation
+    /// Doorzoekt de database voor een reservering met de juiste reserveringcode
+    /// en een account is nodig voor de reservering
     /// </summary>
     /// <param name="Code"></param>
     /// <param name="account"></param>
@@ -318,6 +382,10 @@ public class Administation
 
 	}
 
+    /// <summary>
+    /// Doorzoekt de database naar alle kampeerplekreserveringen en retouneert vervolgens deze lijst
+    /// </summary>
+    /// <returns></returns>
     public List<ReserveSpot> FindReserveSpotsAll()
     {
         List<ReserveSpot> foundReserves = dbreserve.SelectAllSpots();
@@ -332,6 +400,10 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Doorzoekt de database naar alle bekende items en retouneert deze lijst
+    /// </summary>
+    /// <returns></returns>
     public List<Item> FindItems()
     {
         List<Item> foundItems = dbItem.SelectAllItems();
@@ -348,7 +420,11 @@ public class Administation
         }
     }
          
-
+    /// <summary>
+    /// retourneert alle informatie die nodig is voor het incheck systeem
+    /// </summary>
+    /// <param name="Code"></param>
+    /// <returns></returns>
     public List<string> CheckReserve(int Code)
     {
         List<string> checkedReserve = dbreserve.Check(Code);
@@ -364,6 +440,10 @@ public class Administation
 
     }
 
+    /// <summary>
+    /// retouneert een lijst van itemreserveringen
+    /// </summary>
+    /// <returns></returns>
     public List<ReserveItem> FindReserveItemAll()
     {
         List<ReserveItem> foundReserves = dbreserve.SelectAllItems();
@@ -392,21 +472,25 @@ public class Administation
         }
     }
 
-    public CampingSpot FindCampingSpot(int id)
-    {
-        //CampingSpot foundCampingSpot = dbreserve.Select(/*id*/);
-        //if (foundCampingSpot != null)
-        //{
-        //    return foundCampingSpot;
-        //}
-        //else
-        //{
-        //    MessageBox.Show("Kampeerplek niet gevonden");
-        //    return null;
-        //}
-        return null;
-    }
+    //public CampingSpot FindCampingSpot(int id)
+    //{
+    //    //CampingSpot foundCampingSpot = dbreserve.Select(/*id*/);
+    //    //if (foundCampingSpot != null)
+    //    //{
+    //    //    return foundCampingSpot;
+    //    //}
+    //    //else
+    //    //{
+    //    //    MessageBox.Show("Kampeerplek niet gevonden");
+    //    //    return null;
+    //    //}
+    //    return null;
+    //}
 
+    /// <summary>
+    /// retouneert een lijst van alle kampeerplekken
+    /// </summary>
+    /// <returns></returns>
     public List<CampingSpot> FindCampingSpotsAll()
     {
         List<CampingSpot> foundSpots = dbCampingspot.SelectAllSpots();
@@ -422,40 +506,50 @@ public class Administation
         return null;
     }
 
-    public Item FindItem(int id)
-    {
-        //Item founditem = dbreserve.Select(/*id*/);
-        //if (founditem != null)
-        //{
-        //    return founditem;
-        //}
-        //else
-        //{
-        //    MessageBox.Show("Item niet gevonden");
-        //    return null;
-        //}
-        return null;
-    }
+    //public Item FindItem(int id)
+    //{
+    //    //Item founditem = dbreserve.Select(/*id*/);
+    //    //if (founditem != null)
+    //    //{
+    //    //    return founditem;
+    //    //}
+    //    //else
+    //    //{
+    //    //    MessageBox.Show("Item niet gevonden");
+    //    //    return null;
+    //    //}
+    //    return null;
+    //}
 
-    public List<Item> FindItemsAll()
-    {
-        //List<Item> foundItems = dbreserve.Select( /*id*/);
-        //if (foundItems != null)
-        //{
-        //    return foundItems;
-        //}
-        //else
-        //{
-        //    MessageBox.Show("Items niet gevonden");
-        //}
-        return null;
-    }
+    //public List<Item> FindItemsAll()
+    //{
+    //    //List<Item> foundItems = dbreserve.Select( /*id*/);
+    //    //if (foundItems != null)
+    //    //{
+    //    //    return foundItems;
+    //    //}
+    //    //else
+    //    //{
+    //    //    MessageBox.Show("Items niet gevonden");
+    //    //}
+    //    return null;
+    //}
 
+    /// <summary>
+    /// Update het email van het account
+    /// </summary>
+    /// <param name="Account"></param>
+    /// <param name="oldemail"></param>
 	public void Update(Account Account, string oldemail)
 	{
 	    dbaccount.Update(Account, oldemail);
 	}
 
+    /// <summary>
+    /// Koppelt bij het inchecken een RFID aan een account
+    /// </summary>
+    /// <param name="email"></param>
+    /// <param name="rfid"></param>
     public void ChainRFID(string email, string rfid)
     {
         bool SuccesChain = dbaccount.ChainRFID(email, rfid);
@@ -469,6 +563,11 @@ public class Administation
         }
     }
 
+    /// <summary>
+    /// Veranderd de betalingstatus van de reservering naar waar
+    /// </summary>
+    /// <param name="reserveringsID"></param>
+    /// <returns></returns>
     public bool ChangePaymentStat(int reserveringsID)
     {
         bool SuccesChangeStat = dbreserve.UpdatePayment(reserveringsID);
@@ -485,7 +584,7 @@ public class Administation
     }
 
     /// <summary>
-    /// Log the use in the application
+    /// De gebruiker wordt aangemeld
     /// </summary>
     /// <param name="email"></param>
     /// <param name="password"></param>
@@ -497,6 +596,7 @@ public class Administation
 
     /// <summary>
     /// set the current account to the given email
+    /// Zet de account.email gelijk aan het gegeven email
     /// </summary>
     /// <param name="email"></param>
     public void setCurrentAccount(string email)
@@ -505,20 +605,40 @@ public class Administation
     }
 
 
+    /// <summary>
+    /// Doorzoekt de database naar het juiste media bestand en retouneert deze
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     public Media FindMedia(string value)
     {
         return dbevent.SelectMedia(value);
     }
 
+    /// <summary>
+    /// update de gegevens van het event
+    /// </summary>
+    /// <param name="tempEvent"></param>
+    /// <param name="Oldzip"></param>
+    /// <param name="huisnummer"></param>
     public void UpdateEvent(Event tempEvent, string Oldzip, int huisnummer)
     {
         dbevent.UpdateEvent(tempEvent, Oldzip, huisnummer);
     }
+
+    /// <summary>
+    /// Verwijderd de itemreserving uit de database
+    /// </summary>
+    /// <param name="value"></param>
     public void DeleteItemRes(int value)
     {
         dbreserve.DeleteItem(value);
     }
 
+    /// <summary>
+    /// Verwijderd de kampeerplekreservering uit de database
+    /// </summary>
+    /// <param name="value"></param>
     public void DeleteSpotRes(int value)
     {
         dbreserve.DeleteSpot(value);
