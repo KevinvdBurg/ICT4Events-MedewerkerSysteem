@@ -443,7 +443,7 @@ public class DBEvent : Database
         return resultaat;
     }
 
-    public bool UpdateEvent(string name, string locationName, string zipCode, int huisnummer, string oldzip, int oldhuisnummer, int maxbezoeker, int EventID)
+    public bool UpdateEvent(Event Event, string oldzip, int oldhuisnummer)
     {
         Administation administation = new Administation();
         int locationID = administation.FindAddressID(oldzip, Convert.ToString(oldhuisnummer));
@@ -458,9 +458,9 @@ public class DBEvent : Database
         {
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("name", name));
-            cmd.Parameters.Add(new OracleParameter("maxbezoeker", maxbezoeker));
-            cmd.Parameters.Add(new OracleParameter("EventID", EventID));
+            cmd.Parameters.Add(new OracleParameter("name", Event.Name));
+            cmd.Parameters.Add(new OracleParameter("maxbezoeker", Event.MaxPerson));
+            cmd.Parameters.Add(new OracleParameter("EventID", Event.EventID));
             cmd.ExecuteNonQuery();
             resultaat = true;
         }
@@ -476,10 +476,10 @@ public class DBEvent : Database
         try
         {
             Connect();
-            OracleCommand cmd = new OracleCommand(sql, connection);
-            cmd.Parameters.Add(new OracleParameter("locationName", locationName));
-            cmd.Parameters.Add(new OracleParameter("zipCode", zipCode));
-            cmd.Parameters.Add(new OracleParameter("huisnummer", huisnummer));
+            OracleCommand cmd = new OracleCommand(sql2, connection);
+            cmd.Parameters.Add(new OracleParameter("locationName", Event.Location.Name));
+            cmd.Parameters.Add(new OracleParameter("zipCode", Event.Location.Address.ZipCode));
+            cmd.Parameters.Add(new OracleParameter("huisnummer", Event.Location.Address.Number));
             cmd.Parameters.Add(new OracleParameter("LocatieID", locationID));
             cmd.ExecuteNonQuery();
             resultaat = true;

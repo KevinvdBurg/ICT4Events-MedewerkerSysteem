@@ -524,6 +524,7 @@
             this.dgwAccount.MultiSelect = false;
             this.dgwAccount.Name = "dgwAccount";
             this.dgwAccount.ReadOnly = true;
+            this.dgwAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwAccount.Size = new System.Drawing.Size(843, 294);
             this.dgwAccount.TabIndex = 1;
             this.dgwAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwAccount_CellContentClick);
@@ -653,6 +654,7 @@
             this.dgwReserveItem.MultiSelect = false;
             this.dgwReserveItem.Name = "dgwReserveItem";
             this.dgwReserveItem.ReadOnly = true;
+            this.dgwReserveItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwReserveItem.Size = new System.Drawing.Size(885, 278);
             this.dgwReserveItem.TabIndex = 3;
             this.dgwReserveItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -717,6 +719,7 @@
             this.dgwReserveSpot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwReserveSpot.Location = new System.Drawing.Point(3, 3);
             this.dgwReserveSpot.Name = "dgwReserveSpot";
+            this.dgwReserveSpot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwReserveSpot.Size = new System.Drawing.Size(885, 278);
             this.dgwReserveSpot.TabIndex = 4;
             this.dgwReserveSpot.SelectionChanged += new System.EventHandler(this.dgwReserveSpot_SelectionChanged);
@@ -815,6 +818,7 @@
             this.dgwPresent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwPresent.Location = new System.Drawing.Point(3, 3);
             this.dgwPresent.Name = "dgwPresent";
+            this.dgwPresent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwPresent.Size = new System.Drawing.Size(885, 288);
             this.dgwPresent.TabIndex = 2;
             this.dgwPresent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
@@ -861,6 +865,7 @@
             this.dgwMedia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwMedia.Location = new System.Drawing.Point(3, 3);
             this.dgwMedia.Name = "dgwMedia";
+            this.dgwMedia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwMedia.Size = new System.Drawing.Size(885, 288);
             this.dgwMedia.TabIndex = 2;
             // 
@@ -907,6 +912,7 @@
             this.dgwEvents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwEvents.Location = new System.Drawing.Point(3, 3);
             this.dgwEvents.Name = "dgwEvents";
+            this.dgwEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwEvents.Size = new System.Drawing.Size(885, 288);
             this.dgwEvents.TabIndex = 2;
             this.dgwEvents.SelectionChanged += new System.EventHandler(this.dgwEvents_SelectionChanged);

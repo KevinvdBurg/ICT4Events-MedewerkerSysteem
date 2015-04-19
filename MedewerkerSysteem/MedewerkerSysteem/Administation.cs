@@ -506,9 +506,9 @@ public class Administation
         return dbevent.SelectMedia(value);
     }
 
-    public void UpdateEvent(string name, string locationName, string zipCode, int huisnummer, string oldzipCode, int oldhuisnummer, int maxbezoeker, int eventID)
+    public void UpdateEvent(Event tempEvent, string Oldzip, int huisnummer)
     {
-        dbevent.UpdateEvent(name, locationName,zipCode, huisnummer, oldzipCode, oldhuisnummer, maxbezoeker, eventID);
+        dbevent.UpdateEvent(tempEvent, Oldzip, huisnummer);
     }
 }
 

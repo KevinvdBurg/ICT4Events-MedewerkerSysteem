@@ -728,24 +728,23 @@ namespace MedewerkerSysteem
         private void btnChangeEvent_Click(object sender, EventArgs e)
         {
             int gridCount = 0;
-            string value = "";
+            int value = 0;
 
-            foreach (DataGridViewRow row in dgwMedia.SelectedRows)
+            foreach (DataGridViewRow row in dgwEvents.SelectedRows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-
                     if (gridCount == 4)
                     {
-                        value = cell.Value.ToString();
+                        value = Convert.ToInt32(cell.Value);
                     }
                     gridCount++;
                 }
             }
             
-            MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(Convert.ToInt32(value)));
+            MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(value));
             MEU.ShowDialog();
-            RefreshMedia();
+            RefreshEvent();
         }
 
     }
