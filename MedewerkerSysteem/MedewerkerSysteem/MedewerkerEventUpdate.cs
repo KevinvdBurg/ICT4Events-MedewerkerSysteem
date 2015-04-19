@@ -22,6 +22,10 @@ namespace MedewerkerSysteem
         private void MedewerkerEventUpdate_Load(object sender, EventArgs e)
         {
             tbEname.Text = currentEvent.Name;
+            tbElocation.Text = currentEvent.Location.Name;
+            tbEzipcode.Text = currentEvent.Location.Address.ZipCode;
+            nudEhuisnummer.Value = Convert.ToInt32(currentEvent.Location.Address.Number);
+            nudEmaxvisitors.Value = Convert.ToInt32(currentEvent.MaxPerson);
 
         }
     }

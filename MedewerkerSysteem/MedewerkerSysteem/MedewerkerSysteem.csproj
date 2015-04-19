@@ -97,6 +97,12 @@
     <Compile Include="MedewerkerEvent.Designer.cs">
       <DependentUpon>MedewerkerEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedewerkerEventUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedewerkerEventUpdate.Designer.cs">
+      <DependentUpon>MedewerkerEventUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedewerkerLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MedewerkerEvent.resx">
       <DependentUpon>MedewerkerEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedewerkerEventUpdate.resx">
+      <DependentUpon>MedewerkerEventUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedewerkerLogin.resx">
       <DependentUpon>MedewerkerLogin.cs</DependentUpon>

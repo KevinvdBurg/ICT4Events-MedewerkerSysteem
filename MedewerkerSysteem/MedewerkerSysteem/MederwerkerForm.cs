@@ -494,12 +494,10 @@ namespace MedewerkerSysteem
             if (dgwEvents.SelectedRows != null)
             {
                 btnChangeEvent.Enabled = true;
-                btnDeleteEvent.Enabled = true;
             }
             else
             {
                 btnChangeEvent.Enabled = false;
-                btnDeleteEvent.Enabled = false;
             }
         }
 
