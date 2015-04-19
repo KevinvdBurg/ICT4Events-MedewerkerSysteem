@@ -7,16 +7,16 @@ using Oracle.DataAccess.Client;
 
 namespace MedewerkerSysteem
 {
+    /// <summary>
+    /// geeft een lijst met alle items terug
+    /// </summary>
     class DBItem : Database
     {
         public List<Item> SelectAllItems()
         {
             List<Item> resultaat = new List<Item>();
             string sql;
-            //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
-            //sql =
-            //   "Select I.DETAILS, I.MERK, I.NAAM, I.PRIJS, ic.naam  from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT itemcategorie FROM item";
-            //sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam from item i, itemcategorie ic WHERE ic.itemcategorieid in (SELECT it.itemcategorieid FROM item it)";
+            
             sql = "SELECT i.merk, i.naam, i.details, i.prijs, ic.naam as icnaam FROM item i INNER JOIN itemcategorie ic ON i.itemcategorieid = ic.itemcategorieid";
             string TYPE = "";
             try
@@ -56,6 +56,12 @@ namespace MedewerkerSysteem
             }
             return resultaat;
         }
+
+        /// <summary>
+        /// selecteerd een item op basis van de naam van het item
+        /// </summary>
+        /// <param name="naam"></param>
+        /// <returns></returns>
         public int ItemID(string naam)
         {
             int itemID = -1;

@@ -9,6 +9,12 @@ namespace MedewerkerSysteem
 {
     class DBLogin : Database
     {
+        /// <summary>
+        /// Logt de gebruiker in het systeem als de gebruiker een admin is.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool loginCheck(string email, string password)
         {
             bool resultaat = false;
@@ -41,6 +47,12 @@ namespace MedewerkerSysteem
             return resultaat;
         }
 
+        /// <summary>
+        /// retoneerd het gebruikte inlog account
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+
         public Account returnLoggedinAccount(string email)
         {
 
@@ -64,7 +76,6 @@ namespace MedewerkerSysteem
 
                 OracleCommand cmd = new OracleCommand(sql, connection);
                 cmd.Parameters.Add(new OracleParameter("email", email));
-                //cmd.Parameters.Add(new OracleParameter("password", password));
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
