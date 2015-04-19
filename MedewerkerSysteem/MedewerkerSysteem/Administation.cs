@@ -127,9 +127,13 @@ public class Administation
         {
             MessageBox.Show("Accounts niet gevonden");
             return null;
-            
         }
+    }
 
+    public int FindHighestReserveID()
+    {
+        int foundID = dbreserve.HighestID();
+        return foundID;
     }
 
     /// <summary>

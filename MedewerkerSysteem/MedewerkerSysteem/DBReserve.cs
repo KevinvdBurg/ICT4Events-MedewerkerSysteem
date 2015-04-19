@@ -17,6 +17,36 @@ public class DBReserve : Database
         throw new System.NotImplementedException();
     }
 
+    public int HighestID()
+    {
+        int result = 0;
+        string sql = "SELECT MAX(reserveringid) FROM kampeerplekreservering";
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            OracleDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    result = Convert.ToInt32(reader["reserveringid"]);
+                }
+            }
+            
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return result;
+    }
+
     public virtual bool Insert(ReserveSpot reservespot)
     {
         Administation administation = new Administation();

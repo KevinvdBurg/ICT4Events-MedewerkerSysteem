@@ -13,7 +13,8 @@ namespace MedewerkerSysteem
     public partial class MedewerkerReserveSpot : Form
     {
         Administation administation = new Administation();
-        List<CampingSpot> campingSpots = new List<CampingSpot>(); 
+        List<CampingSpot> campingSpots = new List<CampingSpot>();
+        private int number;
         public MedewerkerReserveSpot()
         {
             InitializeComponent();
@@ -35,6 +36,8 @@ namespace MedewerkerSysteem
                     cbRSspotnumbers.Items.Add(item.SpotID);
                 }
             }
+
+
 
         }
 
