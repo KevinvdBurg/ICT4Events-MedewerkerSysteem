@@ -326,5 +326,9 @@ public class DBEvent : Database
 		
 	}
 
+    public Media SelectMedia(string value)
+    {
+        throw new NotImplementedException();
+    }
 }
 
