@@ -17,18 +17,18 @@ namespace MedewerkerSysteem
     {
         private RFID rfid; //Declare an RFID object
         private Administation administration = new Administation();
-        new Database  db = new Database();
-        List<Account> accounts = new List<Account>();
-        List<Reserve> reserves = new List<Reserve>();
-        List<Event> events = new List<Event>();
+        private new Database db = new Database();
+        private List<Account> accounts = new List<Account>();
+        private List<Reserve> reserves = new List<Reserve>();
+        private List<Event> events = new List<Event>();
         private Event currentEvent = null;
 
         public MederwerkerForm(Administation admin)
         {
-            
+
             InitializeComponent();
             administration = admin;
-            
+
         }
 
         private void MederwerkerForm_Load(object sender, EventArgs e)
@@ -50,10 +50,10 @@ namespace MedewerkerSysteem
             cbEvents.DataSource = events;
             cbEvents.DisplayMember = "Name";
 
-            currentEvent = (Event)cbEvents.SelectedItem;
+            currentEvent = (Event) cbEvents.SelectedItem;
 
             RefreshAll();
-            
+
 
         }
 
@@ -105,9 +105,9 @@ namespace MedewerkerSysteem
         }
 
         //attach event handler...display the serial number of the attached RFID phidget
-        void rfid_Attach(object sender, AttachEventArgs e)
+        private void rfid_Attach(object sender, AttachEventArgs e)
         {
-            RFID attached = (RFID)sender;
+            RFID attached = (RFID) sender;
 
             switch (attached.ID)
             {
@@ -126,27 +126,27 @@ namespace MedewerkerSysteem
         }
 
         //detach event handler...clear all the fields, display the attached status, and disable the checkboxes.
-        void rfid_Detach(object sender, DetachEventArgs e)
+        private void rfid_Detach(object sender, DetachEventArgs e)
         {
-            RFID detached = (RFID)sender;
+            RFID detached = (RFID) sender;
 
             //this.Bounds = new Rectangle(this.Location, new Size(298, 433));
         }
 
-        void rfid_Error(object sender, ErrorEventArgs e)
+        private void rfid_Error(object sender, ErrorEventArgs e)
         {
             Console.WriteLine("Error: " + e);
 
         }
 
         //Tag event handler...we'll display the tag code in the field on the GUI
-        void rfid_Tag(object sender, TagEventArgs e)
+        private void rfid_Tag(object sender, TagEventArgs e)
         {
             tbLetterRFID.Text = e.Tag;
         }
 
         //Tag lost event handler...here we simply want to clear our tag field in the GUI
-        void rfid_TagLost(object sender, TagEventArgs e)
+        private void rfid_TagLost(object sender, TagEventArgs e)
         {
             //tbLetterRFID.Text = "";
             Console.WriteLine("Lost");
@@ -176,10 +176,12 @@ namespace MedewerkerSysteem
         }
 
         #region Command line open functions
+
         private void openCmdLine(Phidget p)
         {
             openCmdLine(p, null);
         }
+
         private void openCmdLine(Phidget p, String pass)
         {
             int serial = -1;
@@ -191,7 +193,8 @@ namespace MedewerkerSysteem
             String appName = args[0];
 
             try
-            { //Parse the flags
+            {
+                //Parse the flags
                 for (int i = 1; i < args.Length; i++)
                 {
                     if (args[i].StartsWith("-"))
@@ -238,8 +241,10 @@ namespace MedewerkerSysteem
                     p.open(serial);
                 return; //success
             }
-            catch { }
-        usage:
+            catch
+            {
+            }
+            usage:
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Invalid Command line arguments." + Environment.NewLine);
             sb.AppendLine("Usage: " + appName + " [Flags...]");
@@ -258,6 +263,7 @@ namespace MedewerkerSysteem
 
             Application.Exit();
         }
+
         #endregion
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -286,7 +292,7 @@ namespace MedewerkerSysteem
             tbLetterName.Clear();
 
             int caseSwitch = 1;
-            
+
             foreach (string check in administration.CheckReserve(Convert.ToInt32(nudReserveID.Value)))
             {
                 switch (caseSwitch)
@@ -375,7 +381,8 @@ namespace MedewerkerSysteem
             if (tbLetterRFID.Text != "")
             {
                 administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
-                AccountEvent accountEvent = administration.FindAccountEvent(administration.FindAccountID(tbEmail.Text), currentEvent.EventID);
+                AccountEvent accountEvent = administration.FindAccountEvent(administration.FindAccountID(tbEmail.Text),
+                    currentEvent.EventID);
                 if (accountEvent.Present)
                 {
                     MessageBox.Show("Deelnemer is al binnen");
@@ -416,7 +423,7 @@ namespace MedewerkerSysteem
                 {
                     tbLetterStatus.Text = "Betaald";
                 }
-                
+
             }
             else
             {
@@ -465,27 +472,27 @@ namespace MedewerkerSysteem
         {
             if (dgwReserveItem.SelectedRows != null)
             {
-                btnChangeReservation.Enabled = true;
-                btnDeleteReservation.Enabled = true;
+                btnChangeItemReservation.Enabled = true;
+                btnDeleteItemReservation.Enabled = true;
             }
             else
             {
-                btnChangeReservation.Enabled = false;
-                btnDeleteReservation.Enabled = false;
+                btnChangeItemReservation.Enabled = false;
+                btnDeleteItemReservation.Enabled = false;
             }
         }
 
         private void dgwReserveSpot_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgwReserveSpot.SelectedRows != null)
+            if (dgwReserveSpot.SelectedRows != null)
             {
-                btnChangeReservation.Enabled = true;
-                btnDeleteReservation.Enabled = true;
+                btnChangeItemReservation.Enabled = true;
+                btnDeleteItemReservation.Enabled = true;
             }
             else
             {
-                btnChangeReservation.Enabled = false;
-                btnDeleteReservation.Enabled = false;
+                btnChangeItemReservation.Enabled = false;
+                btnDeleteItemReservation.Enabled = false;
             }
         }
 
@@ -507,27 +514,45 @@ namespace MedewerkerSysteem
             string value = "";
 
             foreach (DataGridViewRow row in dgwAccount.SelectedRows)
-                { 
-                    foreach (DataGridViewCell cell in row.Cells)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+
+                    if (gridCount == 1)
                     {
-                        
-                        if (gridCount == 1)
-                        {
-                            value = cell.Value.ToString();
-                        }
-                        gridCount++;
+                        value = cell.Value.ToString();
                     }
+                    gridCount++;
                 }
+            }
             administration.Delete(administration.FindAccount(value));
             RefreshAccounts();
         }
 
         private void btnDeleteReservation_Click(object sender, EventArgs e)
         {
-            administration.FindReserve(Convert.ToInt32(ItemCode.Selected.ToString()),
-                administration.FindAccount(ItemRFID.Selected.ToString()));
+            int gridCount = -1;
+            int value = 0;
+            string value2 = "";
 
+            foreach (DataGridViewRow row in dgwReserveItem.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (gridCount == 0)
+                    {
+                        value = Convert.ToInt32(cell.Value);
+                    }
+                    if (gridCount == 5)
+                    {
+                        value2 = cell.Value.ToString();
+                    }
+                }
+                gridCount++;
+            }
+            administration.Delete(administration.FindReserve(value, administration.FindAccount(value2)));
         }
+
 
         private void btnDeleteEvent_Click(object sender, EventArgs e)
         {
@@ -541,7 +566,7 @@ namespace MedewerkerSysteem
             {
                 dgwAccount.Rows.Add(account.Person.LastName, account.Person.Email, account.RFID);
             }
-           
+
         }
 
         public void RefreshItem()
@@ -549,18 +574,21 @@ namespace MedewerkerSysteem
             dgwReserveItem.Rows.Clear();
             foreach (ReserveItem item in administration.FindReserveItemAll())
             {
-                dgwReserveItem.Rows.Add(item.ReserveringsID, item.Item.Name, item.Account.Person.LastName, item.EndDate, item.StartDate, item.Account.RFID);
+                dgwReserveItem.Rows.Add(item.ReserveringsID, item.Item.Name, item.Account.Person.LastName, item.EndDate,
+                    item.StartDate, item.Account.Person.Email);
             }
         }
-    
+
         public void RefreshSpot()
         {
             dgwReserveSpot.Rows.Clear();
             foreach (ReserveSpot spot in administration.FindReserveSpotsAll())
             {
-                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName, spot.StartDate, spot.EndDate);
+                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName,
+                    spot.StartDate, spot.EndDate, spot.Account.Person.Email);
             }
         }
+
         public void RefreshMedia()
         {
             dgwMedia.Rows.Clear();
@@ -578,6 +606,7 @@ namespace MedewerkerSysteem
                 dgwPresent.Rows.Add(item.LastName, item.LocatieID, item.DateIn, item.DateOut);
             }
         }
+
         public void RefreshEvent()
         {
             dgwEvents.Rows.Clear();
@@ -605,7 +634,7 @@ namespace MedewerkerSysteem
 
         private void tbSpotLocation_TextChanged(object sender, EventArgs e)
         {
-                
+
         }
 
         private void tbLetterGroupName_TextChanged(object sender, EventArgs e)
@@ -667,18 +696,20 @@ namespace MedewerkerSysteem
             int gridCount = 0;
             string value = "";
 
-            foreach (DataGridViewRow row in dgwAccount.SelectedRows)
+            foreach (DataGridViewRow row in dgwReserveItem.SelectedRows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
 
-                    if (gridCount == 1)
+                    if (gridCount == 0)
                     {
                         value = cell.Value.ToString();
                     }
+
                     gridCount++;
                 }
             }
+            administration.ChangePaymentStat(Convert.ToInt32(value));
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -693,12 +724,12 @@ namespace MedewerkerSysteem
 
         private void MederwerkerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void cbEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentEvent = (Event)cbEvents.SelectedItem;
+            currentEvent = (Event) cbEvents.SelectedItem;
             RefreshAll();
         }
 
@@ -741,11 +772,54 @@ namespace MedewerkerSysteem
                     gridCount++;
                 }
             }
-            
+
             MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(value));
             MEU.ShowDialog();
             RefreshEvent();
         }
 
+        private void btnChangeReservation_Click_1(object sender, EventArgs e)
+        {
+            int gridCount = 0;
+            int value = 0;
+
+            foreach (DataGridViewRow row in dgwReserveSpot.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (gridCount == 0)
+                    {
+                        value = Convert.ToInt32(cell.Value);
+                    }
+                    gridCount++;
+                }
+                administration.ChangePaymentStat(Convert.ToInt32(value));
+            }
+
+        }
+
+        private void btnDeleteReservation_Click_1(object sender, EventArgs e)
+        {
+            int gridCount = 0;
+            int value = 0;
+            string value2 = "";
+
+            foreach (DataGridViewRow row in dgwReserveSpot.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (gridCount == 0)
+                    {
+                        value = Convert.ToInt32(cell.Value);
+                    }
+                    if (gridCount == 4)
+                    {
+                        value2 = cell.Value.ToString();
+                    }
+                    gridCount++;
+                }
+                administration.Delete(administration.FindReserve(value, administration.FindAccount(value2)));
+            }
+        }
     }
 }
