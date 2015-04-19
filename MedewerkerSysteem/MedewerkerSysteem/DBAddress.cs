@@ -13,12 +13,12 @@ using Oracle.DataAccess.Client;
 public class DBAddress : Database
 {
     
-	public virtual void Update()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual bool Insert(Address address)
+    /// <summary>
+    /// Voeft het gegeven adres toe aan de database
+    /// </summary>
+    /// <param name="address"></param>
+    /// <returns></returns>
+	public bool Insert(Address address)
 	{
 	    bool resultaat = false;
         string sql;
@@ -48,7 +48,12 @@ public class DBAddress : Database
         return resultaat;
     }
 
-	public virtual bool Delete(Address address )
+    /// <summary>
+    /// Verwijder het gegeven adres uit de database
+    /// </summary>
+    /// <param name="address"></param>
+    /// <returns></returns>
+	public bool Delete(Address address )
 	{
         Administation administation = new Administation();
         bool resultaat = false;
@@ -77,6 +82,12 @@ public class DBAddress : Database
         return resultaat;
 	}
 
+    /// <summary>
+    /// Haalt en retouneert het adres met de juiste postcode en huisnummer
+    /// </summary>
+    /// <param name="zipcode"></param>
+    /// <param name="housenumber"></param>
+    /// <returns></returns>
     internal Address Select(string zipcode, string housenumber)
     {
         Administation administation = new Administation();
@@ -118,6 +129,12 @@ public class DBAddress : Database
         return resultaat;
     }
 
+    /// <summary>
+    /// Retouneert het adresid waarvan het adres een passend postcode en huisnummer heeft
+    /// </summary>
+    /// <param name="zipcode"></param>
+    /// <param name="number"></param>
+    /// <returns></returns>
     public int FindAdressID(string zipcode, string number)
     {
         
