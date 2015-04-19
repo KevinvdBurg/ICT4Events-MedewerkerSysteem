@@ -17,7 +17,7 @@ public class DBReserve : Database
     {
         throw new System.NotImplementedException();
     }
-
+    //Zoekt de laatste reservering
     public int HighestID()
     {
         int result = 0;
@@ -47,7 +47,7 @@ public class DBReserve : Database
         }
         return result;
     }
-
+    //Zoek het laatst gehuurde item
     public int HighestReserveItemID()
     {
         int result = 0;
@@ -78,7 +78,7 @@ public class DBReserve : Database
         return result;
     }
 
-
+    //voegt een item toe aan een event
     public bool Insert(ReserveItem reserveItem, int CurrentEventID)
     {
         Administation administation = new Administation();
@@ -117,6 +117,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    //voegt plekken toe aan een event
     public bool Insert(ReserveSpot reservespot, int CurrentEventID)
     {
         Administation administation = new Administation();
@@ -208,15 +209,12 @@ public class DBReserve : Database
         throw new System.NotImplementedException();
     }
 
-
+    //haalt een reservering op
     internal Reserve Select(int reserveringID, Account account)
     {
         ReserveSpot resultaat = null;
         string sql;
-        //sql = "select * from gebruiker where RFID = :rfid";
-        //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID Where e.Naam = :name";
-        //sql = "Select kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID where kr.reserveringID = :reserveringID" ;
-        //sql = "Select kr.GEBRUIKERID, kr.reserveringID, kp.KAMPEERPLEKID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join  KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID where kr.reserveringID = :reserveringID";
+
         sql =
             "Select gb.RFID, kr.reserveringID, kp.KAMPEERPLEKID, kp.LOCATIEID, kr.BETAALD, kr.DATUMIN, kr.DATUMUIT, kc.DETAILS, kc.MAXPERSONEN, kc.PRIJS,g.GROEPID, g.GROEPNAAM From Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner join KAMPEERPLEKCATEGORIE kc On kc.KAMPEERPLEKCATEGORIEID = kp.CATEGORIEID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID where kr.reserveringID = :reserveringID";
 
@@ -274,7 +272,7 @@ public class DBReserve : Database
         }
         return resultaat;
     }
-
+    //haalt alle plekken op
     public List<ReserveSpot> SelectAllSpots()
     {
         List<ReserveSpot> resultaat = new List<ReserveSpot>();
@@ -354,7 +352,7 @@ public class DBReserve : Database
     }
 
 
-
+    // kijkt of een reservering betaaldis
     internal List<string> Check(int reserveringID)
     {
         List<string> resultaat = new List<string>();
@@ -396,6 +394,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    //zorgt ervoor dat een reservering betaald is
     internal bool UpdatePayment(int reserveringID)
     {
         string updateID = "'" + reserveringID + "'";
@@ -419,7 +418,7 @@ public class DBReserve : Database
         }
         return resultaat;
     }
-
+    //haalt alle reserveringen op
     public List<ReserveItem> SelectAllItems()
     {
         List<ReserveItem> resultaat = new List<ReserveItem>();
@@ -498,7 +497,7 @@ public class DBReserve : Database
         }
         return resultaat;
     }
-
+    //verwijdered een verhuur
     public bool DeleteItem(int value)
     {
         bool resultaat = false;
@@ -529,6 +528,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    //verwijderd een plek
     public bool DeleteSpot(int value)
     {
         bool resultaat = false;
