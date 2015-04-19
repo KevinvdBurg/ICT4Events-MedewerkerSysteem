@@ -33,7 +33,7 @@ namespace MedewerkerSysteem
 
         private void btnECreateEvent_Click(object sender, EventArgs e)
         {
-            administation.UpdateEvent(currentEvent.Name, currentEvent.Location.Name, currentEvent.Location.Address.ZipCode, Convert.ToInt32(currentEvent.Location.Address.Number), Convert.ToInt32(currentEvent.MaxPerson));
+            administation.UpdateEvent(tbEname.Text, tbElocation.Text, tbEzipcode.Text, Convert.ToInt32(nudEhuisnummer.Value), currentEvent.Location.Address.ZipCode, Convert.ToInt32(currentEvent.Location.Address.Number), Convert.ToInt32(nudEmaxvisitors.Value), currentEvent.EventID);
         }
     }
 }

@@ -442,5 +442,59 @@ public class DBEvent : Database
         }
         return resultaat;
     }
+
+    public bool UpdateEvent(string name, string locationName, string zipCode, int huisnummer, string oldzip, int oldhuisnummer, int maxbezoeker, int EventID)
+    {
+        Administation administation = new Administation();
+        int locationID = administation.FindAddressID(oldzip, Convert.ToString(oldhuisnummer));
+
+        bool resultaat = false;
+        string sql;
+        string sql2;
+        sql = "UPDATE EVENT SET NAAM = :name, MAXPERSONEN = :maxbezoeker WHERE EVENTID = :EventID";
+        sql2 = "UPDATE LOCATIE SET PLAATS = :locationName, POSTCODE = :zipCode, HUISNUMMER = :huisnummer WHERE LocatieID = :LocatieID";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("name", name));
+            cmd.Parameters.Add(new OracleParameter("maxbezoeker", maxbezoeker));
+            cmd.Parameters.Add(new OracleParameter("EventID", EventID));
+            cmd.ExecuteNonQuery();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("locationName", locationName));
+            cmd.Parameters.Add(new OracleParameter("zipCode", zipCode));
+            cmd.Parameters.Add(new OracleParameter("huisnummer", huisnummer));
+            cmd.Parameters.Add(new OracleParameter("LocatieID", locationID));
+            cmd.ExecuteNonQuery();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+
+        return resultaat;
+
+    }
 }
 

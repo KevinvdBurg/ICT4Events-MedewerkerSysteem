@@ -506,9 +506,9 @@ public class Administation
         return dbevent.SelectMedia(value);
     }
 
-    public void UpdateEvent(string name, string s, string zipCode, int toInt32, int i)
+    public void UpdateEvent(string name, string locationName, string zipCode, int huisnummer, string oldzipCode, int oldhuisnummer, int maxbezoeker, int eventID)
     {
-        throw new NotImplementedException();
+        dbevent.UpdateEvent(name, locationName,zipCode, huisnummer, oldzipCode, oldhuisnummer, maxbezoeker, eventID);
     }
 }
 
