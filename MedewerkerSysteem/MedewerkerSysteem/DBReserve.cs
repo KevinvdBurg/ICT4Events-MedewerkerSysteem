@@ -58,9 +58,11 @@ public class DBReserve : Database
             paid = 1;
         }
         string sql;
+        string sql2;
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
         sql =
             "INSERT INTO KAMPEERPLEKRESERVERING (RESERVERINGID, GEBRUIKERID, KAMPEERPLEKID, BETAALD, DATUMIN, DATUMUIT) VALUES (:reserveringid, :gebruikerid, :kampeerplekid, :betaald, :datumin, :datumuit)";
+        sql2 = "INSERT INTO GEBRUIKERKAMPEERRES (GEBRUIKERID, RESERVERINGID ) VALUES (:gebruikerid, :reserveringid)";
         try
         {
             Connect();
@@ -71,6 +73,27 @@ public class DBReserve : Database
             cmd.Parameters.Add(new OracleParameter("betaald", paid));
             cmd.Parameters.Add(new OracleParameter("datumin", reservespot.StartDate));
             cmd.Parameters.Add(new OracleParameter("datumuit", reservespot.EndDate));
+            cmd.ExecuteNonQuery();
+            //OracleDataReader reader = cmd.ExecuteReader();
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        
+        
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql2, connection);
+            cmd.Parameters.Add(new OracleParameter("reserveringid", reservespot.ReserveringsID));
+            cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
             cmd.ExecuteNonQuery();
             //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
