@@ -561,8 +561,8 @@ namespace MedewerkerSysteem
                 
             }
 
-
-            //administration.Delete(administration.FindReserve(value, administration.FindAccount(value2)));
+            administration.DeleteItemRes(value);
+            RefreshAll();
         }
 
 
@@ -829,8 +829,9 @@ namespace MedewerkerSysteem
                     }
                     gridCount++;
                 }
-                administration.Delete(administration.FindReserve(value, administration.FindAccount(value2)));
             }
+            administration.DeleteSpotRes(value);
+            RefreshAll();
         }
     }
 }
