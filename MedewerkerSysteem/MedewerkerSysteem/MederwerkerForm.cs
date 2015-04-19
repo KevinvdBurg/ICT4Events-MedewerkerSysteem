@@ -713,5 +713,28 @@ namespace MedewerkerSysteem
             RefreshMedia();
         }
 
+        private void btnChangeEvent_Click(object sender, EventArgs e)
+        {
+            int gridCount = 0;
+            string value = "";
+
+            foreach (DataGridViewRow row in dgwMedia.SelectedRows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+
+                    if (gridCount == 4)
+                    {
+                        value = cell.Value.ToString();
+                    }
+                    gridCount++;
+                }
+            }
+
+            MedewerkerEventUpdate MEU = new MedewerkerEventUpdate(administration.FindEvent(value));
+            MEU.ShowDialog();
+            RefreshMedia();
+        }
+
     }
 }

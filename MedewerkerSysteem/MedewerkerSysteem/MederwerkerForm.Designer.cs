@@ -94,7 +94,6 @@
             this.tabPadmin = new System.Windows.Forms.TabPage();
             this.btnOpenMediaItem = new System.Windows.Forms.Button();
             this.btnChangeEvent = new System.Windows.Forms.Button();
-            this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.tabCAdmin = new System.Windows.Forms.TabControl();
             this.tabPpressent = new System.Windows.Forms.TabPage();
             this.dgwPresent = new System.Windows.Forms.DataGridView();
@@ -752,7 +751,6 @@
             // 
             this.tabPadmin.Controls.Add(this.btnOpenMediaItem);
             this.tabPadmin.Controls.Add(this.btnChangeEvent);
-            this.tabPadmin.Controls.Add(this.btnDeleteEvent);
             this.tabPadmin.Controls.Add(this.tabCAdmin);
             this.tabPadmin.Controls.Add(this.btnEvent);
             this.tabPadmin.Location = new System.Drawing.Point(4, 22);
@@ -782,17 +780,7 @@
             this.btnChangeEvent.TabIndex = 3;
             this.btnChangeEvent.Text = "Event wijzigen";
             this.btnChangeEvent.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteEvent
-            // 
-            this.btnDeleteEvent.Enabled = false;
-            this.btnDeleteEvent.Location = new System.Drawing.Point(240, 16);
-            this.btnDeleteEvent.Name = "btnDeleteEvent";
-            this.btnDeleteEvent.Size = new System.Drawing.Size(105, 23);
-            this.btnDeleteEvent.TabIndex = 2;
-            this.btnDeleteEvent.Text = "Event verwijderen";
-            this.btnDeleteEvent.UseVisualStyleBackColor = true;
-            this.btnDeleteEvent.Click += new System.EventHandler(this.btnDeleteEvent_Click);
+            this.btnChangeEvent.Click += new System.EventHandler(this.btnChangeEvent_Click);
             // 
             // tabCAdmin
             // 
@@ -1068,7 +1056,6 @@
         private System.Windows.Forms.Button btnChangeReservation;
         private System.Windows.Forms.Button btnDeleteReservation;
         private System.Windows.Forms.Button btnChangeEvent;
-        private System.Windows.Forms.Button btnDeleteEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationRFID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationAccountName;
