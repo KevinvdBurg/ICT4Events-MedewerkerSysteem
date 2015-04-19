@@ -99,18 +99,24 @@ namespace MedewerkerSysteem
                 }
                 else
                 {
+                    bool eventChecks = false;
                     foreach (Event eventCheck in lbUAeventlist.Items)
                     {
-                        if (eventCheck.EventID != SelectedEvent.EventID)
+                        if (eventCheck.EventID == SelectedEvent.EventID)
                         {
-                            eventList.Add(SelectedEvent);
-                            AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(tbUAemail.Text), SelectedEvent.EventID);
-                            administration.Add(accountEvent);
+                            eventChecks = true;
                         }
-                        else
-                        {
-                            MessageBox.Show("Event is al toegevoegt");
-                        }
+                    }
+
+                    if (!eventChecks)
+                    {
+                        eventList.Add(SelectedEvent);
+                        AccountEvent accountEvent = new AccountEvent(false, administration.FindAccountID(tbUAemail.Text), SelectedEvent.EventID);
+                        administration.Add(accountEvent);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Event is al toegevoegt");
                     }
                 }
                 
