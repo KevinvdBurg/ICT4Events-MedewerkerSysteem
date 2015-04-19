@@ -13,6 +13,7 @@ namespace MedewerkerSysteem
     public partial class MedewerkerMedia : Form
     {
         private Media currentMedia = null;
+        private Administation administration = new Administation();
         public MedewerkerMedia(Media value)
         {
             InitializeComponent();
@@ -36,7 +37,8 @@ namespace MedewerkerSysteem
 
         private void btnMdelete_Click(object sender, EventArgs e)
         {
-
+            administration.Delete(currentMedia);
+            Close();
         }
 
         private void MedewerkerMedia_Load(object sender, EventArgs e)

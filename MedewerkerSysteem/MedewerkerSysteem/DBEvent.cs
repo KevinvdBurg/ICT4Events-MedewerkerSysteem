@@ -363,5 +363,33 @@ public class DBEvent : Database
         }
         return resultaat;
     }
+
+    public bool DeleteMedia(Media media)
+    {
+        bool resultaat = false;
+        string sql;
+        sql = "DELETE FROM Post WHERE PostID = :PostID";
+
+        try
+        {
+            Connect();
+            OracleCommand cmd = new OracleCommand(sql, connection);
+            cmd.Parameters.Add(new OracleParameter("PostID", media.PostID));
+            //MessageBox.Show(cmd.ExecuteNonQueryAsync());
+            cmd.ExecuteNonQuery();
+
+            resultaat = true;
+        }
+        catch (OracleException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+        finally
+        {
+            DisConnect();
+        }
+        return resultaat;
+    }
 }
 

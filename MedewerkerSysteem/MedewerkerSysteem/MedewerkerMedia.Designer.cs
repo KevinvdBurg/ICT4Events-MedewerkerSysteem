@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.gbMediaReports = new System.Windows.Forms.GroupBox();
-            this.btnMupdate = new System.Windows.Forms.Button();
             this.nudMreportcount = new System.Windows.Forms.NumericUpDown();
             this.btnMbrowse = new System.Windows.Forms.Button();
             this.tbFile = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@
             // 
             // gbMediaReports
             // 
-            this.gbMediaReports.Controls.Add(this.btnMupdate);
             this.gbMediaReports.Controls.Add(this.nudMreportcount);
             this.gbMediaReports.Controls.Add(this.btnMbrowse);
             this.gbMediaReports.Controls.Add(this.tbFile);
@@ -65,15 +63,6 @@
             this.gbMediaReports.TabIndex = 5;
             this.gbMediaReports.TabStop = false;
             this.gbMediaReports.Text = "Media Reports";
-            // 
-            // btnMupdate
-            // 
-            this.btnMupdate.Location = new System.Drawing.Point(205, 255);
-            this.btnMupdate.Name = "btnMupdate";
-            this.btnMupdate.Size = new System.Drawing.Size(100, 36);
-            this.btnMupdate.TabIndex = 23;
-            this.btnMupdate.Text = "Wijzigen";
-            this.btnMupdate.UseVisualStyleBackColor = true;
             // 
             // nudMreportcount
             // 
@@ -115,7 +104,7 @@
             // 
             // btnMcancel
             // 
-            this.btnMcancel.Location = new System.Drawing.Point(87, 255);
+            this.btnMcancel.Location = new System.Drawing.Point(219, 255);
             this.btnMcancel.Name = "btnMcancel";
             this.btnMcancel.Size = new System.Drawing.Size(100, 36);
             this.btnMcancel.TabIndex = 13;
@@ -201,6 +190,5 @@
         private System.Windows.Forms.Button btnMbrowse;
         private System.Windows.Forms.TextBox tbFile;
         private System.Windows.Forms.TextBox tbMname;
-        private System.Windows.Forms.Button btnMupdate;
     }
 }
