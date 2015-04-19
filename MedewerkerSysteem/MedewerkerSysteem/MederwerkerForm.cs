@@ -378,8 +378,6 @@ namespace MedewerkerSysteem
             //Checkt of de deelnemer al een RFID heeft gekregen, zo niet dan komt er een messagebox met de error "koppel eerst een RFID"
             if (tbLetterRFID.Text != "")
             {
-
-                administration.ChainRFID(tbEmail.Text, tbLetterRFID.Text);
                 AccountEvent accountEvent = administration.FindAccountEvent(administration.FindAccountID(tbEmail.Text), currentEvent.EventID);
 
                 //Checkt of de deelnemer al binnen is, op deze manier kunnen er niet meerdere mensen onder 1 reservering binnen komen.

@@ -505,7 +505,8 @@ public class DBReserve : Database
         string sql;
         //sql = "Select e.EVENTID, e.Naam, e.MAXPERSONEN, e.BEGINDATUM, e.EINDDATUM, l.HUISNUMMER, l.PLAATS, l.POSTCODE From Event e Inner Join Locatie l On e.LOCATIEID = l.LOCATIEID";
         //sql = "INSERT INTO LOCATIE (PLAATS, POSTCODE, HUISNUMMER) VALUES (:plaats, :postcode, :nr)";
-        sql = "DELETE FROM VERHUUR WHERE VERHUURID = :VERHUURID";
+        sql = "DELETE FROM VERHUUR WHERE VERHUURID = :VERHUURID";
+
         try
         {
             Connect();
