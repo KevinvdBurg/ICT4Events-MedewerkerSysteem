@@ -44,8 +44,6 @@
             this.btnCAcancel = new System.Windows.Forms.Button();
             this.lblCAeventlist = new System.Windows.Forms.Label();
             this.lblCAaddEvent = new System.Windows.Forms.Label();
-            this.cbCApaymentstat = new System.Windows.Forms.ComboBox();
-            this.lblCApaymentstat = new System.Windows.Forms.Label();
             this.cbCAaddevent = new System.Windows.Forms.ComboBox();
             this.lbCAeventlist = new System.Windows.Forms.ListBox();
             this.cbCAGroup = new System.Windows.Forms.ComboBox();
@@ -65,7 +63,7 @@
             // 
             // btnCAaddevent
             // 
-            btnCAaddevent.Location = new System.Drawing.Point(347, 349);
+            btnCAaddevent.Location = new System.Drawing.Point(347, 309);
             btnCAaddevent.Name = "btnCAaddevent";
             btnCAaddevent.Size = new System.Drawing.Size(77, 23);
             btnCAaddevent.TabIndex = 12;
@@ -75,7 +73,7 @@
             // 
             // btnCAcreate
             // 
-            this.btnCAcreate.Location = new System.Drawing.Point(324, 511);
+            this.btnCAcreate.Location = new System.Drawing.Point(324, 445);
             this.btnCAcreate.Name = "btnCAcreate";
             this.btnCAcreate.Size = new System.Drawing.Size(100, 36);
             this.btnCAcreate.TabIndex = 16;
@@ -98,8 +96,6 @@
             this.groupBox1.Controls.Add(this.btnCAcancel);
             this.groupBox1.Controls.Add(this.lblCAeventlist);
             this.groupBox1.Controls.Add(this.lblCAaddEvent);
-            this.groupBox1.Controls.Add(this.cbCApaymentstat);
-            this.groupBox1.Controls.Add(this.lblCApaymentstat);
             this.groupBox1.Controls.Add(btnCAaddevent);
             this.groupBox1.Controls.Add(this.cbCAaddevent);
             this.groupBox1.Controls.Add(this.lbCAeventlist);
@@ -116,7 +112,7 @@
             this.groupBox1.Controls.Add(this.btnCAcreate);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(451, 553);
+            this.groupBox1.Size = new System.Drawing.Size(451, 506);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Aanmaken";
@@ -125,7 +121,7 @@
             // nudCAnumber
             // 
             this.nudCAnumber.Location = new System.Drawing.Point(333, 215);
-            this.nudCAnumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudCAnumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudCAnumber.Minimum = new decimal(new int[] {
             1,
             0,
@@ -153,7 +149,7 @@
             // tbCAlastname
             // 
             this.tbCAlastname.Location = new System.Drawing.Point(299, 36);
-            this.tbCAlastname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCAlastname.Margin = new System.Windows.Forms.Padding(2);
             this.tbCAlastname.Name = "tbCAlastname";
             this.tbCAlastname.Size = new System.Drawing.Size(125, 20);
             this.tbCAlastname.TabIndex = 1;
@@ -170,7 +166,7 @@
             // tbCAcity
             // 
             this.tbCAcity.Location = new System.Drawing.Point(114, 245);
-            this.tbCAcity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCAcity.Margin = new System.Windows.Forms.Padding(2);
             this.tbCAcity.Name = "tbCAcity";
             this.tbCAcity.Size = new System.Drawing.Size(310, 20);
             this.tbCAcity.TabIndex = 8;
@@ -200,7 +196,7 @@
             // tbCAzipcode
             // 
             this.tbCAzipcode.Location = new System.Drawing.Point(114, 213);
-            this.tbCAzipcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCAzipcode.Margin = new System.Windows.Forms.Padding(2);
             this.tbCAzipcode.Name = "tbCAzipcode";
             this.tbCAzipcode.Size = new System.Drawing.Size(109, 20);
             this.tbCAzipcode.TabIndex = 6;
@@ -208,7 +204,7 @@
             // tbCAstreetname
             // 
             this.tbCAstreetname.Location = new System.Drawing.Point(114, 186);
-            this.tbCAstreetname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCAstreetname.Margin = new System.Windows.Forms.Padding(2);
             this.tbCAstreetname.Name = "tbCAstreetname";
             this.tbCAstreetname.Size = new System.Drawing.Size(310, 20);
             this.tbCAstreetname.TabIndex = 5;
@@ -225,7 +221,7 @@
             // 
             // btnCAcancel
             // 
-            this.btnCAcancel.Location = new System.Drawing.Point(218, 511);
+            this.btnCAcancel.Location = new System.Drawing.Point(218, 445);
             this.btnCAcancel.Name = "btnCAcancel";
             this.btnCAcancel.Size = new System.Drawing.Size(100, 36);
             this.btnCAcancel.TabIndex = 15;
@@ -236,7 +232,7 @@
             // lblCAeventlist
             // 
             this.lblCAeventlist.AutoSize = true;
-            this.lblCAeventlist.Location = new System.Drawing.Point(6, 384);
+            this.lblCAeventlist.Location = new System.Drawing.Point(6, 344);
             this.lblCAeventlist.Name = "lblCAeventlist";
             this.lblCAeventlist.Size = new System.Drawing.Size(59, 13);
             this.lblCAeventlist.TabIndex = 17;
@@ -245,33 +241,16 @@
             // lblCAaddEvent
             // 
             this.lblCAaddEvent.AutoSize = true;
-            this.lblCAaddEvent.Location = new System.Drawing.Point(6, 353);
+            this.lblCAaddEvent.Location = new System.Drawing.Point(6, 313);
             this.lblCAaddEvent.Name = "lblCAaddEvent";
             this.lblCAaddEvent.Size = new System.Drawing.Size(96, 13);
             this.lblCAaddEvent.TabIndex = 16;
             this.lblCAaddEvent.Text = "Event Toevoegen:";
             // 
-            // cbCApaymentstat
-            // 
-            this.cbCApaymentstat.FormattingEnabled = true;
-            this.cbCApaymentstat.Location = new System.Drawing.Point(114, 472);
-            this.cbCApaymentstat.Name = "cbCApaymentstat";
-            this.cbCApaymentstat.Size = new System.Drawing.Size(310, 21);
-            this.cbCApaymentstat.TabIndex = 14;
-            // 
-            // lblCApaymentstat
-            // 
-            this.lblCApaymentstat.AutoSize = true;
-            this.lblCApaymentstat.Location = new System.Drawing.Point(6, 474);
-            this.lblCApaymentstat.Name = "lblCApaymentstat";
-            this.lblCApaymentstat.Size = new System.Drawing.Size(86, 13);
-            this.lblCApaymentstat.TabIndex = 14;
-            this.lblCApaymentstat.Text = "Betalings Status:";
-            // 
             // cbCAaddevent
             // 
             this.cbCAaddevent.FormattingEnabled = true;
-            this.cbCAaddevent.Location = new System.Drawing.Point(114, 349);
+            this.cbCAaddevent.Location = new System.Drawing.Point(114, 309);
             this.cbCAaddevent.Name = "cbCAaddevent";
             this.cbCAaddevent.Size = new System.Drawing.Size(227, 21);
             this.cbCAaddevent.TabIndex = 11;
@@ -279,7 +258,7 @@
             // lbCAeventlist
             // 
             this.lbCAeventlist.FormattingEnabled = true;
-            this.lbCAeventlist.Location = new System.Drawing.Point(114, 384);
+            this.lbCAeventlist.Location = new System.Drawing.Point(114, 344);
             this.lbCAeventlist.Name = "lbCAeventlist";
             this.lbCAeventlist.Size = new System.Drawing.Size(310, 82);
             this.lbCAeventlist.TabIndex = 13;
@@ -287,15 +266,16 @@
             // cbCAGroup
             // 
             this.cbCAGroup.FormattingEnabled = true;
-            this.cbCAGroup.Location = new System.Drawing.Point(114, 310);
+            this.cbCAGroup.Location = new System.Drawing.Point(114, 277);
             this.cbCAGroup.Name = "cbCAGroup";
             this.cbCAGroup.Size = new System.Drawing.Size(310, 21);
             this.cbCAGroup.TabIndex = 10;
+            this.cbCAGroup.SelectedIndexChanged += new System.EventHandler(this.cbCAGroup_SelectedIndexChanged);
             // 
             // lblCAGroup
             // 
             this.lblCAGroup.AutoSize = true;
-            this.lblCAGroup.Location = new System.Drawing.Point(4, 315);
+            this.lblCAGroup.Location = new System.Drawing.Point(4, 282);
             this.lblCAGroup.Name = "lblCAGroup";
             this.lblCAGroup.Size = new System.Drawing.Size(39, 13);
             this.lblCAGroup.TabIndex = 9;
@@ -370,7 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 577);
+            this.ClientSize = new System.Drawing.Size(475, 527);
             this.Controls.Add(this.groupBox1);
             this.Name = "MederwerkerCreateAccount";
             this.Text = "Account";
@@ -396,8 +376,6 @@
         private System.Windows.Forms.TextBox tbCAemail;
         private System.Windows.Forms.Label lblCAeventlist;
         private System.Windows.Forms.Label lblCAaddEvent;
-        private System.Windows.Forms.ComboBox cbCApaymentstat;
-        private System.Windows.Forms.Label lblCApaymentstat;
         private System.Windows.Forms.ComboBox cbCAaddevent;
         private System.Windows.Forms.ListBox lbCAeventlist;
         private System.Windows.Forms.ComboBox cbCAGroup;
