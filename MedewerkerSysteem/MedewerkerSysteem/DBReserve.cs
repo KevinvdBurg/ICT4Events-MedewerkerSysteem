@@ -280,10 +280,10 @@ public class DBReserve : Database
         List<ReserveSpot> resultaat = new List<ReserveSpot>();
         string sql;
         //sql ="select kr.reserveringID, gb.EMAILADRES, kr.DATUMIN, kr.DATUMUIT from Kampeerplekreservering kr Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID;"
-        sql =
-            "select kr.reserveringID, gb.EMAILADRES, gb.wachtwoord, kr.DATUMIN, kr.DATUMUIT, kr.BETAALD, kp.kampeerplekid, kp.locatieid, g.GROEPNAAM, g.GROEPID, gb.plaats ,gb.postcode,gb.huisnummer, gb.voornaam, gb.achternaam, gb.rfid, kpc.DETAILS, kpc.PRIJS, kpc.MAXPERSONEN   from Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID Inner Join kampeerplekcategorie kpc ON kpc.kampeerplekcategorieid = kp.CATEGORIEID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID Inner Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID Inner Join Groep g On g.GROEPID = gr.GROEPID";
+        sql = "select kr.reserveringID, gb.EMAILADRES, gb.wachtwoord, kr.DATUMIN, kr.DATUMUIT, kr.BETAALD, kp.kampeerplekid, kp.locatieid, g.GROEPNAAM, g.GROEPID, gb.plaats ,gb.postcode,gb.huisnummer, gb.voornaam, gb.achternaam, gb.rfid, kpc.DETAILS, kpc.PRIJS, kpc.MAXPERSONEN from Kampeerplekreservering kr Inner Join Kampeerplek kp ON kr.KAMPEERPLEKID = kp.KAMPEERPLEKID  Inner Join kampeerplekcategorie kpc ON kpc.kampeerplekcategorieid = kp.CATEGORIEID Inner Join GEBRUIKERKAMPEERRES gkr On gkr.GEBRUIKERID = kr.GEBRUIKERID Inner Join Gebruiker gb On gb.GEBRUIKERID = gkr.GEBRUIKERID  left Join GROEPSRESERVERING gr On gr.RESERVERINGID = kr.RESERVERINGID left Join Groep g On g.GROEPID = gr.GROEPID";
         //sql = "select * from gebruiker";
         string type = "";
+        int GROEPID = 0;
         try
         {
             Connect();
@@ -302,7 +302,10 @@ public class DBReserve : Database
                     int kampeerplekid = Convert.ToInt32(reader["kampeerplekid"]);
                     int locatieid = Convert.ToInt32(reader["locatieid"]);
                     string GROEPNAAM = Convert.ToString(reader["GROEPNAAM"]);
-                    int GROEPID = Convert.ToInt32(reader["GROEPID"]);
+                    
+
+
+
                     string plaats = Convert.ToString(reader["plaats"]);
                     string postcode = Convert.ToString(reader["postcode"]);
                     string huisnummer = Convert.ToString(reader["huisnummer"]);
@@ -319,6 +322,11 @@ public class DBReserve : Database
                     {
                         boolbetaald = true;
                     }
+
+                    //if (reader["GROEPID"] != null || reader["GROEPID"] != "")
+                    //{
+                    //    GROEPID = Convert.ToInt32(reader["GROEPID"]);
+                    //}
 
                     ReserveSpot tempResev =
                         new ReserveSpot(
