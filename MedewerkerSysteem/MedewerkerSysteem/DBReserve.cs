@@ -7,6 +7,7 @@ using Oracle.DataAccess.Client;
 
 public class DBReserve : Database
 {
+    //Zoekt de laatste reservering
     public int HighestID()
     {
         int result = 0;
@@ -36,7 +37,7 @@ public class DBReserve : Database
         }
         return result;
     }
-
+    //Zoek het laatst gehuurde item
     public int HighestReserveItemID()
     {
         int result = 0;
@@ -67,7 +68,7 @@ public class DBReserve : Database
         return result;
     }
 
-
+    //voegt een item toe aan een event
     public bool Insert(ReserveItem reserveItem, int CurrentEventID)
     {
         Administation administation = new Administation();
@@ -91,7 +92,7 @@ public class DBReserve : Database
             cmd.Parameters.Add(new OracleParameter("datumin", reserveItem.StartDate));
             cmd.Parameters.Add(new OracleParameter("datumuit", reserveItem.EndDate));
             cmd.ExecuteNonQuery();
-            //OracleDataReader reader = cmd.ExecuteReader();
+
             resultaat = true;
         }
         catch (OracleException e)
@@ -106,6 +107,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    //voegt plekken toe aan een event
     public bool Insert(ReserveSpot reservespot, int CurrentEventID)
     {
         Administation administation = new Administation();
@@ -133,7 +135,7 @@ public class DBReserve : Database
             cmd.Parameters.Add(new OracleParameter("datumin", reservespot.StartDate));
             cmd.Parameters.Add(new OracleParameter("datumuit", reservespot.EndDate));
             cmd.ExecuteNonQuery();
-            //OracleDataReader reader = cmd.ExecuteReader();
+
             resultaat = true;
         }
         catch (OracleException e)
@@ -154,7 +156,6 @@ public class DBReserve : Database
             cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
             cmd.Parameters.Add(new OracleParameter("reserveringid", reservespot.ReserveringsID));
             cmd.ExecuteNonQuery();
-            //OracleDataReader reader = cmd.ExecuteReader();
             resultaat = true;
         }
         catch (OracleException e)
@@ -190,6 +191,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    //haalt een reservering op
     internal Reserve Select(int reserveringID, Account account)
     {
         ReserveSpot resultaat = null;
@@ -248,6 +250,7 @@ public class DBReserve : Database
         return resultaat;
     }
 
+    //haalt alle plekken op
     public List<ReserveSpot> SelectAllSpots()
     {
         List<ReserveSpot> resultaat = new List<ReserveSpot>();
@@ -319,7 +322,7 @@ public class DBReserve : Database
     }
 
 
-
+    // kijkt of een reservering betaaldis
     internal List<string> Check(int reserveringID)
     {
         List<string> resultaat = new List<string>();
@@ -360,6 +363,8 @@ public class DBReserve : Database
         return resultaat;
     }
 
+
+    //zorgt ervoor dat een reservering betaald is
     internal bool UpdatePayment(int reserveringID)
     {
         string updateID = "'" + reserveringID + "'";
@@ -383,7 +388,7 @@ public class DBReserve : Database
         }
         return resultaat;
     }
-
+    //haalt alle reserveringen op
     public List<ReserveItem> SelectAllItems()
     {
         List<ReserveItem> resultaat = new List<ReserveItem>();
@@ -461,6 +466,8 @@ public class DBReserve : Database
         return resultaat;
     }
 
+
+    //verwijdered een verhuur
     public bool DeleteItem(int value)
     {
         bool resultaat = false;
@@ -471,7 +478,7 @@ public class DBReserve : Database
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
             cmd.Parameters.Add(new OracleParameter("VERHUURID", value));
-            //MessageBox.Show(cmd.ExecuteNonQueryAsync());
+
             cmd.ExecuteNonQueryAsync();
 
             resultaat = true;
@@ -498,7 +505,6 @@ public class DBReserve : Database
             Connect();
             OracleCommand cmd = new OracleCommand(sql, connection);
             cmd.Parameters.Add(new OracleParameter("RESERVERINGID", value));
-            //MessageBox.Show(cmd.ExecuteNonQueryAsync());
             cmd.ExecuteNonQueryAsync();
 
             resultaat = true;
