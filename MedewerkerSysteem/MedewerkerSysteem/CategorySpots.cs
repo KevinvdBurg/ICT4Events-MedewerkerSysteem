@@ -17,11 +17,6 @@ public class CategorySpots : Category
 		set;
 	}
 
-	public CategorySpots(int MaxPerson, string Details, decimal Price, string Type) : base(Details, Price)
-	{
-        this.MaxPerson = MaxPerson;
-	}
-
     public CategorySpots(int MaxPerson, string Details, decimal Price): base(Details, Price)
     {
         this.MaxPerson = MaxPerson;

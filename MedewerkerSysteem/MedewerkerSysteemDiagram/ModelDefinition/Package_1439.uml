@@ -1,0 +1,2607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="29c08403-d63d-48f0-b9e3-4f1654dd7ef9"
+  name="MedewerkerSysteem"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="e14a5ba6-5b71-4bce-9a05-dd5a8d2daa30"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMedewerkerSysteem"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="28e31ff0-7fee-4e5e-9c2f-c3cbda2d7fa8"
+        name="AccountEvent"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="4ea8074f-df76-459a-aeb6-932de969433d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a281ff10-cf8b-4291-9eeb-1e1387fc2275"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2907868a-b875-4666-8d24-31e73cf68612">
+                <propertyInstance
+                  Id="1818e224-f7c1-4a73-b1a8-4527dcb86dde"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fb930bcc-3e97-4187-bad8-ef26b59ee1e5">
+                <propertyInstance
+                  Id="96cd0daa-6ea7-4ef5-85eb-6cd22745272b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f6de4af3-8d0d-482a-a4cf-ed2b8b272b87">
+                <propertyInstance
+                  Id="5f4da762-6b95-42f0-aac0-2c26eb5b88e3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4669425c-c627-467b-9328-e0a2779e87eb">
+                <propertyInstance
+                  Id="ca0bd948-e4e4-4042-9f04-6f4232d4d08b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b321b991-c432-47bf-b6f2-0a7b41191c13">
+                <propertyInstance
+                  Id="c3366e62-b09d-42c4-8c99-bf1514c4c6fa"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="3d1ea1d4-83d3-4bbe-a5c4-1a014f520c22"
+            name="AccountID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="ba088234-6ea4-48c2-846b-f886ce160e7d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DAccountID"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="778f895e-2a27-4590-80d9-b831408d436a"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3995cd71-0c94-405b-ba20-fd65f40187a2">
+                    <propertyInstance
+                      Id="5ef7c8a6-db5f-40a7-9b32-a178e5ec4dd0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2ed6575d-3512-4f75-9de0-9a6de31a4c47">
+                    <propertyInstance
+                      Id="a495172f-e903-41ad-82a3-d1781cfcaa66"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3a574bd-3bc2-4b94-84c6-7ed62e3fc958">
+                    <propertyInstance
+                      Id="56fdd9b9-5543-4d91-8c1e-8b60d6e5160f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34b1840d-c4a8-4521-ac9d-406ef40a64d1">
+                    <propertyInstance
+                      Id="44c259a8-7fce-439c-9649-ee1741d5f17f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce08f8e6-f370-4d69-8c30-a2b8128e1adc">
+                    <propertyInstance
+                      Id="8c889498-1d8a-4a96-a5e9-0a63471eabae"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c403ce79-eae2-4ca1-947e-b5a0e0fff261">
+                    <propertyInstance
+                      Id="e97e648a-8149-47ca-9971-af1661d1ae50"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bfa37390-6374-4e93-8faa-8c09e3b3af85">
+                    <propertyInstance
+                      Id="c60ff55b-411b-418b-a9f2-76166d480c22"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8fd94e1f-eae0-4d85-a6d0-03f6873d229e"
+            name="DateIn"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e45b70e4-e4d6-42dc-af17-67d4c98f3d96"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DDateIn"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9e883fbc-9d74-4d42-ae3b-9cf6d05d8b8f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3985a558-f22d-4382-aa8b-51848b3678fb">
+                    <propertyInstance
+                      Id="bb999b3a-fbaf-47b7-a0fa-3c94d191a0a7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54480191-24a1-4b68-9731-1106741d6963">
+                    <propertyInstance
+                      Id="2a123ce5-df1f-473d-9b58-782b31daae61"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b0b75019-d9f0-40bd-bf77-204826f91c59">
+                    <propertyInstance
+                      Id="568b56b3-bdda-442d-9755-4d496351e713"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92b67b81-7a26-464b-a83a-7acd5f8075d2">
+                    <propertyInstance
+                      Id="50b29be2-63ed-4dbf-b426-d4f1578fe7d0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26261add-9ea3-44b6-872a-05512f711760">
+                    <propertyInstance
+                      Id="b9d3a7ff-3976-456a-b3c4-74b4e2bb21f1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="328a95d6-1253-4a37-b77f-dedf6de85150">
+                    <propertyInstance
+                      Id="3d1f8f98-82ed-46cc-b9f8-aec79ad96fb5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e1b6b6f4-4a7f-4e80-aeff-2c56b1c89eed">
+                    <propertyInstance
+                      Id="07de5e78-30f0-455d-bdb4-59641c4d319f"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="19f84afa-b7d0-4f0d-8ae0-b0786738f392"
+            name="DateOut"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="32a40bfa-096e-47b7-aa1f-df7319fbcffb"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DDateOut"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5b372390-11a6-49d9-975b-e4a966a0dba1"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="089042f2-d284-4cbb-9fa0-6195a88c11e4">
+                    <propertyInstance
+                      Id="289cd079-91b8-434d-bce5-6b7cd35699b3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1497566a-7dee-4001-8c5f-29b3936d9410">
+                    <propertyInstance
+                      Id="ac513022-ef12-42c7-9593-47c66c03a156"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba4dac85-953b-4ddb-96ae-7c7ef975449d">
+                    <propertyInstance
+                      Id="88fbef93-4268-4462-be4d-c2f7f67340aa"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42875320-0fca-4fd9-95da-39016ee7d71d">
+                    <propertyInstance
+                      Id="f1e1977d-ef8c-4408-8e85-e11cc107a666"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db5d6a03-2c97-41f0-91c0-b89bd52fca59">
+                    <propertyInstance
+                      Id="ff2f65ea-b261-479a-9933-e89a5d15e0ec"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1aa068b2-f8a9-4368-abb2-818fc340ca1f">
+                    <propertyInstance
+                      Id="d4033c47-139b-4ce0-81a2-11b80ed89ad8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="31a3b709-634c-4971-86d7-d76b81ddee20">
+                    <propertyInstance
+                      Id="2886f121-461f-461c-bd07-6d7a0993f2fb"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="488c593d-76c6-4241-8745-44f601509dc0"
+            name="EventID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="de5f2f6b-fff7-4b84-9027-a6fe451df689"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DEventID"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dab69c44-b893-42b1-bb3e-e4533b7d55b2"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c750e7e3-0ff2-42c6-8ee5-cb79b8ad90be">
+                    <propertyInstance
+                      Id="f20e79db-d470-4b51-93a6-b85806666bdd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c1361b8-a218-4273-a1ee-26de11f5b221">
+                    <propertyInstance
+                      Id="5bcc857b-8e4f-402c-aef7-daac44408178"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bb5b005-fa42-46d1-bce8-14db9fed1972">
+                    <propertyInstance
+                      Id="54ddc544-aea4-45bb-a13e-a5bcd7eb8d2d"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="660da382-2f33-4a3b-911a-4067b8b22977">
+                    <propertyInstance
+                      Id="228cb8e5-af58-417a-ae55-d0e11f2deb61"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8d8d9dd-7766-42de-b4ba-49c5cd39613e">
+                    <propertyInstance
+                      Id="80aab47c-fa00-4a46-8163-48acfe60549f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b889c87d-1a06-4ef2-87f0-5e2905e4d6b8">
+                    <propertyInstance
+                      Id="577d8953-a7e2-400e-a860-9e4135dc8de9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d78d65f-75a9-4322-ad7b-b5a4e814fb99">
+                    <propertyInstance
+                      Id="3a52730e-d2e0-486f-93bb-b122ee4efb05"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3fde3435-3acc-4c9a-83c0-73acc5fb277f"
+            name="LastName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="60bec751-e934-458f-8994-11aef24016e2"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DLastName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ac079d46-a9c4-44c8-9fea-07de2f2f8b2b"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbbe9da6-28a1-442f-ac31-63c1c4f30a66">
+                    <propertyInstance
+                      Id="2a784e5b-b01c-498b-9874-646bd7eaf0e2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="68cceba8-2e62-4a61-ad7b-e5d4534cee45">
+                    <propertyInstance
+                      Id="4922aefd-a636-4cdf-8696-8665df14dab2"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d9df895-441b-4b1f-a97c-460679bc44e6">
+                    <propertyInstance
+                      Id="02039581-5293-4361-a18c-353c8b4e4777"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6891b19-01d0-4b60-8b41-84ddf7aeec63">
+                    <propertyInstance
+                      Id="6eb1ad6d-5897-4578-b3ef-1133eb419f13"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6015ecf-0d92-497a-99e5-75c69dffb19a">
+                    <propertyInstance
+                      Id="dde5d53e-66bc-48fa-bdad-cd99345c2a25"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4eb2c45b-1cd4-401e-ac56-a43480cf68ee">
+                    <propertyInstance
+                      Id="a707654a-a086-4d66-9d49-849102adc6a0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eff72690-6c2d-4261-83e4-506af6500509">
+                    <propertyInstance
+                      Id="1ecb834a-a1c1-4740-a25a-3735f95a6309"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="91f77273-cdaf-4657-abbe-2fec44737c49"
+            name="LocatieID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="847f4e40-4fc9-4408-9b8c-441d2d558ee2"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DLocatieID"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="97d0586c-c88a-4a15-8a30-239bf26cf1c6"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69cfc6f9-e037-47c5-ac02-5358cc22ef1b">
+                    <propertyInstance
+                      Id="2188fb53-4808-482a-a867-f6ef11fc16b9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2ede6b9-941a-41ea-8fa1-33a0ffbc3ca2">
+                    <propertyInstance
+                      Id="3cf4ee60-a525-442d-93f5-60b7847285c7"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8c3a59b1-ada6-49d5-8228-8600b655d4df">
+                    <propertyInstance
+                      Id="0f7a60ec-8eed-4a22-8136-fdbb766d3a0e"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b1d6000-1f3d-49d3-a957-509546fee71a">
+                    <propertyInstance
+                      Id="6eb4fed4-93b6-4ac1-b717-01bc14f75e77"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="33ec6b5b-00f7-4183-9016-b94bd3ecbee4">
+                    <propertyInstance
+                      Id="f993eba7-e2d1-4177-8cde-84f30fca8b96"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e21dbaf-1eff-4a70-ab5c-8786348ce878">
+                    <propertyInstance
+                      Id="6b7d5827-91be-4683-a02f-073a6aadb4e8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bfecaa41-066f-4b2f-8e88-46bb58110abb">
+                    <propertyInstance
+                      Id="68aa4425-71d0-419d-9486-d60251d9e90d"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="46d47808-b946-4378-8df2-fe141ccca8b6"
+            name="Present"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="60f7111e-63f9-453c-9274-57d75ea98291"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3DPresent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="88de24b5-061c-46f9-af45-f243cabceb23"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42d7fdb4-510f-439a-8488-b69f06f07e82">
+                    <propertyInstance
+                      Id="ba1a992f-abdf-4213-a2a5-73563b0ef4ee"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="615abb9f-a9a8-4257-a004-3a073595ee8b">
+                    <propertyInstance
+                      Id="b76f2992-cc14-496d-8c3e-c354d95ddb49"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f4c6d48-f24c-417d-98c4-f3261f8f3494">
+                    <propertyInstance
+                      Id="9509e0e5-836c-4e21-8d6a-abd07d0a01fd"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db2cc24b-5cb1-40aa-9cd2-44432e6d6ca8">
+                    <propertyInstance
+                      Id="f381b628-1b4a-46a6-993e-3d65b5cdf162"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d00dd9ec-a6bd-4a98-86d9-49254c2abf70">
+                    <propertyInstance
+                      Id="5b98c317-caae-4fe2-b1cd-f3a36c3cb29a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3a3d8cf-f7b4-45e0-ad3f-9bc4243cb42b">
+                    <propertyInstance
+                      Id="93c081e0-65ff-4211-8d1b-475a05002599"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53caa1d2-bf81-41a9-b9a3-b497ac8a0d90">
+                    <propertyInstance
+                      Id="5b07a8ad-1118-4dce-b01e-f2a2fcdce6ee"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="39c4de81-085f-46b7-81ef-0e15012cc62c"
+            name="AccountEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b5c8d6a2-01a1-4268-98b2-c027ffc9cc5a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="91300e4e-7e0f-463c-8760-fc132460c264"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca59900b-0816-46e9-b5b7-901444114d8c">
+                    <propertyInstance
+                      Id="d86fe81e-5097-4395-9ff0-8d978e9f4fa0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dbb5b299-7932-448d-998f-f1f4e9f88e25">
+                    <propertyInstance
+                      Id="dde9028b-1ef3-4c66-b149-76cd15b76f3a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a77dc737-bb5c-42ec-b850-65542785ef3b">
+                    <propertyInstance
+                      Id="31a78741-64b0-4b43-bd3f-5204645cfaac"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09b8f2b1-7058-4dc3-8a2e-6d8b2bcda957">
+                    <propertyInstance
+                      Id="91f79b96-21ca-4cb3-a641-a44bd44ed6d9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="93f2396b-fbc4-40df-9f7a-7492614f0c9c">
+                    <propertyInstance
+                      Id="9352dd7c-a440-41d3-b6ab-982b7713cf19"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17d40c33-d148-4769-85e0-db560e059c56">
+                    <propertyInstance
+                      Id="a552afc5-7306-4c02-8115-ba8243456af0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5feed672-9f3b-4a27-8d59-8ebc20b9ac45"
+                  name="Present"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b84a4671-e266-417a-b5ae-c4ee49a556f9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DPresent"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="07b62cd3-2e82-41dd-a109-d7558a4e7e71"
+                  name="AccountID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2821db24-4b22-4075-8111-57ab07d1478a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DAccountID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="54c465db-5258-4c3c-9970-0b597444fb14"
+                  name="EventID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="4f19af10-1d02-48b8-bb7c-39a761ec841a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DEventID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="47c72284-0954-4ce0-a650-8b42f8b71b64"
+                  name="LocatieID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="682e17e4-7b42-406d-94f8-db4e4e9e3e7b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DLocatieID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4f24a86d-f5e3-443f-a9be-6b2f6de24ee8"
+                  name="DateIn"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e80cdf7e-2b15-4179-8a99-55b5cb5e091b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DDateIn"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a11f919c-e982-4586-9b38-ba84822d539e"
+                  name="DateOut"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7d60234d-a07b-4148-9039-25ec8c74c84b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DDateOut"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ce8d93b2-a1c7-4a83-a493-b11e38001840"
+                  name="LastName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b12794c0-f1a7-49f1-8b61-5e722411a4f4"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DLastName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8666d378-9c72-4fc4-b17a-805c8b581d3a"
+            name="AccountEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="21ee3d8d-057f-4c6b-8c96-0db7a6aa69db"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="535bcbe4-fffc-4db9-8648-eabaf2c6f423"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bcf9c65a-0ea4-4eec-aed4-85e7273b3122">
+                    <propertyInstance
+                      Id="a19c80ce-aa57-42bc-843d-7624fbedb160"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e63755c-ff8c-49fd-a54d-6408679cd237">
+                    <propertyInstance
+                      Id="d680815b-12ec-4ee3-b2fb-cf457ea911fa"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8dde86e0-e971-4aa5-b8a9-c0e996355927">
+                    <propertyInstance
+                      Id="b0afe916-9b93-4359-87c2-c601ab2bcc54"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30a79f2e-38c7-4d98-91d8-69277acce7c6">
+                    <propertyInstance
+                      Id="933d14d0-ed2e-478b-a98d-57b6c9a8a359"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0eae2c92-5313-4ccf-8ae4-ed96296773bc">
+                    <propertyInstance
+                      Id="fef24c5d-373d-421d-a071-162de73e03e6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="662bc0ba-2e21-4d83-909a-783e991672bb">
+                    <propertyInstance
+                      Id="569786b8-4e4a-4767-aa12-b0ba153c2c42"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b246d5bf-592e-4a13-8037-e5fb15508334"
+                  name="Present"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="226cf62f-4521-4264-97e8-4285bed510cf"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DPresent"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="10c6c24d-3147-44a0-8ac2-afaabd5dce20"
+                  name="AccountID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="be2adcaf-de9b-4fa9-9f6f-35aba8575837"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DAccountID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="22ba7289-5329-4303-bd78-e0fdb1fcc858"
+                  name="EventID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7ee9d57f-a721-4ff2-bb28-8dfd6dca21e9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DAccountEvent Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DBoolean)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DEventID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5522b5c7-12b2-4567-9fbc-1e0b3bf33f8e"
+        name="Media"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="693d90a0-1c05-4f00-a3b4-07759bfb0221"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f2155806-4f77-4ed7-b4ad-c5c17c83a8c1"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eec65416-794d-4ff9-adc6-e990c903ee88">
+                <propertyInstance
+                  Id="bd51f0ab-9634-4837-806d-0812d0ade895"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d55850f8-f42f-4869-8295-eb63196a18bc">
+                <propertyInstance
+                  Id="fd9d39c2-a364-4fb7-a968-eac366c75ead"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7565de3d-2e88-4850-b8e9-a5cb02753268">
+                <propertyInstance
+                  Id="d6106f70-6cf7-4f48-8fab-2503c86bb77f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="92bee33e-626c-4931-b0b9-07556e22bb4c">
+                <propertyInstance
+                  Id="85f9cd02-fe51-42f6-ba3d-fd66d829e9c3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29f20109-4846-410b-9110-72346ce6dcd6">
+                <propertyInstance
+                  Id="489b1fde-dced-4e85-9329-a717f2d949b8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="3f18d310-4bf5-44b5-851b-4170b5929222"
+            name="PostID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8b5cf535-1c51-4988-b5eb-7df6f14f75d4"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3DPostID"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="55eea94b-a52e-4c35-9959-b5c8eab79bd0"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="490ee09d-2c71-4036-b06c-4416504c2f68">
+                    <propertyInstance
+                      Id="c066249f-6099-445f-b09f-d86b759f7aff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a317f477-ee31-4fa2-8195-5ae8f5d0f6d3">
+                    <propertyInstance
+                      Id="5f5c47b2-6669-466a-8220-6099a91c8f55"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14e7982c-a32c-4d76-bae1-0c99d3c45c4e">
+                    <propertyInstance
+                      Id="14233b12-e46f-46ab-a2c8-e05b91a0ea2f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="193c2e58-81a6-4598-b53c-06c9b89f6f26">
+                    <propertyInstance
+                      Id="ec6ac83d-001d-4c85-b902-c6347c4928ac"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc542909-5409-49e9-892a-76aa039655b0">
+                    <propertyInstance
+                      Id="384d9199-d110-4fda-b919-bddec8976e1a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8770a7d-b9c7-4058-aa47-05b2b4246f9f">
+                    <propertyInstance
+                      Id="9dfe0d25-4664-48b5-866b-b81c907ff508"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5bf8dbad-339a-4531-aabc-117bb3fc37ea">
+                    <propertyInstance
+                      Id="0deaf92a-709d-490f-8ce2-f8027db66dd9"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7d5d2e79-fdc7-43ff-8e96-3d69a18d3e76"
+            name="AANTALREPORTS"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a41768d8-6b94-444d-98ef-119aae36f7a3"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3DAANTALREPORTS"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2f3d198b-6636-4020-9c02-f593c1605ff8"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1d083d35-b987-4e55-8c85-962bb3d60b91">
+                    <propertyInstance
+                      Id="8c469fc2-3550-425a-aa7d-e0984f116c76"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="687724ab-e5ee-480f-88c5-dc9543f84281">
+                    <propertyInstance
+                      Id="9ec77866-2e83-4e02-903f-3ccd88edfbb5"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7b255d9-f339-4baf-9911-beeb74c9e0f7">
+                    <propertyInstance
+                      Id="b569a1de-f904-4e8e-a227-c4285651fd3e"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb888f53-b345-4f72-8965-f575b194e55d">
+                    <propertyInstance
+                      Id="f6048c92-46e5-4f2d-aeec-a91beb92b8bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e61263d-6672-4b23-8b6b-d55c1a619aee">
+                    <propertyInstance
+                      Id="49976fca-b660-477a-829d-0d189fc03dbb"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ec7e5b9-e49e-479c-9c76-7d92e1848bf8">
+                    <propertyInstance
+                      Id="ef5844e4-a1be-46a9-9060-cfc393eb4bb5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6245b657-62d9-4081-8c60-66359497e33d">
+                    <propertyInstance
+                      Id="f6a23e4e-52d8-4464-9588-eea3c7eae544"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4c16450b-e3b3-4332-8118-14bf15d1cbd2"
+            name="Inhoud"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6b965984-99f6-47ad-b3ab-f4db0db64ede"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3DInhoud"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="31024225-a3d3-4dc5-a109-a66806f843b5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="227ea3f8-cf4e-484d-a3e5-5366655cfaf2">
+                    <propertyInstance
+                      Id="8efb37c0-b192-4e4e-a2c8-a1650e272d29"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64ae381c-32dd-4ad1-8f95-637c7dbce7e4">
+                    <propertyInstance
+                      Id="4dc55436-1a40-4035-9c03-b33524042aa9"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42b7caa8-0e16-433b-9129-231415e494f2">
+                    <propertyInstance
+                      Id="6bf241b4-d27d-4c70-8422-00e75a719161"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfae99e2-7b4d-443e-b543-2af7e75f0170">
+                    <propertyInstance
+                      Id="7ea50af2-94c1-4966-98a7-ab6c8caab213"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d49185f-5eb5-4423-9e16-84ffe4b2fbb9">
+                    <propertyInstance
+                      Id="2b1d4b04-1d9e-44f1-854f-a506ef47b238"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d432a32-0ade-4ae7-bffa-2b8e78a72f89">
+                    <propertyInstance
+                      Id="990e16c1-439e-40a7-b2a0-6fc332141e06"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a3ec8d97-ad2f-4a79-8757-920b9c649bea">
+                    <propertyInstance
+                      Id="4d730011-503f-4fd4-8eac-dc404cc0a5cd"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a78b5461-ba87-4b75-8c1d-03f1c5b75836"
+            name="Bestandlocatie"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6dd23de6-de38-4939-b363-d6302c7bb1ab"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3DBestandlocatie"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="07a1f83a-a76b-480f-8013-bb7e0ac54d16"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc48b129-30ea-46bf-b409-b0137b71f399">
+                    <propertyInstance
+                      Id="e6d5e0fe-e745-41d5-b9fa-7d46b42a5cf1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f63c2c49-ea31-4598-81f1-6b9d99b7b83d">
+                    <propertyInstance
+                      Id="4efa976f-816c-4207-b720-642a753af225"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f6926ecb-095e-43a8-b01e-918dcae1d1e7">
+                    <propertyInstance
+                      Id="a14e7b8a-4115-438c-a177-67c45bc0cde0"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1acf0923-5983-4648-b065-26a759d74aee">
+                    <propertyInstance
+                      Id="3543145f-fbea-4245-804c-19aa1397fad8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="de3319b8-18d7-4f64-9477-f73b34d50f5c">
+                    <propertyInstance
+                      Id="f0950fc6-5bc3-478e-aac0-80774afdcba2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5899fcae-37fa-4475-af2d-f45526588401">
+                    <propertyInstance
+                      Id="49efcebb-6f0d-443d-9fb6-5f26d54ab86e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="179e9f96-48ad-4a70-84b6-db79be757aa4">
+                    <propertyInstance
+                      Id="5acc7cbd-3d32-455f-9547-65cfbf03034b"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="39e63338-a558-4ee8-b7e8-6b5e753f0e0c"
+            name="AccountName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="01583a7e-1cab-4b1c-b2e2-7005cd099eea"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3DAccountName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f0f1a59c-a22e-47d0-bb17-b968c07eee0d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76433399-8f13-4292-bbef-701413a1d519">
+                    <propertyInstance
+                      Id="cc853317-036d-41ca-9cb1-770a4f0ddccf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e0e377a8-2fc7-4efc-b1fc-91d89165f72b">
+                    <propertyInstance
+                      Id="19947a99-4c3d-483f-87dd-c9b92902ecd5"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8824e40-fade-4bc2-9bad-5e227f843330">
+                    <propertyInstance
+                      Id="1949b6b4-9697-4549-a12d-375afb165da0"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07629957-8fcc-43d0-b145-1fd36ad86f7b">
+                    <propertyInstance
+                      Id="c80135b7-1f13-4b34-89f4-53b945f292eb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b2d692c-a758-4be8-aae2-f0681c103e5b">
+                    <propertyInstance
+                      Id="f7cc7b6b-ad2f-4896-b321-273925a6fc04"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f189505-7c82-4d97-9d77-d0c4210f662c">
+                    <propertyInstance
+                      Id="68a84a56-15da-40e9-8686-2dcdf48fe1ba"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89a18003-ffaf-4cd5-80d8-f19d56b5da01">
+                    <propertyInstance
+                      Id="29d55aac-a164-41fa-8fbd-79132cd47eef"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="13f39fea-51ca-4366-9b5a-c4ef249ce1c2"
+            name="Media"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0ff08ca5-a5bb-4a44-ac23-962e9298c7c3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7b1ad707-c663-490b-9542-8d22c07beceb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e25e0a37-0dc9-4f8a-9ef0-541621b922b0">
+                    <propertyInstance
+                      Id="2fa7e0aa-bdbd-4a9a-b655-dbf3cfd4a1ce"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95608dfd-ce54-40f0-a469-4e96c4b1edcb">
+                    <propertyInstance
+                      Id="08651c82-b842-4e25-84e7-9f77158cb6ac"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc7bd3cf-6074-4671-b505-9e67ac8df019">
+                    <propertyInstance
+                      Id="b7fc1743-b997-489c-a6fc-5c556d1bc3bd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="275d615e-ad83-409d-b059-f45cd124cb81">
+                    <propertyInstance
+                      Id="27d623d0-78d8-4257-8bd8-c8351e818be7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2080681a-4a20-45df-a656-275ad3e6a0ec">
+                    <propertyInstance
+                      Id="6185212d-d9d5-4581-b4de-4bd3147333fe"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6fd52c9-0cf6-4cbc-a249-90fa54e11608">
+                    <propertyInstance
+                      Id="32667413-a2e7-484d-83a2-4e7ecfce5b02"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="df86ccc8-f08b-4430-8f11-07e57af8f59c"
+                  name="postId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e13270a0-d7bf-47ef-9879-03c887c2af6e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DpostId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="31227f4b-c8d2-46af-9474-0fb26edce323"
+                  name="aantalreports"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="83c76c0c-3b38-4954-ba75-727dcc7cceca"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Daantalreports"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d04b35d8-3a08-496b-bf53-68bc75298c5e"
+                  name="inhoud"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3694917d-96f6-4e8a-a6df-5ca98d9a5a7a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dinhoud"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bb722212-117c-4d93-8c35-191cbe6d3f13"
+                  name="bestandlocatie"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fc7e1d83-b0e3-44d4-bebc-7584787c3f8f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dbestandlocatie"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f086b3c6-5934-4041-b47f-d8f263adef28"
+            name="Media"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e23bf315-0694-4f99-8e8f-a7b071f19055"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b5ebfc99-a959-4061-88a3-15c0151aa38b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64adbf5c-487c-4bdb-ba8a-c47aadda9f47">
+                    <propertyInstance
+                      Id="bd039569-11ab-421f-8beb-c25bf7e22d3e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b72225fd-1a1a-4603-a1c4-19213513e8f9">
+                    <propertyInstance
+                      Id="632e8581-1181-4ca4-a07f-a399cf0aa0a9"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="85b6574f-2df4-4b31-bfc1-e5646a94b732">
+                    <propertyInstance
+                      Id="3702983a-6559-41be-8a45-a8b547c3f14e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6df6afbf-4cf4-4510-b65a-3be9044ab404">
+                    <propertyInstance
+                      Id="0733f14a-ed0e-4e10-824f-25b94a870af8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2ac2ea1-0c8a-4b2a-849c-4341adf5db29">
+                    <propertyInstance
+                      Id="e5e8767b-923f-41c3-8409-b204d175d1ba"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="110d0513-607f-414e-a561-59e66eeda79d">
+                    <propertyInstance
+                      Id="599f1839-e938-4b54-823e-ec5cfa4f24f9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9709d8bb-434a-4f80-9fe8-0b2aae39616f"
+                  name="postId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="98202f13-a0f3-4853-9260-b9e8782f5546"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DpostId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9ce7d711-c0b7-4679-b104-405b30027135"
+                  name="aantalreports"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b573777b-90a7-48f4-855b-b19c6749be89"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Daantalreports"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4253350b-b7ac-4325-ab54-493f8f0a63d0"
+                  name="inhoud"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b0afec27-7e1f-4f50-b2be-afb482a482e2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dinhoud"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fbefe4ac-52c9-481a-b225-11b5acaa5041"
+                  name="bestandlocatie"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="c478dd73-e360-45ba-8d29-44442e944ad7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dbestandlocatie"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cad5c59c-306e-45ba-ad91-7dc4143da397"
+                  name="accountName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="19b0c168-d8aa-4a73-ba7e-42ee8e371575"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DMedia Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DaccountName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="20cdabcb-d97d-442f-94b5-eb4e3723332f"
+        name="DBCampingspot"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="604d5a9d-7675-449a-8aaa-f44a4eb882e5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBCampingspot"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e13d1f98-b844-47ea-9692-d34124b05ad0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="09edae0d-3d74-49f8-8830-9f97efbcbf2b">
+                <propertyInstance
+                  Id="7e87cf69-20b6-4a8a-a52a-f9d2ce4ec56b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="22ac6aeb-514d-4ac8-b089-bef46f2b0333">
+                <propertyInstance
+                  Id="bc81221e-89c0-4d9f-b5cc-0af5f84f2f3b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="813a8d27-f877-41a0-a281-90791c2f160a">
+                <propertyInstance
+                  Id="b883d148-738e-43ff-9b8e-929a3e2f78ef"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8ef2f6d-689c-4998-bd7b-599b8e262b1a">
+                <propertyInstance
+                  Id="c5079848-fdd1-4416-9c37-a7fb7ca4e00a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eac21fd5-e5ce-49b0-8916-3f7c94c43f4b">
+                <propertyInstance
+                  Id="80b8f0fe-8d82-4fc1-9d85-80db59a72328"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="d964ad45-6a0c-4980-ac10-a2530df2f63c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="339b08e8-1e25-4db3-9ffd-b284ba7fed0e"
+              LastKnownName="Database"
+              LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="fe96a964-24f8-41df-a60e-e5e4f5f58347"
+            name="DBCampingspot"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="00918b38-42cd-4deb-a1d2-c2a9da4d82b5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBCampingspot Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fbd08c1c-527b-4abb-8944-314150f39701"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e563318-4640-40ac-bb38-391ac2ed7272">
+                    <propertyInstance
+                      Id="dbf3cda0-4195-4903-b7a9-3915059b60f6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e4c8fbc-8fb9-4549-85fa-d896197f7f5a">
+                    <propertyInstance
+                      Id="1b7fd0e7-1827-4fb2-ae91-60bdb9a4edd7"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26aa066e-f79f-4c05-9861-94d88693bed0">
+                    <propertyInstance
+                      Id="b25ef4f4-ee1c-40bc-a89d-75dd64ad9b04"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccc3a239-cb28-4ff2-a864-bd3c6f99345b">
+                    <propertyInstance
+                      Id="029dd99a-324e-4cf1-b43e-43cf3dafa031"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7dd4ab32-6e83-4dd1-ad14-c1022ab72f7b">
+                    <propertyInstance
+                      Id="1e537638-a976-47a7-a50d-c1a6d399de4d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d728af19-9e61-4066-a80f-b1d55fd37430">
+                    <propertyInstance
+                      Id="256532bc-0fef-4511-832e-aa5f2d8c247d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="a95490f7-248c-49b8-a7dd-116c87195e58"
+            name="SelectAllSpots"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9f975ff4-b64e-4ab3-83bc-78e7dddbc7fd"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBCampingspot Member%3DSelectAllSpots"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2fda93f5-13c0-4b96-b9a8-a2679c7d3c28"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3ce7f2e-6bbf-40bd-8c30-a31c45c86a7a">
+                    <propertyInstance
+                      Id="5686011f-1627-4a51-8b93-8efd0723f33d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e1a71bd-048f-4450-a362-6fad5d8a5916">
+                    <propertyInstance
+                      Id="e85f8787-f149-4a4e-b7ed-6975577967c4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="453c5e9e-0e1c-4452-94d6-b6a534f36b80">
+                    <propertyInstance
+                      Id="4f8941a5-80a3-4fcb-a186-a0b0cfc531be"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45619501-5110-4dc1-af31-06fe68349239">
+                    <propertyInstance
+                      Id="7b3faaf4-0628-4e82-8e81-471cbb5500ab"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e1490c3-6370-4ed9-a14c-a039213c134f">
+                    <propertyInstance
+                      Id="eb0e3fe8-1460-435f-ae98-f18bf3814077"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="090abf72-2426-4f8b-9c8c-1fa06c650f3b">
+                    <propertyInstance
+                      Id="a2e84296-0f5f-4675-9ade-550686742163"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b22729a7-50ba-4032-80cc-919e6e32abc9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f9b82fa6-7bd6-4107-8a67-be561cc44fb0"
+                      LastKnownName="List&lt;CampingSpot‎&gt;"
+                      LastKnownLocation="Package4_1447.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dafeaa24-b058-4c86-8bbd-b0dc614fbbdc"
+        name="DBItem"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="123a6d90-d6c7-441a-9c01-2a5464bec386"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBItem"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9c1eab8e-78aa-4255-8bef-cd2668d94daf"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d4c3a6db-2f85-40e9-99a0-e36c51d40dc9">
+                <propertyInstance
+                  Id="9cc06bbd-b970-4032-b413-2b5baeeb853c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="63c2f0c7-2c7f-4654-a2eb-f5fc0c3a9014">
+                <propertyInstance
+                  Id="fb612245-4083-4448-ab65-1faff066d2ea"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="459200f3-6bc3-42f0-b2a9-921ddbf6e33e">
+                <propertyInstance
+                  Id="f3b607d7-cc4c-413b-a848-ebb7fdad9a3d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3b868270-d9f1-4d3f-a979-98c2690a2d72">
+                <propertyInstance
+                  Id="4054704f-1afa-4467-800e-2f2b4ae9ca87"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a6fd2da1-6f96-4982-a0e7-4fc112c648d7">
+                <propertyInstance
+                  Id="dfd2ffac-9c0c-415d-94c5-a554e791cc5d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="ac1d8a81-b526-4ac5-9e1c-c94400f4b59d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="339b08e8-1e25-4db3-9ffd-b284ba7fed0e"
+              LastKnownName="Database"
+              LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ec329acd-10c1-4948-8b58-15a52f1507f2"
+            name="DBItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="77386c4b-529c-4a36-996c-55ba1f152600"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBItem Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e72a15eb-8f32-42fe-9636-b3e537eefbdc"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="793ef8b0-5e6f-49a3-bc13-5685d1649bc7">
+                    <propertyInstance
+                      Id="77e3e49e-b19a-47c3-a980-ac3a25e866a2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a3b3272-f25f-473c-ae4d-8c54ff3ea9fc">
+                    <propertyInstance
+                      Id="f4db0086-20e0-494c-bf49-7664b40ee2bc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c122a5ba-f07f-40c1-be71-3fc407e24340">
+                    <propertyInstance
+                      Id="e433e61a-203d-47e2-9855-8452261d5373"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc80c8ac-4c1f-4a16-89e4-ed7756cb7844">
+                    <propertyInstance
+                      Id="fd423873-0a3c-4101-83e8-948d27dd92f1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4dac53db-3281-43ae-bda0-5a8b35ae06b2">
+                    <propertyInstance
+                      Id="313cc24d-fc3b-4549-a2d0-120026741d27"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6844c457-828c-4ebc-bfc8-98750125f968">
+                    <propertyInstance
+                      Id="5090b7dd-10f1-4814-81ee-b37309357a62"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="e7839246-c26b-4a72-9a36-72d924764bcf"
+            name="ItemID"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="aa0b3fda-1205-4539-9b29-1b589bdf3322"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBItem Member%3D(Name%3DItemID OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="141919fd-d5d9-459c-ba63-b2a70a845791"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="016d33c9-5a10-44a0-8ad1-9751ec4052f5">
+                    <propertyInstance
+                      Id="575d61a2-1228-42fd-98b9-34b087d29fc7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24c9121d-aff9-4fcd-9b53-6e3bd44ee118">
+                    <propertyInstance
+                      Id="926aae4a-91b8-414c-b3db-cd04ee7b26af"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c740e25-7cd2-4ff3-aa84-00c8731e5f47">
+                    <propertyInstance
+                      Id="0e5868e7-91ac-4a0e-b7f3-82f6a8044944"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e0bdd21-5cca-4651-b609-1264ca7360bf">
+                    <propertyInstance
+                      Id="9572e9dd-5d09-429b-8b10-f7542549d2ab"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="04f338dc-ce60-48bf-9433-ef4368443dfb">
+                    <propertyInstance
+                      Id="f85ba775-c475-4001-bc7f-988e7e3daf69"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="79f6a2c3-c941-4211-80fe-7d78eae2d9ae">
+                    <propertyInstance
+                      Id="51ded357-fb96-4377-9387-264ac7e4b405"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="230ba1e5-8cd0-4c0c-9e2a-1f39f0dcbc5f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="618503b0-0be5-408a-9ed0-ef5256bcef83"
+                  name="naam"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="9919da81-0710-4c5c-bca8-a222abe4a3ba"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBItem Member%3D(Name%3DItemID OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dnaam"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bc78c70e-9218-4fb9-aea6-3d34054ce275"
+            name="SelectAllItems"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="702c3f13-710f-47f3-8095-c9a12a6d6331"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBItem Member%3DSelectAllItems"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9d345d5c-1b89-48db-aed5-c373682ab42e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="45657426-2e91-4bb9-8f98-1cbbd694e5ec">
+                    <propertyInstance
+                      Id="11de9aac-89d4-49a0-a510-c359d54ffa0d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4dee9641-ec9d-480b-bf07-10f05c193f92">
+                    <propertyInstance
+                      Id="bbf401d6-6657-402c-82f5-ea55e38dc2aa"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="573e1031-8531-43d0-a990-fb11c23b5182">
+                    <propertyInstance
+                      Id="85571474-9c32-472f-9c29-58e08d56a2b1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d33c8c0e-3cf1-4c87-aaac-ffba0d980385">
+                    <propertyInstance
+                      Id="4c426271-df16-4da1-ae32-7de23af5a3d8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3effd136-9310-435a-b727-6c2a93df23fd">
+                    <propertyInstance
+                      Id="3341c84d-e2a8-42fb-b5e8-9f16aa1ba4f0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3e0ebd7-9ed9-427d-a963-ad2001249368">
+                    <propertyInstance
+                      Id="a747a09a-352c-42eb-a7da-cf003910d89c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d350140f-89f4-4afa-bbcf-911d5fca1ea6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="5b0dc3ac-048d-4a17-b92f-e0c031f8bee5"
+                      LastKnownName="List&lt;Item‎&gt;"
+                      LastKnownLocation="Package4_1447.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4d0711c9-62d2-4369-89c8-ff5155920866"
+        name="DBLogin"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8ff2deeb-3b17-4cc8-8917-a299a685c8e7"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c3e71659-e7bd-4068-a935-70f5286409a8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d55d7969-0d11-4b64-b3d8-6098394abd5a">
+                <propertyInstance
+                  Id="7004dacc-82a9-4a15-a301-1c6c426127a9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a3e39592-e474-457d-9211-775dfc6e816f">
+                <propertyInstance
+                  Id="857e70b6-bc1c-4f52-a2e1-392c0aa79218"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0398bd69-41c0-4de9-b404-93120aa2f95c">
+                <propertyInstance
+                  Id="3b89e939-407f-4633-9547-ed94df417ea3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1a70a7b6-e1d7-4385-bfd7-16796e19e6b4">
+                <propertyInstance
+                  Id="98e686f4-e36f-4e8a-930b-b79023ddbf94"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f316bf83-f69c-4b0e-844d-6e09f2b077ab">
+                <propertyInstance
+                  Id="55fd3ceb-9a1f-4bd4-9ec4-53c14f14046f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="5ba67ea8-156f-4ada-8bc4-7ae64945fb0c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="339b08e8-1e25-4db3-9ffd-b284ba7fed0e"
+              LastKnownName="Database"
+              LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="5c895811-ae83-41bb-a082-cd912305e81a"
+            name="DBLogin"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="71c002ec-7a49-4560-82b1-5acf3ab6eb38"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a85d02de-6ee6-406e-a6a7-20c525cbedaf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63f503b1-1881-42e5-8adf-1b69c86eac95">
+                    <propertyInstance
+                      Id="549a9664-d541-462f-95e2-5da15572b239"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29df3483-a024-4db7-b47d-95435a17efe1">
+                    <propertyInstance
+                      Id="7bebb64e-77b8-459a-add1-d3cbe032f665"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="570356e3-91f4-4c38-976a-30675dbb87ef">
+                    <propertyInstance
+                      Id="44e727f7-7889-4f44-a965-f44acaec5ef8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5786461-df79-4f9a-9d12-fa1572a173f4">
+                    <propertyInstance
+                      Id="fc167707-cf66-4f7d-b7f3-b50712d78e01"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cce6371e-666b-435b-96db-cb692fb2e0c6">
+                    <propertyInstance
+                      Id="c1ede8a0-cb30-4d3f-9e68-0ffb92b59e3f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0911468b-a11c-414f-b877-bb907492fee4">
+                    <propertyInstance
+                      Id="438481e4-b114-465e-979e-1a57e19d3b5e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5f51f1ab-5c20-4039-bd8b-d6b2952d3e4b"
+            name="loginCheck"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="93ae5983-6f00-4abc-86b9-820431925884"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin Member%3D(Name%3DloginCheck OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8cfb3f3c-7419-48b2-8670-13edc31ab6b4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9fcd062-6882-4f59-9bba-711d4a1bf3c7">
+                    <propertyInstance
+                      Id="4881ad2e-6df4-4717-a3d0-7a9f984cffb4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="125bbb68-4d8d-4e83-a6cb-5e38059993b1">
+                    <propertyInstance
+                      Id="4d624bb7-e92b-4c99-a28e-0d5af5f5e8e6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da594389-9610-4222-a104-7f665cf8d13a">
+                    <propertyInstance
+                      Id="0303da2c-db3d-474a-bdfb-2340a49f414e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="534700c1-a4ca-44ae-b0d7-34790926fde4">
+                    <propertyInstance
+                      Id="b40af42d-a0c8-427b-8466-093394ce76f8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1231a72-635b-4a49-9f94-d300c57afe90">
+                    <propertyInstance
+                      Id="b67b94c1-a3a0-4baf-8a60-5c6535665883"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="389ff1de-9310-416f-90ac-b241bddd791b">
+                    <propertyInstance
+                      Id="c512f7bd-1ca2-4fb4-ac02-b1a77c668f70"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3a3e660c-0671-4de6-9d06-905f20d33bee"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="297eaca9-a076-4f8e-a661-f8cad0837346"
+                  name="email"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="df8dd71e-3ad8-4332-9923-6f8c80a0101a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin Member%3D(Name%3DloginCheck OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Demail"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1635c95-d72d-441d-95c8-22189de6a7e6"
+                  name="password"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="36f17b88-6f8c-467e-904a-0e426d5b68f1"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin Member%3D(Name%3DloginCheck OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dpassword"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ea10bedc-d1f9-405a-a8e6-a8182353bcba"
+            name="returnLoggedinAccount"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="9f7dbf84-5cad-4f6a-b23c-b787c3417fe1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin Member%3D(Name%3DreturnLoggedinAccount OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1d5ed339-d726-4561-8f55-0525e60d20c0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d2c3d99c-d1b7-4823-82b7-b543067bbf6a">
+                    <propertyInstance
+                      Id="345d1300-565f-409c-8430-599a1f0e9b81"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c077de76-1f74-49d3-ad23-9c5ea7df9fdf">
+                    <propertyInstance
+                      Id="56bc3b55-a209-4382-ba0f-c1fd26f28c7f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3cbf20a-11ae-4b3c-8cee-6bdc603bf6bd">
+                    <propertyInstance
+                      Id="3b6a40dd-c89b-4331-bb76-633528471573"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="315e9a85-d752-43b0-a528-b7de24587444">
+                    <propertyInstance
+                      Id="bcad2de1-5568-4652-9d5a-ae1d02365fbc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b4cef09-f8f4-4f1b-b84a-4b30051d7f51">
+                    <propertyInstance
+                      Id="66b44471-0f99-4b79-bc7b-c40596bee20a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8707188e-2c4e-4314-83e5-0d7ec19cceda">
+                    <propertyInstance
+                      Id="def76dfd-1ce6-4719-87e9-201708d2d76d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5f484d82-6afd-4b9a-a365-22a97fac03b2"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ab097110-917b-4fa2-878e-589c3be05a02"
+                      LastKnownName="Account"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="781acad4-f9fa-4ff7-be79-59c44951e91b"
+                  name="email"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a75f9f21-139f-4a85-93d5-c8815fef86df"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fbin%2FDebug%2FMedewerkerSysteem.exe Namespace%3DMedewerkerSysteem Type%3DDBLogin Member%3D(Name%3DreturnLoggedinAccount OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Demail"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="MedewerkerSysteemDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -375,7 +375,6 @@ namespace MedewerkerSysteem
 
         private void btnComplete_Click(object sender, EventArgs e)
         {
-            //TODO checkin person
             //Checkt of de deelnemer al een RFID heeft gekregen, zo niet dan komt er een messagebox met de error "koppel eerst een RFID"
             if (tbLetterRFID.Text != "")
             {
@@ -604,7 +603,7 @@ namespace MedewerkerSysteem
             dgwReserveSpot.Rows.Clear();
             foreach (ReserveSpot spot in administration.FindReserveSpotsAll())
             {
-                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.ReserveringsID, spot.Account.Person.LastName,spot.StartDate, spot.EndDate, spot.Account.Person.Email);
+                dgwReserveSpot.Rows.Add(spot.ReserveringsID, spot.Account.Person.LastName,spot.StartDate, spot.EndDate, spot.Account.Person.Email);
             }
         }
         

@@ -17,11 +17,6 @@ public class CategoryItems : Category
 		set;
 	}
 
-    public CategoryItems(string Name, string Details, decimal Price, string Type) : base(Details,  Price)
-	{
-        this.Name = Name;
-	}
-
     public CategoryItems(string Name, string Details, decimal Price) : base(Details, Price)
     {
         this.Name = Name;

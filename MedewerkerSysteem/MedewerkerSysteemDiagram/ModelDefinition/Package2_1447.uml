@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="29cb155f-e227-428e-9dbc-f6c19353b26d"
+  name="Client"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1e74f4b0-a048-4044-ab11-adf2a5ded6d5"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DOracle.DataAccess.Client"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="ed2f7c87-9cb4-4c4e-8374-c45403d4f90f"
+        name="OracleConnection"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="925d03c4-a76a-40a9-8095-819c231fdfdd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FBart%2FDocuments%2FGitHub%2FICT4Events-MedewerkerSysteem%2FMedewerkerSysteem%2FMedewerkerSysteem%2Fdlls%2FOracle.DataAccess.dll Namespace%3DOracle.DataAccess.Client Type%3DOracleConnection"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="46239040-cd28-4c85-bf25-31394e7a3bda"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4aa5d6a2-dc95-4335-a3ba-fadc4a8f8198">
+                <propertyInstance
+                  Id="8b636a45-3217-45b6-bea7-4747ede5ad39"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9067147e-9641-43e6-81ef-70f91499dbaf">
+                <propertyInstance
+                  Id="b70ecd2b-8bab-49ec-bddd-6ad7dc59c798"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f2c4364-eeff-4ca7-b2a2-a618942b473f">
+                <propertyInstance
+                  Id="bb9219d4-fef8-4db3-8f46-9ed508028742"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3cab4725-7d2a-4517-8c9a-4b7558b789d6">
+                <propertyInstance
+                  Id="a617d361-fa87-4737-ad19-38293b4da8ba"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="59ff3a6c-ea45-4e54-b83e-6c92f9b86e09">
+                <propertyInstance
+                  Id="5bb1b347-ae05-47a8-a171-b79536d739fe"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

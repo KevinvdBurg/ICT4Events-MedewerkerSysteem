@@ -121,7 +121,7 @@ public class DBReserve : Database
         string sql3;
         sql = "INSERT INTO KAMPEERPLEKRESERVERING (RESERVERINGID, GEBRUIKERID, KAMPEERPLEKID, BETAALD, DATUMIN, DATUMUIT) VALUES (:reserveringid, :gebruikerid, :kampeerplekid, :betaald, :datumin, :datumuit)";
         sql2 = "INSERT INTO GEBRUIKERKAMPEERRES (GEBRUIKERID, RESERVERINGID ) VALUES (:gebruikerid, :reserveringid)";
-        sql3 = "INSERT INTO GEBRUIKEREVENT (GEBRUIKERID, EVENTID, AANWEZIG) VALUES (:gebruikerid, :currentevent, '0')"; 
+        //sql3 = "INSERT INTO GEBRUIKEREVENT (GEBRUIKERID, EVENTID, AANWEZIG) VALUES (:gebruikerid, :currentevent, '0')"; 
         try
         {
             Connect();
@@ -167,25 +167,25 @@ public class DBReserve : Database
             DisConnect();
         }
 
-        try
-        {
-            Connect();
-            OracleCommand cmd = new OracleCommand(sql3, connection);
-            cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
-            cmd.Parameters.Add(new OracleParameter("currentevent", CurrentEventID));
-            cmd.ExecuteNonQuery();
-            //OracleDataReader reader = cmd.ExecuteReader();
-            resultaat = true;
-        }
-        catch (OracleException e)
-        {
-            Console.WriteLine(e.Message);
-            throw;
-        }
-        finally
-        {
-            DisConnect();
-        }
+        //try
+        //{
+        //    Connect();
+        //    OracleCommand cmd = new OracleCommand(sql3, connection);
+        //    cmd.Parameters.Add(new OracleParameter("gebruikerid", accountID));
+        //    cmd.Parameters.Add(new OracleParameter("currentevent", CurrentEventID));
+        //    cmd.ExecuteNonQuery();
+        //    //OracleDataReader reader = cmd.ExecuteReader();
+        //    resultaat = true;
+        //}
+        //catch (OracleException e)
+        //{
+        //    Console.WriteLine(e.Message);
+        //    throw;
+        //}
+        //finally
+        //{
+        //    DisConnect();
+        //}
 
         return resultaat;
     }
