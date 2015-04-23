@@ -402,6 +402,7 @@ namespace MedewerkerSysteem
             reserves.Clear();
             tbLetterStatus.Clear();
             tbLetterName.Clear();
+            tbEmail.Clear();
             tbLetterRFID.Clear();
             tbLetterGroupName.Clear();
             tbSpotLocation.Clear();
